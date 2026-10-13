@@ -1,0 +1,107 @@
+{
+  "scope": "Recorded settings for the historical studies.",
+  "platform": {
+    "gpu": "NVIDIA GB10",
+    "python": "3.12",
+    "torch": "2.13.0+cu130"
+  },
+  "refit": {
+    "fit_records": 185178,
+    "quarantined_overlap_records": 12,
+    "development_records": 24937,
+    "epochs": 5,
+    "updates": 3620,
+    "seed": 43,
+    "batch_size": 256,
+    "calibration_records": 23813,
+    "temperatures": {
+      "choice": 1.18305242061615,
+      "noul": 1.273818016052246,
+      "ordinal": 0.9596070647239685
+    },
+    "reproduction": "research-training.md#reproduce",
+    "provenance": "research-provenance.md#released-head-provenance",
+    "wrapper_records": "study-code/README.md"
+  },
+  "held_out_quality": {
+    "records": 25599,
+    "checks_passed": 23,
+    "checks_total": 27,
+    "vl_rewardbench_examples": 1247,
+    "reproduction": "processed-quality.md#reproduce"
+  },
+  "http_quality": {
+    "configurations": 6,
+    "requests_per_configuration": 5075,
+    "fuzev_requests": 2000,
+    "fuzev_text_requests": 1400,
+    "fuzev_image_requests": 600,
+    "kev_suite": "breadth-v1",
+    "kev_split": "DEV",
+    "kev_records": 1990,
+    "kev_questions": 3075,
+    "calibration": "raw",
+    "native_candidate_batch_size": 8,
+    "gpu_memory_fraction_by_configuration": {
+      "native-3.05": 0.85,
+      "native-4.05": 0.85,
+      "native-5.05": 0.85,
+      "vllm-nvidia": 0.75,
+      "vllm-radixark": 0.75,
+      "vllm-exl3-4.05": 0.75
+    },
+    "mtp": false,
+    "configurations_reference": "https://github.com/PeisongXiao/fuzev/blob/main/docs/models.md#recorded-benchmark-settings",
+    "reproduction": "research-evaluation.md#reproduce",
+    "server_and_panel_configs": "configs/README.md#quality-and-head-studies"
+  },
+  "native_short_performance": {
+    "gpu_memory_fraction_by_configuration": {
+      "native-3.05": 0.85,
+      "native-4.05": 0.85,
+      "native-5.05": 0.85
+    }
+  },
+  "native_integration": {
+    "backbone_repository": "turboderp/Qwen3.8-Flash-Next-exl3",
+    "backbone_revision": "55a732e0c4c3d4614bc42b68493bb930d9b02c0a",
+    "bits_per_weight": 4.05,
+    "context_tokens": 262144,
+    "target_cache": "Q8",
+    "draft_cache": "Q8",
+    "mtp_tokens": 3,
+    "capacity": 4,
+    "memory_fraction": 0.85,
+    "ple": "mmap",
+    "requested_output_tokens": [
+      256,
+      512
+    ],
+    "warmup_requests_per_length": 1,
+    "measured_requests_per_length": 3
+  },
+  "vllm_integration": {
+    "backbone_repository": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "backbone_revision": "fc694b54fb0174e0913e6adf86691ef85a4ead47",
+    "runner": "V1",
+    "scheduling": "synchronous",
+    "devices": 1,
+    "memory_fraction": 0.85,
+    "kv_cache": "FP8",
+    "mtp_tokens": 3,
+    "ple": "mmap",
+    "graphs": "piecewise",
+    "index_share_for_mtp_iteration": false,
+    "corrected_smoke_max_output_tokens": 256,
+    "decision_arrival_seconds": [
+      0.75,
+      1,
+      1.25
+    ]
+  },
+  "missing_reproduction_inputs": [
+    "Original prompt journals and per-item predictions",
+    "Prepared example membership, images and extracted features",
+    "Original admission/declaration ledgers and historical engine binaries"
+  ]
+}

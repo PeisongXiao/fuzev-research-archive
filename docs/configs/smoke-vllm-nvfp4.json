@@ -1,0 +1,181 @@
+{
+  "recorded_date_utc": "2026-10-13",
+  "hardware": "NVIDIA GB10 (DGX Spark), Linux aarch64",
+  "python": "3.12.3",
+  "torch_cuda_build": "13.0",
+  "source_revision_note": "Unpublished lab code commit IDs identify the measured source exports.",
+  "host_memory_metric": "Maximum of one-second samples of host-wide MemTotal minus MemAvailable; not isolated engine RSS or dedicated GPU memory.",
+  "container_memory_metric": "The container cgroup memory.peak includes its prior build/run history and is not GPU memory.",
+  "source_zip_releases": {
+    "vllm-fuzev": {
+      "release": "0.30.0+fuzev.v1.0",
+      "unpublished_lab_code_commit": "5e11d8fb1"
+    },
+    "fuzev-runtime": {
+      "release": "1.0.0",
+      "unpublished_lab_code_commit": "7ecb72a"
+    },
+    "fuzev-vllm-plugin": {
+      "release": "1.0.0",
+      "unpublished_lab_code_commit": "aa2fe16"
+    }
+  },
+  "upstream_binary_wheel": "vllm-0.30.0-cp38-abi3-manylinux_2_28_aarch64.whl",
+  "build_scope": "Fresh ZIP install with normal dependency resolution and matching upstream compiled vLLM extensions; final runtime and plugin sources installed normally from the corrected source export.",
+  "recorded_install_commands": [
+    "export MAX_JOBS=4",
+    "python3 -m venv \"${FUZEV_VENV}\"",
+    ". \"${FUZEV_VENV}/bin/activate\"",
+    "python -m pip install --upgrade pip",
+    "python -m pip install 'setuptools>=77' wheel packaging ninja",
+    "python -m pip install 'torch==2.13.0' --index-url https://download.pytorch.org/whl/cu130",
+    "python -m zipfile -e \"${SOURCE_ZIPS}/vllm-fuzev.zip\" \"${FUZEV_ENGINE_SOURCES}\"",
+    "export VLLM_USE_PRECOMPILED=1",
+    "export VLLM_PRECOMPILED_WHEEL_LOCATION=\"${UPSTREAM_VLLM_WHEEL}\"",
+    "python -m pip install \"${FUZEV_ENGINE_SOURCES}/vllm-fuzev\"",
+    "python -m pip install \"flashinfer-jit-cache==$(python -c 'from importlib.metadata import version; print(version(\"flashinfer-python\"))')\" --index-url https://flashinfer.ai/whl/cu130",
+    "python -m pip install \"${FUZEV_FINAL_SOURCES}/fuzev-runtime\" \"${FUZEV_FINAL_SOURCES}/fuzev-vllm-plugin\""
+  ],
+  "environment": {
+    "MAX_JOBS": "4",
+    "VLLM_USE_V2_MODEL_RUNNER": "0"
+  },
+  "engine_config": {
+    "model": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "async_scheduling": false,
+    "gpu_memory_utilization": 0.75,
+    "max_model_len": 32768,
+    "max_num_seqs": 8,
+    "additional_config": {
+      "ple_storage": "mmap"
+    }
+  },
+  "observed_engine_settings": {
+    "dtype": "bfloat16",
+    "kv_cache_dtype": "auto (BF16)",
+    "speculative_config": null,
+    "tensor_parallel_size": 1,
+    "pipeline_parallel_size": 1,
+    "data_parallel_size": 1,
+    "enable_prefix_caching": true,
+    "enable_chunked_prefill": true,
+    "max_num_batched_tokens": 2048,
+    "cudagraph_mode": "PIECEWISE"
+  },
+  "batch_default_note": "No explicit batch-token override. OPENAI_API_SERVER usage context is supplied; the GB10 NVML device-total-memory query raises NVMLError_NotSupported, so upstream get_batch_defaults falls back to device_memory=0 and selects 2048 rather than the expected 8192.",
+  "command": [
+    "${FUZEV_VENV}/bin/fuzev-vllm",
+    "--engine-config",
+    "${NVFP4_ENGINE_CONFIG}",
+    "--model-name",
+    "nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "--head-directory",
+    "${FUZEV_HEAD_DIRECTORY}",
+    "--head-device",
+    "cpu",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8000"
+  ],
+  "request_method": "POST",
+  "request_url": "http://localhost:8000/v1/systemone",
+  "request_headers": {
+    "Content-Type": "application/json",
+    "X-TypeSafe-Request-ID": "smoke-1"
+  },
+  "request": {
+    "state": {
+      "message": "Please refund the duplicate charge."
+    },
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the customer request a refund?"
+      },
+      "intent": {
+        "type": "choice",
+        "criteria": {
+          "refund": "Request a refund",
+          "shipping": "Track delivery"
+        }
+      },
+      "clarity": {
+        "type": "score",
+        "criteria": [
+          "unclear",
+          "clear"
+        ]
+      }
+    }
+  },
+  "packages": {
+    "torch": "2.13.0+cu130",
+    "vllm": "0.30.0+fuzev.v1.0.precompiled",
+    "fuzev-runtime": "1.0.0",
+    "fuzev-vllm-plugin": "1.0.0",
+    "flashinfer-python": "0.6.18.post1",
+    "flashinfer-jit-cache": "0.6.18.post1+cu130"
+  },
+  "ok": true,
+  "health": {
+    "status": "ok",
+    "model": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "context_window": 32768,
+    "capabilities": {
+      "generation": true,
+      "decisions": true,
+      "images": true,
+      "streaming": true
+    }
+  },
+  "http_status": 200,
+  "request_id": "smoke-1",
+  "response": {
+    "model": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "answers": {
+      "refund": {
+        "type": "noul",
+        "noul": 0.9648171067237854
+      },
+      "intent": {
+        "type": "choice",
+        "choice": "refund",
+        "confidence": 0.9755830764770508,
+        "probabilities": {
+          "refund": 0.9877915382385254,
+          "shipping": 0.012208525091409683
+        }
+      },
+      "clarity": {
+        "type": "score",
+        "score": 0.8462883234024048,
+        "confidence": 0.6925767660140991,
+        "legend": {
+          "0": "unclear",
+          "1": "clear"
+        },
+        "probabilities": {
+          "0": 0.15371161699295044,
+          "1": 0.8462883234024048
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 215
+    },
+    "latency_ms": 4693.940847002523
+  },
+  "exit_code": -15,
+  "peak_host_used_bytes": 105996451840,
+  "peak_container_bytes": 22113214464,
+  "container_memory_limit": "107374182400",
+  "wrapper_exit_code": 0,
+  "shutdown": {
+    "stop_method": "Wrapper sends SIGTERM for normal operator stop",
+    "application_shutdown_complete": true,
+    "worker_force_kill_fallback_seconds": 5,
+    "fully_graceful_worker_shutdown": false
+  }
+}

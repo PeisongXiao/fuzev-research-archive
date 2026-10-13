@@ -1,0 +1,15 @@
+{
+  "kind": "partial-http-quality-run-aggregate",
+  "run": "e2e-vllm-nvidia-v3",
+  "scope": "Incomplete attempt; completed responses used only for the shared-request comparison.",
+  "stop_reason": "Operator stop after request 670 to lower memory.",
+  "source_sha256": "d2636def25cf72f87db8e9ed868b24771774fd7ad2f78f5f41dbedcd56ec78bf",
+  "status": "failed",
+  "processed": 670,
+  "total": 5075,
+  "passed": 501,
+  "error": "KeyboardInterrupt: ",
+  "experimental": true,
+  "calibrated": false,
+  "comparison": "../../repeat/nvidia-shared-670.json"
+}

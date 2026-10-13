@@ -1,0 +1,23 @@
+{
+  "model_directory": "${EXL3_MODEL_DIRECTORY}",
+  "head_directory": "${FUZEV_HEAD_DIRECTORY}",
+  "chat_template": "${QWEN_CHAT_TEMPLATE}",
+  "model_name": "native-4.05-mixed",
+  "cache_tokens": 1048576,
+  "capacity": 4,
+  "context_tokens": 262144,
+  "loader_chunk_tokens": 16384,
+  "prefill_chunk_tokens": 8192,
+  "max_output_size": 32,
+  "recurrent_cache_bytes": 1073741824,
+  "memory_fraction": 0.85,
+  "target_kv_bits": [
+    8,
+    8
+  ],
+  "draft_kv_bits": [
+    8,
+    8
+  ],
+  "mtp_tokens": 3
+}

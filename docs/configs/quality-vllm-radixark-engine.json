@@ -1,0 +1,43 @@
+{
+  "model": "${MODEL_DIRECTORY}",
+  "tokenizer": "${MODEL_DIRECTORY}",
+  "revision": "7b719225242aacd3dbd3f9407468c2ee9a9d2594",
+  "tokenizer_revision": "7b719225242aacd3dbd3f9407468c2ee9a9d2594",
+  "trust_remote_code": false,
+  "runner": "generate",
+  "quantization": "modelopt_fp4",
+  "dtype": "bfloat16",
+  "kv_cache_dtype": "auto",
+  "load_format": "safetensors",
+  "safetensors_load_strategy": "lazy",
+  "enforce_eager": true,
+  "gpu_memory_utilization": 0.75,
+  "max_model_len": 262144,
+  "max_num_seqs": 4,
+  "max_num_batched_tokens": 16384,
+  "tensor_parallel_size": 1,
+  "pipeline_parallel_size": 1,
+  "data_parallel_size": 1,
+  "async_scheduling": false,
+  "enable_prefix_caching": true,
+  "mamba_cache_mode": "align",
+  "enable_chunked_prefill": true,
+  "disable_chunked_mm_input": false,
+  "limit_mm_per_prompt": {
+    "image": 2,
+    "video": 0
+  },
+  "mm_processor_kwargs": {
+    "truncation": false
+  },
+  "disable_log_stats": false,
+  "engram_config": {
+    "cpu_offload": false
+  },
+  "additional_config": {
+    "fuzev": {
+      "enabled": true,
+      "ple_storage": "mmap"
+    }
+  }
+}

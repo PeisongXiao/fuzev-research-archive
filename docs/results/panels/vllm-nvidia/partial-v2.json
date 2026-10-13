@@ -1,0 +1,15 @@
+{
+  "kind": "partial-http-quality-run-aggregate",
+  "run": "e2e-vllm-nvidia-v2",
+  "scope": "Incomplete attempt; completed responses used only for the shared-request comparison.",
+  "stop_reason": "Lost server connection after request 817.",
+  "source_sha256": "904d37ba510f251760bd216bbad5aca11d2395fad399493107b13ef32f5b4948",
+  "status": "failed",
+  "processed": 817,
+  "total": 5075,
+  "passed": 589,
+  "error": "ConnectError: [Errno 111] Connection refused",
+  "experimental": true,
+  "calibrated": false,
+  "comparison": "../../repeat/nvidia-shared-670.json"
+}

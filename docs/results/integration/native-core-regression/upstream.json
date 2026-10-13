@@ -1,0 +1,274 @@
+{
+  "schema": 1,
+  "status": "complete",
+  "engine": "upstream",
+  "plan": {
+    "recipe": {
+      "model_name": "native-4.05-mixed",
+      "cache_tokens": 1048576,
+      "capacity": 4,
+      "context_tokens": 262144,
+      "loader_chunk_tokens": 16384,
+      "prefill_chunk_tokens": 8192,
+      "max_output_size": 32,
+      "recurrent_cache_bytes": 1073741824,
+      "memory_fraction": 0.85,
+      "target_kv_bits": [
+        8,
+        8
+      ],
+      "draft_kv_bits": [
+        8,
+        8
+      ],
+      "mtp_tokens": 3
+    },
+    "sampling": {
+      "temperature": 1,
+      "top_p": 0.95,
+      "top_k": 20
+    }
+  },
+  "rows": [
+    {
+      "requested_tokens": 256,
+      "phase": "warmup",
+      "metrics": {
+        "new_tokens": 256,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 171,
+        "rejected_draft_tokens": 84,
+        "time_enqueued": 0.005104541778564453,
+        "time_prefill": 2.9507896900177,
+        "time_generate": 11.759379625320435,
+        "proposed_draft_tokens": 255,
+        "acceptance": 0.6705882352941176,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 255
+      },
+      "emitted_tokens": 256,
+      "timing": {
+        "render_seconds": 0.03985766496043652,
+        "tokenize_seconds": 0.0005615890258923173,
+        "submit_seconds": 0.006021389039233327,
+        "first_stream_seconds": 7.630550549016334,
+        "job_wall_seconds": 14.71876301500015,
+        "request_wall_seconds": 14.765203658025712
+      },
+      "http_seconds": 14.766853083041497,
+      "output_characters": 1119
+    },
+    {
+      "requested_tokens": 256,
+      "phase": "measured",
+      "metrics": {
+        "new_tokens": 256,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 171,
+        "rejected_draft_tokens": 84,
+        "time_enqueued": 0.00511932373046875,
+        "time_prefill": 0.30565714836120605,
+        "time_generate": 5.1224822998046875,
+        "proposed_draft_tokens": 255,
+        "acceptance": 0.6705882352941176,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 255
+      },
+      "emitted_tokens": 256,
+      "timing": {
+        "render_seconds": 0.00019352196250110865,
+        "tokenize_seconds": 0.00040669203735888004,
+        "submit_seconds": 0.0002503070281818509,
+        "first_stream_seconds": 0.36932252102997154,
+        "job_wall_seconds": 5.434277502936311,
+        "request_wall_seconds": 5.435128023964353
+      },
+      "http_seconds": 5.436766984057613,
+      "output_characters": 1087
+    },
+    {
+      "requested_tokens": 256,
+      "phase": "measured",
+      "metrics": {
+        "new_tokens": 256,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 169,
+        "rejected_draft_tokens": 92,
+        "time_enqueued": 0.005117654800415039,
+        "time_prefill": 0.29906606674194336,
+        "time_generate": 5.309279918670654,
+        "proposed_draft_tokens": 261,
+        "acceptance": 0.6475095785440613,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 255
+      },
+      "emitted_tokens": 256,
+      "timing": {
+        "render_seconds": 0.00018150603864341974,
+        "tokenize_seconds": 0.0004284039605408907,
+        "submit_seconds": 0.00019963399972766638,
+        "first_stream_seconds": 0.3628133620368317,
+        "job_wall_seconds": 5.6148844989947975,
+        "request_wall_seconds": 5.6156940429937094
+      },
+      "http_seconds": 5.617080279975198,
+      "output_characters": 1137
+    },
+    {
+      "requested_tokens": 256,
+      "phase": "measured",
+      "metrics": {
+        "new_tokens": 256,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 173,
+        "rejected_draft_tokens": 76,
+        "time_enqueued": 0.0051348209381103516,
+        "time_prefill": 0.3033020496368408,
+        "time_generate": 4.9602952003479,
+        "proposed_draft_tokens": 249,
+        "acceptance": 0.6947791164658634,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 255
+      },
+      "emitted_tokens": 256,
+      "timing": {
+        "render_seconds": 0.00018345797434449196,
+        "tokenize_seconds": 0.0004333800170570612,
+        "submit_seconds": 0.0002055220538750291,
+        "first_stream_seconds": 0.368330753990449,
+        "job_wall_seconds": 5.26988648599945,
+        "request_wall_seconds": 5.270708846044727
+      },
+      "http_seconds": 5.272103579947725,
+      "output_characters": 1116
+    },
+    {
+      "requested_tokens": 512,
+      "phase": "warmup",
+      "metrics": {
+        "new_tokens": 512,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 363,
+        "rejected_draft_tokens": 84,
+        "time_enqueued": 0.00512385368347168,
+        "time_prefill": 0.30007410049438477,
+        "time_generate": 9.060723781585693,
+        "proposed_draft_tokens": 447,
+        "acceptance": 0.8120805369127517,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 511
+      },
+      "emitted_tokens": 512,
+      "timing": {
+        "render_seconds": 0.00019025802612304688,
+        "tokenize_seconds": 0.00042691605631262064,
+        "submit_seconds": 0.00020059396047145128,
+        "first_stream_seconds": 0.3639423520071432,
+        "job_wall_seconds": 9.366524360026233,
+        "request_wall_seconds": 9.36734212806914
+      },
+      "http_seconds": 9.368789565982297,
+      "output_characters": 2074
+    },
+    {
+      "requested_tokens": 512,
+      "phase": "measured",
+      "metrics": {
+        "new_tokens": 512,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 359,
+        "rejected_draft_tokens": 100,
+        "time_enqueued": 0.005095720291137695,
+        "time_prefill": 0.3006308078765869,
+        "time_generate": 9.207828283309937,
+        "proposed_draft_tokens": 459,
+        "acceptance": 0.7821350762527233,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 511
+      },
+      "emitted_tokens": 512,
+      "timing": {
+        "render_seconds": 0.00019688205793499947,
+        "tokenize_seconds": 0.00044792494736611843,
+        "submit_seconds": 0.0002107060281559825,
+        "first_stream_seconds": 0.3762165099615231,
+        "job_wall_seconds": 9.514547185972333,
+        "request_wall_seconds": 9.51540269900579
+      },
+      "http_seconds": 9.517246381030418,
+      "output_characters": 2059
+    },
+    {
+      "requested_tokens": 512,
+      "phase": "measured",
+      "metrics": {
+        "new_tokens": 512,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 356,
+        "rejected_draft_tokens": 112,
+        "time_enqueued": 0.00516200065612793,
+        "time_prefill": 0.3006913661956787,
+        "time_generate": 9.422358751296997,
+        "proposed_draft_tokens": 468,
+        "acceptance": 0.7606837606837606,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 511
+      },
+      "emitted_tokens": 512,
+      "timing": {
+        "render_seconds": 0.00018200103659182787,
+        "tokenize_seconds": 0.00046253297477960587,
+        "submit_seconds": 0.00022819405421614647,
+        "first_stream_seconds": 0.36581420397851616,
+        "job_wall_seconds": 9.729316181968898,
+        "request_wall_seconds": 9.730188910034485
+      },
+      "http_seconds": 9.731873439042829,
+      "output_characters": 2050
+    },
+    {
+      "requested_tokens": 512,
+      "phase": "measured",
+      "metrics": {
+        "new_tokens": 512,
+        "prompt_tokens": 133,
+        "cached_tokens": 0,
+        "cached_pages": 0,
+        "accepted_draft_tokens": 343,
+        "rejected_draft_tokens": 164,
+        "time_enqueued": 0.005109548568725586,
+        "time_prefill": 0.3013613224029541,
+        "time_generate": 10.315626382827759,
+        "proposed_draft_tokens": 507,
+        "acceptance": 0.6765285996055227,
+        "eos_reason": "max_new_tokens",
+        "decode_tokens": 511
+      },
+      "emitted_tokens": 512,
+      "timing": {
+        "render_seconds": 0.00017324998043477535,
+        "tokenize_seconds": 0.0003936679568141699,
+        "submit_seconds": 0.00020285008940845728,
+        "first_stream_seconds": 0.3651684100041166,
+        "job_wall_seconds": 10.622722622007132,
+        "request_wall_seconds": 10.623492390033789
+      },
+      "http_seconds": 10.62508374999743,
+      "output_characters": 2147
+    }
+  ]
+}

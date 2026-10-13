@@ -1,0 +1,29 @@
+{
+  "kind": "existing-shared-request-comparison",
+  "configuration_id": "vllm-nvidia",
+  "runs": [
+    "e2e-vllm-nvidia-v2",
+    "e2e-vllm-nvidia-v3",
+    "e2e-vllm-nvidia-v4"
+  ],
+  "shared_identical_requests": 670,
+  "scope": "Identical evaluation-mix request bodies across all three runs; two partial attempts and one completed run. These are selections, not the breadth-v1 index.",
+  "pairwise_selection_disagreement_percent_range": [
+    14.6,
+    14.9
+  ],
+  "maximum_absolute_probability_delta_approx": 0.62,
+  "shared_request_accuracy_percent": [
+    73.43,
+    74.78,
+    75.22
+  ],
+  "source_aggregates": {
+    "v2": "../panels/vllm-nvidia/partial-v2.json",
+    "v3": "../panels/vllm-nvidia/partial-v3.json",
+    "v4": "../panels/vllm-nvidia/summary.json"
+  },
+  "record_origin": "Existing shared-request comparison; the pairwise disagreement range was recomputed on the 670 shared request bodies from the three runs' HTTP journals.",
+  "precision": "Percentages and maximum probability delta retain the existing comparison's reported precision.",
+  "excluded": "Request bodies, generated text, images, predictions and raw journals."
+}

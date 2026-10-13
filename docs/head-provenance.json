@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "kind": "record-only-released-head-provenance",
+  "source_manifest": {
+    "path": "${FUZEV_ROOT}/weights/frozen-reference-calibration-20261010/reference/manifest.json",
+    "sha256": "5b463f03798f647ae377fd41dcd38add3c2532d13e974bc1684553d2ec7f078f",
+    "artifact_kind": "calibrated-reference-head"
+  },
+  "unpublished_lab_commits": {
+    "research_snapshot": "48c09bb6592d09702de15d16be252c851429c622",
+    "numerical_scorer": "9728b98b205d4f9af8ecac4e28ee678ba5ab758b",
+    "key_adapter_parent": "da1a527d18d1e053e3a72da31fc0cbd72258fcda",
+    "key_adapter_reference": "6721adaf03b0598839c2d59c6059632912bc883a"
+  },
+  "membership": {
+    "fit": {
+      "ordered_sha256": "705923d61d63b1a0e95929110ec706ffbdfa8f1d840aaf313836e3fb3ea717bc",
+      "records": 185178
+    },
+    "development": {
+      "ordered_sha256": "8a96b3e5b74dcc9b7fbf33ae406d6b872a4e6134c781cad7cde6456f38d665b1",
+      "records": 24937
+    },
+    "calibration": {
+      "ordered_sha256": "74a9e672894207b2672a5219f149d3deb7273b249ecd3993cea3648e88946480",
+      "records": 23813
+    }
+  },
+  "training_module_sha256": {
+    "features.py": "c6583d37f865befeedc55151a9a1b37a9f945563bf9299fa65cb909d986d7579",
+    "head.py": "52882ccbc6009ab0d8aa090f8f0f087cc794503cfb98f7a83696139bddd163ea",
+    "metrics.py": "78ded3a8847ff3d10ced0fe5452bce72c2000730e48ce52ae73a1ed826380d68",
+    "preference_head_retrain.py": "2fcaa6c2c919527cd1164058bb36852fae732202845dfe95453b0ccd579e519b",
+    "scope.py": "69befb3e286726123c1f56802e9783b28e867a2a9fa612f815c463d9fc79c317",
+    "shared_head.py": "5435eeff154cc7494ca9a214f8a8fdf32012326902cf41da32ab7fe1dac9090c",
+    "shared_train.py": "f39f7b4342bec4d1b8f3616838d319fb272c3f0a45c0997f7c7558b8337fbaee",
+    "shared_training_data.py": "4f9364c5d0a421e75ff3cb22f636ac4cf52ac01fdae3a5c107701893234e82c8"
+  },
+  "calibration_module_sha256": {
+    "features.py": "c6583d37f865befeedc55151a9a1b37a9f945563bf9299fa65cb909d986d7579",
+    "head.py": "52882ccbc6009ab0d8aa090f8f0f087cc794503cfb98f7a83696139bddd163ea",
+    "metrics.py": "78ded3a8847ff3d10ced0fe5452bce72c2000730e48ce52ae73a1ed826380d68",
+    "preference_head_retrain.py": "2fcaa6c2c919527cd1164058bb36852fae732202845dfe95453b0ccd579e519b",
+    "scope.py": "69befb3e286726123c1f56802e9783b28e867a2a9fa612f815c463d9fc79c317",
+    "shared_head.py": "5435eeff154cc7494ca9a214f8a8fdf32012326902cf41da32ab7fe1dac9090c",
+    "shared_train.py": "f39f7b4342bec4d1b8f3616838d319fb272c3f0a45c0997f7c7558b8337fbaee",
+    "shared_training_data.py": "4f9364c5d0a421e75ff3cb22f636ac4cf52ac01fdae3a5c107701893234e82c8"
+  },
+  "operator_sha256": "f39f7b4342bec4d1b8f3616838d319fb272c3f0a45c0997f7c7558b8337fbaee",
+  "actual_fit_operator_sha256": "e200bbfb01006f5ef58eba8f620ef8b9a67c53ad8897e86da276228ec0e3826d",
+  "calibration_worker_sha256": "ef9d06f3e850183d3b13692d4ecf7e11b382cfa329c3a2af5896b3005a075f0c",
+  "historical_artifacts": {
+    "weights_sha256": "f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c",
+    "calibration_sha256": "566e0f43fb66fbbd5834d34299a41f3e884f3b306c9a0040d30364c8189d01d3",
+    "scorer_sha256": "5435eeff154cc7494ca9a214f8a8fdf32012326902cf41da32ab7fe1dac9090c"
+  },
+  "feature_origins": {
+    "current_runtime_sources": {
+      "exllamav3-fuzev": "ba60611d031f673a12ebbf2f133c583b4e12df7f",
+      "recipes": "32ab4a61f0418ddc9460baaf7bbc5596efe27ef6"
+    },
+    "reused": {
+      "computation_proof": {
+        "encoding.py": "bf1c963bc1761d190af6ebfeb7032b790c006896cbad8343d14d5c65b53a6a17",
+        "extraction.py:PIPELINE_POLICY": "ab681162682effb8b26f7eb9102eb9057ee70b7ef8f13d76ba749af313b4ef00",
+        "extraction.py:PreparedRows": "36fc09a4be5b801b5acc62abf0da6ac18c59494d4f3b9d2212d95b46dbc93447",
+        "extraction.py:write_rows": "2d8ff7307a3bddc37685334412a0d4e38a89d0b513704bc5a38f22db119951c3",
+        "native.py:NativeBackend": "54b9cb62c93affe77fdc272846f2f83313b2b664e063d0edda4ae5d94014ecb8",
+        "preparation.py": "1670655cedf712467475973b4f2b3b6f24f9cddc341144d98c2c98fcbcecd696",
+        "templates/chat_template.jinja": "8a43601f6fb34fc5e43acc965cd79baa23dae63c099d58efce95ee3b35d38c6b"
+      },
+      "receipt_sha256": "077e7452cbf1ddff9553d9a776410d53ccfca961fc740e087fb6d63ead21d560",
+      "records": 253395,
+      "runtime_sources": {
+        "exllamav3-fuzev": "ba60611d031f673a12ebbf2f133c583b4e12df7f",
+        "recipes": "ad07a1885df9a337b911b079ea318dec87a277a1"
+      },
+      "source_identity_sha256": "2d1eb2f6129bf70d2d9f38992062dae22d774528d47436376f39b822c048276b"
+    }
+  },
+  "preparation": {
+    "counts": {
+      "image/mm-rlhf/choice/calibration": 9070,
+      "image/mm-rlhf/choice/development": 9879,
+      "image/mm-rlhf/choice/fit": 66602,
+      "image/mm-rlhf/choice/test": 8543,
+      "image/mm-rlhf/noul/calibration": 256,
+      "image/mm-rlhf/noul/development": 256,
+      "image/mm-rlhf/noul/fit": 2048,
+      "text/boolq/noul/calibration": 810,
+      "text/boolq/noul/development": 791,
+      "text/boolq/noul/fit": 6392,
+      "text/boolq/noul/test": 3270,
+      "text/helpsteer2/choice/calibration": 1094,
+      "text/helpsteer2/choice/development": 1151,
+      "text/helpsteer2/choice/fit": 7962,
+      "text/helpsteer2/choice/test": 448,
+      "text/helpsteer2/noul/calibration": 128,
+      "text/helpsteer2/noul/development": 128,
+      "text/helpsteer2/noul/fit": 1024,
+      "text/helpsteer2/ordinal/calibration": 9980,
+      "text/helpsteer2/ordinal/development": 10330,
+      "text/helpsteer2/ordinal/fit": 81215,
+      "text/helpsteer2/ordinal/test": 5190,
+      "text/helpsteer3/choice/calibration": 2347,
+      "text/helpsteer3/choice/development": 2274,
+      "text/helpsteer3/choice/fit": 18923,
+      "text/helpsteer3/choice/test": 1965,
+      "text/helpsteer3/noul/calibration": 128,
+      "text/helpsteer3/noul/development": 128,
+      "text/helpsteer3/noul/fit": 1024
+    },
+    "preparations": [
+      {
+        "manifest_sha256": "e40eb893bb8dd083a3e38c7b5b07e3a81c52d5e96645f1efae4d6d5820c46e50",
+        "path": "${FUZEV_ROOT}/data/prepared/text.jsonl",
+        "records": 141343,
+        "sha256": "92d8f1c514b44fd51228d12f40c7c0e30aaa006c4839af2f6ff1fb0cb94489d3"
+      },
+      {
+        "manifest_sha256": "9937f0b15259d6827bae55e0635866f61d697f8b70890ab5be8d02f8f6b1885c",
+        "path": "${FUZEV_ROOT}/data/prepared/boolq.jsonl",
+        "records": 11263,
+        "sha256": "8920a695023654243a0528dd332298d1811a06e4ed17cb9da30157b65f2d49e8"
+      },
+      {
+        "manifest_sha256": "8a027e5f0dbf19415866702676627e22ab993fc59ff2eca00fa570c723d5172f",
+        "path": "${FUZEV_ROOT}/data/prepared/images.jsonl",
+        "records": 89486,
+        "sha256": "4172ba8391def31e3325c4140f99a32bef5cd213eff0e4a2bdca609bf6d15589"
+      },
+      {
+        "manifest_sha256": "1b092e54f28e0fca054f9c6305ab54d726a9cff7f1bbd97085974236d8820231",
+        "path": "${FUZEV_ROOT}/data/prepared/noul-preference-text.jsonl",
+        "records": 2560,
+        "sha256": "1f98891dd9db24f9f0133f713c92565aa77c1fb167f90ae79dffb1b2cfdf8356"
+      },
+      {
+        "manifest_sha256": "a9e2a1b89d2b18aa33a765afc59c3b87c1f5778ee4d01dfa489b51589cf46f1f",
+        "path": "${FUZEV_ROOT}/data/prepared/noul-preference-images.jsonl",
+        "records": 2560,
+        "sha256": "6fe9acb259f26a238111a2b6f1d71b3f5da37cd3f5190e210a6af57603d6c389"
+      },
+      {
+        "manifest_sha256": "a4cb17d9c42fff76ac6f9203f2ef7542778f823abcb7e1e0ecdb713cb8fbaee8",
+        "path": "${FUZEV_ROOT}/data/prepared/dimension-choice-text.jsonl",
+        "records": 1536,
+        "sha256": "f623578d14c300508c0fec6308a3f56e1bfa1f1ead9d4883814f93e71594ca62"
+      },
+      {
+        "manifest_sha256": "a95093d68d4c8d16697b6175a8a58481dee7e688afeb57f5182eda1fe4997980",
+        "path": "${FUZEV_ROOT}/data/prepared/dimension-choice-images.jsonl",
+        "records": 4608,
+        "sha256": "2fca85a322452f068b3975f06f3f94cde7da1d98b55b9c8de6cec3c779ec9135"
+      }
+    ],
+    "records": 253356
+  },
+  "calibration_procedure": "CUDA CAL-only positive per-primitive scalar LBFGS; original balanced group/track normalized CE",
+  "serving_artifact_capture": {
+    "files": {
+      "head.safetensors": "f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c",
+      "config.json": "33937ec66536248fc6ae4fc3eeb1df3d835aae5e908d1f8fae3f39a370a7acbe",
+      "calibration.json": "24a15bd4fda54411d06ad96689f2a86317d7d259723b946a2d06b75a048a372c",
+      "fuzev-runtime/src/fuzev/_scoring.py": "a3b03255d7f9369736d3cc404b2a3c8bc24ed7c0911a03fb36d2f7cbe1f573db"
+    }
+  },
+  "scope": "Digests and counts from the existing released-reference manifest; no membership records, datasets, feature shards, weights or optimizer state are copied."
+}

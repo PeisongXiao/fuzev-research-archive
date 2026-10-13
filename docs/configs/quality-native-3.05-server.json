@@ -1,0 +1,16 @@
+{
+  "model_name": "native-3.05",
+  "model_directory": "${MODEL_DIRECTORY}",
+  "model_repo": "turboderp/Qwen3.8-Flash-Next-exl3",
+  "model_revision": "69e33439ae950f17bcbe95c98f117d80f759ab6d",
+  "model_config_sha256": "92ce0839c71b5a39988299fe38206a32fea50586be54378d424fc0eb035a44c0",
+  "quantization_config_sha256": "c6ad4cb2f24b2d2cab6362e94a4646b8ffa3c76b08002595dd36de93c0028a91",
+  "head_directory": "${HEAD_DIRECTORY}",
+  "head_config_sha256": "a94aa3794235ee86f4ee6959bd31b992307bd591be99b5510d266a5cfae38f6c",
+  "image_root": "${FUZEV_ROOT}/data/images",
+  "calibration": "raw",
+  "memory_fraction": 0.85,
+  "cache_tokens": 294912,
+  "batch_capacity": 8,
+  "candidate_batch_size": 8
+}

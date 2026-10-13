@@ -1,0 +1,134 @@
+{
+  "status": "passed",
+  "quality_scored": false,
+  "head_tuning": false,
+  "expected_runtime": {
+    "model": "native-4.05-mixed",
+    "head_loaded": true,
+    "capabilities.images": false,
+    "provenance.runtime_cell.engine": "native-engine-fuzev",
+    "provenance.runtime_cell.engine_kind": "native",
+    "provenance.runtime_cell.context_window": 262144,
+    "provenance.runtime_cell.cache_tokens": 1048576,
+    "provenance.runtime_cell.draft_cache_tokens": 1048576,
+    "provenance.runtime_cell.max_num_seqs": 4,
+    "provenance.runtime_cell.target_kv_bits": [
+      [
+        8,
+        8
+      ]
+    ],
+    "provenance.runtime_cell.draft_kv_bits": [
+      [
+        8,
+        8
+      ]
+    ],
+    "provenance.runtime_cell.prefill_chunk_tokens": 8192,
+    "provenance.runtime_cell.loader_chunk_tokens": 16384,
+    "provenance.runtime_cell.max_output_size": 32,
+    "provenance.runtime_cell.recurrent_cache_bytes": 1073741824,
+    "provenance.runtime_cell.memory_fraction": 0.85,
+    "provenance.runtime_cell.additional_config": {
+      "ple_storage": "disk",
+      "fuzev": {
+        "enabled": true
+      }
+    },
+    "provenance.runtime_cell.speculative_decoding": true,
+    "provenance.runtime_cell.speculative_config": {
+      "method": "mtp",
+      "num_speculative_tokens": 3,
+      "dynamic_draft_tokens": false
+    }
+  },
+  "max_concurrent_http_requests": 4,
+  "generation_max_tokens": 64,
+  "planned_arrival_delays_seconds": [
+    0.75,
+    1,
+    1.25
+  ],
+  "overlap": {
+    "all_decision_arrivals_during_generation_http": true,
+    "actual_arrival_delays_seconds": [
+      0.7504585610004142,
+      1.0006391209317371,
+      1.25028705294244
+    ],
+    "generation_http_seconds": 3.966254030005075,
+    "scope": "overlapping HTTP lifetimes; no assertion of simultaneous GPU kernels",
+    "first_token_upper_bound_seconds": 0.294219289557077,
+    "decision_arrivals_after_first_token_upper_bound": [
+      true,
+      true,
+      true
+    ]
+  },
+  "generation_phase_timing": {
+    "status": "available",
+    "source": "upstream-generator-terminal",
+    "scope": "prefill includes first token; decode excludes first token; not GPU kernel time",
+    "prompt_tokens": 419,
+    "completion_tokens": 64,
+    "decode_tokens": 63,
+    "prefill_seconds": 0.2800109386444092,
+    "decode_seconds": 3.672034740447998
+  },
+  "speculative_decoding": {
+    "num_draft_tokens": 66,
+    "accepted_draft_tokens": 42,
+    "rejected_draft_tokens": 24
+  },
+  "health_before": {
+    "status": "ok",
+    "model": "native-4.05-mixed",
+    "experimental": true,
+    "calibration": "raw",
+    "head_loaded": true,
+    "decision_head_enabled": true,
+    "active_requests": 0,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "context_window": 262144,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "images": false,
+      "trusted_still_images": false,
+      "streaming": false
+    },
+    "generation_chat_template_kwargs": {
+      "preserve_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "health_after": {
+    "status": "ok",
+    "model": "native-4.05-mixed",
+    "experimental": true,
+    "calibration": "raw",
+    "head_loaded": true,
+    "decision_head_enabled": true,
+    "active_requests": 0,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "context_window": 262144,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "images": false,
+      "trusted_still_images": false,
+      "streaming": false
+    },
+    "generation_chat_template_kwargs": {
+      "preserve_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "finish_reason": "length"
+}

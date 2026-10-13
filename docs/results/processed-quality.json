@@ -1,0 +1,4856 @@
+{
+  "status": "evaluated",
+  "corpus_scope": "full",
+  "test_membership": {
+    "records": 25599
+  },
+  "external_membership": {
+    "records": 6183,
+    "counts": {
+      "image/vl-rewardbench/choice/test": 1247,
+      "image/vl-rewardbench/noul/test": 1247,
+      "text/qasper/noul/test": 3689
+    }
+  },
+  "track_metadata": {
+    "boolq/noul/text/boolean_truth": {
+      "adaptation": "boolean_truth",
+      "attribute": null,
+      "evaluation_scope": "training",
+      "modality": "text",
+      "primitive": "noul",
+      "source": "boolq"
+    },
+    "helpsteer2/choice/text/main": {
+      "adaptation": null,
+      "attribute": null,
+      "evaluation_scope": null,
+      "modality": "text",
+      "primitive": "choice",
+      "source": "helpsteer2"
+    },
+    "helpsteer2/ordinal/text/coherence": {
+      "adaptation": null,
+      "attribute": "coherence",
+      "evaluation_scope": null,
+      "modality": "text",
+      "primitive": "ordinal",
+      "source": "helpsteer2"
+    },
+    "helpsteer2/ordinal/text/complexity": {
+      "adaptation": null,
+      "attribute": "complexity",
+      "evaluation_scope": null,
+      "modality": "text",
+      "primitive": "ordinal",
+      "source": "helpsteer2"
+    },
+    "helpsteer2/ordinal/text/correctness": {
+      "adaptation": null,
+      "attribute": "correctness",
+      "evaluation_scope": null,
+      "modality": "text",
+      "primitive": "ordinal",
+      "source": "helpsteer2"
+    },
+    "helpsteer2/ordinal/text/helpfulness": {
+      "adaptation": null,
+      "attribute": "helpfulness",
+      "evaluation_scope": null,
+      "modality": "text",
+      "primitive": "ordinal",
+      "source": "helpsteer2"
+    },
+    "helpsteer2/ordinal/text/verbosity": {
+      "adaptation": null,
+      "attribute": "verbosity",
+      "evaluation_scope": null,
+      "modality": "text",
+      "primitive": "ordinal",
+      "source": "helpsteer2"
+    },
+    "helpsteer3/choice/text/main": {
+      "adaptation": null,
+      "attribute": null,
+      "evaluation_scope": null,
+      "modality": "text",
+      "primitive": "choice",
+      "source": "helpsteer3"
+    },
+    "mm-rlhf/choice/image/best_response": {
+      "adaptation": "best_response",
+      "attribute": null,
+      "evaluation_scope": "training",
+      "modality": "image",
+      "primitive": "choice",
+      "source": "mm-rlhf"
+    },
+    "mm-rlhf/choice/image/pairwise_preference": {
+      "adaptation": "pairwise_preference",
+      "attribute": null,
+      "evaluation_scope": "training",
+      "modality": "image",
+      "primitive": "choice",
+      "source": "mm-rlhf"
+    },
+    "qasper/noul/text/answerability": {
+      "adaptation": "answerability",
+      "attribute": null,
+      "evaluation_scope": "external",
+      "modality": "text",
+      "primitive": "noul",
+      "source": "qasper"
+    },
+    "qasper/noul/text/evidence": {
+      "adaptation": "evidence",
+      "attribute": null,
+      "evaluation_scope": "external",
+      "modality": "text",
+      "primitive": "noul",
+      "source": "qasper"
+    },
+    "qasper/noul/text/yes_no": {
+      "adaptation": "yes_no",
+      "attribute": null,
+      "evaluation_scope": "external",
+      "modality": "text",
+      "primitive": "noul",
+      "source": "qasper"
+    },
+    "vl-rewardbench/choice/image/official_heldout_preference": {
+      "adaptation": "official_heldout_preference",
+      "attribute": null,
+      "estimand": "pairwise response preference, not absolute correctness",
+      "evaluation_scope": "external",
+      "modality": "image",
+      "primitive": "choice",
+      "source": "vl-rewardbench"
+    },
+    "vl-rewardbench/noul/image/pairwise_preference_yes_no": {
+      "adaptation": "pairwise_preference_yes_no",
+      "attribute": null,
+      "estimand": "pairwise response preference, not absolute correctness",
+      "evaluation_scope": "external",
+      "modality": "image",
+      "primitive": "noul",
+      "source": "vl-rewardbench"
+    }
+  },
+  "sampling_design": {
+    "effective_records": "Kish weight-dispersion ESS, not independent group count",
+    "estimator": "self-normalized inverse-inclusion weighted ratios",
+    "resampling": "shared paired whole-group percentile bootstrap with fixed record weights",
+    "variance_scope": "group bootstrap; not exact stratified/multistage survey-design variance"
+  },
+  "macro_normalized_nll": {
+    "groups": 8215,
+    "methods": {
+      "head_calibrated": 0.6605736125620513,
+      "head_raw": 0.674105233518796,
+      "label_token": 0.849607468688373
+    },
+    "minimum_track_groups": 192,
+    "paired": {
+      "head_calibrated": {
+        "difference": -0.18903385612632173,
+        "draws": 2000,
+        "groups": 8215,
+        "high": -0.17675586409375105,
+        "low": -0.20146202476648167,
+        "method": "paired group percentile bootstrap; candidate minus label-token",
+        "seed": 17,
+        "supported": true,
+        "valid_draws": 2000
+      },
+      "head_raw": {
+        "difference": -0.17550223516957697,
+        "draws": 2000,
+        "groups": 8215,
+        "high": -0.163527961083938,
+        "low": -0.18806048127462616,
+        "method": "paired group percentile bootstrap; candidate minus label-token",
+        "seed": 17,
+        "supported": true,
+        "valid_draws": 2000
+      }
+    },
+    "tracks": 15,
+    "weighting": "equal task-track weight; inverse-inclusion-weighted within track"
+  },
+  "gates": {
+    "head_calibrated": {
+      "status": "fail",
+      "checks": {
+        "boolq/noul/text/boolean_truth/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "boolq/noul/text/boolean_truth/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/choice/text/main/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.10227272727272729,
+            "draws": 2000,
+            "groups": 352,
+            "high": 0.15731018045624778,
+            "low": 0.04891148175912044,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/choice/text/main/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.0803571428571428,
+            "draws": 2000,
+            "groups": 448,
+            "high": 0.12375274204067119,
+            "low": 0.038283995879287304,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/coherence/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.8280436188277704,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.772151529954497,
+            "low": -0.8853425974850935,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/complexity/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.14553209805388295,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.11248289573419999,
+            "low": -0.17660043877261422,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/correctness/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.679642630913711,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.6164301581177836,
+            "low": -0.7435898832608127,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/helpfulness/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.41172544920809484,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.35999451362291873,
+            "low": -0.4622618436597681,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/verbosity/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.05591032972765009,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.03907490009854548,
+            "low": -0.07282415544728685,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer3/choice/text/main/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.06046013911182446,
+            "draws": 2000,
+            "groups": 1860,
+            "high": 0.0791114948376643,
+            "low": 0.04184483452950112,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer3/choice/text/main/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.05750636132315523,
+            "draws": 2000,
+            "groups": 1956,
+            "high": 0.0752351217562689,
+            "low": 0.03980606067972971,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "macro_normalized_nll": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.18903385612632173,
+            "draws": 2000,
+            "groups": 8215,
+            "high": -0.17675586409375105,
+            "low": -0.20146202476648167,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0,
+          "status": "pass",
+          "strict": true
+        },
+        "mm-rlhf/choice/image/best_response/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.2936979785969084,
+            "draws": 2000,
+            "groups": 834,
+            "high": 0.3277924392429195,
+            "low": 0.26013457894469577,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "mm-rlhf/choice/image/best_response/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.23007395234182415,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.25923412288803166,
+            "low": 0.20223434321702402,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "mm-rlhf/choice/image/pairwise_preference/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.15918600228223656,
+            "draws": 2000,
+            "groups": 1143,
+            "high": 0.17650600734001815,
+            "low": 0.14271921804249388,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "mm-rlhf/choice/image/pairwise_preference/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.11425061425061422,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.12696836560641414,
+            "low": 0.10198449680836233,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/answerability/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.0036737692872886862,
+            "draws": 2000,
+            "groups": 413,
+            "high": 0.012950574605250868,
+            "low": -0.00658114035087716,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/answerability/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.0034482758620689724,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.01220407133554966,
+            "low": -0.006141827711704795,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/evidence/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.09070781291056651,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12307974189346875,
+            "low": 0.05987154024894327,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/evidence/evidence_f1": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.059828450577932624,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.08695322902681163,
+            "low": 0.03808499547541207,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/evidence/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.08952472932110656,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12155097486793531,
+            "low": 0.05905036657925679,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/yes_no/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.07619047619047614,
+            "draws": 2000,
+            "groups": 171,
+            "high": 0.12042176982049359,
+            "low": 0.035709753444525004,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/yes_no/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.06694560669456073,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.10506827025114954,
+            "low": 0.03152799660647185,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "vl-rewardbench/choice/image/official_heldout_preference/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        },
+        "vl-rewardbench/choice/image/official_heldout_preference/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        },
+        "vl-rewardbench/noul/image/pairwise_preference_yes_no/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        },
+        "vl-rewardbench/noul/image/pairwise_preference_yes_no/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        }
+      }
+    },
+    "head_raw": {
+      "status": "fail",
+      "checks": {
+        "boolq/noul/text/boolean_truth/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "boolq/noul/text/boolean_truth/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/choice/text/main/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.10227272727272729,
+            "draws": 2000,
+            "groups": 352,
+            "high": 0.15731018045624778,
+            "low": 0.04891148175912044,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/choice/text/main/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.0803571428571428,
+            "draws": 2000,
+            "groups": 448,
+            "high": 0.12375274204067119,
+            "low": 0.038283995879287304,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/coherence/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.8188582207928328,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.7636837363660445,
+            "low": -0.8750534081364335,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/complexity/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.1447831812454315,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.11149917968156625,
+            "low": -0.17610440384966278,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/correctness/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.6739905812895673,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.6111120689316852,
+            "low": -0.7373970707967734,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/helpfulness/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.40861135344748667,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.35798849589828285,
+            "low": -0.4585262156040118,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer2/ordinal/text/verbosity/ordinal_mae": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.05396055888933815,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.03719379557974862,
+            "low": -0.07096383395088726,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.1,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer3/choice/text/main/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.06046013911182446,
+            "draws": 2000,
+            "groups": 1860,
+            "high": 0.0791114948376643,
+            "low": 0.04184483452950112,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "helpsteer3/choice/text/main/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.05750636132315523,
+            "draws": 2000,
+            "groups": 1956,
+            "high": 0.0752351217562689,
+            "low": 0.03980606067972971,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "macro_normalized_nll": {
+          "higher_is_better": false,
+          "interval": {
+            "difference": -0.17550223516957697,
+            "draws": 2000,
+            "groups": 8215,
+            "high": -0.163527961083938,
+            "low": -0.18806048127462616,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0,
+          "status": "pass",
+          "strict": true
+        },
+        "mm-rlhf/choice/image/best_response/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.2936979785969084,
+            "draws": 2000,
+            "groups": 834,
+            "high": 0.3277924392429195,
+            "low": 0.26013457894469577,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "mm-rlhf/choice/image/best_response/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.23007395234182415,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.25923412288803166,
+            "low": 0.20223434321702402,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "mm-rlhf/choice/image/pairwise_preference/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.15918600228223656,
+            "draws": 2000,
+            "groups": 1143,
+            "high": 0.17650600734001815,
+            "low": 0.14271921804249388,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "mm-rlhf/choice/image/pairwise_preference/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.11425061425061422,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.12696836560641414,
+            "low": 0.10198449680836233,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/answerability/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.0036737692872886862,
+            "draws": 2000,
+            "groups": 413,
+            "high": 0.012950574605250868,
+            "low": -0.00658114035087716,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/answerability/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.0034482758620689724,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.01220407133554966,
+            "low": -0.006141827711704795,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/evidence/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.09070781291056651,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12307974189346875,
+            "low": 0.05987154024894327,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/evidence/evidence_f1": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.059828450577932624,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.08695322902681163,
+            "low": 0.03808499547541207,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/evidence/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.08952472932110656,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12155097486793531,
+            "low": 0.05905036657925679,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/yes_no/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.07619047619047614,
+            "draws": 2000,
+            "groups": 171,
+            "high": 0.12042176982049359,
+            "low": 0.035709753444525004,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "qasper/noul/text/yes_no/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": 0.06694560669456073,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.10506827025114954,
+            "low": 0.03152799660647185,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "pass",
+          "strict": false
+        },
+        "vl-rewardbench/choice/image/official_heldout_preference/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        },
+        "vl-rewardbench/choice/image/official_heldout_preference/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        },
+        "vl-rewardbench/noul/image/pairwise_preference_yes_no/accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        },
+        "vl-rewardbench/noul/image/pairwise_preference_yes_no/tie_aware_accuracy": {
+          "higher_is_better": true,
+          "interval": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "margin": 0.02,
+          "status": "fail",
+          "strict": false
+        }
+      }
+    }
+  },
+  "tracks": {
+    "boolq/noul/text/boolean_truth": {
+      "records": 3270,
+      "groups": 2938,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.9152905198776758,
+          "brier": 0.13055076347562744,
+          "ece": 0.021055990885927856,
+          "expected_accuracy": 0.9152905198776758,
+          "nll": 0.2270692942997776,
+          "normalized_nll": 0.32759174482444636,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.9152905198776758
+        },
+        "head_raw": {
+          "accuracy": 0.9152905198776758,
+          "brier": 0.13048258977934082,
+          "ece": 0.014362612230985299,
+          "expected_accuracy": 0.9152905198776758,
+          "nll": 0.22490650996998313,
+          "normalized_nll": 0.324471506597339,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.9152905198776758
+        },
+        "label_token": {
+          "accuracy": 0.8452599388379205,
+          "brier": 0.21158262771461697,
+          "ece": 0.020243903460155057,
+          "expected_accuracy": 0.8452599388379205,
+          "nll": 0.3377018401977186,
+          "normalized_nll": 0.4872007701523261,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8452599388379205
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.08103186423898953,
+            "draws": 2000,
+            "groups": 2938,
+            "high": -0.07112076785000127,
+            "low": -0.09083224030670632,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.0008120874257727985,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.012373935257328732,
+            "low": -0.012853258026631122,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.110632545897941,
+            "draws": 2000,
+            "groups": 2938,
+            "high": -0.09669252697359727,
+            "low": -0.12439990752157129,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.15960902532787974,
+            "draws": 2000,
+            "groups": 2938,
+            "high": -0.139497829155832,
+            "low": -0.17947112966841727,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.08110003793527615,
+            "draws": 2000,
+            "groups": 2938,
+            "high": -0.07053791675814715,
+            "low": -0.09154581057547197,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.005881291229169758,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.003454437330793294,
+            "low": -0.017392628319331988,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.11279533022773547,
+            "draws": 2000,
+            "groups": 2938,
+            "high": -0.09777346358008457,
+            "low": -0.12750606680712082,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.16272926355498712,
+            "draws": 2000,
+            "groups": 2938,
+            "high": -0.14105729103752718,
+            "low": -0.18395237026589004,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.07003058103975535,
+            "draws": 2000,
+            "groups": 2938,
+            "high": 0.08219846773885081,
+            "low": 0.05848829684515553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "helpsteer2/choice/text/main": {
+      "records": 448,
+      "groups": 448,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.7982954545454546,
+          "brier": 0.23990123556642667,
+          "ece": 0.028655197592265307,
+          "expected_accuracy": 0.734375,
+          "nll": 0.5185429959357478,
+          "normalized_nll": 0.7480994087242101,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8415178571428571
+        },
+        "head_raw": {
+          "accuracy": 0.7982954545454546,
+          "brier": 0.2395384210229682,
+          "ece": 0.02320678802516802,
+          "expected_accuracy": 0.734375,
+          "nll": 0.5172809484418206,
+          "normalized_nll": 0.7462786590633538,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8415178571428571
+        },
+        "label_token": {
+          "accuracy": 0.6960227272727273,
+          "brier": 0.3446608945124104,
+          "ece": 0.1210186637929971,
+          "expected_accuracy": 0.6540178571428571,
+          "nll": 0.6669753336995267,
+          "normalized_nll": 0.9622420063235679,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7611607142857143
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.10227272727272729,
+            "draws": 2000,
+            "groups": 352,
+            "high": 0.15731018045624778,
+            "low": 0.04891148175912044,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.10475965894598371,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.07277064684362683,
+            "low": -0.1392372970765029,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.0923634662007318,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.03403980607680023,
+            "low": -0.12210893979142713,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.0803571428571429,
+            "draws": 2000,
+            "groups": 448,
+            "high": 0.12375274204067108,
+            "low": 0.038283995879287304,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.14843233776377884,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.10624619060184906,
+            "low": -0.19583214014994718,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.21414259759935783,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.15328085229463065,
+            "low": -0.2825260574410013,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.0803571428571428,
+            "draws": 2000,
+            "groups": 448,
+            "high": 0.12375274204067119,
+            "low": 0.038283995879287304,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.10227272727272729,
+            "draws": 2000,
+            "groups": 352,
+            "high": 0.15731018045624778,
+            "low": 0.04891148175912044,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.10512247348944218,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.07192465304033542,
+            "low": -0.1406675920514767,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.09781187576782907,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.04174186268168829,
+            "low": -0.12222480572527389,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.0803571428571429,
+            "draws": 2000,
+            "groups": 448,
+            "high": 0.12375274204067108,
+            "low": 0.038283995879287304,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.14969438525770606,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.10680731892570498,
+            "low": -0.19789989475942193,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.21596334726021416,
+            "draws": 2000,
+            "groups": 448,
+            "high": -0.1540903893447589,
+            "low": -0.28550919676186587,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.0803571428571428,
+            "draws": 2000,
+            "groups": 448,
+            "high": 0.12375274204067119,
+            "low": 0.038283995879287304,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "helpsteer2/ordinal/text/coherence": {
+      "records": 1038,
+      "groups": 519,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.7215799614643545,
+          "brier": 0.4038536906287864,
+          "ece": 0.024777874471581526,
+          "expected_accuracy": 0.7215799614643545,
+          "nll": 0.7158472481084198,
+          "normalized_nll": 0.4447809030581224,
+          "ordinal_mae": 0.46850576192388743,
+          "ranked_probability_score": 0.06310326127674691,
+          "tie_aware_accuracy": 0.7215799614643545
+        },
+        "head_raw": {
+          "accuracy": 0.7215799614643545,
+          "brier": 0.40413707029158796,
+          "ece": 0.03617136243010971,
+          "expected_accuracy": 0.7215799614643545,
+          "nll": 0.7173062077752954,
+          "normalized_nll": 0.44568740566726656,
+          "ordinal_mae": 0.4776911599588251,
+          "ranked_probability_score": 0.0631974458001537,
+          "tie_aware_accuracy": 0.7215799614643545
+        },
+        "label_token": {
+          "accuracy": 0.4210019267822736,
+          "brier": 0.6821063160564206,
+          "ece": 0.03130790151123474,
+          "expected_accuracy": 0.4210019267822736,
+          "nll": 1.3233916883649397,
+          "normalized_nll": 0.8222694880869645,
+          "ordinal_mae": 1.296549380751658,
+          "ranked_probability_score": 0.18505621874895484,
+          "tie_aware_accuracy": 0.4210019267822736
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.30057803468208094,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.3411572816256652,
+            "low": 0.2591860325572859,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.2782526254276342,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.2473233682373554,
+            "low": -0.30926138040516904,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.0065300270396532155,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.019597254390214133,
+            "low": -0.03653717215442167,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.30057803468208094,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.3411572816256652,
+            "low": 0.2591860325572859,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.6075444402565199,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.553784749253535,
+            "low": -0.6616774279065907,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.37748858502884214,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.34408581093755597,
+            "low": -0.41112330136791436,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.8280436188277704,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.772151529954497,
+            "low": -0.8853425974850935,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.12195295747220793,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.11077802525440726,
+            "low": -0.13390029111500182,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.30057803468208094,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.3411572816256652,
+            "low": 0.2591860325572859,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.30057803468208094,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.3411572816256652,
+            "low": 0.2591860325572859,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.2779692457648326,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.2477858974246202,
+            "low": -0.3081709993894689,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.004863460918874969,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.028533321124081423,
+            "low": -0.027916511682128217,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.30057803468208094,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.3411572816256652,
+            "low": 0.2591860325572859,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.6060854805896443,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.5533641192861062,
+            "low": -0.6588210614493737,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.376582082419698,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.3438244588442695,
+            "low": -0.40934854110214214,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.8188582207928328,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.7636837363660445,
+            "low": -0.8750534081364335,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.12185877294880114,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.11088156572253458,
+            "low": -0.13364416581234465,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.30057803468208094,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.3411572816256652,
+            "low": 0.2591860325572859,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "helpsteer2/ordinal/text/complexity": {
+      "records": 1038,
+      "groups": 519,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.6117533718689788,
+          "brier": 0.5209905886800403,
+          "ece": 0.04860121753782067,
+          "expected_accuracy": 0.6117533718689788,
+          "nll": 0.9084496303368387,
+          "normalized_nll": 0.5644514916160438,
+          "ordinal_mae": 0.47049626435205577,
+          "ranked_probability_score": 0.07386284376202647,
+          "tie_aware_accuracy": 0.6117533718689788
+        },
+        "head_raw": {
+          "accuracy": 0.6117533718689788,
+          "brier": 0.5211201037847089,
+          "ece": 0.04313917998674339,
+          "expected_accuracy": 0.6117533718689788,
+          "nll": 0.9100397262125994,
+          "normalized_nll": 0.5654394737329529,
+          "ordinal_mae": 0.47124518116050723,
+          "ranked_probability_score": 0.07391384320299375,
+          "tie_aware_accuracy": 0.6117533718689788
+        },
+        "label_token": {
+          "accuracy": 0.30828516377649323,
+          "brier": 0.7606069008164925,
+          "ece": 0.09010208800691696,
+          "expected_accuracy": 0.30828516377649323,
+          "nll": 1.428656857790181,
+          "normalized_nll": 0.8876744152432036,
+          "ordinal_mae": 0.6160283624059387,
+          "ranked_probability_score": 0.1191858025532601,
+          "tie_aware_accuracy": 0.30828516377649323
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.3034682080924856,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.34901791115311903,
+            "low": 0.2574812645246573,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.23961631213645218,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.20831098273182444,
+            "low": -0.2707367303538911,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.04150087046909629,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.010298870642279183,
+            "low": -0.08193895103412417,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.3034682080924856,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.34901791115311903,
+            "low": 0.2574812645246573,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.5202072274533424,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.46722090457567406,
+            "low": -0.5751668372684225,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.32322292362715976,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.29030067016941025,
+            "low": -0.35737124919503516,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.14553209805388295,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.11248289573419999,
+            "low": -0.17660043877261422,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.04532295879123363,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.03927619268171498,
+            "low": -0.05096966546949731,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.3034682080924856,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.34901791115311903,
+            "low": 0.2574812645246573,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.3034682080924856,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.34901791115311903,
+            "low": 0.2574812645246573,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.23948679703178366,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.20916211160779605,
+            "low": -0.2695908545896174,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.046962908020173576,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.011564130157833244,
+            "low": -0.08203538343389688,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.3034682080924856,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.34901791115311903,
+            "low": 0.2574812645246573,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.5186171315775816,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.46682549308907373,
+            "low": -0.5721975100544077,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.32223494151025067,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.29005498719925826,
+            "low": -0.3555263024648285,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.1447831812454315,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.11149917968156625,
+            "low": -0.17610440384966278,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.045271959350266344,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.03926819964450975,
+            "low": -0.05088511299297883,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.3034682080924856,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.34901791115311903,
+            "low": 0.2574812645246573,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "helpsteer2/ordinal/text/correctness": {
+      "records": 1038,
+      "groups": 519,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.5086705202312138,
+          "brier": 0.6149166363376178,
+          "ece": 0.048192526611923796,
+          "expected_accuracy": 0.5086705202312138,
+          "nll": 1.1511624300836907,
+          "normalized_nll": 0.7152574331635343,
+          "ordinal_mae": 0.8129586673532946,
+          "ranked_probability_score": 0.1222165614451374,
+          "tie_aware_accuracy": 0.5086705202312138
+        },
+        "head_raw": {
+          "accuracy": 0.5086705202312138,
+          "brier": 0.6148310693929541,
+          "ece": 0.05038379251752373,
+          "expected_accuracy": 0.5086705202312138,
+          "nll": 1.1522367122960182,
+          "normalized_nll": 0.7159249222316294,
+          "ordinal_mae": 0.8186107169774383,
+          "ranked_probability_score": 0.12240429842936656,
+          "tie_aware_accuracy": 0.5086705202312138
+        },
+        "label_token": {
+          "accuracy": 0.28516377649325625,
+          "brier": 0.8647268187460647,
+          "ece": 0.19706386224517225,
+          "expected_accuracy": 0.28516377649325625,
+          "nll": 1.7640674114019996,
+          "normalized_nll": 1.0960767096222053,
+          "ordinal_mae": 1.4926012982670056,
+          "ranked_probability_score": 0.25563784547282636,
+          "tie_aware_accuracy": 0.28516377649325625
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.2235067437379576,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.26196279239477727,
+            "low": 0.18648895573404872,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.24981018240844688,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.2227055405734519,
+            "low": -0.27644465767135723,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.14887133563324845,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.10246657475192472,
+            "low": -0.1770979174062093,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.2235067437379576,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.26196279239477727,
+            "low": 0.18648895573404872,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.612904981318309,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.5541454257950057,
+            "low": -0.6724307141371727,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.380819276458671,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.3443099118728489,
+            "low": -0.4178046937642927,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.679642630913711,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.6164301581177836,
+            "low": -0.7435898832608127,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.13342128402768896,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.12080533358974735,
+            "low": -0.14675430163304565,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.2235067437379576,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.26196279239477727,
+            "low": 0.18648895573404872,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.2235067437379576,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.26196279239477727,
+            "low": 0.18648895573404872,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.24989574935311065,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.22370679234459614,
+            "low": -0.2761582177676866,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.14668006972764852,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.10317545658855849,
+            "low": -0.1792797697262389,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.2235067437379576,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.26196279239477727,
+            "low": 0.18648895573404872,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.6118306991059814,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.5544595843148443,
+            "low": -0.6708102256563753,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.38015178739057587,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.3445051095362121,
+            "low": -0.4167978276601221,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.6739905812895673,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.6111120689316852,
+            "low": -0.7373970707967734,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.1332335470434598,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.1208177922407635,
+            "low": -0.14641749448234748,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.2235067437379576,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.26196279239477727,
+            "low": 0.18648895573404872,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "helpsteer2/ordinal/text/helpfulness": {
+      "records": 1038,
+      "groups": 519,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.44701348747591524,
+          "brier": 0.6531008628186896,
+          "ece": 0.03508877309346887,
+          "expected_accuracy": 0.44701348747591524,
+          "nll": 1.2192898041120461,
+          "normalized_nll": 0.7575873506471601,
+          "ordinal_mae": 0.8384516032759224,
+          "ranked_probability_score": 0.13099782831160411,
+          "tie_aware_accuracy": 0.44701348747591524
+        },
+        "head_raw": {
+          "accuracy": 0.44701348747591524,
+          "brier": 0.6524262416251848,
+          "ece": 0.028568695787017526,
+          "expected_accuracy": 0.44701348747591524,
+          "nll": 1.218694747656896,
+          "normalized_nll": 0.7572176212835392,
+          "ordinal_mae": 0.8415656990365306,
+          "ranked_probability_score": 0.13090495172959735,
+          "tie_aware_accuracy": 0.44701348747591524
+        },
+        "label_token": {
+          "accuracy": 0.29190751445086704,
+          "brier": 0.8122116595773826,
+          "ece": 0.14897736738303152,
+          "expected_accuracy": 0.29190751445086704,
+          "nll": 1.6970047551232437,
+          "normalized_nll": 1.0544083384718521,
+          "ordinal_mae": 1.2501770524840172,
+          "ranked_probability_score": 0.20663359697529873,
+          "tie_aware_accuracy": 0.29190751445086704
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.1551059730250482,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.1965334309472557,
+            "low": 0.11362517895490337,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.159110796758693,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.1334362563339401,
+            "low": -0.18263157778249228,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.11388859428956266,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.06710536848469287,
+            "low": -0.13811358453343275,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.1551059730250482,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.1965334309472557,
+            "low": 0.11362517895490337,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.47771495101119754,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.4129230103054728,
+            "low": -0.5412280015116974,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.296820987824692,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.2565634915863086,
+            "low": -0.3362838649011001,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.41172544920809484,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.35999451362291873,
+            "low": -0.4622618436597681,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.07563576866369462,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.06549741072673562,
+            "low": -0.08590156195373193,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.1551059730250482,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.1965334309472557,
+            "low": 0.11362517895490337,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.1551059730250482,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.1965334309472557,
+            "low": 0.11362517895490337,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.1597854179521978,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.1343767147811271,
+            "low": -0.1828385499906006,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.120408671596014,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.07207632588036302,
+            "low": -0.14244456718855542,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.1551059730250482,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.1965334309472557,
+            "low": 0.11362517895490337,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.4783100074663478,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.41475165138213416,
+            "low": -0.5408757430314218,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.2971907171883129,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.25769969017000954,
+            "low": -0.3360649944013104,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.40861135344748667,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.35798849589828285,
+            "low": -0.4585262156040118,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.07572864524570139,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.06573211106971048,
+            "low": -0.08579142954202998,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.1551059730250482,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.1965334309472557,
+            "low": 0.11362517895490337,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "helpsteer2/ordinal/text/verbosity": {
+      "records": 1038,
+      "groups": 519,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.6589595375722543,
+          "brier": 0.47094246553526353,
+          "ece": 0.022485077879648492,
+          "expected_accuracy": 0.6589595375722543,
+          "nll": 0.8508256197675449,
+          "normalized_nll": 0.5286476807799092,
+          "ordinal_mae": 0.43887138136681236,
+          "ranked_probability_score": 0.06873081896222231,
+          "tie_aware_accuracy": 0.6589595375722543
+        },
+        "head_raw": {
+          "accuracy": 0.6589595375722543,
+          "brier": 0.4711528570566025,
+          "ece": 0.025410989164749598,
+          "expected_accuracy": 0.6589595375722543,
+          "nll": 0.8523156919903516,
+          "normalized_nll": 0.5295735147069556,
+          "ordinal_mae": 0.4408211522051243,
+          "ranked_probability_score": 0.06880986740376256,
+          "tie_aware_accuracy": 0.6589595375722543
+        },
+        "label_token": {
+          "accuracy": 0.35260115606936415,
+          "brier": 0.7291373220419479,
+          "ece": 0.030786794794789858,
+          "expected_accuracy": 0.35260115606936415,
+          "nll": 1.4118004550392615,
+          "normalized_nll": 0.8772009433430495,
+          "ordinal_mae": 0.49478171109446245,
+          "ranked_probability_score": 0.10728597477186536,
+          "tie_aware_accuracy": 0.35260115606936415
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.3063583815028902,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.35029624368314743,
+            "low": 0.265381679389313,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.2581948565066844,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.22684852912107625,
+            "low": -0.28932179450260415,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.008301716915141366,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.02942008129432639,
+            "low": -0.028867833208735875,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.3063583815028902,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.35029624368314743,
+            "low": 0.265381679389313,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.5609748352717167,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.5074156443585826,
+            "low": -0.6136318582195575,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.34855326256314034,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.31527506618206275,
+            "low": -0.38127091047054157,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.05591032972765009,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.03907490009854548,
+            "low": -0.07282415544728685,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.03855515580964304,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.034692137180296075,
+            "low": -0.04223194391311306,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.3063583815028902,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.35029624368314743,
+            "low": 0.265381679389313,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.3063583815028902,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.35029624368314743,
+            "low": 0.265381679389313,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.25798446498534544,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.22754712934846014,
+            "low": -0.28815410834940036,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.00537580563004026,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.030677896735190287,
+            "low": -0.028861791306039695,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.3063583815028902,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.35029624368314743,
+            "low": 0.265381679389313,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.5594847630489099,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.5073848013713814,
+            "low": -0.6106731866327502,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.34762742863609397,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.31525590235662804,
+            "low": -0.37943258445376954,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": -0.05396055888933815,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.03719379557974862,
+            "low": -0.07096383395088726,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ranked_probability_score": {
+            "difference": -0.038476107368102794,
+            "draws": 2000,
+            "groups": 519,
+            "high": -0.03468200142516744,
+            "low": -0.04208101105530181,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.3063583815028902,
+            "draws": 2000,
+            "groups": 519,
+            "high": 0.35029624368314743,
+            "low": 0.265381679389313,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "helpsteer3/choice/text/main": {
+      "records": 1965,
+      "groups": 1956,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.7838416265382557,
+          "brier": 0.2949201217501714,
+          "ece": 0.020724400351568837,
+          "expected_accuracy": 0.7699745547073792,
+          "nll": 0.48815182667827245,
+          "normalized_nll": 0.7042542195496312,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7944020356234097
+        },
+        "head_raw": {
+          "accuracy": 0.7838416265382557,
+          "brier": 0.294358303099197,
+          "ece": 0.01627402395716291,
+          "expected_accuracy": 0.7699745547073792,
+          "nll": 0.48805393543317177,
+          "normalized_nll": 0.704112992335778,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7944020356234097
+        },
+        "label_token": {
+          "accuracy": 0.7233814874264313,
+          "brier": 0.3680958299661336,
+          "ece": 0.0979684561569667,
+          "expected_accuracy": 0.712468193384224,
+          "nll": 0.6064346265987917,
+          "normalized_nll": 0.8749002284174278,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7368956743002545
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.06046013911182446,
+            "draws": 2000,
+            "groups": 1860,
+            "high": 0.0791114948376643,
+            "low": 0.04184483452950112,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.0731757082159622,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.057998715028022396,
+            "low": -0.08943148304530417,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.07724405580539787,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.04390286590657233,
+            "low": -0.09454698381683989,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.05750636132315523,
+            "draws": 2000,
+            "groups": 1956,
+            "high": 0.0752351217562689,
+            "low": 0.03980606067972971,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.11828279992051921,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.09357529837888662,
+            "low": -0.14395964526649888,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.17064600886779657,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.13500061892092333,
+            "low": -0.20768986631411313,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.05750636132315523,
+            "draws": 2000,
+            "groups": 1956,
+            "high": 0.0752351217562689,
+            "low": 0.03980606067972971,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.06046013911182446,
+            "draws": 2000,
+            "groups": 1860,
+            "high": 0.0791114948376643,
+            "low": 0.04184483452950112,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.07373752686693658,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.058418591935865204,
+            "low": -0.089986050045039,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.0816944321998038,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.05229776579635322,
+            "low": -0.09162954070467769,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.05750636132315523,
+            "draws": 2000,
+            "groups": 1956,
+            "high": 0.0752351217562689,
+            "low": 0.03980606067972971,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.11838069116561989,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.09501734782126928,
+            "low": -0.14283322271421825,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.1707872360816498,
+            "draws": 2000,
+            "groups": 1956,
+            "high": -0.1370810565001703,
+            "low": -0.20606478208399306,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.05750636132315523,
+            "draws": 2000,
+            "groups": 1956,
+            "high": 0.0752351217562689,
+            "low": 0.03980606067972971,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "mm-rlhf/choice/image/best_response": {
+      "records": 1217,
+      "groups": 1193,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.8038049940546967,
+          "brier": 0.2683943277306622,
+          "ece": 0.048368790834175696,
+          "expected_accuracy": 0.6555738161358563,
+          "nll": 0.8384348594153802,
+          "normalized_nll": 0.6040302594514706,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8044371405094495
+        },
+        "head_raw": {
+          "accuracy": 0.8038049940546967,
+          "brier": 0.2652017232088786,
+          "ece": 0.022559651506598187,
+          "expected_accuracy": 0.6555738161358563,
+          "nll": 0.8305844081364787,
+          "normalized_nll": 0.5983567814431695,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8044371405094495
+        },
+        "label_token": {
+          "accuracy": 0.5101070154577884,
+          "brier": 0.5590875404903504,
+          "ece": 0.21463117240898597,
+          "expected_accuracy": 0.44165981981532926,
+          "nll": 1.4816497996132922,
+          "normalized_nll": 1.0678331420697764,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.5743631881676253
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.2936979785969084,
+            "draws": 2000,
+            "groups": 834,
+            "high": 0.3277924392429195,
+            "low": 0.26013457894469577,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.2906932127596882,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.2666048491411715,
+            "low": -0.31588669013243653,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.16626238157481027,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.12833759468885686,
+            "low": -0.19493066872486872,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.21391399632052704,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.2392524005414635,
+            "low": 0.1890743306572186,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.643214940197912,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.5870149187341511,
+            "low": -0.7008798436890614,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.4638028826183058,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.4232473535491391,
+            "low": -0.505433593336078,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.23007395234182415,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.25923412288803166,
+            "low": 0.20223434321702402,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.2936979785969084,
+            "draws": 2000,
+            "groups": 834,
+            "high": 0.3277924392429195,
+            "low": 0.26013457894469577,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.2938858172814718,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.26868287842282684,
+            "low": -0.3201589207732649,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.19207152090238777,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.15236657521476113,
+            "low": -0.20874090598339776,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.21391399632052704,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.2392524005414635,
+            "low": 0.1890743306572186,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.6510653914768135,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.5948944175301716,
+            "low": -0.7074313711075572,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.4694763606266069,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.4289092359257386,
+            "low": -0.5101570469638476,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.23007395234182415,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.25923412288803166,
+            "low": 0.20223434321702402,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "mm-rlhf/choice/image/pairwise_preference": {
+      "records": 7326,
+      "groups": 1193,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.8440471662228984,
+          "brier": 0.18519267778591195,
+          "ece": 0.018017965961631844,
+          "expected_accuracy": 0.7469287469287469,
+          "nll": 0.4911853648715576,
+          "normalized_nll": 0.7086306900574341,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8880698880698881
+        },
+        "head_raw": {
+          "accuracy": 0.8440471662228984,
+          "brier": 0.18643348925282477,
+          "ece": 0.027801987613593936,
+          "expected_accuracy": 0.7469287469287469,
+          "nll": 0.49328091776689303,
+          "normalized_nll": 0.7116539338274546,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8880698880698881
+        },
+        "label_token": {
+          "accuracy": 0.6848611639406619,
+          "brier": 0.38457654781294853,
+          "ece": 0.17844936796353578,
+          "expected_accuracy": 0.6326781326781327,
+          "nll": 0.8380216948507092,
+          "normalized_nll": 1.209009743318481,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7738192738192738
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.15918600228223656,
+            "draws": 2000,
+            "groups": 1143,
+            "high": 0.17650600734001815,
+            "low": 0.14271921804249388,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.19938387002703659,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.1849997022035378,
+            "low": -0.21425585477604825,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.16043140200190392,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.14397129961165944,
+            "low": -0.1727893173016406,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.11425061425061422,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.12696836560641414,
+            "low": 0.10198449680836233,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.3468363299791516,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.3194384662637791,
+            "low": -0.3738462143026728,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.5003790532610469,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.46085229114793136,
+            "low": -0.539346079429578,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.11425061425061422,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.12696836560641414,
+            "low": 0.10198449680836233,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.15918600228223656,
+            "draws": 2000,
+            "groups": 1143,
+            "high": 0.17650600734001815,
+            "low": 0.14271921804249388,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.19814305856012376,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.1836933335867497,
+            "low": -0.2134151204752959,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.15064738034994185,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.138120050609914,
+            "low": -0.1626006039404512,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.11425061425061422,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.12696836560641414,
+            "low": 0.10198449680836233,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.3447407770838162,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.31770585471325447,
+            "low": -0.37159788836818236,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.4973558094910264,
+            "draws": 2000,
+            "groups": 1193,
+            "high": -0.4583526610562012,
+            "low": -0.5361024307535875,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.11425061425061422,
+            "draws": 2000,
+            "groups": 1193,
+            "high": 0.12696836560641414,
+            "low": 0.10198449680836233,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "qasper/noul/text/answerability": {
+      "records": 1450,
+      "groups": 416,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.9324026451138868,
+          "brier": 0.10525375555238735,
+          "ece": 0.04147094211497833,
+          "expected_accuracy": 0.89937931110119,
+          "nll": 0.282871423556773,
+          "normalized_nll": 0.40809719997455823,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.9365517241379311
+        },
+        "head_raw": {
+          "accuracy": 0.9324026451138868,
+          "brier": 0.11120372802323265,
+          "ece": 0.05982141582905872,
+          "expected_accuracy": 0.89937931110119,
+          "nll": 0.3207125280430801,
+          "normalized_nll": 0.4626903737587144,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.9365517241379311
+        },
+        "label_token": {
+          "accuracy": 0.9287288758265981,
+          "brier": 0.10673070276122072,
+          "ece": 0.047324788291140195,
+          "expected_accuracy": 0.8977701156714867,
+          "nll": 0.29790008717447797,
+          "normalized_nll": 0.429778978447009,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.9331034482758621
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.0036737692872886862,
+            "draws": 2000,
+            "groups": 413,
+            "high": 0.012950574605250868,
+            "low": -0.00658114035087716,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.0014769472088333735,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.006635823257496065,
+            "low": -0.008421588975695952,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.005853846176161866,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.00219610623722318,
+            "low": -0.014119216526120519,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.0016091954297032807,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.009393024843857527,
+            "low": -0.007510523698125412,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.01502866361770494,
+            "draws": 2000,
+            "groups": 416,
+            "high": -0.0011472913242388616,
+            "low": -0.027858087595508618,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.021681778472450786,
+            "draws": 2000,
+            "groups": 416,
+            "high": -0.0016551915039344006,
+            "low": -0.04019072482269026,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.0034482758620689724,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.01220407133554966,
+            "low": -0.006141827711704795,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.0036737692872886862,
+            "draws": 2000,
+            "groups": 413,
+            "high": 0.012950574605250868,
+            "low": -0.00658114035087716,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": 0.0044730252620119315,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.01342694071933484,
+            "low": -0.0034545104667015928,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.012496627537918525,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.02049324541484437,
+            "low": 0.0036139317781009824,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.0016091954297032807,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.009393024843857527,
+            "low": -0.007510523698125412,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": 0.022812440868602124,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.03838182519449758,
+            "low": 0.008481454848890296,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": 0.032911395311705394,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.055373268868369574,
+            "low": 0.012236152850017388,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.0034482758620689724,
+            "draws": 2000,
+            "groups": 416,
+            "high": 0.01220407133554966,
+            "low": -0.006141827711704795,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "qasper/noul/text/evidence": {
+      "records": 2000,
+      "groups": 415,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.8431204212126782,
+          "brier": 0.28762369302763374,
+          "ece": 0.14811257082767032,
+          "evidence_eligible_records": 1727,
+          "evidence_eligible_weight": 64962.51453368923,
+          "evidence_f1": 0.1950658846369127,
+          "evidence_fn": 45,
+          "evidence_fn_weight": 121.48250000000002,
+          "evidence_fp": 259,
+          "evidence_fp_weight": 10069.809417010434,
+          "evidence_precision": 0.10923507022068932,
+          "evidence_recall": 0.9104342297398798,
+          "evidence_tp": 497,
+          "evidence_tp_weight": 1234.8671372239746,
+          "expected_accuracy": 0.8387885608871094,
+          "nll": 0.4995185571388288,
+          "normalized_nll": 0.7206529452161984,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8451665697111295
+        },
+        "head_raw": {
+          "accuracy": 0.8431204212126782,
+          "brier": 0.2738225562173673,
+          "ece": 0.11475981333514251,
+          "evidence_eligible_records": 1727,
+          "evidence_eligible_weight": 64962.51453368923,
+          "evidence_f1": 0.1950658846369127,
+          "evidence_fn": 45,
+          "evidence_fn_weight": 121.48250000000002,
+          "evidence_fp": 259,
+          "evidence_fp_weight": 10069.809417010434,
+          "evidence_precision": 0.10923507022068932,
+          "evidence_recall": 0.9104342297398798,
+          "evidence_tp": 497,
+          "evidence_tp_weight": 1234.8671372239746,
+          "expected_accuracy": 0.8387885608871094,
+          "nll": 0.5000949325097573,
+          "normalized_nll": 0.7214844791055286,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8451665697111295
+        },
+        "label_token": {
+          "accuracy": 0.7524126083021117,
+          "brier": 0.3626819983475116,
+          "ece": 0.09434227981392528,
+          "evidence_eligible_records": 1727,
+          "evidence_eligible_weight": 64962.51453368923,
+          "evidence_f1": 0.1352374340589801,
+          "evidence_fn": 36,
+          "evidence_fn_weight": 98.69500000000001,
+          "evidence_fp": 354,
+          "evidence_fp_weight": 15985.204531532261,
+          "evidence_precision": 0.07293770858506017,
+          "evidence_recall": 0.927234838797172,
+          "evidence_tp": 506,
+          "evidence_tp_weight": 1257.6546372239748,
+          "expected_accuracy": 0.7495100169068273,
+          "nll": 0.6220734026033288,
+          "normalized_nll": 0.8974622130047462,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7556418403900229
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.09070781291056651,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12307974189346875,
+            "low": 0.05987154024894327,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.07505830531987784,
+            "draws": 2000,
+            "groups": 415,
+            "high": -0.056854202852814145,
+            "low": -0.09338886061237332,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.053770291013745045,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.07808986179481359,
+            "low": 0.0178798112353325,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "evidence_f1": {
+            "difference": 0.059828450577932624,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.08695322902681163,
+            "low": 0.03808499547541207,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "evidence_precision": {
+            "difference": 0.03629736163562915,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.054069517977498684,
+            "low": 0.022887562070649257,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "evidence_recall": {
+            "difference": -0.016800609057292193,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.0008045374772334734,
+            "low": -0.03454873580077268,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.08927854398028212,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12114762922087219,
+            "low": 0.05892458264154802,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.12255484546449996,
+            "draws": 2000,
+            "groups": 415,
+            "high": -0.09420093688204607,
+            "low": -0.1521172299196875,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.17680926778854777,
+            "draws": 2000,
+            "groups": 415,
+            "high": -0.13590322448682246,
+            "low": -0.21945877323889884,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.08952472932110656,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12155097486793531,
+            "low": 0.05905036657925679,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.09070781291056651,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12307974189346875,
+            "low": 0.05987154024894327,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.0888594421301443,
+            "draws": 2000,
+            "groups": 415,
+            "high": -0.0707628021676998,
+            "low": -0.1067880070482774,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.020417533521217238,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.04399442905826078,
+            "low": -0.01421517606948073,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "evidence_f1": {
+            "difference": 0.059828450577932624,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.08695322902681163,
+            "low": 0.03808499547541207,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "evidence_precision": {
+            "difference": 0.03629736163562915,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.054069517977498684,
+            "low": 0.022887562070649257,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "evidence_recall": {
+            "difference": -0.016800609057292193,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.0008045374772334734,
+            "low": -0.03454873580077268,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.08927854398028212,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12114762922087219,
+            "low": 0.05892458264154802,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.12197847009357143,
+            "draws": 2000,
+            "groups": 415,
+            "high": -0.0962539332690293,
+            "low": -0.14704295075209287,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.17597773389921756,
+            "draws": 2000,
+            "groups": 415,
+            "high": -0.13886507219328564,
+            "low": -0.2121381358477236,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.08952472932110656,
+            "draws": 2000,
+            "groups": 415,
+            "high": 0.12155097486793531,
+            "low": 0.05905036657925679,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "qasper/noul/text/yes_no": {
+      "records": 239,
+      "groups": 192,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.7571428571428571,
+          "brier": 0.33376367266112333,
+          "ece": 0.12288548578813441,
+          "expected_accuracy": 0.7133891224611754,
+          "nll": 0.6665296365289982,
+          "normalized_nll": 0.961599001225909,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7866108786610879
+        },
+        "head_raw": {
+          "accuracy": 0.7571428571428571,
+          "brier": 0.3526829759680411,
+          "ece": 0.16290306325431464,
+          "expected_accuracy": 0.7133891224611754,
+          "nll": 0.75128699878623,
+          "normalized_nll": 1.0838780274332467,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7866108786610879
+        },
+        "label_token": {
+          "accuracy": 0.680952380952381,
+          "brier": 0.39459110868324465,
+          "ece": 0.1930178858810924,
+          "expected_accuracy": 0.6520223162413641,
+          "nll": 0.7779553732959962,
+          "normalized_nll": 1.122352359087056,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.7196652719665272
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": 0.07619047619047614,
+            "draws": 2000,
+            "groups": 171,
+            "high": 0.12042176982049359,
+            "low": 0.035709753444525004,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.06082743602212132,
+            "draws": 2000,
+            "groups": 192,
+            "high": -0.033727168248752944,
+            "low": -0.08913707835094346,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.07013240009295799,
+            "draws": 2000,
+            "groups": 192,
+            "high": -0.030017665732585342,
+            "low": -0.10195954943573499,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.061366806219811276,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.09772821448595162,
+            "low": 0.026012733464521078,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.11142573676699796,
+            "draws": 2000,
+            "groups": 192,
+            "high": -0.06750297770135592,
+            "low": -0.15823199607621388,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.16075335786114708,
+            "draws": 2000,
+            "groups": 192,
+            "high": -0.0973862111749849,
+            "low": -0.22828051604911553,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.06694560669456073,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.10506827025114954,
+            "low": 0.03152799660647185,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": 0.07619047619047614,
+            "draws": 2000,
+            "groups": 171,
+            "high": 0.12042176982049359,
+            "low": 0.035709753444525004,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": -0.04190813271520355,
+            "draws": 2000,
+            "groups": 192,
+            "high": -0.011930828061472477,
+            "low": -0.07230313851777288,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": -0.030114822626777754,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.005739414444712386,
+            "low": -0.06613010870281216,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": 0.061366806219811276,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.09772821448595162,
+            "low": 0.026012733464521078,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": -0.026668374509766224,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.023741505476033268,
+            "low": -0.07601824541190687,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": -0.038474331653809424,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.034251752213510955,
+            "low": -0.10967114567283917,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": 0.06694560669456073,
+            "draws": 2000,
+            "groups": 192,
+            "high": 0.10506827025114954,
+            "low": 0.03152799660647185,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "vl-rewardbench/choice/image/official_heldout_preference": {
+      "records": 1247,
+      "groups": 1194,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.6896551724137931,
+          "brier": 0.41852776072602477,
+          "ece": 0.04660032831481152,
+          "expected_accuracy": 0.6896551724137931,
+          "nll": 0.6133510232881336,
+          "normalized_nll": 0.8848784796219612,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.6896551724137931
+        },
+        "head_raw": {
+          "accuracy": 0.6896551724137931,
+          "brier": 0.41890136153896246,
+          "ece": 0.045014644303725565,
+          "expected_accuracy": 0.6896551724137931,
+          "nll": 0.6177450457704946,
+          "normalized_nll": 0.8912177140668186,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.6896551724137931
+        },
+        "label_token": {
+          "accuracy": 0.8901363271852446,
+          "brier": 0.16773702934733942,
+          "ece": 0.019157238285153595,
+          "expected_accuracy": 0.8901363271852446,
+          "nll": 0.2772252348818991,
+          "normalized_nll": 0.3999514715733921,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8901363271852446
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": 0.25079073137868535,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.2699698040891868,
+            "low": 0.23256307015914693,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.027443090029657925,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.05177559017700602,
+            "low": 0.0024819828461433067,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": 0.3361257884062345,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.36312774803142495,
+            "low": 0.309025905662272,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": 0.4849270080485691,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.5238826012941158,
+            "low": 0.4458301416051795,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": 0.25116433219162304,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.27152435194973307,
+            "low": 0.23212909125343642,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.02585740601857197,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.04848320553781765,
+            "low": 0.0010327094335392452,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": 0.3405198108885955,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.36874775255022946,
+            "low": 0.3123845691888094,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": 0.4912662424934265,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.5319905539431676,
+            "low": 0.45067566881893273,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": -0.20048115477145145,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.17538084112149532,
+            "low": -0.224922106996138,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    },
+    "vl-rewardbench/noul/image/pairwise_preference_yes_no": {
+      "records": 1247,
+      "groups": 1194,
+      "methods": {
+        "head_calibrated": {
+          "accuracy": 0.698476343223737,
+          "brier": 0.39414017070714863,
+          "ece": 0.041376051768684266,
+          "expected_accuracy": 0.698476343223737,
+          "nll": 0.5753436152443697,
+          "normalized_nll": 0.8300453805201802,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.698476343223737
+        },
+        "head_raw": {
+          "accuracy": 0.698476343223737,
+          "brier": 0.4030465812086174,
+          "ece": 0.07562218189507584,
+          "expected_accuracy": 0.698476343223737,
+          "nll": 0.5916642626027369,
+          "normalized_nll": 0.8535910975281935,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.698476343223737
+        },
+        "label_token": {
+          "accuracy": 0.8259823576583801,
+          "brier": 0.24702676025729256,
+          "ece": 0.033000562037511026,
+          "expected_accuracy": 0.8259823576583801,
+          "nll": 0.3852173934292416,
+          "normalized_nll": 0.5557512231645382,
+          "ordinal_mae": null,
+          "ranked_probability_score": null,
+          "tie_aware_accuracy": 0.8259823576583801
+        }
+      },
+      "paired": {
+        "head_calibrated": {
+          "accuracy": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": 0.14711341044985607,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.16460239097496485,
+            "low": 0.1296136620645521,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.00837548973117324,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.03511924475246004,
+            "low": -0.021518929791171978,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": 0.19012622181512812,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.2118401851865805,
+            "low": 0.16843847544749807,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": 0.274294157355642,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.30562078462968084,
+            "low": 0.2430053532230027,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        },
+        "head_raw": {
+          "accuracy": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "brier": {
+            "difference": 0.15601982095132486,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.1759872096481293,
+            "low": 0.1368941185340601,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ece": {
+            "difference": 0.04262161985756482,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.06745160776988064,
+            "low": 0.007940871302160032,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "expected_accuracy": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "nll": {
+            "difference": 0.20644686917349525,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.23184704372196635,
+            "low": 0.18090639310153298,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "normalized_nll": {
+            "difference": 0.29783987436365533,
+            "draws": 2000,
+            "groups": 1194,
+            "high": 0.3344845802224468,
+            "low": 0.26099275619269247,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          },
+          "ordinal_mae": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "ranked_probability_score": {
+            "difference": null,
+            "draws": 2000,
+            "groups": 0,
+            "high": null,
+            "low": null,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": false,
+            "valid_draws": 0
+          },
+          "tie_aware_accuracy": {
+            "difference": -0.12750601443464316,
+            "draws": 2000,
+            "groups": 1194,
+            "high": -0.10377260627886947,
+            "low": -0.15146941232462757,
+            "method": "paired group percentile bootstrap; candidate minus label-token",
+            "seed": 17,
+            "supported": true,
+            "valid_draws": 2000
+          }
+        }
+      }
+    }
+  }
+}

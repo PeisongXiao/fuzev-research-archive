@@ -1,0 +1,43 @@
+{
+  "adapter_sha256": "da1282167571c328afa3508eb2773772f03f5de2b521bc4752e5d80a6fc81edc",
+  "calibration_allowed": false,
+  "combined_questions_or_requests": 5075,
+  "combined_records": 3990,
+  "external_evaluation_only": true,
+  "kind": "fixed-e2e-multipanel-v1",
+  "model_selection_allowed": false,
+  "new_data_fitting": false,
+  "panels": {
+    "kev-development": {
+      "expected": "${FUZEV_ROOT}/data/evaluation/e2e-with-kev-v1/kev-development-expected.jsonl",
+      "expected_sha256": "8410b889ce259f11064a4d1b7d49bc121f0724a65212aa4e9d2661ddc0bda246",
+      "metric": "Official breadth-v1 per-dataset metrics and chance-corrected index; no training DEV use",
+      "questions": 3075,
+      "records": 1990,
+      "requests": "${FUZEV_ROOT}/data/evaluation/e2e-with-kev-v1/kev-development-requests.jsonl",
+      "requests_sha256": "26ae2d2df55cef73e1c4d1f80413256b732e92187a102ffcd2db992e807ab4ff",
+      "selection": "Entire official frozen development partition, original record/question order",
+      "source": "${FUZEV_ROOT}/data/evaluation/kev-breadth-v1/development.jsonl",
+      "source_sha256": "9aad8f4a7374988b2768d31135d5690137df3a3d6cbc1e771db4ee95ca515a94"
+    },
+    "original-fixed": {
+      "path": "${FUZEV_ROOT}/runs/native-real/qualification/shared-e2e-inputs.json",
+      "records": 2000,
+      "requests": 2000,
+      "sampling_and_weights": "Retain original quotas, seed, inclusion probabilities and targets unchanged",
+      "sha256": "bea7571002c4e659a797204799bfcf01b6d7ab0334f1d9a2549f34d744bc0667"
+    }
+  },
+  "preparation_source_sha256": "8292dae92387d11b550e411d4c10f9d8cb6831b600e29e01ca484974b36ca2fc",
+  "report_panels_separately": true,
+  "same_inputs_across": [
+    "native-4.05",
+    "native-3.05",
+    "native-5.05",
+    "vllm-nvidia",
+    "vllm-radixark",
+    "vllm-exl3-4.05"
+  ],
+  "training_allowed": false,
+  "scope": "Six 5,075-request benchmark panels; manifest settings and input digests only, no example rows."
+}

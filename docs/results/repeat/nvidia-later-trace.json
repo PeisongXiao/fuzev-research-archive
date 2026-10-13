@@ -1,0 +1,55 @@
+{
+  "kind": "existing-synthetic-readout-repeat-aggregate",
+  "configuration_id": "vllm-nvidia",
+  "context_tokens": 2048,
+  "query_tokens": 2028,
+  "candidate_tokens": [
+    2037,
+    2038
+  ],
+  "cached_tokens": 1568,
+  "sequence": [
+    "A",
+    "A",
+    "B",
+    "A"
+  ],
+  "status": "failed",
+  "tolerance": 0.000002,
+  "maximum_absolute_probability_delta": 0.10429,
+  "source_precision": "Existing report rounded to five decimal places.",
+  "alpha_probabilities": {
+    "first": 0.7177612781524658,
+    "immediate_repeat": 0.8220507502555847,
+    "after_other_request": 0.7274690270423889
+  },
+  "query_feature_drift": {
+    "metric": "norm(compared - reference) / norm(reference), using 2,560 feature coordinates",
+    "pairs": [
+      {
+        "pair": "A1 to A2",
+        "relative_l2_percent": 47.4744
+      },
+      {
+        "pair": "A1 to A after B",
+        "relative_l2_percent": 46.1189
+      },
+      {
+        "pair": "A2 to A after B",
+        "relative_l2_percent": 47.9249
+      }
+    ]
+  },
+  "unpublished_lab_commits": {
+    "trace_recipes": "da9ce12dd047198ad0d90d051a1ea67fb6050bf4",
+    "panel_recipes": "0acaf188a00e0d96f9ad79f74bee80fcbe3ab616",
+    "vllm_core": "5398bfcefdb762f8ad70ef9ca73b701186199397"
+  },
+  "build_relation": "The trace and completed NVIDIA panel use the same vLLM core. The trace uses a different research-server source revision with readout instrumentation; it is not a repeat of the full panel or a released-build measurement.",
+  "source_records": [
+    "${FUZEV_ROOT}/reports/2026-10-10-cross-cell/engine-correctness-vllm-nvidia-trace-v2/result.json",
+    "${FUZEV_ROOT}/reports/2026-10-10-cross-cell/engine-correctness-vllm-nvidia-trace-v2/http.jsonl",
+    "${FUZEV_ROOT}/reports/2026-10-10-cross-cell/report.md"
+  ],
+  "scope": "Existing recorded synthetic metrics only; feature arrays and request bodies omitted. No scoring or analysis was rerun."
+}

@@ -1,0 +1,254 @@
+{
+  "recorded_date_utc": "2026-10-13",
+  "hardware": "NVIDIA GB10 (DGX Spark), Linux aarch64",
+  "python": "3.12.3",
+  "torch_cuda_build": "13.0",
+  "source_revision_note": "Unpublished lab code commit IDs identify the measured source exports.",
+  "source_zip_releases": {
+    "vllm-fuzev": {
+      "release": "0.30.0+fuzev.v1.0",
+      "unpublished_lab_code_commit": "5e11d8fb1"
+    },
+    "exllamav3-fuzev": {
+      "release": "1.5.2+fuzev.v1.0",
+      "unpublished_lab_code_commit": "72408e5",
+      "original_fresh_cpp_build_code_commit": "5d93a1a"
+    },
+    "fuzev-runtime": {
+      "release": "1.0.0",
+      "unpublished_lab_code_commit": "7ecb72a"
+    },
+    "fuzev-vllm-plugin": {
+      "release": "1.0.0",
+      "unpublished_lab_code_commit": "aa2fe16",
+      "test_only_revision": "13c2f5f"
+    },
+    "vllm-exl3-plugin": {
+      "release": "0.5.0+fuzev.v1.0",
+      "source_zip_commit": "a0e5e99",
+      "unpublished_lab_code_commit": "f6f03a3"
+    }
+  },
+  "model": {
+    "repository": "turboderp/Qwen3.8-Flash-Next-exl3",
+    "revision": "55a732e0c4c3d4614bc42b68493bb930d9b02c0a",
+    "bits_per_weight": 4.05,
+    "source_directory": "${EXL3_MODEL_DIRECTORY}",
+    "serving_view": "${EXL3_SERVING_VIEW}"
+  },
+  "build_scope": "Fresh source-ZIP installation with matching official vLLM binaries and normal installation dependency resolution. Quantization uses the Python plugin, not vllm_exl3_c. The final native wheel is built from ZIP 72408e5 with unchanged C++ objects from the original fresh 5d93a1a build.",
+  "upstream_binary_wheel": "vllm-0.30.0-cp38-abi3-manylinux_2_28_aarch64.whl",
+  "native_wheel": "exllamav3-1.5.2+fuzev.v1.0-cp312-cp312-linux_aarch64.whl",
+  "native_wheel_build_command": [
+    "${FUZEV_NATIVE_VENV}/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    "--no-build-isolation",
+    "--no-deps",
+    "${FUZEV_NATIVE_SOURCES}/exllamav3-fuzev",
+    "--wheel-dir",
+    "${FUZEV_WHEELS}"
+  ],
+  "native_wheel_build_environment": {
+    "MAX_JOBS": "4",
+    "CPLUS_INCLUDE_PATH": "${FUZEV_NATIVE_VENV}/lib/python3.12/site-packages/nvidia/cu13/include",
+    "LIBRARY_PATH": "${FUZEV_NATIVE_VENV}/lib/python3.12/site-packages/nvidia/cu13/lib"
+  },
+  "wheel_dependency_scope": "--no-deps applies only to the wheel BUILD. All INSTALL commands resolve dependencies normally. Only the older exllamav3 distribution was uninstalled before installing the final native wheel.",
+  "recorded_install_commands": [
+    "export MAX_JOBS=4",
+    "python3 -m venv \"${FUZEV_VENV}\"",
+    ". \"${FUZEV_VENV}/bin/activate\"",
+    "python -m pip install --upgrade pip",
+    "python -m pip install 'setuptools>=77' wheel packaging ninja",
+    "python -m pip install 'torch==2.13.0' --index-url https://download.pytorch.org/whl/cu130",
+    "for name in vllm-fuzev fuzev-runtime fuzev-vllm-plugin vllm-exl3-plugin; do python -m zipfile -e \"${SOURCE_ZIPS}/$name.zip\" \"${FUZEV_ENGINE_SOURCES}\"; done",
+    "VLLM_USE_PRECOMPILED=1 VLLM_PRECOMPILED_WHEEL_LOCATION=\"${UPSTREAM_VLLM_WHEEL}\" python -m pip install \"${FUZEV_ENGINE_SOURCES}/vllm-fuzev\"",
+    "python -m pip install \"${FUZEV_WHEELS}\"/exllamav3-*.whl",
+    "python -m pip install \"${FUZEV_ENGINE_SOURCES}/fuzev-runtime\" \"${FUZEV_ENGINE_SOURCES}/fuzev-vllm-plugin\" \"${FUZEV_ENGINE_SOURCES}/vllm-exl3-plugin\"",
+    "python -m pip install \"${FUZEV_FINAL_SOURCES}/fuzev-runtime\" \"${FUZEV_FINAL_SOURCES}/fuzev-vllm-plugin\"",
+    "\"${FUZEV_VENV}/bin/python\" -m pip install \"${FUZEV_WHEELS}/exllamav3-1.5.2+fuzev.v1.0-cp312-cp312-linux_aarch64.whl\"",
+    "python -m pip install \"flashinfer-jit-cache==$(python -c 'from importlib.metadata import version; print(version(\"flashinfer-python\"))')\" --index-url https://flashinfer.ai/whl/cu130"
+  ],
+  "environment": {
+    "MAX_JOBS": "4",
+    "VLLM_USE_V2_MODEL_RUNNER": "0",
+    "VLLM_PLUGINS": "vllm_exl3",
+    "VLLM_EXL3_NGRAM_TABLE": "disk"
+  },
+  "engine_config": {
+    "model": "${EXL3_SERVING_VIEW}",
+    "quantization": "exl3",
+    "engram_config": {
+      "cpu_offload": false
+    },
+    "async_scheduling": false,
+    "gpu_memory_utilization": 0.75,
+    "max_model_len": 8192,
+    "max_num_seqs": 4,
+    "load_format": "safetensors",
+    "safetensors_load_strategy": "lazy",
+    "compilation_config": {
+      "cudagraph_mode": "PIECEWISE",
+      "splitting_ops": [
+        "vllm::unified_attention_with_output",
+        "vllm::unified_mla_attention_with_output",
+        "vllm::mamba_mixer2",
+        "vllm::mamba_mixer",
+        "vllm::short_conv",
+        "vllm::qwen4_exp_ple_short_conv",
+        "vllm::qwen4_exp_qsa_with_output",
+        "vllm::linear_attention",
+        "vllm::qwen_gdn_attention_core",
+        "vllm::qwen_gdn_attention_core_fused_norm_packed",
+        "vllm::gdn_attention_core_xpu",
+        "vllm::olmo_hybrid_gdn_full_forward",
+        "vllm::sparse_attn_indexer",
+        "vllm::rocm_aiter_sparse_attn_indexer",
+        "vllm::deepseek_v4_attention",
+        "vllm::hpc_rope_norm_forward",
+        "vllm::unified_kv_cache_update",
+        "vllm::unified_mla_kv_cache_update",
+        "vllm::exl3_ngram_lookup_out"
+      ]
+    }
+  },
+  "observed_engine_settings": {
+    "dtype": "bfloat16",
+    "kv_cache_dtype": "auto (BF16)",
+    "speculative_config": null,
+    "engram_cpu_offload": false,
+    "ngram_table": "disk",
+    "cudagraph_mode": "PIECEWISE",
+    "max_num_batched_tokens": 2048,
+    "available_kv_cache_gib": 19.84
+  },
+  "command": [
+    "${FUZEV_VENV}/bin/fuzev-vllm",
+    "--engine-config",
+    "${EXL3_ENGINE_CONFIG}",
+    "--model-name",
+    "qwen-flash-next-exl3",
+    "--head-directory",
+    "${FUZEV_HEAD_DIRECTORY}",
+    "--head-device",
+    "cpu",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8000"
+  ],
+  "request_method": "POST",
+  "request_url": "http://localhost:8000/v1/systemone",
+  "request_headers": {
+    "Content-Type": "application/json",
+    "X-TypeSafe-Request-ID": "smoke-1"
+  },
+  "request": {
+    "state": {
+      "message": "Please refund the duplicate charge."
+    },
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the customer request a refund?"
+      },
+      "intent": {
+        "type": "choice",
+        "criteria": {
+          "refund": "Request a refund",
+          "shipping": "Track delivery"
+        }
+      },
+      "clarity": {
+        "type": "score",
+        "criteria": [
+          "unclear",
+          "clear"
+        ]
+      }
+    }
+  },
+  "packages": {
+    "torch": "2.13.0+cu130",
+    "vllm": "0.30.0+fuzev.v1.0.precompiled",
+    "exllamav3": "1.5.2+fuzev.v1.0",
+    "fuzev-runtime": "1.0.0",
+    "fuzev-vllm-plugin": "1.0.0",
+    "fuzev-exllamav3-plugin": "1.0.0",
+    "vllm-exl3": "0.5.0+fuzev.v1.0",
+    "flashinfer-python": "0.6.18.post1",
+    "flashinfer-jit-cache": "0.6.18.post1+cu130"
+  },
+  "ok": true,
+  "health": {
+    "status": "ok",
+    "model": "qwen-flash-next-exl3",
+    "context_window": 8192,
+    "capabilities": {
+      "generation": true,
+      "decisions": true,
+      "images": true,
+      "streaming": true
+    }
+  },
+  "http_status": 200,
+  "request_id": "smoke-1",
+  "response": {
+    "model": "qwen-flash-next-exl3",
+    "answers": {
+      "refund": {
+        "type": "noul",
+        "noul": 0.9893544912338257
+      },
+      "intent": {
+        "type": "choice",
+        "choice": "refund",
+        "confidence": 0.9671566486358643,
+        "probabilities": {
+          "refund": 0.9835783243179321,
+          "shipping": 0.016421692445874214
+        }
+      },
+      "clarity": {
+        "type": "score",
+        "score": 0.8786213397979736,
+        "confidence": 0.7572426497936249,
+        "legend": {
+          "0": "unclear",
+          "1": "clear"
+        },
+        "probabilities": {
+          "0": 0.12137867510318756,
+          "1": 0.8786213397979736
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 215
+    },
+    "latency_ms": 1328.0425290031417
+  },
+  "exit_code": -15,
+  "peak_host_used_bytes": 104181092352,
+  "peak_container_bytes": 44140683264,
+  "container_memory_limit": "107374182400",
+  "wrapper_exit_code": 0,
+  "host_memory_metric": "Maximum of one-second samples of host-wide MemTotal minus MemAvailable; not isolated engine RSS or dedicated GPU memory.",
+  "container_memory_metric": "The container cgroup memory.peak includes its prior build/run history and is not GPU memory.",
+  "shutdown": {
+    "stop_method": "Wrapper sends SIGTERM for normal operator stop",
+    "application_shutdown_complete": true,
+    "engine_manager_stopped": true,
+    "force_kill_warning_observed": false
+  },
+  "earlier_failed_attempt": {
+    "engine_config_difference": "Original engine JSON omitted engram_config; the corrected config only added cpu_offload=false.",
+    "failure": "Qwen4ExpPLEPinnedHostEmbedding expected a raw .weight tensor before weights loaded; the packed quantization plugin owns storage.",
+    "exit_code": 3,
+    "http_response_observed": false,
+    "peak_host_used_bytes": 12161536000
+  }
+}

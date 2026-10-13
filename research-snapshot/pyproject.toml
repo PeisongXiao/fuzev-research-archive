@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fuzev-research"
+version = "1.0.0"
+description = "Reproducible frozen-backbone fused generation and decision experiments"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{name = "Peisong Xiao"}]
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "psutil>=6,<8", "numpy>=2,<3", "huggingface-hub>=0.30,<2", "safetensors>=0.5,<1", "pillow>=11,<13", "httpx>=0.28,<1", "pydantic>=2,<3"]
+
+[project.optional-dependencies]
+data = ["datasets>=3,<5", "imagehash>=4,<5", "pyarrow>=15"]
+test = ["pytest>=8,<10"]
+dashboard = ["playwright>=1.50,<2"]
+
+[project.scripts]
+fuzev-research = "fuzev_research.cli:main"
+
+[tool.setuptools.package-data]
+fuzev_research = ["static/*", "templates/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

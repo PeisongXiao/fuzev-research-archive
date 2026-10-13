@@ -1,0 +1,275 @@
+{
+  "status": "completed",
+  "processed": 5075,
+  "total": 5075,
+  "passed": 3867,
+  "pass_rate": 0.7619704433497537,
+  "elapsed_seconds": 6542.40414948808,
+  "frozen_postcheck_status": "pass",
+  "experimental": true,
+  "calibrated": false,
+  "metric_weighting": "Unweighted descriptive fixed-panel means; not population estimates or a quality gate",
+  "panels": {
+    "original-fixed": {
+      "metrics": {
+        "boolq/noul/text/boolean_truth:tie_aware_accuracy": {
+          "n": 300,
+          "mean": 0.91
+        },
+        "boolq/noul/text/boolean_truth:accuracy": {
+          "n": 300,
+          "mean": 0.91
+        },
+        "helpsteer2/choice/text/main:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.82
+        },
+        "helpsteer2/ordinal/text/coherence:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.7
+        },
+        "helpsteer2/ordinal/text/coherence:accuracy": {
+          "n": 100,
+          "mean": 0.7
+        },
+        "helpsteer2/ordinal/text/coherence:raw_probability_ordinal_mae": {
+          "n": 100,
+          "mean": 0.49385624620772434
+        },
+        "helpsteer2/ordinal/text/complexity:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.67
+        },
+        "helpsteer2/ordinal/text/complexity:accuracy": {
+          "n": 100,
+          "mean": 0.67
+        },
+        "helpsteer2/ordinal/text/complexity:raw_probability_ordinal_mae": {
+          "n": 100,
+          "mean": 0.43349426520755513
+        },
+        "helpsteer2/ordinal/text/correctness:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.48
+        },
+        "helpsteer2/ordinal/text/correctness:accuracy": {
+          "n": 100,
+          "mean": 0.48
+        },
+        "helpsteer2/ordinal/text/correctness:raw_probability_ordinal_mae": {
+          "n": 100,
+          "mean": 0.9209907308686525
+        },
+        "helpsteer2/ordinal/text/helpfulness:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.46
+        },
+        "helpsteer2/ordinal/text/helpfulness:accuracy": {
+          "n": 100,
+          "mean": 0.46
+        },
+        "helpsteer2/ordinal/text/helpfulness:raw_probability_ordinal_mae": {
+          "n": 100,
+          "mean": 0.8084272907255218
+        },
+        "helpsteer2/ordinal/text/verbosity:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.71
+        },
+        "helpsteer2/ordinal/text/verbosity:accuracy": {
+          "n": 100,
+          "mean": 0.71
+        },
+        "helpsteer2/ordinal/text/verbosity:raw_probability_ordinal_mae": {
+          "n": 100,
+          "mean": 0.3939366034558043
+        },
+        "helpsteer3/choice/text/main:tie_aware_accuracy": {
+          "n": 200,
+          "mean": 0.795
+        },
+        "helpsteer3/choice/text/main:accuracy": {
+          "n": 190,
+          "mean": 0.7842105263157895
+        },
+        "mm-rlhf/choice/image/best_response:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.7933333333333333
+        },
+        "mm-rlhf/choice/image/pairwise_preference:tie_aware_accuracy": {
+          "n": 250,
+          "mean": 0.904
+        },
+        "mm-rlhf/choice/image/pairwise_preference:accuracy": {
+          "n": 180,
+          "mean": 0.8666666666666667
+        },
+        "qasper/noul/text/answerability:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.91
+        },
+        "qasper/noul/text/answerability:accuracy": {
+          "n": 94,
+          "mean": 0.9042553191489362
+        },
+        "qasper/noul/text/evidence:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.8466666666666667
+        },
+        "qasper/noul/text/evidence:accuracy": {
+          "n": 130,
+          "mean": 0.823076923076923
+        },
+        "qasper/noul/text/yes_no:tie_aware_accuracy": {
+          "n": 50,
+          "mean": 0.86
+        },
+        "qasper/noul/text/yes_no:accuracy": {
+          "n": 44,
+          "mean": 0.8409090909090909
+        },
+        "vl-rewardbench/choice/image/official_heldout_preference:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.69
+        },
+        "vl-rewardbench/choice/image/official_heldout_preference:accuracy": {
+          "n": 100,
+          "mean": 0.69
+        },
+        "vl-rewardbench/noul/image/pairwise_preference_yes_no:tie_aware_accuracy": {
+          "n": 100,
+          "mean": 0.77
+        },
+        "vl-rewardbench/noul/image/pairwise_preference_yes_no:accuracy": {
+          "n": 100,
+          "mean": 0.77
+        },
+        "helpsteer2/choice/text/main:accuracy": {
+          "n": 78,
+          "mean": 0.7692307692307693
+        },
+        "mm-rlhf/choice/image/best_response:accuracy": {
+          "n": 103,
+          "mean": 0.8155339805825242
+        }
+      }
+    },
+    "kev-development": {
+      "metrics": {
+        "sata_bench:tie_aware_accuracy": {
+          "n": 959,
+          "mean": 0.8550573514077163
+        },
+        "sata_bench:accuracy": {
+          "n": 959,
+          "mean": 0.8550573514077163
+        },
+        "bfcl:tie_aware_accuracy": {
+          "n": 306,
+          "mean": 0.9379084967320261
+        },
+        "bfcl:accuracy": {
+          "n": 306,
+          "mean": 0.9379084967320261
+        },
+        "bright:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.6733333333333333
+        },
+        "bright:accuracy": {
+          "n": 150,
+          "mean": 0.6733333333333333
+        },
+        "clinc150:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.98
+        },
+        "clinc150:accuracy": {
+          "n": 150,
+          "mean": 0.98
+        },
+        "chessbench:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.30666666666666664
+        },
+        "chessbench:accuracy": {
+          "n": 150,
+          "mean": 0.30666666666666664
+        },
+        "toolret:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.6133333333333333
+        },
+        "toolret:accuracy": {
+          "n": 150,
+          "mean": 0.6133333333333333
+        },
+        "hellaswag:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.88
+        },
+        "hellaswag:accuracy": {
+          "n": 150,
+          "mean": 0.88
+        },
+        "musr:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.6866666666666666
+        },
+        "musr:accuracy": {
+          "n": 150,
+          "mean": 0.6866666666666666
+        },
+        "cfcolor:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.4866666666666667
+        },
+        "cfcolor:accuracy": {
+          "n": 150,
+          "mean": 0.4866666666666667
+        },
+        "sgd:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.7133333333333334
+        },
+        "sgd:accuracy": {
+          "n": 150,
+          "mean": 0.7133333333333334
+        },
+        "routerbench:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.32666666666666666
+        },
+        "routerbench:accuracy": {
+          "n": 150,
+          "mean": 0.32666666666666666
+        },
+        "contractnli:tie_aware_accuracy": {
+          "n": 160,
+          "mean": 0.75
+        },
+        "contractnli:accuracy": {
+          "n": 160,
+          "mean": 0.75
+        },
+        "humicroedit:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.56
+        },
+        "humicroedit:accuracy": {
+          "n": 150,
+          "mean": 0.56
+        },
+        "apibank:tie_aware_accuracy": {
+          "n": 150,
+          "mean": 0.92
+        },
+        "apibank:accuracy": {
+          "n": 150,
+          "mean": 0.92
+        }
+      }
+    }
+  },
+  "kev_scoring": "Canonical official-order rows with logits; Main runs official score_system/bootstrap separately"
+}

@@ -1,0 +1,208 @@
+{
+  "status": "passed",
+  "scope": "recorded engine settings plus head; functional smoke only",
+  "quality_scored": false,
+  "head_tuning": false,
+  "expected_runtime": {
+    "model": "NVIDIAFlashNextHF",
+    "provenance.runtime_cell.quantization": "modelopt_mixed",
+    "provenance.runtime_cell.memory_fraction": 0.85,
+    "provenance.runtime_cell.context_window": 262144,
+    "provenance.runtime_cell.max_num_seqs": 4,
+    "provenance.runtime_cell.max_num_batched_tokens": 8192,
+    "provenance.runtime_cell.cache_dtype_config": "fp8_e4m3",
+    "provenance.runtime_cell.prefix_caching": true,
+    "provenance.runtime_cell.chunked_prefill": true,
+    "provenance.runtime_cell.enforce_eager": false,
+    "provenance.runtime_cell.cudagraph_mode": "PIECEWISE",
+    "provenance.runtime_cell.splitting_ops": [
+      "vllm::unified_attention_with_output",
+      "vllm::unified_mla_attention_with_output",
+      "vllm::mamba_mixer2",
+      "vllm::mamba_mixer",
+      "vllm::short_conv",
+      "vllm::qwen4_exp_ple_short_conv",
+      "vllm::qwen4_exp_qsa_with_output",
+      "vllm::linear_attention",
+      "vllm::qwen_gdn_attention_core",
+      "vllm::qwen_gdn_attention_core_fused_norm_packed",
+      "vllm::gdn_attention_core_xpu",
+      "vllm::olmo_hybrid_gdn_full_forward",
+      "vllm::sparse_attn_indexer",
+      "vllm::rocm_aiter_sparse_attn_indexer",
+      "vllm::deepseek_v4_attention",
+      "vllm::hpc_rope_norm_forward",
+      "vllm::unified_kv_cache_update",
+      "vllm::unified_mla_kv_cache_update",
+      "vllm::qwen4_exp_ple_mmap_lookup_out"
+    ],
+    "provenance.runtime_cell.loader": {
+      "format": "safetensors",
+      "safetensors_strategy": "lazy"
+    },
+    "provenance.runtime_cell.additional_config": {
+      "ple_storage": "mmap",
+      "fuzev": {
+        "enabled": true
+      }
+    },
+    "provenance.runtime_cell.image_processor_kwargs": {
+      "truncation": false
+    },
+    "provenance.runtime_cell.speculative_decoding": true,
+    "provenance.runtime_cell.speculative_config.method": "mtp",
+    "provenance.runtime_cell.speculative_config.num_speculative_tokens": 3
+  },
+  "max_concurrent_requests": 2,
+  "requested_generation_tokens": 256,
+  "generation_chat_template_kwargs": null,
+  "cache_isolation": [
+    {
+      "kind": "foreign_or_missing",
+      "http_status": 404,
+      "active_requests": 0,
+      "active_engine_requests": 0,
+      "retained_prefixes": 2
+    },
+    {
+      "kind": "released",
+      "http_status": 404,
+      "active_requests": 0,
+      "active_engine_requests": 0,
+      "retained_prefixes": 1
+    }
+  ],
+  "health_before": {
+    "status": "ok",
+    "model": "NVIDIAFlashNextHF",
+    "experimental": true,
+    "calibration": "raw",
+    "context_window": 262144,
+    "memory_fraction_limit": 0.85,
+    "validation_memory_fraction": 0.75,
+    "max_active_engine_requests": 4,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "head_loaded": true,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "trusted_still_images": true,
+      "images": true,
+      "streaming": false,
+      "checkpoint_retention": false
+    }
+  },
+  "health_after": {
+    "status": "ok",
+    "model": "NVIDIAFlashNextHF",
+    "experimental": true,
+    "calibration": "raw",
+    "context_window": 262144,
+    "memory_fraction_limit": 0.85,
+    "validation_memory_fraction": 0.75,
+    "max_active_engine_requests": 4,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "head_loaded": true,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "trusted_still_images": true,
+      "images": true,
+      "streaming": false,
+      "checkpoint_retention": false
+    }
+  },
+  "speculative_activity": {
+    "verified": true,
+    "bookend_positions_with_drafts": [
+      "before",
+      "after"
+    ],
+    "scope": "at least one before/after generation with engine-reported num_draft_tokens > 0"
+  },
+  "generations": [
+    {
+      "position": "before",
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.423076923076923,
+        "draft_acceptance_rate": 0.8076923076923077,
+        "acceptance_histogram": [
+          1,
+          3,
+          6,
+          16
+        ],
+        "num_spec_steps": 26,
+        "num_accepted_draft_tokens": 63,
+        "num_draft_tokens": 78,
+        "num_spec_tokens": 3
+      },
+      "usage": {
+        "prompt_tokens": 2419,
+        "completion_tokens": 90,
+        "total_tokens": 2509,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "position": "alongside",
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.1,
+        "draft_acceptance_rate": 0.7,
+        "acceptance_histogram": [
+          8,
+          9,
+          3,
+          30
+        ],
+        "num_spec_steps": 50,
+        "num_accepted_draft_tokens": 105,
+        "num_draft_tokens": 150,
+        "num_spec_tokens": 3
+      },
+      "usage": {
+        "prompt_tokens": 2419,
+        "completion_tokens": 154,
+        "total_tokens": 2573,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "position": "after",
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.076923076923077,
+        "draft_acceptance_rate": 0.6923076923076923,
+        "acceptance_histogram": [
+          4,
+          2,
+          8,
+          12
+        ],
+        "num_spec_steps": 26,
+        "num_accepted_draft_tokens": 54,
+        "num_draft_tokens": 78,
+        "num_spec_tokens": 3
+      },
+      "usage": {
+        "prompt_tokens": 2419,
+        "completion_tokens": 81,
+        "total_tokens": 2500,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    }
+  ],
+  "fresh_decision_requests": 5,
+  "distinct_decision_engine_requests": 15
+}

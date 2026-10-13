@@ -1,0 +1,96 @@
+{
+  "status": "observed-serving-capacity",
+  "scope": "independent serving capacity only, not state correctness",
+  "window_tokens": 262144,
+  "accepted_prefix_tokens": 3,
+  "experimental": true,
+  "calibrated": false,
+  "metadata": {
+    "window_tokens": 262144,
+    "model_name": "native-4.05",
+    "head_execution_device": "cuda:0",
+    "backbone_weight_bytes_verified": false,
+    "head_checkpoint_verified": true
+  },
+  "memory": {
+    "cuda_peak_allocated_bytes": 82111987200,
+    "cuda_peak_reserved_bytes": 82208358400
+  },
+  "generation": {
+    "usage": {
+      "prompt_tokens": 2,
+      "completion_tokens": 1,
+      "total_tokens": 3
+    },
+    "consumed_tokens": 2,
+    "phase_timing": {
+      "schema_version": 1,
+      "source": "native-owner-cpu-observed",
+      "status": "available",
+      "reason": null,
+      "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+      "prefill_seconds": 4.60119491093792,
+      "decode_seconds": 0,
+      "queue_seconds": null,
+      "prompt_tokens": 2,
+      "completion_tokens": 1,
+      "decode_tokens": 0,
+      "reported_cached_prompt_tokens": 0,
+      "num_preemptions": null
+    }
+  },
+  "decisions": [
+    {
+      "primitive": "choice",
+      "maximum_branch_tokens": 51,
+      "execution": {
+        "mode": "checkpoint",
+        "logical_prefix_tokens": 3,
+        "reused_tokens": 2,
+        "replayed_tokens": 0,
+        "forwarded_tokens": 56,
+        "consumed_tokens": 44,
+        "feature_tap": "final-mixer/post-collapse/before-lm-head"
+      }
+    },
+    {
+      "primitive": "noul",
+      "maximum_branch_tokens": 50,
+      "execution": {
+        "mode": "checkpoint",
+        "logical_prefix_tokens": 3,
+        "reused_tokens": 2,
+        "replayed_tokens": 0,
+        "forwarded_tokens": 55,
+        "consumed_tokens": 43,
+        "feature_tap": "final-mixer/post-collapse/before-lm-head"
+      }
+    },
+    {
+      "primitive": "ordinal",
+      "maximum_branch_tokens": 54,
+      "execution": {
+        "mode": "checkpoint",
+        "logical_prefix_tokens": 3,
+        "reused_tokens": 2,
+        "replayed_tokens": 0,
+        "forwarded_tokens": 59,
+        "consumed_tokens": 46,
+        "feature_tap": "final-mixer/post-collapse/before-lm-head"
+      }
+    },
+    {
+      "primitive": "choice",
+      "maximum_branch_tokens": 262144,
+      "execution": {
+        "mode": "checkpoint",
+        "logical_prefix_tokens": 3,
+        "reused_tokens": 2,
+        "replayed_tokens": 0,
+        "forwarded_tokens": 262151,
+        "consumed_tokens": 262135,
+        "feature_tap": "final-mixer/post-collapse/before-lm-head"
+      }
+    }
+  ]
+}

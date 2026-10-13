@@ -1,0 +1,1766 @@
+{
+  "cell": "native-4.05",
+  "status": "completed",
+  "quality_scored": false,
+  "policy": {
+    "schema": "fuzev-small-performance-v2",
+    "cells": [
+      "native-4.05",
+      "native-3.05",
+      "native-5.05",
+      "vllm-nvidia",
+      "vllm-radixark",
+      "vllm-exl3-4.05"
+    ],
+    "workloads": 1,
+    "prompt": "short Python file; actual engine token counts recorded",
+    "generation_input": "chat messages through the fixed template, thinking disabled",
+    "modes": [
+      "generation",
+      "decision",
+      "mixed"
+    ],
+    "streams": [
+      1,
+      4
+    ],
+    "warmup_waves": 1,
+    "measured_waves": 3,
+    "requested_generation_tokens": 32,
+    "sampling": {
+      "temperature": 1,
+      "top_p": 0.95,
+      "top_k": 20,
+      "seed": 17,
+      "min_p": 0,
+      "presence_penalty": 0,
+      "repetition_penalty": 1
+    },
+    "sampling_noops": "min_p and penalties are engine defaults/no-op; not extra request fields",
+    "head_calibration": "raw-T1, no fitting or model selection",
+    "cache_policy": "unique leading nonce for every pipeline/wave; within-pipeline AB reuse is intentional",
+    "baseline": "cross-configuration panel only; not a stock/fused speedup or fair comparison to the old unmatched-prefix run",
+    "quality_scored": false
+  },
+  "rows": [
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 1.8503428580006585,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.8311325389659032,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4708068110048771,
+            "decode_seconds": 1.3507278169272467,
+            "queue_seconds": null,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 1.8138743470190093,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.8121334919705987,
+          "generation_usage": {
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "total_tokens": 474
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4698888580314815,
+            "decode_seconds": 1.3279627199517563,
+            "queue_seconds": null,
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 1.8382848710753024,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.8185067899757996,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4745380460517481,
+            "decode_seconds": 1.3330959470476955,
+            "queue_seconds": null,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 1.830382653977722,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.828851206926629,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4673473470611498,
+            "decode_seconds": 1.3477937399875373,
+            "queue_seconds": null,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 7.336749834008515,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.813949809060432,
+          "generation_usage": {
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "total_tokens": 481
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4735673579853028,
+            "decode_seconds": 1.3289896200876683,
+            "queue_seconds": null,
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 7.316877544042654,
+          "generation_usage": {
+            "prompt_tokens": 452,
+            "completion_tokens": 32,
+            "total_tokens": 484
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4838230540044606,
+            "decode_seconds": 1.3224861200433224,
+            "queue_seconds": null,
+            "prompt_tokens": 452,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.638906502048485,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.46917097398545593,
+            "decode_seconds": 1.344029751024209,
+            "queue_seconds": null,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 5.498694016947411,
+          "generation_usage": {
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "total_tokens": 483
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47942684299778193,
+            "decode_seconds": 1.3649410729994997,
+            "queue_seconds": null,
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 7.282725929981098,
+      "pipelines": [
+        {
+          "elapsed_seconds": 5.4637343239737675,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4716561770765111,
+            "decode_seconds": 1.3414519409416243,
+            "queue_seconds": null,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 1.8304720810847357,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.466822009999305,
+            "decode_seconds": 1.346515408018604,
+            "queue_seconds": null,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 7.280191247002222,
+          "generation_usage": {
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "total_tokens": 483
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4821801740908995,
+            "decode_seconds": 1.3198341449024156,
+            "queue_seconds": null,
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.6364555709296837,
+          "generation_usage": {
+            "prompt_tokens": 441,
+            "completion_tokens": 32,
+            "total_tokens": 473
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47439914697315544,
+            "decode_seconds": 1.3248115630121902,
+            "queue_seconds": null,
+            "prompt_tokens": 441,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 7.279423528932966,
+      "pipelines": [
+        {
+          "elapsed_seconds": 5.421014980063774,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4758573221042752,
+            "decode_seconds": 1.326936428900808,
+            "queue_seconds": null,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 7.260207624058239,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47066283703316003,
+            "decode_seconds": 1.3605172300012782,
+            "queue_seconds": null,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 1.80065318394918,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47476121701765805,
+            "decode_seconds": 1.3130208739312366,
+            "queue_seconds": null,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.610910399002023,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47226882504764944,
+            "decode_seconds": 1.3295075389323756,
+            "queue_seconds": null,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 7.2697533869650215,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.6606933319708332,
+          "generation_usage": {
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "total_tokens": 474
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4792320770211518,
+            "decode_seconds": 1.3506039819912985,
+            "queue_seconds": null,
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 1.823714059079066,
+          "generation_usage": {
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "total_tokens": 483
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4735318439779803,
+            "decode_seconds": 1.3324558369349688,
+            "queue_seconds": null,
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 5.4608303781133145,
+          "generation_usage": {
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "total_tokens": 481
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4811709669884294,
+            "decode_seconds": 1.307972401031293,
+            "queue_seconds": null,
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 7.248560498002917,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4732220229925588,
+            "decode_seconds": 1.308430360048078,
+            "queue_seconds": null,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 0.8824679910903797,
+      "pipelines": [
+        {
+          "elapsed_seconds": 0.8818819409934804,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 504,
+            "consumed_tokens": 485,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 0.8103253069566563,
+      "pipelines": [
+        {
+          "elapsed_seconds": 0.8095195759087801,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 439,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 503,
+            "consumed_tokens": 484,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 0.8210202490445226,
+      "pipelines": [
+        {
+          "elapsed_seconds": 0.820500022964552,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 438,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 502,
+            "consumed_tokens": 483,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 0.8136328109540045,
+      "pipelines": [
+        {
+          "elapsed_seconds": 0.812772584031336,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 444,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 508,
+            "consumed_tokens": 489,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 3.2633905599359423,
+      "pipelines": [
+        {
+          "elapsed_seconds": 0.8236746951006353,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 438,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 502,
+            "consumed_tokens": 483,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 1.6310793709708378,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 438,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 502,
+            "consumed_tokens": 483,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 2.4517118310322985,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 436,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 500,
+            "consumed_tokens": 481,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 3.2613858160329983,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 442,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 506,
+            "consumed_tokens": 487,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 3.297730293008499,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.2968792490428314,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 439,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 503,
+            "consumed_tokens": 484,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 0.8255653160158545,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 441,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 505,
+            "consumed_tokens": 486,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 1.6617305169347674,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 436,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 500,
+            "consumed_tokens": 481,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 2.482249990920536,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 504,
+            "consumed_tokens": 485,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 3.282025975990109,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.643595571978949,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 441,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 505,
+            "consumed_tokens": 486,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 2.467001126962714,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 439,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 503,
+            "consumed_tokens": 484,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 0.8245422929758206,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 433,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 497,
+            "consumed_tokens": 478,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 3.279601981979795,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 436,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 500,
+            "consumed_tokens": 481,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 3.2766170620452613,
+      "pipelines": [
+        {
+          "elapsed_seconds": 0.8209983470151201,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 437,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 501,
+            "consumed_tokens": 482,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 1.6354895170079544,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 504,
+            "consumed_tokens": 485,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 2.4623777479864657,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 504,
+            "consumed_tokens": 485,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 3.2737294980324805,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 444,
+            "reused_tokens": 0,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 508,
+            "consumed_tokens": 489,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 2.265665526036173,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.2635915329447016,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4776403789874166,
+            "decode_seconds": 1.358092888025567,
+            "queue_seconds": null,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 477,
+            "reused_tokens": 476,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 522,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 2.236409300006926,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.234966238029301,
+          "generation_usage": {
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "total_tokens": 480
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47362734004855156,
+            "decode_seconds": 1.341204502969049,
+            "queue_seconds": null,
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 480,
+            "reused_tokens": 479,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 525,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 2.2796506449813023,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.277826381032355,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.48478185303974897,
+            "decode_seconds": 1.3819585369201377,
+            "queue_seconds": null,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 475,
+            "reused_tokens": 474,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 520,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 2.1969326559919864,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.195704043027945,
+          "generation_usage": {
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "total_tokens": 480
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47686295793391764,
+            "decode_seconds": 1.310155006009154,
+            "queue_seconds": null,
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 480,
+            "reused_tokens": 479,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 525,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 8.7874946690863,
+      "pipelines": [
+        {
+          "elapsed_seconds": 7.60183991107624,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47152221703436226,
+            "decode_seconds": 1.3293736210325733,
+            "queue_seconds": null,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 477,
+            "reused_tokens": 476,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 522,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 7.992746880976483,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4794022840214893,
+            "decode_seconds": 1.3058000219753012,
+            "queue_seconds": null,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 476,
+            "reused_tokens": 475,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 521,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.394704825943336,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4689689780352637,
+            "decode_seconds": 1.3145925909047946,
+            "queue_seconds": null,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 475,
+            "reused_tokens": 474,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 520,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.783781164092943,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.46991311106830835,
+            "decode_seconds": 1.3006850809324533,
+            "queue_seconds": null,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 478,
+            "reused_tokens": 477,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 523,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 8.869645048980601,
+      "pipelines": [
+        {
+          "elapsed_seconds": 7.691257871920243,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4680633780080825,
+            "decode_seconds": 1.3613033948931843,
+            "queue_seconds": null,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 476,
+            "reused_tokens": 475,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 521,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.075998148997314,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47183049900922924,
+            "decode_seconds": 1.3358808909542859,
+            "queue_seconds": null,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 477,
+            "reused_tokens": 476,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 522,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.866560347029008,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.473355580936186,
+            "decode_seconds": 1.32182863203343,
+            "queue_seconds": null,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 478,
+            "reused_tokens": 477,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 523,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.473751202924177,
+          "generation_usage": {
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "total_tokens": 474
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4726213209796697,
+            "decode_seconds": 1.344731541001238,
+            "queue_seconds": null,
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 474,
+            "reused_tokens": 473,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 519,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 8.785423903958872,
+      "pipelines": [
+        {
+          "elapsed_seconds": 7.992451923084445,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4687972469255328,
+            "decode_seconds": 1.3275840610731393,
+            "queue_seconds": null,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 476,
+            "reused_tokens": 475,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 521,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 7.59864150499925,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4706762610003352,
+            "decode_seconds": 1.3180695369374007,
+            "queue_seconds": null,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 475,
+            "reused_tokens": 474,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 520,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.78271226095967,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47944308700971305,
+            "decode_seconds": 1.313741386984475,
+            "queue_seconds": null,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 477,
+            "reused_tokens": 476,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 522,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.392479057074524,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4819566799560562,
+            "decode_seconds": 1.3022078460780904,
+            "queue_seconds": null,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 478,
+            "reused_tokens": 477,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 523,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 8.914554854040034,
+      "pipelines": [
+        {
+          "elapsed_seconds": 7.713337940978818,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.47365565702784806,
+            "decode_seconds": 1.3221496710320935,
+            "queue_seconds": null,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 479,
+            "reused_tokens": 478,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 524,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.912663133000024,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4764519779710099,
+            "decode_seconds": 1.3137846239842474,
+            "queue_seconds": null,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 475,
+            "reused_tokens": 474,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 520,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.119152000988834,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4881924729561433,
+            "decode_seconds": 1.4110699279699475,
+            "queue_seconds": null,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 478,
+            "reused_tokens": 477,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 523,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        },
+        {
+          "elapsed_seconds": 8.509168762015179,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "native-owner-cpu-observed",
+            "status": "available",
+            "reason": null,
+            "scope": "prompt forward through first CPU sample; first to last CPU sample; not GPU-kernel-only",
+            "prefill_seconds": 0.4789616190828383,
+            "decode_seconds": 1.3113514579599723,
+            "queue_seconds": null,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": null
+          },
+          "decision_execution": {
+            "mode": "checkpoint",
+            "logical_prefix_tokens": 479,
+            "reused_tokens": 478,
+            "replayed_tokens": 0,
+            "forwarded_tokens": 65,
+            "consumed_tokens": 524,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head"
+          }
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "mode": "generation",
+      "streams": 1,
+      "mean_pipeline_seconds": 1.819830496291009,
+      "mean_wave_seconds": 1.8275139573573445,
+      "mean_prefill_tokens_per_second": 944.252268865081,
+      "mean_decode_tokens_per_second": 23.199573658080435,
+      "observed_generation_prompt_tokens": [
+        442,
+        444,
+        447
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "mean_pipeline_seconds": 4.541453139769146,
+      "mean_wave_seconds": 7.277300948626362,
+      "mean_prefill_tokens_per_second": 939.7054188114693,
+      "mean_decode_tokens_per_second": 23.30870584571589,
+      "observed_generation_prompt_tokens": [
+        441,
+        442,
+        443,
+        445,
+        446,
+        447,
+        449,
+        451
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "mean_pipeline_seconds": 0.8142640609682227,
+      "mean_wave_seconds": 0.8149927889850611,
+      "mean_prefill_tokens_per_second": null,
+      "mean_decode_tokens_per_second": null,
+      "observed_generation_prompt_tokens": [],
+      "observed_generation_completion_tokens": [],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "mean_pipeline_seconds": 2.056146763071107,
+      "mean_wave_seconds": 3.285457777014623,
+      "mean_prefill_tokens_per_second": null,
+      "mean_decode_tokens_per_second": null,
+      "observed_generation_prompt_tokens": [],
+      "observed_generation_completion_tokens": [],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "mean_pipeline_seconds": 2.236165554029867,
+      "mean_wave_seconds": 2.2376642003267384,
+      "mean_prefill_tokens_per_second": 933.0592299653493,
+      "mean_decode_tokens_per_second": 23.068935481051586,
+      "observed_generation_prompt_tokens": [
+        443,
+        448
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "mean_pipeline_seconds": 8.260681179497624,
+      "mean_wave_seconds": 8.856541268993169,
+      "mean_prefill_tokens_per_second": 935.9464749283151,
+      "mean_decode_tokens_per_second": 23.283927019429665,
+      "observed_generation_prompt_tokens": [
+        442,
+        443,
+        444,
+        445,
+        446,
+        447
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    }
+  ],
+  "health_before": {
+    "gpu_owner_threads": 1,
+    "max_queued_requests": 4
+  }
+}

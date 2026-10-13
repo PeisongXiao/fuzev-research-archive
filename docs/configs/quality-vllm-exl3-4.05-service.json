@@ -1,0 +1,23 @@
+{
+  "model_name": "vllm-exl3-4.05",
+  "head_directory": "${HEAD_DIRECTORY}",
+  "config_sha256": "a94aa3794235ee86f4ee6959bd31b992307bd591be99b5510d266a5cfae38f6c",
+  "image_root": "${FUZEV_ROOT}/data/images",
+  "head_id": "reference",
+  "calibration": "raw",
+  "feature_identity": {
+    "encoding": {
+      "candidate_features": "independent candidate suffix from identical query prefix",
+      "chat_template_sha256": "8a43601f6fb34fc5e43acc965cd79baa23dae63c099d58efce95ee3b35d38c6b",
+      "readout": "last consumed token, post-collapse, FP32 owned copy",
+      "thinking": false,
+      "version": "fuzev-candidate-branches-v1"
+    },
+    "feature_tap": "final-mixer/post-collapse/before-lm-head",
+    "hidden_size": 2560,
+    "reference_backbone": {
+      "repo": "turboderp/Qwen3.8-Flash-Next-exl3",
+      "revision": "55a732e0c4c3d4614bc42b68493bb930d9b02c0a"
+    }
+  }
+}

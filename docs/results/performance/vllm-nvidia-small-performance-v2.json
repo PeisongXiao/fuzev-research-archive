@@ -1,0 +1,2402 @@
+{
+  "cell": "vllm-nvidia",
+  "status": "completed",
+  "quality_scored": false,
+  "policy": {
+    "schema": "fuzev-small-performance-v2",
+    "cells": [
+      "native-4.05",
+      "native-3.05",
+      "native-5.05",
+      "vllm-nvidia",
+      "vllm-radixark",
+      "vllm-exl3-4.05"
+    ],
+    "workloads": 1,
+    "prompt": "short Python file; actual engine token counts recorded",
+    "generation_input": "chat messages through the fixed template, thinking disabled",
+    "modes": [
+      "generation",
+      "decision",
+      "mixed"
+    ],
+    "streams": [
+      1,
+      4
+    ],
+    "warmup_waves": 1,
+    "measured_waves": 3,
+    "requested_generation_tokens": 32,
+    "sampling": {
+      "temperature": 1,
+      "top_p": 0.95,
+      "top_k": 20,
+      "seed": 17,
+      "min_p": 0,
+      "presence_penalty": 0,
+      "repetition_penalty": 1
+    },
+    "sampling_noops": "min_p and penalties are engine defaults/no-op; not extra request fields",
+    "head_calibration": "raw-T1, no fitting or model selection",
+    "cache_policy": "unique leading nonce for every pipeline/wave; within-pipeline AB reuse is intentional",
+    "baseline": "cross-configuration panel only; not a stock/fused speedup or fair comparison to the old unmatched-prefix run",
+    "quality_scored": false
+  },
+  "rows": [
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 2.9083843319676816,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.90711129095871,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9590069360565394,
+            "decode_seconds": 1.8997790570138022,
+            "queue_seconds": 0.000025728018954396248,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 2.4765825299546123,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.475502196000889,
+          "generation_usage": {
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "total_tokens": 474,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.5159099960001186,
+            "decode_seconds": 1.8830280669499189,
+            "queue_seconds": 0.000019520055502653122,
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 2.4755997590254992,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.474538578069769,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.5723523749038577,
+            "decode_seconds": 1.8797619850374758,
+            "queue_seconds": 0.000029841088689863682,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 1,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 2.4977258710423484,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.496479246998206,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.6010317620821297,
+            "decode_seconds": 1.8752237579319626,
+            "queue_seconds": 0.00004886498209089041,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 5.378532720031217,
+      "pipelines": [
+        {
+          "elapsed_seconds": 5.377323249937035,
+          "generation_usage": {
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "total_tokens": 481,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.7682900519575924,
+            "decode_seconds": 2.624249577987939,
+            "queue_seconds": 0.00001054396852850914,
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 5.376928493031301,
+          "generation_usage": {
+            "prompt_tokens": 452,
+            "completion_tokens": 32,
+            "total_tokens": 484,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.7682900519575924,
+            "decode_seconds": 2.624249577987939,
+            "queue_seconds": 0.000014384044334292412,
+            "prompt_tokens": 452,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 5.320531610981561,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9594162610592321,
+            "decode_seconds": 4.3347891320008785,
+            "queue_seconds": 0.000029039918445050716,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 5.320966401020996,
+          "generation_usage": {
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "total_tokens": 483,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9594162610592321,
+            "decode_seconds": 4.3347891320008785,
+            "queue_seconds": 0.00006054493132978678,
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 3.7975241229869425,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.7352755540050566,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.6111549510387704,
+            "decode_seconds": 3.104214851045981,
+            "queue_seconds": 0.000024143955670297146,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.7950091630918905,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.1784827869851142,
+            "decode_seconds": 1.983541153022088,
+            "queue_seconds": 0.00001364806666970253,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.7951015169965103,
+          "generation_usage": {
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "total_tokens": 483,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.1784827869851142,
+            "decode_seconds": 1.983541153022088,
+            "queue_seconds": 0.000017727958038449287,
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.7949869070434943,
+          "generation_usage": {
+            "prompt_tokens": 441,
+            "completion_tokens": 32,
+            "total_tokens": 473,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.1784827869851142,
+            "decode_seconds": 1.983541153022088,
+            "queue_seconds": 0.000010687974281609058,
+            "prompt_tokens": 441,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 3.46850505808834,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.406277755042538,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.47603086300659925,
+            "decode_seconds": 2.9123318209312856,
+            "queue_seconds": 0.000023185042664408684,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.464847875991836,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9954332370543852,
+            "decode_seconds": 1.9747307599755004,
+            "queue_seconds": 0.00001304002944380045,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.465495772077702,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9954332370543852,
+            "decode_seconds": 1.9747307599755004,
+            "queue_seconds": 0.00001767999492585659,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.4649453500751406,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9954332370543852,
+            "decode_seconds": 1.9747307599755004,
+            "queue_seconds": 0.000010399962775409222,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 3.7613107170909643,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.7595907599898055,
+          "generation_usage": {
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "total_tokens": 474,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.0096072560409084,
+            "decode_seconds": 2.2579364869743586,
+            "queue_seconds": 0.000013311975635588169,
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.758873743005097,
+          "generation_usage": {
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "total_tokens": 483,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.0096072560409084,
+            "decode_seconds": 2.2579364869743586,
+            "queue_seconds": 0.000010191928595304489,
+            "prompt_tokens": 451,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.7594669020036235,
+          "generation_usage": {
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "total_tokens": 481,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 1.0096072560409084,
+            "decode_seconds": 2.2579364869743586,
+            "queue_seconds": 0.00001742399763315916,
+            "prompt_tokens": 449,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        },
+        {
+          "elapsed_seconds": 3.700490570976399,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.47158151399344206,
+            "decode_seconds": 3.2080216290196404,
+            "queue_seconds": 0.000020655919797718525,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": null
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 1.18034787196666,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.1797737049637362,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "logical_query_tokens": 485,
+            "submitted_tokens": 1474,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 1.0444003840675578,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.043821464991197,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 439,
+            "logical_query_tokens": 484,
+            "submitted_tokens": 1471,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 1.0128370400052518,
+      "pipelines": [
+        {
+          "elapsed_seconds": 1.0122382650151849,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 438,
+            "logical_query_tokens": 483,
+            "submitted_tokens": 1468,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 0.9764957659645006,
+      "pipelines": [
+        {
+          "elapsed_seconds": 0.9760219840100035,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 444,
+            "logical_query_tokens": 489,
+            "submitted_tokens": 1486,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 3.4804640359943733,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.5768245429499075,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 438,
+            "logical_query_tokens": 483,
+            "submitted_tokens": 1468,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 2.577137297950685,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 438,
+            "logical_query_tokens": 483,
+            "submitted_tokens": 1468,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.478974033962004,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 436,
+            "logical_query_tokens": 481,
+            "submitted_tokens": 1462,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.478831071057357,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 442,
+            "logical_query_tokens": 487,
+            "submitted_tokens": 1480,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 3.757382686017081,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.830801627947949,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 439,
+            "logical_query_tokens": 484,
+            "submitted_tokens": 1471,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 2.8302438610699028,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 441,
+            "logical_query_tokens": 486,
+            "submitted_tokens": 1477,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.7551708520622924,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 436,
+            "logical_query_tokens": 481,
+            "submitted_tokens": 1462,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.755128243006766,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "logical_query_tokens": 485,
+            "submitted_tokens": 1474,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 3.2758274560328573,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.429815956042148,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 441,
+            "logical_query_tokens": 486,
+            "submitted_tokens": 1477,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 2.4299002449261025,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 439,
+            "logical_query_tokens": 484,
+            "submitted_tokens": 1471,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.273581027984619,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 433,
+            "logical_query_tokens": 478,
+            "submitted_tokens": 1453,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.272636872017756,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 436,
+            "logical_query_tokens": 481,
+            "submitted_tokens": 1462,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 3.4773513569962233,
+      "pipelines": [
+        {
+          "elapsed_seconds": 2.570694496971555,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 437,
+            "logical_query_tokens": 482,
+            "submitted_tokens": 1465,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 2.570529118995182,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "logical_query_tokens": 485,
+            "submitted_tokens": 1474,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.476379648083821,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 440,
+            "logical_query_tokens": 485,
+            "submitted_tokens": 1474,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 3.4758164410013705,
+          "generation_usage": null,
+          "generation_phase": null,
+          "decision_execution": {
+            "mode": "fresh",
+            "logical_prefix_tokens": 444,
+            "logical_query_tokens": 489,
+            "submitted_tokens": 1486,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 3.313188113970682,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.312256182078272,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.467593826004304,
+            "decode_seconds": 1.887780729914084,
+            "queue_seconds": 0.000022993073798716068,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 477,
+            "logical_query_tokens": 522,
+            "submitted_tokens": 1585,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 3.261522514047101,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.260588133940473,
+          "generation_usage": {
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "total_tokens": 480,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.5021738531067967,
+            "decode_seconds": 1.905927476938814,
+            "queue_seconds": 0.000028831884264945984,
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 480,
+            "logical_query_tokens": 525,
+            "submitted_tokens": 1594,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 3.251997703919187,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.250992411049083,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.5145683729788288,
+            "decode_seconds": 1.8846349919913337,
+            "queue_seconds": 0.00005216104909777641,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 475,
+            "logical_query_tokens": 520,
+            "submitted_tokens": 1579,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 3.2027832589810714,
+      "pipelines": [
+        {
+          "elapsed_seconds": 3.201610396965407,
+          "generation_usage": {
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "total_tokens": 480,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.47633287007920444,
+            "decode_seconds": 1.8818816129351035,
+            "queue_seconds": 0.00002776097971946001,
+            "prompt_tokens": 448,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 480,
+            "logical_query_tokens": 525,
+            "submitted_tokens": 1594,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 0,
+      "warmup": true,
+      "elapsed_seconds": 6.424408918945119,
+      "pipelines": [
+        {
+          "elapsed_seconds": 4.978797068004496,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.7223108230391517,
+            "decode_seconds": 2.7200053869746625,
+            "queue_seconds": 0.00003121607005596161,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 477,
+            "logical_query_tokens": 522,
+            "submitted_tokens": 1585,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 5.935356201021932,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.7681420140434057,
+            "decode_seconds": 2.0095397679833695,
+            "queue_seconds": 0.000011023948900401592,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 476,
+            "logical_query_tokens": 521,
+            "submitted_tokens": 1582,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 5.458208088995889,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.7223108230391517,
+            "decode_seconds": 2.7200053869746625,
+            "queue_seconds": 0.000015535973943769932,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 475,
+            "logical_query_tokens": 520,
+            "submitted_tokens": 1579,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 6.421617910033092,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.7681420140434057,
+            "decode_seconds": 2.0095397679833695,
+            "queue_seconds": 0.000015711993910372257,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 478,
+            "logical_query_tokens": 523,
+            "submitted_tokens": 1588,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 1,
+      "warmup": false,
+      "elapsed_seconds": 6.466777150053531,
+      "pipelines": [
+        {
+          "elapsed_seconds": 5.509170856908895,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.6845161999808624,
+            "decode_seconds": 2.7358440971001983,
+            "queue_seconds": 0.000015759957022964954,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 476,
+            "logical_query_tokens": 521,
+            "submitted_tokens": 1582,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 5.025727411033586,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.6845161999808624,
+            "decode_seconds": 2.7358440971001983,
+            "queue_seconds": 0.000031232950277626514,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 477,
+            "logical_query_tokens": 522,
+            "submitted_tokens": 1585,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 6.011240925057791,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.6701430310495198,
+            "decode_seconds": 2.126579785021022,
+            "queue_seconds": 0.000013872981071472168,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 478,
+            "logical_query_tokens": 523,
+            "submitted_tokens": 1588,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 6.463107889983803,
+          "generation_usage": {
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "total_tokens": 474,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.6701430310495198,
+            "decode_seconds": 2.126579785021022,
+            "queue_seconds": 0.00001009693369269371,
+            "prompt_tokens": 442,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 474,
+            "logical_query_tokens": 519,
+            "submitted_tokens": 1576,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 2,
+      "warmup": false,
+      "elapsed_seconds": 6.310985242947936,
+      "pipelines": [
+        {
+          "elapsed_seconds": 5.361489717033692,
+          "generation_usage": {
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "total_tokens": 476,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.4876959379762411,
+            "decode_seconds": 2.869369792053476,
+            "queue_seconds": 0.00002616096753627062,
+            "prompt_tokens": 444,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 476,
+            "logical_query_tokens": 521,
+            "submitted_tokens": 1582,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 6.308815871947445,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9268632879247889,
+            "decode_seconds": 2.001206746092066,
+            "queue_seconds": 0.00001731200609356165,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 475,
+            "logical_query_tokens": 520,
+            "submitted_tokens": 1579,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 5.360623802058399,
+          "generation_usage": {
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "total_tokens": 477,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9268632879247889,
+            "decode_seconds": 2.001206746092066,
+            "queue_seconds": 0.000013199984095990658,
+            "prompt_tokens": 445,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 477,
+            "logical_query_tokens": 522,
+            "submitted_tokens": 1585,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 6.307712292065844,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9268632879247889,
+            "decode_seconds": 2.001206746092066,
+            "queue_seconds": 0.000010288087651133537,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 478,
+            "logical_query_tokens": 523,
+            "submitted_tokens": 1588,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "wave": 3,
+      "warmup": false,
+      "elapsed_seconds": 6.2686716940952465,
+      "pipelines": [
+        {
+          "elapsed_seconds": 5.365118253044784,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.4443440519971773,
+            "decode_seconds": 2.868853215011768,
+            "queue_seconds": 0.000025807996280491352,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 479,
+            "logical_query_tokens": 524,
+            "submitted_tokens": 1591,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 6.266636566026136,
+          "generation_usage": {
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "total_tokens": 475,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9202501559630036,
+            "decode_seconds": 2.0073137460276484,
+            "queue_seconds": 0.00001780805177986622,
+            "prompt_tokens": 443,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 475,
+            "logical_query_tokens": 520,
+            "submitted_tokens": 1579,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 5.365182942012325,
+          "generation_usage": {
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "total_tokens": 478,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9202501559630036,
+            "decode_seconds": 2.0073137460276484,
+            "queue_seconds": 0.000013248063623905182,
+            "prompt_tokens": 446,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 478,
+            "logical_query_tokens": 523,
+            "submitted_tokens": 1588,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        },
+        {
+          "elapsed_seconds": 6.266617046087049,
+          "generation_usage": {
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "total_tokens": 479,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "generation_phase": {
+            "schema_version": 1,
+            "source": "vllm-engine-core-request-stats",
+            "status": "available",
+            "reason": null,
+            "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+            "prefill_seconds": 0.9202501559630036,
+            "decode_seconds": 2.0073137460276484,
+            "queue_seconds": 0.00001051207073032856,
+            "prompt_tokens": 447,
+            "completion_tokens": 32,
+            "decode_tokens": 31,
+            "reported_cached_prompt_tokens": 0,
+            "num_preemptions": 0
+          },
+          "decision_execution": {
+            "mode": "full-token-replay",
+            "logical_prefix_tokens": 479,
+            "logical_query_tokens": 524,
+            "submitted_tokens": 1591,
+            "num_cached_tokens": 0,
+            "reused_tokens": null,
+            "replayed_tokens": null,
+            "forwarded_tokens": null,
+            "completed_token_positions": null,
+            "completed_forward_steps": null,
+            "missing_worker_receipts": null,
+            "forwarded_tokens_lower_bound": null,
+            "forward_counts_status": "unavailable",
+            "unavailable_forward_receipts": 3,
+            "forward_counter_scope": "worker-acknowledged unpadded target input positions; not kernels/FLOPs or causal coverage",
+            "consumed_tokens": null,
+            "feature_tap": "final-mixer/post-collapse/before-lm-head",
+            "checkpoint_retained": false,
+            "cache_evidence": "per-request num_cached_tokens only; no hybrid-state proof",
+            "counter_gap": "final worker receipt unavailable; no physical total; replay/reuse, causal consumed-prefix and terminal abort/failure totals remain unavailable"
+          }
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "mode": "generation",
+      "streams": 1,
+      "mean_pipeline_seconds": 2.482173340356288,
+      "mean_wave_seconds": 2.4833027200074866,
+      "mean_prefill_tokens_per_second": 792.0685217991252,
+      "mean_decode_tokens_per_second": 16.495218509428856,
+      "observed_generation_prompt_tokens": [
+        442,
+        444,
+        447
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "generation",
+      "streams": 4,
+      "mean_pipeline_seconds": 3.6583634891915913,
+      "mean_wave_seconds": 3.6757799660554156,
+      "mean_prefill_tokens_per_second": 534.6397946921526,
+      "mean_decode_tokens_per_second": 13.788584247264774,
+      "observed_generation_prompt_tokens": [
+        441,
+        442,
+        443,
+        445,
+        446,
+        447,
+        449,
+        451
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "decision",
+      "streams": 1,
+      "mean_pipeline_seconds": 1.0106939046721284,
+      "mean_wave_seconds": 1.0112443966791034,
+      "mean_prefill_tokens_per_second": null,
+      "mean_decode_tokens_per_second": null,
+      "observed_generation_prompt_tokens": [],
+      "observed_generation_completion_tokens": [],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "decision",
+      "streams": 4,
+      "mean_pipeline_seconds": 3.055891532509122,
+      "mean_wave_seconds": 3.503520499682054,
+      "mean_prefill_tokens_per_second": null,
+      "mean_decode_tokens_per_second": null,
+      "observed_generation_prompt_tokens": [],
+      "observed_generation_completion_tokens": [],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "mixed",
+      "streams": 1,
+      "mean_pipeline_seconds": 3.237730313984988,
+      "mean_wave_seconds": 3.23876782564912,
+      "mean_prefill_tokens_per_second": 897.8519317966907,
+      "mean_decode_tokens_per_second": 16.395576719733018,
+      "observed_generation_prompt_tokens": [
+        443,
+        448
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    },
+    {
+      "mode": "mixed",
+      "streams": 4,
+      "mean_pipeline_seconds": 5.800953631104979,
+      "mean_wave_seconds": 6.348811362365571,
+      "mean_prefill_tokens_per_second": 619.2700341183742,
+      "mean_decode_tokens_per_second": 13.852409890547385,
+      "observed_generation_prompt_tokens": [
+        442,
+        443,
+        444,
+        445,
+        446,
+        447
+      ],
+      "observed_generation_completion_tokens": [
+        32
+      ],
+      "scope": "per-request engine phases; wave wall is separate and includes prefix release"
+    }
+  ]
+}

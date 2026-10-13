@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "label": null,
+  "decision_requests": 0,
+  "quality_scored": false,
+  "rows": [
+    {
+      "name": null,
+      "http_status": null,
+      "requested_completion_tokens": 512,
+      "actual_completion_tokens": 512,
+      "requested_prompt_tokens": 8192,
+      "actual_prompt_tokens": 8192,
+      "finish_reasons": null,
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.5694444444444446,
+        "draft_acceptance_rate": 0.8564814814814815,
+        "acceptance_histogram": [
+          10,
+          8,
+          16,
+          110
+        ],
+        "num_spec_steps": 144,
+        "num_accepted_draft_tokens": 370,
+        "num_draft_tokens": 432,
+        "num_spec_tokens": 3,
+        "per_step_accepted": null,
+        "per_step_drafted": null
+      },
+      "wall_seconds": 22.228102434892207
+    },
+    {
+      "name": null,
+      "http_status": null,
+      "requested_completion_tokens": 512,
+      "actual_completion_tokens": 512,
+      "requested_prompt_tokens": 32768,
+      "actual_prompt_tokens": 32768,
+      "finish_reasons": null,
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.0783132530120483,
+        "draft_acceptance_rate": 0.6927710843373494,
+        "acceptance_histogram": [
+          27,
+          21,
+          30,
+          88
+        ],
+        "num_spec_steps": 166,
+        "num_accepted_draft_tokens": 345,
+        "num_draft_tokens": 498,
+        "num_spec_tokens": 3,
+        "per_step_accepted": null,
+        "per_step_drafted": null
+      },
+      "wall_seconds": 29.246426556957886
+    }
+  ]
+}

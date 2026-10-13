@@ -1,0 +1,437 @@
+{
+  "api_response_validation_errors": 0,
+  "calibration_performed": false,
+  "http_requests": 5075,
+  "kev_development_official": {
+    "areas": {
+      "arts": {
+        "calibration": {
+          "brier": 0.5459663655226964,
+          "ece": 0.18080542862415316,
+          "mean_conf": 0.7041387619574865,
+          "n": 300,
+          "nll": 0.7527713358991078
+        },
+        "datasets": [
+          "humicroedit",
+          "cfcolor"
+        ],
+        "label": "Arts & Human Taste",
+        "score": 0.5233333333333334,
+        "skill": 0.06000000000000005
+      },
+      "knowledge": {
+        "calibration": {
+          "brier": 0.33033806608209526,
+          "ece": 0.04239956491328686,
+          "mean_conf": 0.7714956101441403,
+          "n": 1259,
+          "nll": 0.632077042092946
+        },
+        "datasets": [
+          "musr",
+          "sata_bench",
+          "chessbench"
+        ],
+        "label": "Knowledge & Reasoning",
+        "score": 0.4955555555555555,
+        "skill": 0.3908289263602544
+      },
+      "language": {
+        "calibration": {
+          "brier": 0.35040673194320526,
+          "ece": 0.20293259389938847,
+          "mean_conf": 0.6117061382339847,
+          "n": 310,
+          "nll": 0.6567575215749124
+        },
+        "datasets": [
+          "contractnli",
+          "hellaswag"
+        ],
+        "label": "Language Understanding",
+        "score": 0.815,
+        "skill": 0.7324999999999999
+      },
+      "retrieval": {
+        "calibration": {
+          "brier": 0.34161396209529293,
+          "ece": 0.1751885031991535,
+          "mean_conf": 0.6137003856897354,
+          "n": 450,
+          "nll": 0.6888085258377168
+        },
+        "datasets": [
+          "clinc150",
+          "sgd",
+          "bright"
+        ],
+        "label": "Retrieval & Classification",
+        "score": 0.7888888888888889,
+        "skill": 0.7058685217616917
+      },
+      "tools": {
+        "calibration": {
+          "brier": 0.32575404273014913,
+          "ece": 0.06054950261084491,
+          "mean_conf": 0.7045717808620009,
+          "n": 756,
+          "nll": 0.6807482046797645
+        },
+        "datasets": [
+          "bfcl",
+          "toolret",
+          "apibank",
+          "routerbench"
+        ],
+        "label": "Tools & Automation",
+        "score": 0.6933333333333334,
+        "skill": 0.6096685583203879
+      }
+    },
+    "datasets": {
+      "apibank": {
+        "accuracy_answered": 0.92,
+        "answered": 1,
+        "area": "tools",
+        "calibration": {
+          "brier": 0.15824326300005415,
+          "ece": 0.14298939327398932,
+          "mean_conf": 0.7828442452351252,
+          "n": 150,
+          "nll": 0.3997129833128627
+        },
+        "chance": 0.125,
+        "metric": "accuracy",
+        "score": 0.92,
+        "skill": 0.9085714285714286,
+        "units": 150
+      },
+      "bfcl": {
+        "accuracy_answered": 0.9133333333333333,
+        "answered": 1,
+        "area": "tools",
+        "calibration": {
+          "brier": 0.10645115003745463,
+          "ece": 0.045543753828098596,
+          "mean_conf": 0.8968310190571679,
+          "n": 306,
+          "nll": 0.19360872497156506
+        },
+        "chance": 0.33869791666666665,
+        "metric": "case_exact",
+        "score": 0.9133333333333333,
+        "skill": 0.8689454201779948,
+        "units": 150
+      },
+      "bright": {
+        "accuracy_answered": 0.6733333333333333,
+        "answered": 1,
+        "area": "retrieval",
+        "calibration": {
+          "brier": 0.46961179724481183,
+          "ece": 0.16951148639122643,
+          "mean_conf": 0.5385648662845294,
+          "n": 150,
+          "nll": 0.9633334338126228
+        },
+        "chance": 0.19999999999999996,
+        "metric": "accuracy",
+        "score": 0.6733333333333333,
+        "skill": 0.5916666666666667,
+        "units": 150
+      },
+      "cfcolor": {
+        "accuracy_answered": 0.4866666666666667,
+        "answered": 1,
+        "area": "arts",
+        "calibration": {
+          "brier": 0.5597626375416291,
+          "ece": 0.201959859530131,
+          "mean_conf": 0.6886265261967977,
+          "n": 150,
+          "nll": 0.7641465405469732
+        },
+        "chance": 0.5,
+        "metric": "accuracy",
+        "score": 0.4866666666666667,
+        "skill": 0,
+        "units": 150
+      },
+      "chessbench": {
+        "accuracy_answered": 0.30666666666666664,
+        "answered": 1,
+        "area": "knowledge",
+        "calibration": {
+          "brier": 0.833739054262248,
+          "ece": 0.08422012428442636,
+          "mean_conf": 0.2603576467434565,
+          "n": 150,
+          "nll": 1.9896597327719678
+        },
+        "chance": 0.12893386243386243,
+        "metric": "accuracy",
+        "score": 0.30666666666666664,
+        "skill": 0.2040405390219976,
+        "units": 150
+      },
+      "clinc150": {
+        "accuracy_answered": 0.98,
+        "answered": 1,
+        "area": "retrieval",
+        "calibration": {
+          "brier": 0.1645017643512332,
+          "ece": 0.29906824439764024,
+          "mean_conf": 0.6809317556023597,
+          "n": 150,
+          "nll": 0.44281405909910926
+        },
+        "chance": 0.09999999999999998,
+        "metric": "accuracy",
+        "score": 0.98,
+        "skill": 0.9777777777777777,
+        "units": 150
+      },
+      "contractnli": {
+        "accuracy_answered": 0.75,
+        "answered": 1,
+        "area": "language",
+        "calibration": {
+          "brier": 0.44871025295999567,
+          "ece": 0.17709224596619608,
+          "mean_conf": 0.5729077540338039,
+          "n": 160,
+          "nll": 0.7829128826285412
+        },
+        "chance": 0.33333333333333337,
+        "metric": "accuracy",
+        "score": 0.75,
+        "skill": 0.625,
+        "units": 160
+      },
+      "hellaswag": {
+        "accuracy_answered": 0.88,
+        "answered": 1,
+        "area": "language",
+        "calibration": {
+          "brier": 0.24554964285862885,
+          "ece": 0.23510833501815798,
+          "mean_conf": 0.6530910813808442,
+          "n": 150,
+          "nll": 0.5221918031177084
+        },
+        "chance": 0.25,
+        "metric": "accuracy",
+        "score": 0.88,
+        "skill": 0.84,
+        "units": 150
+      },
+      "humicroedit": {
+        "accuracy_answered": 0.56,
+        "answered": 1,
+        "area": "arts",
+        "calibration": {
+          "brier": 0.5321700935037633,
+          "ece": 0.15965099771817523,
+          "mean_conf": 0.7196509977181752,
+          "n": 150,
+          "nll": 0.7413961312512424
+        },
+        "chance": 0.5,
+        "metric": "accuracy",
+        "score": 0.56,
+        "skill": 0.1200000000000001,
+        "units": 150
+      },
+      "musr": {
+        "accuracy_answered": 0.6866666666666666,
+        "answered": 1,
+        "area": "knowledge",
+        "calibration": {
+          "brier": 0.432843082389487,
+          "ece": 0.09351362347602848,
+          "mean_conf": 0.5931530431906382,
+          "n": 150,
+          "nll": 0.7171151316265639
+        },
+        "chance": 0.39166666666666666,
+        "metric": "accuracy",
+        "score": 0.6866666666666666,
+        "skill": 0.484931506849315,
+        "units": 150
+      },
+      "routerbench": {
+        "accuracy_answered": 0.32666666666666666,
+        "answered": 1,
+        "area": "tools",
+        "calibration": {
+          "brier": 0.7653374801630646,
+          "ece": 0.0620188651482264,
+          "mean_conf": 0.362547265291214,
+          "n": 150,
+          "nll": 1.638687943572187
+        },
+        "chance": 0.2129444444444444,
+        "metric": "accuracy",
+        "score": 0.32666666666666666,
+        "skill": 0.14449071786546203,
+        "units": 150
+      },
+      "sata_bench": {
+        "accuracy_answered": 0.49333333333333335,
+        "answered": 1,
+        "area": "knowledge",
+        "calibration": {
+          "brier": 0.2355665325334699,
+          "ece": 0.03814495542126476,
+          "mean_conf": 0.8793392801682569,
+          "n": 959,
+          "nll": 0.4064324987854424
+        },
+        "chance": 0.019010416666666665,
+        "metric": "case_exact",
+        "score": 0.49333333333333335,
+        "skill": 0.48351473320945054,
+        "units": 150
+      },
+      "sgd": {
+        "accuracy_answered": 0.7133333333333334,
+        "answered": 1,
+        "area": "retrieval",
+        "calibration": {
+          "brier": 0.39072832468983404,
+          "ece": 0.09499666412671408,
+          "mean_conf": 0.6216045351823171,
+          "n": 150,
+          "nll": 0.6602780846014188
+        },
+        "chance": 0.3655555555555555,
+        "metric": "accuracy",
+        "score": 0.7133333333333334,
+        "skill": 0.5481611208406305,
+        "units": 150
+      },
+      "toolret": {
+        "accuracy_answered": 0.6133333333333333,
+        "answered": 1,
+        "area": "tools",
+        "calibration": {
+          "brier": 0.5010592861204255,
+          "ece": 0.08375915189584096,
+          "mean_conf": 0.5761149861415227,
+          "n": 150,
+          "nll": 0.9976082257589709
+        },
+        "chance": 0.19999999999999996,
+        "metric": "accuracy",
+        "score": 0.6133333333333333,
+        "skill": 0.5166666666666666,
+        "units": 150
+      }
+    },
+    "overall": {
+      "answered_questions": 3075,
+      "calibration": {
+        "brier": 0.35392128813119844,
+        "ece": 0.049286622555275265,
+        "mean_conf": 0.7092699006514821,
+        "n": 3075,
+        "nll": 0.6666083602659671
+      },
+      "index": 49.97732012884668,
+      "mean_dataset_ece": 0.13482697860543685,
+      "question_accuracy_answered": 0.7476422764227643,
+      "questions": 3075
+    }
+  },
+  "kev_development_uncertainty": {
+    "difference": {},
+    "difference_from": "research-native-4.05",
+    "index": {
+      "research-native-4.05": [
+        47.57954525320697,
+        53.028110019373685
+      ]
+    },
+    "samples": 2000,
+    "seed": 0,
+    "unit": "record, resampled within each dataset, paired across systems"
+  },
+  "original_fixed_weighted_per_track": {
+    "boolq/noul/text/boolean_truth": {
+      "n": 300,
+      "weighted_tie_aware_accuracy": 0.9098888584491935
+    },
+    "helpsteer2/choice/text/main": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.8188244047619049
+    },
+    "helpsteer2/ordinal/text/coherence": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.6959140401218159
+    },
+    "helpsteer2/ordinal/text/complexity": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.6671456891187055
+    },
+    "helpsteer2/ordinal/text/correctness": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.48033849159172
+    },
+    "helpsteer2/ordinal/text/helpfulness": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.4599068721901091
+    },
+    "helpsteer2/ordinal/text/verbosity": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.7113067490654662
+    },
+    "helpsteer3/choice/text/main": {
+      "n": 200,
+      "weighted_tie_aware_accuracy": 0.7947649278199096
+    },
+    "mm-rlhf/choice/image/best_response": {
+      "n": 150,
+      "weighted_tie_aware_accuracy": 0.7948204014555699
+    },
+    "mm-rlhf/choice/image/pairwise_preference": {
+      "n": 250,
+      "weighted_tie_aware_accuracy": 0.904396587729921
+    },
+    "qasper/noul/text/answerability": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.9123900118906064
+    },
+    "qasper/noul/text/evidence": {
+      "n": 150,
+      "weighted_tie_aware_accuracy": 0.8982192039097378
+    },
+    "qasper/noul/text/yes_no": {
+      "n": 50,
+      "weighted_tie_aware_accuracy": 0.8581810173970491
+    },
+    "vl-rewardbench/choice/image/official_heldout_preference": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.6890005400716822
+    },
+    "vl-rewardbench/noul/image/pairwise_preference_yes_no": {
+      "n": 100,
+      "weighted_tie_aware_accuracy": 0.7692584652144738
+    }
+  },
+  "panels": {
+    "kev-development": {
+      "correct_or_tie_aware": 2299,
+      "descriptive_selection_accuracy": 0.7476422764227643,
+      "requests": 3075
+    },
+    "original-fixed": {
+      "correct_or_tie_aware": 1568,
+      "descriptive_selection_accuracy": 0.784,
+      "requests": 2000
+    }
+  },
+  "status": "completed",
+  "training_performed": false,
+  "weighting_scope": "Conditional API-eligible represented strata; subset inverse inclusion multiplied by original external sampling weight. No whole-population or causal claim."
+}

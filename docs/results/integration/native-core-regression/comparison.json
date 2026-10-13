@@ -1,0 +1,72 @@
+{
+  "status": "matched",
+  "scope": "Generation only; upstream ExLlamaV3 with the exllamav3-fuzev prefill optimizations. Three measured samples per length; generated text is omitted and was not quality-scored.",
+  "lengths": {
+    "256": {
+      "upstream": {
+        "samples": 3,
+        "actual_output_tokens": [
+          256,
+          256,
+          256
+        ],
+        "median_decode_seconds": 5.1224822998046875,
+        "median_prefill_seconds": 0.3033020496368408,
+        "median_http_seconds": 5.436766984057613,
+        "decode_tokens_per_second": 49.70095804505425,
+        "accepted": 513,
+        "proposed": 765,
+        "acceptance": 0.6705882352941176
+      },
+      "fork": {
+        "samples": 3,
+        "actual_output_tokens": [
+          256,
+          256,
+          256
+        ],
+        "median_decode_seconds": 5.154973745346069,
+        "median_prefill_seconds": 0.29898786544799805,
+        "median_http_seconds": 5.470514002954587,
+        "decode_tokens_per_second": 50.21031310470538,
+        "accepted": 514,
+        "proposed": 762,
+        "acceptance": 0.6745406824146981
+      },
+      "fork_over_upstream_decode_seconds": 1.0063429102610313
+    },
+    "512": {
+      "upstream": {
+        "samples": 3,
+        "actual_output_tokens": [
+          512,
+          512,
+          512
+        ],
+        "median_decode_seconds": 9.422358751296997,
+        "median_prefill_seconds": 0.3006913661956787,
+        "median_http_seconds": 9.731873439042829,
+        "decode_tokens_per_second": 52.961026794867706,
+        "accepted": 1058,
+        "proposed": 1434,
+        "acceptance": 0.7377963737796374
+      },
+      "fork": {
+        "samples": 3,
+        "actual_output_tokens": [
+          512,
+          512,
+          512
+        ],
+        "median_decode_seconds": 9.90606164932251,
+        "median_prefill_seconds": 0.29871416091918945,
+        "median_http_seconds": 10.213824328035116,
+        "decode_tokens_per_second": 51.71568772651514,
+        "accepted": 1047,
+        "proposed": 1467,
+        "acceptance": 0.7137014314928425
+      },
+      "fork_over_upstream_decode_seconds": 1.0513356486197185
+    }
+  }
+}

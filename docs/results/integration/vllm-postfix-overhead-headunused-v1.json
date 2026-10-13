@@ -1,0 +1,431 @@
+{
+  "status": "completed",
+  "label": "headunused",
+  "decision_requests": 0,
+  "quality_scored": false,
+  "policy": {
+    "schema": "fuzev-generation-overhead-v1",
+    "streams": 1,
+    "warmup_per_prompt": 1,
+    "measurements_per_prompt": 3,
+    "prompts": {
+      "512": {
+        "nominal_prefill_tokens": 512
+      },
+      "2048": {
+        "nominal_prefill_tokens": 2048
+      }
+    },
+    "sampling": {
+      "temperature": 1,
+      "top_p": 0.95,
+      "top_k": 20,
+      "max_tokens": 256
+    },
+    "retain_decision_prefix": false,
+    "request_chat_template_kwargs": null,
+    "cache_policy": "unique leading nonce per request; paired nonce reused only across fresh control/headunused engines",
+    "phase_scope": "engine prefill includes first token; decode excludes it; wall includes HTTP, not GPU-only time",
+    "quality_scored": false
+  },
+  "rows": [
+    {
+      "prompt": "512",
+      "wave": 0,
+      "warmup": true,
+      "seed": 17,
+      "usage": {
+        "prompt_tokens": 526,
+        "completion_tokens": 256,
+        "total_tokens": 782,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 3.1550221310462803,
+        "decode_seconds": 9.22039022797253,
+        "queue_seconds": 0.0000397280091419816,
+        "prompt_tokens": 526,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.108433734939759,
+        "draft_acceptance_rate": 0.7028112449799196,
+        "acceptance_histogram": [
+          13,
+          11,
+          13,
+          46
+        ],
+        "num_spec_steps": 83,
+        "num_accepted_draft_tokens": 175,
+        "num_draft_tokens": 249,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 13.948912734049372
+    },
+    {
+      "prompt": "2048",
+      "wave": 0,
+      "warmup": true,
+      "seed": 18,
+      "usage": {
+        "prompt_tokens": 2062,
+        "completion_tokens": 256,
+        "total_tokens": 2318,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 1.188136384007521,
+        "decode_seconds": 8.802058905013837,
+        "queue_seconds": 0.000026687979698181152,
+        "prompt_tokens": 2062,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 2.9767441860465116,
+        "draft_acceptance_rate": 0.6589147286821705,
+        "acceptance_histogram": [
+          16,
+          13,
+          14,
+          43
+        ],
+        "num_spec_steps": 86,
+        "num_accepted_draft_tokens": 170,
+        "num_draft_tokens": 258,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 10.311261566937901
+    },
+    {
+      "prompt": "512",
+      "wave": 1,
+      "warmup": false,
+      "seed": 19,
+      "usage": {
+        "prompt_tokens": 522,
+        "completion_tokens": 256,
+        "total_tokens": 778,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 0.5675472450675443,
+        "decode_seconds": 8.810041111893952,
+        "queue_seconds": 0.000026031979359686375,
+        "prompt_tokens": 522,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.0476190476190474,
+        "draft_acceptance_rate": 0.6825396825396826,
+        "acceptance_histogram": [
+          15,
+          14,
+          7,
+          48
+        ],
+        "num_spec_steps": 84,
+        "num_accepted_draft_tokens": 172,
+        "num_draft_tokens": 252,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 9.408685645088553
+    },
+    {
+      "prompt": "2048",
+      "wave": 1,
+      "warmup": false,
+      "seed": 20,
+      "usage": {
+        "prompt_tokens": 2063,
+        "completion_tokens": 256,
+        "total_tokens": 2319,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 1.052401317982003,
+        "decode_seconds": 8.472569632926024,
+        "queue_seconds": 0.000027392059564590454,
+        "prompt_tokens": 2063,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.1219512195121952,
+        "draft_acceptance_rate": 0.7073170731707317,
+        "acceptance_histogram": [
+          9,
+          13,
+          19,
+          41
+        ],
+        "num_spec_steps": 82,
+        "num_accepted_draft_tokens": 174,
+        "num_draft_tokens": 246,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 9.673735860968009
+    },
+    {
+      "prompt": "512",
+      "wave": 2,
+      "warmup": false,
+      "seed": 21,
+      "usage": {
+        "prompt_tokens": 528,
+        "completion_tokens": 256,
+        "total_tokens": 784,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 0.5889022269984707,
+        "decode_seconds": 8.247440889012069,
+        "queue_seconds": 0.00002502498682588339,
+        "prompt_tokens": 528,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.0476190476190474,
+        "draft_acceptance_rate": 0.6825396825396826,
+        "acceptance_histogram": [
+          14,
+          14,
+          10,
+          46
+        ],
+        "num_spec_steps": 84,
+        "num_accepted_draft_tokens": 172,
+        "num_draft_tokens": 252,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 8.864465947961435
+    },
+    {
+      "prompt": "2048",
+      "wave": 2,
+      "warmup": false,
+      "seed": 22,
+      "usage": {
+        "prompt_tokens": 2063,
+        "completion_tokens": 256,
+        "total_tokens": 2319,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 0.9901526930043474,
+        "decode_seconds": 8.194157251971774,
+        "queue_seconds": 0.00005100807175040245,
+        "prompt_tokens": 2063,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.0963855421686746,
+        "draft_acceptance_rate": 0.6987951807228916,
+        "acceptance_histogram": [
+          12,
+          14,
+          11,
+          46
+        ],
+        "num_spec_steps": 83,
+        "num_accepted_draft_tokens": 174,
+        "num_draft_tokens": 249,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 9.288112465059385
+    },
+    {
+      "prompt": "512",
+      "wave": 3,
+      "warmup": false,
+      "seed": 23,
+      "usage": {
+        "prompt_tokens": 530,
+        "completion_tokens": 256,
+        "total_tokens": 786,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 0.5100176159758121,
+        "decode_seconds": 9.093886477057822,
+        "queue_seconds": 0.0000201129587367177,
+        "prompt_tokens": 530,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 2.782608695652174,
+        "draft_acceptance_rate": 0.5942028985507246,
+        "acceptance_histogram": [
+          26,
+          10,
+          14,
+          42
+        ],
+        "num_spec_steps": 92,
+        "num_accepted_draft_tokens": 164,
+        "num_draft_tokens": 276,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 9.620591009035707
+    },
+    {
+      "prompt": "2048",
+      "wave": 3,
+      "warmup": false,
+      "seed": 24,
+      "usage": {
+        "prompt_tokens": 2063,
+        "completion_tokens": 256,
+        "total_tokens": 2319,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "phase_timing": {
+        "schema_version": 1,
+        "source": "vllm-engine-core-request-stats",
+        "status": "available",
+        "reason": null,
+        "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+        "prefill_seconds": 0.9807988390093669,
+        "decode_seconds": 7.784540776978247,
+        "queue_seconds": 0.000048113055527210236,
+        "prompt_tokens": 2063,
+        "completion_tokens": 256,
+        "decode_tokens": 255,
+        "reported_cached_prompt_tokens": 0,
+        "num_preemptions": 0
+      },
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.2,
+        "draft_acceptance_rate": 0.7333333333333333,
+        "acceptance_histogram": [
+          9,
+          10,
+          17,
+          44
+        ],
+        "num_spec_steps": 80,
+        "num_accepted_draft_tokens": 176,
+        "num_draft_tokens": 240,
+        "num_spec_tokens": 3
+      },
+      "wall_seconds": 8.884024798986502
+    }
+  ],
+  "health_before": {
+    "status": "ok",
+    "model": "NVIDIAFlashNextHF",
+    "experimental": true,
+    "calibration": "raw",
+    "context_window": 262144,
+    "memory_fraction_limit": 0.85,
+    "validation_memory_fraction": 0.75,
+    "max_active_engine_requests": 4,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "head_loaded": true,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "trusted_still_images": true,
+      "images": true,
+      "streaming": false,
+      "checkpoint_retention": false
+    }
+  },
+  "health_after": {
+    "status": "ok",
+    "model": "NVIDIAFlashNextHF",
+    "experimental": true,
+    "calibration": "raw",
+    "context_window": 262144,
+    "memory_fraction_limit": 0.85,
+    "validation_memory_fraction": 0.75,
+    "max_active_engine_requests": 4,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "head_loaded": true,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "trusted_still_images": true,
+      "images": true,
+      "streaming": false,
+      "checkpoint_retention": false
+    }
+  }
+}

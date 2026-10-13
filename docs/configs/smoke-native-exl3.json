@@ -1,0 +1,414 @@
+{
+  "recorded_date_utc": "2026-10-13",
+  "hardware": "NVIDIA GB10 (DGX Spark), Linux aarch64",
+  "python": "3.12.3",
+  "torch_cuda_build": "13.0",
+  "source_revision_note": "Unpublished lab code commit IDs identify the measured source exports.",
+  "host_memory_metric": "Maximum of one-second samples of host-wide MemTotal minus MemAvailable; not isolated engine RSS or dedicated GPU memory.",
+  "container_memory_metric": "The container cgroup memory.peak includes its prior build/run history and is not GPU memory.",
+  "source_zip_releases": {
+    "exllamav3-fuzev": {
+      "release": "1.5.2+fuzev.v1.0",
+      "unpublished_lab_code_commit": "72408e5",
+      "original_fresh_cpp_build_code_commit": "5d93a1a"
+    },
+    "fuzev-runtime": {
+      "release": "1.0.0",
+      "unpublished_lab_code_commit": "7ecb72a"
+    },
+    "fuzev-exllamav3-plugin": {
+      "release": "1.0.0",
+      "unpublished_lab_code_commit": "72f8cc9"
+    }
+  },
+  "model": {
+    "repository": "turboderp/Qwen3.8-Flash-Next-exl3",
+    "revision": "55a732e0c4c3d4614bc42b68493bb930d9b02c0a",
+    "bits_per_weight": 4.05,
+    "directory": "${EXL3_MODEL_DIRECTORY}"
+  },
+  "build_scope": "Original fresh source ZIP 5d93a1a compiled the full CUDA extension with normal dependency resolution. Final ZIP 72408e5 updates Python only and was installed normally with --no-build-isolation, reusing cached unchanged C++ objects from that fresh build.",
+  "recorded_install_commands": [
+    "export MAX_JOBS=4",
+    "python3 -m venv \"${FUZEV_VENV}\"",
+    ". \"${FUZEV_VENV}/bin/activate\"",
+    "python -m pip install --upgrade pip",
+    "python -m pip install 'setuptools>=77' wheel packaging ninja",
+    "python -m pip install 'torch==2.13.0' --index-url https://download.pytorch.org/whl/cu130",
+    "python -m zipfile -e \"${SOURCE_ZIPS}/exllamav3-fuzev.zip\" \"${FUZEV_ENGINE_SOURCES}\"",
+    "unset CPATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH",
+    "export CPLUS_INCLUDE_PATH=\"$(python -c 'import sysconfig; print(sysconfig.get_paths()[\"purelib\"])')/nvidia/cu13/include\"",
+    "export LIBRARY_PATH=\"$(python -c 'import sysconfig; print(sysconfig.get_paths()[\"purelib\"])')/nvidia/cu13/lib\"",
+    "python -m pip install --no-build-isolation \"${FUZEV_ENGINE_SOURCES}/exllamav3-fuzev\"",
+    "python -m pip install \"flashinfer-jit-cache==$(python -c 'from importlib.metadata import version; print(version(\"flashinfer-python\"))')\" --index-url https://flashinfer.ai/whl/cu130",
+    "python -m pip install \"${FUZEV_FINAL_SOURCES}/fuzev-runtime\" \"${FUZEV_FINAL_SOURCES}/fuzev-exllamav3-plugin\""
+  ],
+  "final_python_update_command": "python -m pip install --no-build-isolation \"${FUZEV_ENGINE_SOURCES}/exllamav3-fuzev\"",
+  "environment": {
+    "MAX_JOBS": "4"
+  },
+  "engine_settings": {
+    "context_length": 32768,
+    "cache_tokens": 65536,
+    "cache_bits": [
+      8,
+      8
+    ],
+    "max_batch_size": 8,
+    "max_chunk_size": 8192,
+    "prefill_optimizations": true,
+    "moe_impl": "folded-hot",
+    "gdn_operand_dtype": "bfloat16",
+    "mtp_tokens": 0,
+    "vision": false,
+    "head_device": "cpu",
+    "calibration": "raw",
+    "prefix_capacity": 128
+  },
+  "startup_log": "Prefill optimizations enabled; chunk size 8192 tokens",
+  "command": [
+    "fuzev-native",
+    "--model",
+    "${EXL3_MODEL_DIRECTORY}",
+    "--model-name",
+    "qwen-flash-next-exl3",
+    "--head",
+    "${FUZEV_HEAD_DIRECTORY}",
+    "--head-device",
+    "cpu",
+    "--context-length",
+    "32768",
+    "--cache-tokens",
+    "65536",
+    "--cache-bits",
+    "8",
+    "8",
+    "--max-batch-size",
+    "8",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8000"
+  ],
+  "verification_invocation_note": "A verification wrapper calls the installed native launcher in-process with the recorded argv; it performs this HTTP check and the decision-latency diagnostics before orderly shutdown.",
+  "request_method": "POST",
+  "request_url": "http://localhost:8000/v1/systemone",
+  "request_headers": {
+    "Content-Type": "application/json"
+  },
+  "request": {
+    "state": {
+      "message": "Please refund the duplicate charge."
+    },
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the customer request a refund?"
+      },
+      "intent": {
+        "type": "choice",
+        "criteria": {
+          "refund": "Request a refund",
+          "shipping": "Track delivery"
+        }
+      },
+      "clarity": {
+        "type": "score",
+        "criteria": [
+          "unclear",
+          "clear"
+        ]
+      }
+    }
+  },
+  "http_status": 200,
+  "packages": {
+    "torch": "2.13.0+cu130",
+    "exllamav3": "1.5.2+fuzev.v1.0",
+    "fuzev-runtime": "1.0.0",
+    "fuzev-exllamav3-plugin": "1.0.0",
+    "flashinfer-python": "0.7.1",
+    "flashinfer-jit-cache": "0.7.1+cu130"
+  },
+  "health": {
+    "status": "ok",
+    "model": "qwen-flash-next-exl3",
+    "context_window": 32768,
+    "capabilities": {
+      "generation": true,
+      "decisions": true,
+      "images": false,
+      "streaming": true
+    }
+  },
+  "response": {
+    "model": "qwen-flash-next-exl3",
+    "answers": {
+      "refund": {
+        "type": "noul",
+        "noul": 0.9759222269058228
+      },
+      "intent": {
+        "type": "choice",
+        "choice": "refund",
+        "confidence": 0.9676482677459717,
+        "probabilities": {
+          "refund": 0.9838241338729858,
+          "shipping": 0.016175827011466026
+        }
+      },
+      "clarity": {
+        "type": "score",
+        "score": 0.8634201884269714,
+        "confidence": 0.7268403768539429,
+        "legend": {
+          "0": "unclear",
+          "1": "clear"
+        },
+        "probabilities": {
+          "0": 0.13657981157302856,
+          "1": 0.8634201884269714
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 515,
+      "output_tokens": 215
+    },
+    "latency_ms": 5586.370599001384
+  },
+  "exit_code": 0,
+  "peak_host_used_bytes": 82892206080,
+  "peak_container_bytes": 72175017984,
+  "peak_measurement_scope": "Entire native installed verification, including the HTTP check and decision-latency diagnostics.",
+  "shutdown": {
+    "stop_method": "Wrapper sets Uvicorn should_exit and awaits server shutdown",
+    "application_shutdown_complete": true
+  },
+  "decision_timings": {
+    "model": "qwen-flash-next-exl3",
+    "page_size": 256,
+    "context_window": 32768,
+    "chunk_size": 8192,
+    "shared_state_prewarm": {
+      "context_words": 2048,
+      "context_construction": "Repeat words from: The customer wrote again about the delayed parcel, the duplicate charge on the card, and the broken login page.",
+      "question_keys": [
+        "team",
+        "refund",
+        "urgency"
+      ],
+      "questions": {
+        "team": {
+          "type": "choice",
+          "instructions": "Which team?",
+          "criteria": {
+            "billing": "Charges",
+            "technical": "Faults",
+            "shipping": "Delivery"
+          }
+        },
+        "refund": {
+          "type": "noul",
+          "instructions": "Does the customer ask for a refund?"
+        },
+        "urgency": {
+          "type": "score",
+          "instructions": "How urgent?",
+          "criteria": [
+            "Low",
+            "Medium",
+            "High"
+          ]
+        }
+      },
+      "before_without_state_prewarm": {
+        "seconds": 8.73646424600156,
+        "result": {
+          "answers": {
+            "team": {
+              "type": "choice",
+              "choice": "billing"
+            },
+            "refund": {
+              "type": "noul",
+              "noul": 0.6602138876914978
+            },
+            "urgency": {
+              "type": "score",
+              "score": 1.3189833015203476
+            }
+          },
+          "usage": {
+            "input_tokens": 26681,
+            "output_tokens": 246
+          }
+        },
+        "state_readouts": [
+          {
+            "tokens": 2376,
+            "checkpoint": true,
+            "executed": false
+          }
+        ]
+      },
+      "after_with_state_prewarm": {
+        "seconds": 5.317069264001475,
+        "result": {
+          "answers": {
+            "team": {
+              "type": "choice",
+              "choice": "billing"
+            },
+            "refund": {
+              "type": "noul",
+              "noul": 0.5223525762557983
+            },
+            "urgency": {
+              "type": "score",
+              "score": 1.2776402086019516
+            }
+          },
+          "usage": {
+            "input_tokens": 29057,
+            "output_tokens": 242
+          }
+        },
+        "state_readouts": [
+          {
+            "tokens": 2376,
+            "checkpoint": true,
+            "executed": true
+          }
+        ]
+      },
+      "latency_gain_fraction": 0.3913934614412288,
+      "answers_identical": false,
+      "scope_note": "One ordered before/after pair without a separate warmup; KV/page caches reset before each case; first-use compilation/kernel-cache state was unmatched. The pair measures timing only: native decision probabilities can differ slightly between server starts (Triton autotuning at first compilation) and with prefix-cache state."
+    },
+    "option_checkpoints": {
+      "status": "no_page_crossing",
+      "measured_calls": 1,
+      "context_words": 64,
+      "context": "The customer wrote again about the delayed parcel, the duplicate charge on the card, and the broken login page. The customer wrote again about the delayed parcel, the duplicate charge on the card, and the broken login page. The customer wrote again about the delayed parcel, the duplicate charge on the card, and the broken login page. The customer wrote again about the delayed",
+      "options": [
+        {
+          "id": "c0",
+          "text": "Option 0: route the ticket to team 0"
+        },
+        {
+          "id": "c1",
+          "text": "Option 1: route the ticket to team 1"
+        },
+        {
+          "id": "c2",
+          "text": "Option 2: route the ticket to team 2"
+        },
+        {
+          "id": "c3",
+          "text": "Option 3: route the ticket to team 3"
+        },
+        {
+          "id": "c4",
+          "text": "Option 4: route the ticket to team 4"
+        },
+        {
+          "id": "c5",
+          "text": "Option 5: route the ticket to team 5"
+        },
+        {
+          "id": "c6",
+          "text": "Option 6: route the ticket to team 6"
+        },
+        {
+          "id": "c7",
+          "text": "Option 7: route the ticket to team 7"
+        }
+      ],
+      "option_words": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "query_tokens": 223,
+      "tail_tokens": [
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17
+      ],
+      "candidate_tokens": [
+        240,
+        240,
+        240,
+        240,
+        240,
+        240,
+        240,
+        240
+      ],
+      "query_full_pages": 0,
+      "crosses_new_page": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "readouts": [
+        {
+          "tokens": 223,
+          "checkpoint": true
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        },
+        {
+          "tokens": 240,
+          "checkpoint": false
+        }
+      ],
+      "seconds": 3.641698779996659,
+      "selected_id": "c0",
+      "submitted_tokens": 2143,
+      "scope_note": "One 64-word, eight-option case: the 223-token query and every 240-token candidate stay below the 256-token page boundary. Candidate readouts use checkpoint=False."
+    }
+  }
+}

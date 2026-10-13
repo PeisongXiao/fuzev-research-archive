@@ -1,0 +1,64 @@
+{
+  "status": "completed",
+  "label": "mrv1-nvidia-mmap-nohead-patched-long",
+  "decision_requests": 0,
+  "quality_scored": false,
+  "rows": [
+    {
+      "name": "code-256",
+      "http_status": 200,
+      "requested_completion_tokens": 256,
+      "actual_completion_tokens": 256,
+      "requested_prompt_tokens": null,
+      "actual_prompt_tokens": null,
+      "finish_reasons": [
+        "length"
+      ],
+      "speculative_decoding": {
+        "mean_acceptance_length": 2.909090909090909,
+        "draft_acceptance_rate": 0.6363636363636364,
+        "acceptance_histogram": [
+          18,
+          13,
+          16,
+          41
+        ],
+        "num_spec_steps": 88,
+        "num_accepted_draft_tokens": 168,
+        "num_draft_tokens": 264,
+        "num_spec_tokens": 3,
+        "per_step_accepted": null,
+        "per_step_drafted": null
+      },
+      "wall_seconds": 13.141075493069366
+    },
+    {
+      "name": "code-512",
+      "http_status": 200,
+      "requested_completion_tokens": 512,
+      "actual_completion_tokens": 512,
+      "requested_prompt_tokens": null,
+      "actual_prompt_tokens": null,
+      "finish_reasons": [
+        "length"
+      ],
+      "speculative_decoding": {
+        "mean_acceptance_length": 3.3594771241830066,
+        "draft_acceptance_rate": 0.7864923747276689,
+        "acceptance_histogram": [
+          18,
+          13,
+          18,
+          104
+        ],
+        "num_spec_steps": 153,
+        "num_accepted_draft_tokens": 361,
+        "num_draft_tokens": 459,
+        "num_spec_tokens": 3,
+        "per_step_accepted": null,
+        "per_step_drafted": null
+      },
+      "wall_seconds": 16.126936023007147
+    }
+  ]
+}

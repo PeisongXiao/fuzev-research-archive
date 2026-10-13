@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "scope": "container and HTTP-server terminal lifecycle, not cache numerical equivalence",
+  "server_shutdown_completed": true,
+  "fatal_engine_error": false,
+  "state": {
+    "ExitCode": 0,
+    "OOMKilled": false,
+    "Status": "exited",
+    "Running": false,
+    "Dead": false
+  }
+}

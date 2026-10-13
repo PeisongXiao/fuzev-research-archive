@@ -1,0 +1,153 @@
+{
+  "status": "passed",
+  "quality_scored": false,
+  "head_tuning": false,
+  "expected_runtime": {
+    "model": "NVIDIAFlashNextHF",
+    "provenance.runtime_cell.quantization": "modelopt_mixed",
+    "provenance.runtime_cell.memory_fraction": 0.85,
+    "provenance.runtime_cell.context_window": 262144,
+    "provenance.runtime_cell.max_num_seqs": 4,
+    "provenance.runtime_cell.max_num_batched_tokens": 8192,
+    "provenance.runtime_cell.cache_dtype_config": "fp8_e4m3",
+    "provenance.runtime_cell.prefix_caching": true,
+    "provenance.runtime_cell.chunked_prefill": true,
+    "provenance.runtime_cell.enforce_eager": false,
+    "provenance.runtime_cell.cudagraph_mode": "PIECEWISE",
+    "provenance.runtime_cell.splitting_ops": [
+      "vllm::unified_attention_with_output",
+      "vllm::unified_mla_attention_with_output",
+      "vllm::mamba_mixer2",
+      "vllm::mamba_mixer",
+      "vllm::short_conv",
+      "vllm::qwen4_exp_ple_short_conv",
+      "vllm::qwen4_exp_qsa_with_output",
+      "vllm::linear_attention",
+      "vllm::qwen_gdn_attention_core",
+      "vllm::qwen_gdn_attention_core_fused_norm_packed",
+      "vllm::gdn_attention_core_xpu",
+      "vllm::olmo_hybrid_gdn_full_forward",
+      "vllm::sparse_attn_indexer",
+      "vllm::rocm_aiter_sparse_attn_indexer",
+      "vllm::deepseek_v4_attention",
+      "vllm::hpc_rope_norm_forward",
+      "vllm::unified_kv_cache_update",
+      "vllm::unified_mla_kv_cache_update",
+      "vllm::qwen4_exp_ple_mmap_lookup_out"
+    ],
+    "provenance.runtime_cell.loader": {
+      "format": "safetensors",
+      "safetensors_strategy": "lazy"
+    },
+    "provenance.runtime_cell.additional_config": {
+      "ple_storage": "mmap",
+      "fuzev": {
+        "enabled": true
+      }
+    },
+    "provenance.runtime_cell.image_processor_kwargs": {
+      "truncation": false
+    },
+    "provenance.runtime_cell.speculative_decoding": true,
+    "provenance.runtime_cell.speculative_config.method": "mtp",
+    "provenance.runtime_cell.speculative_config.num_speculative_tokens": 3
+  },
+  "max_concurrent_http_requests": 4,
+  "generation_max_tokens": null,
+  "planned_arrival_delays_seconds": [
+    0.75,
+    1,
+    1.25
+  ],
+  "overlap": {
+    "all_decision_arrivals_during_generation_http": true,
+    "actual_arrival_delays_seconds": [
+      0.7507088179700077,
+      1.0001937500201166,
+      1.2503757929662243
+    ],
+    "generation_http_seconds": 6.9497976819984615,
+    "scope": "overlapping HTTP lifetimes; no assertion of simultaneous GPU kernels",
+    "first_token_upper_bound_seconds": 0.491830604034476,
+    "decision_arrivals_after_first_token_upper_bound": [
+      true,
+      true,
+      true
+    ]
+  },
+  "generation_phase_timing": {
+    "schema_version": 1,
+    "source": "vllm-engine-core-request-stats",
+    "status": "available",
+    "reason": null,
+    "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
+    "prefill_seconds": 0.39813154097646475,
+    "decode_seconds": 6.4579670779639855,
+    "queue_seconds": 0.00004310405347496271,
+    "prompt_tokens": 419,
+    "completion_tokens": 64,
+    "decode_tokens": 63,
+    "reported_cached_prompt_tokens": 0,
+    "num_preemptions": 0
+  },
+  "speculative_decoding": {
+    "mean_acceptance_length": 1,
+    "draft_acceptance_rate": 0,
+    "acceptance_histogram": [
+      63,
+      0,
+      0,
+      0
+    ],
+    "num_spec_steps": 63,
+    "num_accepted_draft_tokens": 0,
+    "num_draft_tokens": 189,
+    "num_spec_tokens": 3
+  },
+  "health_before": {
+    "status": "ok",
+    "model": "NVIDIAFlashNextHF",
+    "experimental": true,
+    "calibration": "raw",
+    "context_window": 262144,
+    "memory_fraction_limit": 0.85,
+    "validation_memory_fraction": 0.75,
+    "max_active_engine_requests": 4,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "head_loaded": true,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "trusted_still_images": true,
+      "images": true,
+      "streaming": false,
+      "checkpoint_retention": false
+    }
+  },
+  "health_after": {
+    "status": "ok",
+    "model": "NVIDIAFlashNextHF",
+    "experimental": true,
+    "calibration": "raw",
+    "context_window": 262144,
+    "memory_fraction_limit": 0.85,
+    "validation_memory_fraction": 0.75,
+    "max_active_engine_requests": 4,
+    "active_engine_requests": 0,
+    "retained_prefixes": 0,
+    "retained_tokens": 0,
+    "retained_multimodal_bytes": 0,
+    "head_loaded": true,
+    "capabilities": {
+      "text_generation": true,
+      "typed_decisions": true,
+      "trusted_still_images": true,
+      "images": true,
+      "streaming": false,
+      "checkpoint_retention": false
+    }
+  }
+}

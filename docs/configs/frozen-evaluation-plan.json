@@ -1,0 +1,151 @@
+{
+  "baseline_index": 40.98328748655934,
+  "baseline_index_ci": [
+    38.82186660975127,
+    43.90236579809118
+  ],
+  "baseline_question_accuracy": 0.6982842343800583,
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 0,
+  "calibration_allowed": false,
+  "candidate_selection_allowed": false,
+  "candidates": {
+    "feature-only": {
+      "commit": "6721adaf03b0598839c2d59c6059632912bc883a",
+      "parameters": 1402144,
+      "profile": {
+        "adapter_learning_rate_multiplier": 10,
+        "balanced_noul": false,
+        "batch_size": 256,
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 17,
+        "channel_gate_learning_rate_multiplier": 10,
+        "clip_grad_norm": 1,
+        "correction_regularization": 0,
+        "distillation": {
+          "detached": true,
+          "direction": "teacher||student",
+          "extra_lm_copy": false,
+          "inference_used": false,
+          "label_controls_usage": "FIT-training-only",
+          "normalization": "log(valid candidate count)",
+          "role": "fit",
+          "source": "native4-owned-cached-label-controls",
+          "temperature": 1,
+          "vocabulary_free_inference": true
+        },
+        "distillation_lambda": 0,
+        "gold_target_smoothing": 0.05,
+        "key_adapter_learning_rate_multiplier": 10,
+        "key_gain": 0.001,
+        "learning_rate": 0.00001,
+        "learning_rate_schedule": [
+          {
+            "learning_rate": 0.00001,
+            "start_epoch": 1
+          },
+          {
+            "learning_rate": 0.000003,
+            "start_epoch": 5
+          }
+        ],
+        "loss": "gold CE/log(K) + distillation_lambda * KL(teacher||student)/log(K)",
+        "max_epochs": 12,
+        "minimum_improvement": 0.0001,
+        "optimizer_foreach": false,
+        "optimizer_fused": true,
+        "patience": 3,
+        "preference_consistency_beta": 0.05,
+        "seed": 43,
+        "weight_decay": 0.01
+      },
+      "source8": {
+        "features.py": "c6583d37f865befeedc55151a9a1b37a9f945563bf9299fa65cb909d986d7579",
+        "head.py": "77243274f538bc289f4908a1a0f214faf30597417234c0ba625678a7203f7ca4",
+        "metrics.py": "78ded3a8847ff3d10ced0fe5452bce72c2000730e48ce52ae73a1ed826380d68",
+        "preference_head_retrain.py": "2fcaa6c2c919527cd1164058bb36852fae732202845dfe95453b0ccd579e519b",
+        "scope.py": "69befb3e286726123c1f56802e9783b28e867a2a9fa612f815c463d9fc79c317",
+        "shared_head.py": "94ea3be7d786b12b8ab97e90c656823a03086f9dfb65d726b3e58cae72d871c8",
+        "shared_train.py": "1972d4859616df651abde1abcc63b67ec7a39dba5b2b25cd1c3ec373267c6e96",
+        "shared_training_data.py": "4f9364c5d0a421e75ff3cb22f636ac4cf52ac01fdae3a5c107701893234e82c8"
+      },
+      "tree": "${FEATURE_ONLY_TRAINING_SOURCE}",
+      "weights": "${FUZEV_ROOT}/weights/retained-clean-20261010/feature-only/fit/head.safetensors",
+      "weights_sha256": "862cd81d9837de046dd7247c2a6b466f59eea313c5005b71e4891f44b4c0becb"
+    },
+    "lm-assisted": {
+      "commit": "9728b98b205d4f9af8ecac4e28ee678ba5ab758b",
+      "parameters": 2872401,
+      "profile": {
+        "adapter_learning_rate_multiplier": 10,
+        "balanced_noul": false,
+        "batch_size": 256,
+        "bootstrap_draws": 2000,
+        "bootstrap_seed": 17,
+        "channel_gate_learning_rate_multiplier": 10,
+        "clip_grad_norm": 1,
+        "correction_regularization": 0.001,
+        "fit_track_weighting": "equal-track-macro",
+        "key_adapter_learning_rate_multiplier": 10,
+        "key_gain": 0.001,
+        "learning_rate": 0.00001,
+        "learning_rate_schedule": {
+          "epoch_indexing": "one-based",
+          "stages": [
+            {
+              "learning_rate": 0.00001,
+              "start_epoch": 1
+            },
+            {
+              "learning_rate": 0.000003,
+              "start_epoch": 5
+            }
+          ],
+          "update": "before-epoch-FIT"
+        },
+        "loss": "normalized candidate cross-entropy plus correction mean-square and FIT-only normalized teacher KL",
+        "max_epochs": 12,
+        "minimum_improvement": 0.0001,
+        "optimizer_foreach": false,
+        "optimizer_fused": true,
+        "ordinal_rps_coefficient": 0.15,
+        "patience": 3,
+        "preference_consistency_beta": 0.05,
+        "seed": 43,
+        "teacher_distribution_regularization": 0.03,
+        "weight_decay": 0.01
+      },
+      "source8": {
+        "features.py": "c6583d37f865befeedc55151a9a1b37a9f945563bf9299fa65cb909d986d7579",
+        "head.py": "52882ccbc6009ab0d8aa090f8f0f087cc794503cfb98f7a83696139bddd163ea",
+        "metrics.py": "78ded3a8847ff3d10ced0fe5452bce72c2000730e48ce52ae73a1ed826380d68",
+        "preference_head_retrain.py": "2fcaa6c2c919527cd1164058bb36852fae732202845dfe95453b0ccd579e519b",
+        "scope.py": "69befb3e286726123c1f56802e9783b28e867a2a9fa612f815c463d9fc79c317",
+        "shared_head.py": "5435eeff154cc7494ca9a214f8a8fdf32012326902cf41da32ab7fe1dac9090c",
+        "shared_train.py": "f39f7b4342bec4d1b8f3616838d319fb272c3f0a45c0997f7c7558b8337fbaee",
+        "shared_training_data.py": "4f9364c5d0a421e75ff3cb22f636ac4cf52ac01fdae3a5c107701893234e82c8"
+      },
+      "tree": "${LM_ASSISTED_TRAINING_SOURCE}",
+      "weights": "${FUZEV_ROOT}/weights/retained-clean-20261010/lm-assisted/fit/head.safetensors",
+      "weights_sha256": "f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c"
+    }
+  },
+  "cuda_allocation_fraction": 0.85,
+  "diagnostic": "feature-only",
+  "gate": "primary index CI lower > released Kev-9B v2 index CI upper; no paired claim",
+  "kind": "frozen-kev-text-evaluation-v1",
+  "original_feature_identity": "${FUZEV_ROOT}/data/features/native-4.05-dimension-choice-v4/identity.json",
+  "partition": "test",
+  "primary": "lm-assisted",
+  "qualified": false,
+  "questions": 3089,
+  "raw_probabilities_not_calibrated": true,
+  "records": 1990,
+  "servable": false,
+  "suite": "${FUZEV_ROOT}/data/evaluation/kev-breadth-v1",
+  "temperature": 1,
+  "test_sha256": "91a64f0a9448dcaece421c051a4b3fd079c15b84ea6cb9cfa8155237d8d1fa18",
+  "training_allowed": false,
+  "scope": "Original fixed TEST evaluation plan; dataset contents and input hash-map paths omitted.",
+  "commit_label": "All candidate commit fields are unpublished lab commit IDs."
+}

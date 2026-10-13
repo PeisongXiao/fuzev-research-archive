@@ -1,0 +1,64 @@
+{
+  "schema_version": 2,
+  "scope": "curated-research-methods-and-aggregate-results",
+  "sources": {
+    "research_snapshot": {
+      "directory": "research-snapshot",
+      "unpublished_lab_commit": "48c09bb6592d09702de15d16be252c851429c622",
+      "curated": true
+    },
+    "numerical_scorer": {
+      "unpublished_lab_commit": "9728b98b205d4f9af8ecac4e28ee678ba5ab758b",
+      "provenance_record": "docs/head-provenance.json",
+      "path": "research-snapshot/fuzev_research/shared_head.py"
+    }
+  },
+  "head": {
+    "parameters": 2872401,
+    "fp32_tensors": 15,
+    "tensor_sha256": "f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c",
+    "model_card": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev",
+    "provenance": "docs/research-provenance.md#released-head-provenance",
+    "checksums": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev/blob/main/SHA256SUMS"
+  },
+  "studies": [
+    {
+      "id": "shared-head-refit-and-calibration",
+      "method": "docs/research-training.md#reproduce",
+      "settings": "docs/historical-study-settings.json",
+      "portable_training": "docs/train-a-shared-head.md",
+      "code_and_configs": "docs/study-code/README.md"
+    },
+    {
+      "id": "held-out-quality",
+      "method": "docs/processed-quality.md#reproduce",
+      "results": "docs/processed-quality.md",
+      "code_and_configs": "docs/study-code/README.md"
+    },
+    {
+      "id": "six-configuration-quality",
+      "method": "docs/research-evaluation.md#reproduce",
+      "results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/benchmarks.md",
+      "aggregate_results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/benchmark-results.json",
+      "code_and_configs": "docs/study-code/README.md"
+    },
+    {
+      "id": "http-performance",
+      "method": "docs/research-evaluation.md#running-server-checks",
+      "results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/performance.md",
+      "aggregate_results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/performance-results.json"
+    },
+    {
+      "id": "engine-integration",
+      "method": "docs/2026-10-12-engine-owned-integration.md#reproduce",
+      "results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/integration.md"
+    },
+    {
+      "id": "systemone-cpu-compatibility",
+      "method": "docs/2026-10-12-systemone-unit-compatibility.md#reproduce-current-cpu-checks",
+      "results": "docs/2026-10-12-systemone-unit-compatibility.md"
+    }
+  ],
+  "historical_settings": "docs/research-provenance.md#historical-settings",
+  "glossary": "docs/research-provenance.md#glossary"
+}
