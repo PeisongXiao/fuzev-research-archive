@@ -1,0 +1,347 @@
+{
+  "scope": "Concurrent versus sequential same-prefix decisions on the v1.1 release candidate before the decision-root scheduling fix and on the final v1.1 sources.",
+  "measured_date": "2026-10-17",
+  "tool": "Native probe: four three-option Choice questions over one shared state, decided one at a time (three passes) and concurrently (two passes) through the ExLlamaV3 decision integration on one loaded model.",
+  "protocol": {
+    "sequential": "Three passes deciding the four questions one at a time: pass 1 and pass 3 start from an empty cache, pass 2 first prepares the shared state and reuses it.",
+    "concurrent": "Two passes deciding the four questions concurrently over the prepared shared state.",
+    "comparison": "Maximum absolute difference over all questions and options between every sequential pass and every concurrent pass."
+  },
+  "model": "turboderp/Qwen3.8-Flash-Next-exl3@55a732e0c4c3d4614bc42b68493bb930d9b02c0a",
+  "head": "fuzev-head-1.1.0, calibrated",
+  "environment": {
+    "device": "NVIDIA GB10",
+    "device_memory_bytes": 130663165952,
+    "python": "3.12.3",
+    "torch": "2.13.0+cu130",
+    "cuda": "13.0",
+    "triton": "3.7.1",
+    "flashinfer-python": "0.7.2",
+    "exllamav3": "1.6.1+fuzev.v1.1",
+    "device_memory_description": "128 GB unified memory"
+  },
+  "settings": {
+    "max_batch_size": 4,
+    "kv_cache_bits": [
+      8,
+      8
+    ],
+    "cache_tokens": 16384,
+    "prefill_chunk": 2048,
+    "recurrent_checkpoint_interval": 2048,
+    "recurrent_state": "float32",
+    "mtp_tokens": 0,
+    "torch_memory_fraction": 0.8,
+    "prefill_optimizations": true
+  },
+  "fixture": {
+    "questions": 4,
+    "candidates_per_question": 3,
+    "shared_state": "The sentence 'The committee compares the available choices using the supplied facts.' repeated to 2,048 tokens; it re-encodes to 1,878 tokens and the encoded decision state has 1,883 tokens.",
+    "candidates": [
+      "Use the supplied facts.",
+      "Ignore the supplied facts.",
+      "Ask for clarification."
+    ]
+  },
+  "arms": {
+    "before": {
+      "build": "v1.1 release candidate before the decision-root scheduling fix (unpublished lab commit IDs: fork 7282dacc, runtime dc82fa4, integration 1a4e488)",
+      "completed_root_branches": {
+        "sequential": [
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ]
+        ],
+        "concurrent": [
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            3
+          ]
+        ]
+      },
+      "max_abs_differences": {
+        "features": {
+          "isolated_vs_isolated": 0.0,
+          "concurrent_vs_concurrent": 0.0,
+          "concurrent_vs_isolated": 3.90625
+        },
+        "raw_probabilities": {
+          "isolated_vs_isolated": 0.0,
+          "concurrent_vs_concurrent": 0.0,
+          "concurrent_vs_isolated": 0.0891873
+        },
+        "calibrated_probabilities": {
+          "isolated_vs_isolated": 0.0,
+          "concurrent_vs_concurrent": 0.0,
+          "concurrent_vs_isolated": 0.0797301
+        }
+      },
+      "selected_candidate": {
+        "isolated": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "concurrent": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "raw_probabilities": {
+        "sequential_pass_1": [
+          [
+            0.643682,
+            0.025503,
+            0.330815
+          ],
+          [
+            0.653005,
+            0.032044,
+            0.31495
+          ],
+          [
+            0.631235,
+            0.055827,
+            0.312938
+          ],
+          [
+            0.629678,
+            0.051902,
+            0.318419
+          ]
+        ],
+        "concurrent_pass_1": [
+          [
+            0.721169,
+            0.037203,
+            0.241628
+          ],
+          [
+            0.661968,
+            0.029301,
+            0.308731
+          ],
+          [
+            0.548843,
+            0.067933,
+            0.383225
+          ],
+          [
+            0.629678,
+            0.051902,
+            0.318419
+          ]
+        ]
+      },
+      "remaining_after_concurrent": {
+        "active": 0,
+        "pending": 0,
+        "roots": 0,
+        "referenced_pages": 0,
+        "pinned_checkpoints": 0,
+        "free_slots": 4,
+        "slots": 4
+      }
+    },
+    "after": {
+      "build": "final v1.1 sources (fork 1.6.1+fuzev.v1.1, runtime 1.1.0, integration 1.1.0)",
+      "completed_root_branches": {
+        "sequential": [
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ]
+        ],
+        "concurrent": [
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ]
+        ]
+      },
+      "max_abs_differences": {
+        "features": {
+          "isolated_vs_isolated": 0.0,
+          "concurrent_vs_concurrent": 0.0,
+          "concurrent_vs_isolated": 2.75
+        },
+        "raw_probabilities": {
+          "isolated_vs_isolated": 0.0,
+          "concurrent_vs_concurrent": 0.0,
+          "concurrent_vs_isolated": 0.0477242
+        },
+        "calibrated_probabilities": {
+          "isolated_vs_isolated": 0.0,
+          "concurrent_vs_concurrent": 0.0,
+          "concurrent_vs_isolated": 0.0419041
+        }
+      },
+      "selected_candidate": {
+        "isolated": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "concurrent": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "raw_probabilities": {
+        "sequential_pass_1": [
+          [
+            0.643682,
+            0.025503,
+            0.330815
+          ],
+          [
+            0.653005,
+            0.032044,
+            0.31495
+          ],
+          [
+            0.631235,
+            0.055827,
+            0.312938
+          ],
+          [
+            0.629678,
+            0.051902,
+            0.318419
+          ]
+        ],
+        "concurrent_pass_1": [
+          [
+            0.685524,
+            0.027153,
+            0.287323
+          ],
+          [
+            0.614561,
+            0.032301,
+            0.353138
+          ],
+          [
+            0.655886,
+            0.066985,
+            0.277129
+          ],
+          [
+            0.592811,
+            0.041045,
+            0.366144
+          ]
+        ]
+      },
+      "remaining_after_concurrent": {
+        "active": 0,
+        "pending": 0,
+        "roots": 0,
+        "referenced_pages": 0,
+        "pinned_checkpoints": 0,
+        "free_slots": 4,
+        "slots": 4
+      }
+    }
+  },
+  "limitations": [
+    "One fixture: four questions, three options, one shared state, one batch size. Other prompts, option counts and batch sizes can differ by other amounts.",
+    "Sequential passes match each other exactly, with or without the cached shared state, and concurrent passes match each other exactly; the differences are between the two execution orders."
+  ]
+}

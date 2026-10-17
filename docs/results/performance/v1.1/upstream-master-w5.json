@@ -1,0 +1,271 @@
+{
+  "mode": "plain",
+  "settings": {
+    "mode": "plain",
+    "bundle": null,
+    "chunks": [
+      32768
+    ],
+    "lengths": [
+      40960
+    ],
+    "prefix_tokens": 32768,
+    "append_tokens": 8192,
+    "reps": 2,
+    "variants": null,
+    "cache_tokens": 73728,
+    "context_tokens": 73728,
+    "recurrent_state_fp32": true,
+    "use_gib": 90.0,
+    "features": null,
+    "trace": null,
+    "trace_backend": "torch",
+    "ple_diagnostic": false,
+    "warm_ple": true,
+    "continuation": null,
+    "continuation_only": false,
+    "hc_folded_reference": false,
+    "greedy": null,
+    "stage_a": false,
+    "moe_witness": null,
+    "moe_layer_probe": false,
+    "stage_a_fanout_only": false,
+    "fanout_widths": [
+      4,
+      8
+    ],
+    "head": null,
+    "batch_sizes": [
+      1,
+      4
+    ],
+    "mtp_tokens": 3
+  },
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "triton": "3.7.1",
+    "flashinfer-python": "0.6.18.post1",
+    "flashinfer-jit-cache": "0.6.18.post1+cu130"
+  },
+  "effective_prefill_options": {},
+  "recurrent_state_dtypes": {
+    "target": {
+      "(0, 0)": "torch.float32",
+      "(1, 0)": "torch.float32",
+      "(2, 0)": "torch.float32",
+      "(4, 0)": "torch.float32",
+      "(5, 0)": "torch.float32",
+      "(6, 0)": "torch.float32",
+      "(8, 0)": "torch.float32",
+      "(9, 0)": "torch.float32",
+      "(10, 0)": "torch.float32",
+      "(12, 0)": "torch.float32",
+      "(13, 0)": "torch.float32",
+      "(14, 0)": "torch.float32",
+      "(16, 0)": "torch.float32",
+      "(17, 0)": "torch.float32",
+      "(18, 0)": "torch.float32",
+      "(20, 0)": "torch.float32",
+      "(21, 0)": "torch.float32",
+      "(22, 0)": "torch.float32",
+      "(24, 0)": "torch.float32",
+      "(25, 0)": "torch.float32",
+      "(26, 0)": "torch.float32",
+      "(28, 0)": "torch.float32",
+      "(29, 0)": "torch.float32",
+      "(30, 0)": "torch.float32",
+      "(32, 0)": "torch.float32",
+      "(33, 0)": "torch.float32",
+      "(34, 0)": "torch.float32",
+      "(36, 0)": "torch.float32",
+      "(37, 0)": "torch.float32",
+      "(38, 0)": "torch.float32",
+      "(40, 0)": "torch.float32",
+      "(41, 0)": "torch.float32",
+      "(42, 0)": "torch.float32",
+      "(44, 0)": "torch.float32",
+      "(45, 0)": "torch.float32",
+      "(46, 0)": "torch.float32"
+    },
+    "draft": {}
+  },
+  "ngram_stream_from_disk": true,
+  "batch_size": 1,
+  "runs": [
+    {
+      "chunk": 32768,
+      "length": 40960,
+      "rep": 0,
+      "measured": false,
+      "offset": 7919,
+      "wall_s": 5.964131287008058,
+      "time_prefill_s": 5.925279140472412,
+      "prompt_tokens": 40960,
+      "cached_tokens": 32768,
+      "processed_tokens": 8191,
+      "peak_gpu_bytes": 68938456064,
+      "tok_per_s": 1382.3821301601913,
+      "prefix_tokens": 32768,
+      "append_tokens": 8192,
+      "forwarded_tokens": 8192,
+      "new_tokens": 1,
+      "prefix_setup": {
+        "wall_s": 20.366139221994672,
+        "prompt_tokens": 32769,
+        "cached_tokens": 0,
+        "processed_tokens": 32768,
+        "forwarded_tokens": 32769,
+        "new_tokens": 1
+      }
+    },
+    {
+      "chunk": 32768,
+      "length": 40960,
+      "rep": 1,
+      "measured": true,
+      "offset": 15838,
+      "wall_s": 5.99700935499277,
+      "time_prefill_s": 5.95774507522583,
+      "prompt_tokens": 40960,
+      "cached_tokens": 32768,
+      "processed_tokens": 8191,
+      "peak_gpu_bytes": 68960300544,
+      "tok_per_s": 1374.849023678563,
+      "prefix_tokens": 32768,
+      "append_tokens": 8192,
+      "forwarded_tokens": 8192,
+      "new_tokens": 1,
+      "prefix_setup": {
+        "wall_s": 20.393417234998196,
+        "prompt_tokens": 32769,
+        "cached_tokens": 0,
+        "processed_tokens": 32768,
+        "forwarded_tokens": 32769,
+        "new_tokens": 1
+      },
+      "ple_priming": {
+        "wall_s": 27.48010395601159,
+        "input_tokens": 40960,
+        "prompt_tokens": 40960,
+        "cached_tokens": 0,
+        "processed_tokens": 40959
+      },
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "timed_ru_inblock_before": 129994840,
+      "timed_ru_inblock_after": 129994840,
+      "timed_ru_inblock_delta": 0
+    },
+    {
+      "chunk": 32768,
+      "length": 40960,
+      "rep": 2,
+      "measured": true,
+      "offset": 23757,
+      "wall_s": 6.150589958007913,
+      "time_prefill_s": 6.112762451171875,
+      "prompt_tokens": 40960,
+      "cached_tokens": 32768,
+      "processed_tokens": 8191,
+      "peak_gpu_bytes": 68964461056,
+      "tok_per_s": 1339.9833652017194,
+      "prefix_tokens": 32768,
+      "append_tokens": 8192,
+      "forwarded_tokens": 8192,
+      "new_tokens": 1,
+      "prefix_setup": {
+        "wall_s": 21.558501050050836,
+        "prompt_tokens": 32769,
+        "cached_tokens": 0,
+        "processed_tokens": 32768,
+        "forwarded_tokens": 32769,
+        "new_tokens": 1
+      },
+      "ple_priming": {
+        "wall_s": 26.801379380980507,
+        "input_tokens": 40960,
+        "prompt_tokens": 40960,
+        "cached_tokens": 0,
+        "processed_tokens": 40959
+      },
+      "cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "timed_ru_inblock_before": 129994840,
+      "timed_ru_inblock_after": 129994840,
+      "timed_ru_inblock_delta": 0
+    }
+  ],
+  "means": [
+    {
+      "chunk": 32768,
+      "length": 40960,
+      "reps": 2,
+      "tok_per_s": 1357.4161944401412,
+      "time_prefill_s": 6.0352537631988525,
+      "wall_s": 6.073799656500341,
+      "prefix_tokens": 32768,
+      "append_tokens": 8192
+    }
+  ],
+  "environment": {
+    "device": "NVIDIA GB10",
+    "device_memory_description": "128 GB unified memory",
+    "torch": "2.13.0+cu130",
+    "triton": "3.7.1",
+    "flashinfer_python": "0.6.18.post1",
+    "flashinfer_jit_cache": "0.6.18.post1+cu130",
+    "prefill_chunk": [
+      32768
+    ],
+    "max_batch_size": 1,
+    "kv_cache_bits": [
+      8,
+      8
+    ],
+    "mtp_tokens": 0,
+    "recurrent_state": [
+      "torch.float32"
+    ],
+    "mtp_note": "Ordinary fresh/append prefill loads the target component only. settings.mtp_tokens records the generic flag used by the harness's additional generation modes."
+  }
+}

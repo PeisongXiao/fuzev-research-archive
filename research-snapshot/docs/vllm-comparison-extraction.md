@@ -280,7 +280,7 @@ CUDA_VISIBLE_DEVICES="" python -m pytest -q \
   tests/test_vllm_comparison_extract.py
 ```
 
-Current results are linked from the archive evaluation guide. These fixture
+Current results are linked from the [archive evaluation guide](../../docs/research-evaluation.md). These fixture
 checks establish readout and cleanup behavior, not engine transfer quality.
 
 [Snapshot methods and environment](../README.md)

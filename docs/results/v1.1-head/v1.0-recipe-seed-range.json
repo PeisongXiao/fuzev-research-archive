@@ -1,0 +1,314 @@
+{
+  "scope": "Context only: DEV decision-accuracy range of three seeds (17, 29, 43) of the v1.0 text recipe (learning rate 0.0003, Brier weight 0.1) over 14,290 DEV records.",
+  "recipe": {
+    "learning_rate": 0.0003,
+    "brier_weight": 0.1
+  },
+  "trials": [
+    {
+      "seed": 17,
+      "best_epoch": 3,
+      "records": 14290,
+      "record_weighted_accuracy": 0.6392273793811981,
+      "development": {
+        "tracks": {
+          "helpsteer2/choice/text/main": {
+            "nll": 0.7476807835592658,
+            "normalized_nll": 1.0786753586089275,
+            "brier": 0.3570878518451122,
+            "expected_accuracy": 0.6703910614525139,
+            "accuracy": 0.717546362339515,
+            "tie_aware_accuracy": 0.7787709497206704,
+            "ece": 0.14931714662853143,
+            "records": 895
+          },
+          "helpsteer3/choice/text/main": {
+            "nll": 0.5965515429102577,
+            "normalized_nll": 0.8606419525912885,
+            "brier": 0.34073890173577687,
+            "expected_accuracy": 0.7464819700967458,
+            "accuracy": 0.7596109309865678,
+            "tie_aware_accuracy": 0.7717678100263852,
+            "ece": 0.10784382878864524,
+            "records": 2274
+          },
+          "boolq/noul/text/boolean_truth": {
+            "nll": 0.2683123767723613,
+            "normalized_nll": 0.3870929353786168,
+            "brier": 0.1612898604707282,
+            "expected_accuracy": 0.8938053097345132,
+            "accuracy": 0.8938053097345132,
+            "tie_aware_accuracy": 0.8938053097345132,
+            "ece": 0.03806019348593305,
+            "records": 791
+          },
+          "helpsteer2/ordinal/text/helpfulness": {
+            "nll": 1.2315659381724082,
+            "normalized_nll": 0.7652149416002002,
+            "brier": 0.6597533736641955,
+            "expected_accuracy": 0.45014520813165537,
+            "accuracy": 0.45014520813165537,
+            "tie_aware_accuracy": 0.45014520813165537,
+            "ordinal_mae": 0.811209298724029,
+            "ranked_probability_score": 0.13055606424526225,
+            "ece": 0.08317711282324465,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/correctness": {
+            "nll": 1.2146825756857962,
+            "normalized_nll": 0.7547247186744349,
+            "brier": 0.63603577224098,
+            "expected_accuracy": 0.5145208131655372,
+            "accuracy": 0.5145208131655372,
+            "tie_aware_accuracy": 0.5145208131655372,
+            "ordinal_mae": 0.7859011957969037,
+            "ranked_probability_score": 0.1281493980121479,
+            "ece": 0.11475224300377357,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/coherence": {
+            "nll": 0.8376160141575898,
+            "normalized_nll": 0.520440091342689,
+            "brier": 0.4533587004454886,
+            "expected_accuracy": 0.7192642787996127,
+            "accuracy": 0.7192642787996127,
+            "tie_aware_accuracy": 0.7192642787996127,
+            "ordinal_mae": 0.3821737620714049,
+            "ranked_probability_score": 0.06883910166605815,
+            "ece": 0.15484766490446158,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/complexity": {
+            "nll": 0.9816726019988861,
+            "normalized_nll": 0.6099474819219417,
+            "brier": 0.5505066328841662,
+            "expected_accuracy": 0.5847047434656341,
+            "accuracy": 0.5847047434656341,
+            "tie_aware_accuracy": 0.5847047434656341,
+            "ordinal_mae": 0.4881690979082888,
+            "ranked_probability_score": 0.07824147608022762,
+            "ece": 0.06488357994299696,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/verbosity": {
+            "nll": 0.8673953491986133,
+            "normalized_nll": 0.538943032531632,
+            "brier": 0.4796271480053343,
+            "expected_accuracy": 0.6636011616650532,
+            "accuracy": 0.6636011616650532,
+            "tie_aware_accuracy": 0.6636011616650532,
+            "ordinal_mae": 0.3944166788815269,
+            "ranked_probability_score": 0.06869153981436718,
+            "ece": 0.11528990338718034,
+            "records": 2066
+          }
+        },
+        "macro_normalized_nll": 0.6894600640812163
+      }
+    },
+    {
+      "seed": 29,
+      "best_epoch": 5,
+      "records": 14290,
+      "record_weighted_accuracy": 0.640117804218313,
+      "development": {
+        "tracks": {
+          "helpsteer2/choice/text/main": {
+            "nll": 0.7549408376319565,
+            "normalized_nll": 1.0891494026161839,
+            "brier": 0.35738885692195854,
+            "expected_accuracy": 0.6782122905027933,
+            "accuracy": 0.7275320970042796,
+            "tie_aware_accuracy": 0.7865921787709497,
+            "ece": 0.14867920908951923,
+            "records": 895
+          },
+          "helpsteer3/choice/text/main": {
+            "nll": 0.6382758267394599,
+            "normalized_nll": 0.9208373699563221,
+            "brier": 0.3533756981548467,
+            "expected_accuracy": 0.7447229551451188,
+            "accuracy": 0.7577582213987958,
+            "tie_aware_accuracy": 0.7700087950747582,
+            "ece": 0.11572654322921802,
+            "records": 2274
+          },
+          "boolq/noul/text/boolean_truth": {
+            "nll": 0.25735121217778417,
+            "normalized_nll": 0.37127931757565263,
+            "brier": 0.15014353722879947,
+            "expected_accuracy": 0.8938053097345132,
+            "accuracy": 0.8938053097345132,
+            "tie_aware_accuracy": 0.8938053097345132,
+            "ece": 0.017940434174002456,
+            "records": 791
+          },
+          "helpsteer2/ordinal/text/helpfulness": {
+            "nll": 1.2828491253260708,
+            "normalized_nll": 0.7970789773343293,
+            "brier": 0.6741609316555405,
+            "expected_accuracy": 0.45014520813165537,
+            "accuracy": 0.45014520813165537,
+            "tie_aware_accuracy": 0.45014520813165537,
+            "ordinal_mae": 0.8006814819870941,
+            "ranked_probability_score": 0.13267825561643706,
+            "ece": 0.11729771405679794,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/correctness": {
+            "nll": 1.228863152250133,
+            "normalized_nll": 0.7635356062860548,
+            "brier": 0.6474277994063765,
+            "expected_accuracy": 0.4941916747337851,
+            "accuracy": 0.4941916747337851,
+            "tie_aware_accuracy": 0.4941916747337851,
+            "ordinal_mae": 0.7879694400317677,
+            "ranked_probability_score": 0.12931289287453665,
+            "ece": 0.1048516576004911,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/coherence": {
+            "nll": 0.783217692447363,
+            "normalized_nll": 0.48664051368271255,
+            "brier": 0.4358678827686327,
+            "expected_accuracy": 0.7086156824782188,
+            "accuracy": 0.7086156824782188,
+            "tie_aware_accuracy": 0.7086156824782188,
+            "ordinal_mae": 0.4144954693345073,
+            "ranked_probability_score": 0.06638386694745171,
+            "ece": 0.08697883745001381,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/complexity": {
+            "nll": 0.9996386601514549,
+            "normalized_nll": 0.6211104214884623,
+            "brier": 0.5418548693652182,
+            "expected_accuracy": 0.6151984511132623,
+            "accuracy": 0.6151984511132623,
+            "tie_aware_accuracy": 0.6151984511132623,
+            "ordinal_mae": 0.45810375891106203,
+            "ranked_probability_score": 0.07481376752974624,
+            "ece": 0.10385237527557711,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/verbosity": {
+            "nll": 0.8694376356217924,
+            "normalized_nll": 0.5402119764327301,
+            "brier": 0.47205234004161395,
+            "expected_accuracy": 0.6679574056147144,
+            "accuracy": 0.6679574056147144,
+            "tie_aware_accuracy": 0.6679574056147144,
+            "ordinal_mae": 0.4084579423570143,
+            "ranked_probability_score": 0.067335875798633,
+            "ece": 0.07475410710514145,
+            "records": 2066
+          }
+        },
+        "macro_normalized_nll": 0.6987304481715559
+      }
+    },
+    {
+      "seed": 43,
+      "best_epoch": 3,
+      "records": 14290,
+      "record_weighted_accuracy": 0.6320541595993681,
+      "development": {
+        "tracks": {
+          "helpsteer2/choice/text/main": {
+            "nll": 0.6750684426084286,
+            "normalized_nll": 0.9739178944118158,
+            "brier": 0.3459905783697755,
+            "expected_accuracy": 0.6525139664804469,
+            "accuracy": 0.6947218259629101,
+            "tie_aware_accuracy": 0.7608938547486034,
+            "ece": 0.13289537503325496,
+            "records": 895
+          },
+          "helpsteer3/choice/text/main": {
+            "nll": 0.5722014080730053,
+            "normalized_nll": 0.825512133816607,
+            "brier": 0.34469698727396686,
+            "expected_accuracy": 0.7293315743183817,
+            "accuracy": 0.7415470125057897,
+            "tie_aware_accuracy": 0.7546174142480211,
+            "ece": 0.0904892471172698,
+            "records": 2274
+          },
+          "boolq/noul/text/boolean_truth": {
+            "nll": 0.3302103406926432,
+            "normalized_nll": 0.4763928209675315,
+            "brier": 0.16722406514827284,
+            "expected_accuracy": 0.8963337547408344,
+            "accuracy": 0.8963337547408344,
+            "tie_aware_accuracy": 0.8963337547408344,
+            "ece": 0.06506575014972221,
+            "records": 791
+          },
+          "helpsteer2/ordinal/text/helpfulness": {
+            "nll": 1.3225009707709932,
+            "normalized_nll": 0.8217160541290182,
+            "brier": 0.6910390041542259,
+            "expected_accuracy": 0.425459825750242,
+            "accuracy": 0.425459825750242,
+            "tie_aware_accuracy": 0.425459825750242,
+            "ordinal_mae": 0.8771059163087486,
+            "ranked_probability_score": 0.14846920753635626,
+            "ece": 0.12123059016346475,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/correctness": {
+            "nll": 1.2338377562799423,
+            "normalized_nll": 0.7666265015553763,
+            "brier": 0.6457473937055971,
+            "expected_accuracy": 0.4961277831558567,
+            "accuracy": 0.4961277831558567,
+            "tie_aware_accuracy": 0.4961277831558567,
+            "ordinal_mae": 0.8334770866692558,
+            "ranked_probability_score": 0.1357403222586376,
+            "ece": 0.09236775241130517,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/coherence": {
+            "nll": 0.7469980911242639,
+            "normalized_nll": 0.4641360100648494,
+            "brier": 0.42131740710989923,
+            "expected_accuracy": 0.7110358180058083,
+            "accuracy": 0.7110358180058083,
+            "tie_aware_accuracy": 0.7110358180058083,
+            "ordinal_mae": 0.4222778408195018,
+            "ranked_probability_score": 0.06406760527465398,
+            "ece": 0.059310465968855045,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/complexity": {
+            "nll": 0.9308221203269138,
+            "normalized_nll": 0.5783523012199621,
+            "brier": 0.5314755470481186,
+            "expected_accuracy": 0.6132623426911907,
+            "accuracy": 0.6132623426911907,
+            "tie_aware_accuracy": 0.6132623426911907,
+            "ordinal_mae": 0.455346487904435,
+            "ranked_probability_score": 0.0739128858989607,
+            "ece": 0.0889932206993538,
+            "records": 2066
+          },
+          "helpsteer2/ordinal/text/verbosity": {
+            "nll": 0.8529423742743641,
+            "normalized_nll": 0.5299628943028819,
+            "brier": 0.4663781353346111,
+            "expected_accuracy": 0.6655372700871249,
+            "accuracy": 0.6655372700871249,
+            "tie_aware_accuracy": 0.6655372700871249,
+            "ordinal_mae": 0.4026802062196061,
+            "ranked_probability_score": 0.0663023526328413,
+            "ece": 0.08141402962425556,
+            "records": 2066
+          }
+        },
+        "macro_normalized_nll": 0.6795770763085053
+      }
+    }
+  ],
+  "accuracy_range": 0.008063644618944932,
+  "percentage_point_range": 0.8063644618944932
+}

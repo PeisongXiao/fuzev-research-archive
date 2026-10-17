@@ -9,5 +9,6 @@
     "Status": "exited",
     "Running": false,
     "Dead": false
-  }
+  },
+  "device": "NVIDIA GB10"
 }

@@ -14,12 +14,22 @@
     }
   },
   "head": {
+    "release": "v1.0",
     "parameters": 2872401,
     "fp32_tensors": 15,
     "tensor_sha256": "f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c",
-    "model_card": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev",
-    "provenance": "docs/research-provenance.md#released-head-provenance",
-    "checksums": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev/blob/main/SHA256SUMS"
+    "model_card": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev/tree/v1.0",
+    "provenance": "docs/research-provenance.md#v10-head-provenance",
+    "checksums": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev/blob/v1.0/SHA256SUMS"
+  },
+  "head_v1.1": {
+    "release": "v1.1",
+    "bundle_version": "1.1.0",
+    "model_card": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev/tree/v1.1",
+    "checksums": "https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev/blob/v1.1/SHA256SUMS",
+    "config": "docs/configs/v1.1-final-head.json",
+    "calibration": "docs/configs/v1.1-final-calibration.json",
+    "results": "docs/v1.1-head-results.md"
   },
   "studies": [
     {
@@ -38,25 +48,47 @@
     {
       "id": "six-configuration-quality",
       "method": "docs/research-evaluation.md#reproduce",
-      "results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/benchmarks.md",
-      "aggregate_results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/benchmark-results.json",
+      "results": "docs/results-history.md",
+      "aggregate_results": "docs/results/panels/",
       "code_and_configs": "docs/study-code/README.md"
     },
     {
       "id": "http-performance",
       "method": "docs/research-evaluation.md#running-server-checks",
-      "results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/performance.md",
-      "aggregate_results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/performance-results.json"
+      "results": "docs/results-history.md",
+      "aggregate_results": "docs/results/performance/v1.0-short-workload-results.json"
     },
     {
       "id": "engine-integration",
       "method": "docs/2026-10-12-engine-owned-integration.md#reproduce",
-      "results": "https://github.com/PeisongXiao/fuzev/blob/main/docs/integration.md"
+      "results": "docs/results/integration/v1.0/integration-results.json"
     },
     {
       "id": "systemone-cpu-compatibility",
       "method": "docs/2026-10-12-systemone-unit-compatibility.md#reproduce-current-cpu-checks",
       "results": "docs/2026-10-12-systemone-unit-compatibility.md"
+    },
+    {
+      "id": "v1.1-head-results",
+      "method": "docs/train-v1.1-head.md",
+      "results": "docs/v1.1-head-results.md",
+      "aggregate_results": "docs/results/v1.1-head/"
+    },
+    {
+      "id": "integration-v1.1",
+      "results": "docs/integration-v1.1.md",
+      "aggregate_results": "docs/results/integration/v1.1/"
+    },
+    {
+      "id": "performance-v1.1",
+      "results": "docs/performance-v1.1.md",
+      "aggregate_results": "docs/results/performance/v1.1/"
+    },
+    {
+      "id": "v1.0-v1.1-comparison",
+      "method": "docs/v1.0-v1.1-comparison.md#method",
+      "results": "docs/v1.0-v1.1-comparison.md",
+      "aggregate_results": "docs/results/comparison/v1.1/"
     }
   ],
   "historical_settings": "docs/research-provenance.md#historical-settings",

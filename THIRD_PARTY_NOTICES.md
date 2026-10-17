@@ -42,6 +42,9 @@ redistribute backbone weights or dataset contents.
 | [HelpSteer3](https://huggingface.co/datasets/nvidia/HelpSteer3/tree/f6d145777bcbde96137596340fab89793acd1031) | NVIDIA and contributors | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | [MM-RLHF](https://huggingface.co/datasets/yifanzhang114/MM-RLHF/tree/29cfeea5929979d12b42a8f30201e03c188408a6) | Yifan Zhang and contributors | [MIT](https://opensource.org/license/mit), as declared in the dataset card |
 | [BoolQ](https://huggingface.co/datasets/google/boolq/tree/35b264d03638db9f4ce671b711558bf7ff0f80d5) | Clark et al., Google Research | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| [WANDS](https://github.com/wayfair/WANDS) | Chen, Liu, Liu, Sun, Baltrunas and Schroeder, Wayfair (ECIR 2022) | MIT, Copyright (c) 2021 ecir2022; v1.1 head FIT/DEV/CAL and held-out TEST rows |
+| [SugarCrepe](https://github.com/RAIVNLab/sugar-crepe) `replace_att` | Hsieh, Zhang, Ma, Kembhavi and Krishna (NeurIPS 2023 Datasets and Benchmarks) | MIT, Copyright (c) 2023 RAIVN Lab; FIT/DEV select the v1.1 image residual strength and temperature, EVAL reports the image result |
+| [COCO 2017 validation images](https://cocodataset.org/#termsofuse) | COCO Consortium | Annotations CC BY 4.0; images under the Flickr Terms of Use |
 
 ## Evaluation-Only Datasets
 
@@ -73,14 +76,19 @@ The following sources form Kev `breadth-v1`. Declarations and credits follow
 ## Historical Acquisition
 
 The research pipeline acquired and indexed A-OKVQA before the dataset-scope
-change. The released head and results use no A-OKVQA data.
+change. A-OKVQA v1.0 question-to-COCO image-ID metadata (allenai/aokvqa) was
+read to exclude previously used images from the SugarCrepe image sample.
+No A-OKVQA question, answer or image is a training, calibration or evaluation
+example.
 
 | Source | Credit | Declared Terms |
 | --- | --- | --- |
 | [A-OKVQA](https://huggingface.co/datasets/HuggingFaceM4/A-OKVQA/tree/d1b0efa3a436e9101dfbde3752db7607da696c35) | Schwenk et al. (ECCV 2022) | No license declared in the acquired dataset card; images are from COCO |
+| [Official A-OKVQA v1.0 metadata](https://github.com/allenai/aokvqa) | Schwenk et al., Allen Institute for AI | Repository Apache-2.0; no dataset license stated |
 
 These declarations describe the upstream releases. Rights in underlying images,
 text and generated responses remain governed by their source terms. Evaluation-only
 data do not supply head-fitting examples.
 
-The optional [vllm-exl3 plugin](https://github.com/PeisongXiao/vllm-exl3-plugin) uses AGPL-3.0-only.
+The v1.0 research servers used the [vllm-exl3 plugin](https://github.com/PeisongXiao/vllm-exl3-plugin/tree/v1.0)
+(AGPL-3.0-only); this archive contains none of its code.

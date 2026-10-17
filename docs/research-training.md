@@ -1,9 +1,12 @@
 # Training History
 
-How the selected FuZev head was produced. To fit a head to another backbone, use
+Covers the v1.0 head (`head.safetensors` SHA-256 prefix `f7bc42e7`);
+the v1.1 head is in [v1.1 head results](v1.1-head-results.md).
+
+How the v1.0 FuZev head was produced. To fit a head to another backbone, use
 the [training walkthrough](train-a-shared-head.md).
 
-## Selected Head
+## v1.0 Head
 
 The LM-assisted shared scorer has 2,872,401 FP32 parameters in 15 tensors. Its
 numerical implementation comes from unpublished lab commit
@@ -53,9 +56,11 @@ checks. See [processed quality](processed-quality.md).
   `$FUZEV_ROOT`. [Provenance](research-provenance.md) gives paths and source identity.
 - **Inputs:** acquire or produce prepared membership and feature shards separately.
 
-For a reusable training baseline, use the new
+For a reusable training baseline, use the
 [portable trainer](../tools/train_shared_head.py);
 [train-a-shared-head.md](train-a-shared-head.md) has its executable commands,
 feature schemas and a CPU example. The
 [snapshot training rehearsal](../research-snapshot/docs/training-rehearsal.md)
 documents the optimizer-resume and calibration methods used during development.
+
+The v1.1 head recipe is [train-v1.1-head.md](train-v1.1-head.md).

@@ -70,7 +70,7 @@ The following sources form Kev `breadth-v1`. Declarations and credits follow
 ## Historical Acquisition
 
 The research pipeline acquired and indexed A-OKVQA before the dataset-scope
-change. The released head and results use no A-OKVQA data.
+change. The v1.0 head and results use no A-OKVQA data.
 
 | Source | Credit | Declared Terms |
 | --- | --- | --- |

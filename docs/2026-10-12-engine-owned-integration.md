@@ -1,10 +1,10 @@
 # Engine Integration History, 2026-10-12
 
-Historical implementation checks on NVIDIA GB10. Curated results and measured
-timing spread are on the
-[index integration page](https://github.com/PeisongXiao/fuzev/blob/main/docs/integration.md).
+Historical implementation checks on one NVIDIA GB10 (128 GB unified memory).
+Curated results and measured timing spread are on the
+[v1.0 integration page](integration-v1.0.md#cross-engine-research-checks).
 Decision quality is in the
-[benchmarks](https://github.com/PeisongXiao/fuzev/blob/main/docs/benchmarks.md).
+[benchmarks](benchmarks-v1.0.md).
 
 ## Checkpoints
 
@@ -78,7 +78,7 @@ Generated text and MTP verification-step counts differed. The per-step
 normalization does not establish the cause of the wall-time difference.
 
 This small comparison is inconclusive about negligible generation-only overhead.
-Per-pair values and ranges are on the index integration page.
+Per-pair values and ranges are on the [v1.0 integration page](integration-v1.0.md#loaded-but-unused-head).
 
 ## ExLlamaV3 Comparison
 
@@ -109,8 +109,8 @@ these measurements were not repeated after it.
 
 ## Reproduce
 
-- Start the engines with the current
-  [component CLIs and build instructions](modular-setup.md).
+- Start the engines with the v1.0
+  [component CLIs and build instructions](https://github.com/PeisongXiao/fuzev-research-archive/blob/v1.0/docs/modular-setup.md).
 - Exercise an already running server with the small HTTP clients in the
   [evaluation guide](research-evaluation.md#running-server-checks).
 - Scrubbed launch configurations are in [configs](configs/README.md). Original

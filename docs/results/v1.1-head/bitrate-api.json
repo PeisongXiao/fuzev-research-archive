@@ -1,0 +1,2311 @@
+{
+  "scope": "Served head 1.1.0 on the 4.05 and 3.05 bpw backbones; matched candidate views and recorded API checks.",
+  "alignment": {
+    "only_left": [],
+    "only_right": [],
+    "duplicates": {
+      "left": [],
+      "right": []
+    },
+    "same_head": true,
+    "same_bounds": true,
+    "same_mtp": true,
+    "same_execution_order": true,
+    "same_generation_requests": true,
+    "same_requests": true
+  },
+  "runs": {
+    "left": {
+      "status": "completed",
+      "error": null,
+      "bounds": {
+        "context_tokens": 65536,
+        "cache_tokens": 73728,
+        "max_batch_size": 4,
+        "max_chunk_size": 8192
+      },
+      "mtp": {
+        "enabled": true,
+        "draft_tokens": 3
+      },
+      "cleanup": {
+        "native_jobs": 0,
+        "readout_roots": 0,
+        "service_jobs": 0,
+        "owner_jobs": 0,
+        "retained_prefixes": 0
+      },
+      "decisions": 24,
+      "successful_decisions": 24,
+      "finite_decisions": 24,
+      "released_prefixes": 12,
+      "model": "turboderp/Qwen3.8-Flash-Next-exl3@55a732e0c4c3d4614bc42b68493bb930d9b02c0a",
+      "head": "fuzev-head 1.1.0",
+      "generation": [
+        {
+          "phase": "before",
+          "status_code": 200,
+          "usage": {
+            "prompt_tokens": 7,
+            "completion_tokens": 16,
+            "total_tokens": 23
+          },
+          "native": [
+            {
+              "new_tokens": 16,
+              "eos_reason": "max_new_tokens",
+              "accepted_draft_tokens": 8,
+              "rejected_draft_tokens": 16,
+              "cached_tokens": 0,
+              "forwarded_tokens": null
+            }
+          ]
+        },
+        {
+          "phase": "after",
+          "status_code": 200,
+          "usage": {
+            "prompt_tokens": 7,
+            "completion_tokens": 16,
+            "total_tokens": 23
+          },
+          "native": [
+            {
+              "new_tokens": 16,
+              "eos_reason": "max_new_tokens",
+              "accepted_draft_tokens": 8,
+              "rejected_draft_tokens": 16,
+              "cached_tokens": 0,
+              "forwarded_tokens": null
+            }
+          ]
+        }
+      ],
+      "order_comparisons": [
+        {
+          "fresh": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 3.419245719909668,
+                "relative_l2": 0.1951878520625124
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.0025980062782764435,
+                "relative_l2": 0.0037053175751877434
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 4.8041343688964844e-05,
+                "relative_l2": 6.791241992398871e-05
+              }
+            }
+          },
+          "retained": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 3.419245719909668,
+                "relative_l2": 0.1951878520625124
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.0025980062782764435,
+                "relative_l2": 0.0037053175751877434
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 4.8041343688964844e-05,
+                "relative_l2": 6.791241992398871e-05
+              }
+            }
+          }
+        },
+        {
+          "fresh": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 2.395817756652832,
+                "relative_l2": 0.12867581323915572
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.12440979480743408,
+                "relative_l2": 0.1889484903253086
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.053416430950164795,
+                "relative_l2": 0.07605480527567489
+              }
+            }
+          },
+          "retained": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 2.395817756652832,
+                "relative_l2": 0.12867581323915572
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.12440979480743408,
+                "relative_l2": 0.1889484903253086
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.053416430950164795,
+                "relative_l2": 0.07605480527567489
+              }
+            }
+          }
+        },
+        {
+          "fresh": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 1.2115440368652344,
+                "relative_l2": 0.06152678887627795
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.013817369937896729,
+                "relative_l2": 0.020348442975534307
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.0011955091613344848,
+                "relative_l2": 0.0016942583525423518
+              }
+            }
+          },
+          "retained": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 1.2115440368652344,
+                "relative_l2": 0.06152678887627795
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.013817369937896729,
+                "relative_l2": 0.020348442975534307
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.0011955091613344848,
+                "relative_l2": 0.0016942583525423518
+              }
+            }
+          }
+        }
+      ],
+      "bpw": 4.05
+    },
+    "right": {
+      "status": "completed",
+      "error": null,
+      "bounds": {
+        "context_tokens": 65536,
+        "cache_tokens": 73728,
+        "max_batch_size": 4,
+        "max_chunk_size": 8192
+      },
+      "mtp": {
+        "enabled": true,
+        "draft_tokens": 3
+      },
+      "cleanup": {
+        "native_jobs": 0,
+        "readout_roots": 0,
+        "service_jobs": 0,
+        "owner_jobs": 0,
+        "retained_prefixes": 0
+      },
+      "decisions": 24,
+      "successful_decisions": 24,
+      "finite_decisions": 24,
+      "released_prefixes": 12,
+      "model": "turboderp/Qwen3.8-Flash-Next-exl3@69e33439ae950f17bcbe95c98f117d80f759ab6d",
+      "head": "fuzev-head 1.1.0",
+      "generation": [
+        {
+          "phase": "before",
+          "status_code": 200,
+          "usage": {
+            "prompt_tokens": 7,
+            "completion_tokens": 16,
+            "total_tokens": 23
+          },
+          "native": [
+            {
+              "new_tokens": 16,
+              "eos_reason": "max_new_tokens",
+              "accepted_draft_tokens": 6,
+              "rejected_draft_tokens": 24,
+              "cached_tokens": 0,
+              "forwarded_tokens": null
+            }
+          ]
+        },
+        {
+          "phase": "after",
+          "status_code": 200,
+          "usage": {
+            "prompt_tokens": 7,
+            "completion_tokens": 16,
+            "total_tokens": 23
+          },
+          "native": [
+            {
+              "new_tokens": 16,
+              "eos_reason": "max_new_tokens",
+              "accepted_draft_tokens": 6,
+              "rejected_draft_tokens": 24,
+              "cached_tokens": 0,
+              "forwarded_tokens": null
+            }
+          ]
+        }
+      ],
+      "order_comparisons": [
+        {
+          "fresh": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 3.3200626373291016,
+                "relative_l2": 0.21152525150422294
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.07338905334472656,
+                "relative_l2": 0.11537226391699675
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.014310317928902805,
+                "relative_l2": 0.020558694754179773
+              }
+            }
+          },
+          "retained": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 3.3200626373291016,
+                "relative_l2": 0.21152525150422294
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.07338905334472656,
+                "relative_l2": 0.11537226391699675
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.014310317928902805,
+                "relative_l2": 0.020558694754179773
+              }
+            }
+          }
+        },
+        {
+          "fresh": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 1.58931303024292,
+                "relative_l2": 0.12055090192973245
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.11558056250214577,
+                "relative_l2": 0.1679409256379451
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.028607845306396484,
+                "relative_l2": 0.04049545586417218
+              }
+            }
+          },
+          "retained": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 1.58931303024292,
+                "relative_l2": 0.12055090192973245
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.11558056250214577,
+                "relative_l2": 0.1679409256379451
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.028607845306396484,
+                "relative_l2": 0.04049545586417218
+              }
+            }
+          }
+        },
+        {
+          "fresh": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 1.2348480224609375,
+                "relative_l2": 0.07116414917668674
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.022347450256347656,
+                "relative_l2": 0.03459932748118389
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.0050029754638671875,
+                "relative_l2": 0.00715512928447858
+              }
+            }
+          },
+          "retained": {
+            "same_candidate_ids": true,
+            "same_winner": true,
+            "same_top_two": true,
+            "same_ranks": true,
+            "differences": {
+              "logit": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 1.2348480224609375,
+                "relative_l2": 0.07116414917668674
+              },
+              "raw_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.022347450256347656,
+                "relative_l2": 0.03459932748118389
+              },
+              "calibrated_probability": {
+                "same_shape": true,
+                "equal": false,
+                "max_absolute": 0.0050029754638671875,
+                "relative_l2": 0.00715512928447858
+              }
+            }
+          }
+        }
+      ],
+      "bpw": 3.05
+    }
+  },
+  "cases": [
+    {
+      "group": "noul",
+      "k": 2,
+      "order": null,
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.9213638305664062,
+              "relative_l2": 0.09828086396233114
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04238129407167435,
+              "relative_l2": 0.06303334909443319
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.053323566913604736,
+              "relative_l2": 0.08309649329837593
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.9213638305664062,
+              "relative_l2": 0.09828086396233114
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04238129407167435,
+              "relative_l2": 0.06303334909443319
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.053323566913604736,
+              "relative_l2": 0.08309649329837593
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "ordinal",
+      "k": 255,
+      "order": null,
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": false,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 3.7818727493286133,
+              "relative_l2": 0.8083139135722767
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04689657362177968,
+              "relative_l2": 0.46774763159789645
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04689657362177968,
+              "relative_l2": 0.46774763159789645
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": false,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 3.7818727493286133,
+              "relative_l2": 0.8083139135722767
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04689657362177968,
+              "relative_l2": 0.46774763159789645
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04689657362177968,
+              "relative_l2": 0.46774763159789645
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "visual",
+      "k": 2,
+      "order": "ab",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.607675552368164,
+              "relative_l2": 0.07562156946323743
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.050574447959661484,
+              "relative_l2": 0.07447969023026756
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.009117473615333438,
+              "relative_l2": 0.012921218987948659
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.607675552368164,
+              "relative_l2": 0.07562156946323743
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.050574447959661484,
+              "relative_l2": 0.07447969023026756
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.009117473615333438,
+              "relative_l2": 0.012921218987948659
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "visual",
+      "k": 2,
+      "order": "ba",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.584371566772461,
+              "relative_l2": 0.06809057962649723
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.042044369503855705,
+              "relative_l2": 0.06107007828398951
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.00531001336639747,
+              "relative_l2": 0.007516290176652648
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.584371566772461,
+              "relative_l2": 0.06809057962649723
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.042044369503855705,
+              "relative_l2": 0.06107007828398951
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.00531001336639747,
+              "relative_l2": 0.007516290176652648
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "visual",
+      "k": 2,
+      "order": "ab",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 4.695160865783691,
+              "relative_l2": 0.2183451440903222
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0983128547668457,
+              "relative_l2": 0.14021583712390337
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.015639272714906838,
+              "relative_l2": 0.02211932215616221
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 4.695160865783691,
+              "relative_l2": 0.2183451440903222
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0983128547668457,
+              "relative_l2": 0.14021583712390337
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.015639272714906838,
+              "relative_l2": 0.02211932215616221
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "visual",
+      "k": 2,
+      "order": "ba",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 3.7240190505981445,
+              "relative_l2": 0.22132080806995505
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.02752180304378271,
+              "relative_l2": 0.039150327216292594
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0013769865036010742,
+              "relative_l2": 0.0019474138110614006
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 3.7240190505981445,
+              "relative_l2": 0.22132080806995505
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.02752180304378271,
+              "relative_l2": 0.039150327216292594
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0013769865036010742,
+              "relative_l2": 0.0019474138110614006
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "visual",
+      "k": 2,
+      "order": "ab",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 6.068017482757568,
+              "relative_l2": 0.3762223322754727
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04450776055455208,
+              "relative_l2": 0.06759655399405694
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.005827009677886963,
+              "relative_l2": 0.008296512124977225
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 6.068017482757568,
+              "relative_l2": 0.3762223322754727
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04450776055455208,
+              "relative_l2": 0.06759655399405694
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.005827009677886963,
+              "relative_l2": 0.008296512124977225
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "visual",
+      "k": 2,
+      "order": "ba",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 3.2338972091674805,
+              "relative_l2": 0.23489371709918738
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0533369779586792,
+              "relative_l2": 0.09114905850806909
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.030635595321655273,
+              "relative_l2": 0.04600524170809549
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 3.2338972091674805,
+              "relative_l2": 0.23489371709918738
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0533369779586792,
+              "relative_l2": 0.09114905850806909
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.030635595321655273,
+              "relative_l2": 0.04600524170809549
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "high_k",
+      "k": 128,
+      "order": "seeded",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": false,
+          "same_top_two": false,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.3302001953125,
+              "relative_l2": 0.48365291521864595
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.20963092148303986,
+              "relative_l2": 0.8326197829559622
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.10613236576318741,
+              "relative_l2": 0.6720918747932629
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": false,
+          "same_top_two": false,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.3302001953125,
+              "relative_l2": 0.48365291521864595
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.20963092148303986,
+              "relative_l2": 0.8326197829559622
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.10613236576318741,
+              "relative_l2": 0.6720918747932629
+            }
+          },
+          "same_top_few": true,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "high_k",
+      "k": 255,
+      "order": "seeded",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": false,
+          "same_top_two": true,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.7468299865722656,
+              "relative_l2": 0.49372623358510404
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.12516314536333084,
+              "relative_l2": 0.4899204235266666
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0725286677479744,
+              "relative_l2": 0.42302326299002574
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": false,
+          "same_top_two": true,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.7468299865722656,
+              "relative_l2": 0.49372623358510404
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.12516314536333084,
+              "relative_l2": 0.4899204235266666
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.0725286677479744,
+              "relative_l2": 0.42302326299002574
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "high_k",
+      "k": 26,
+      "order": "seeded",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 4.419483661651611,
+              "relative_l2": 0.3349543809715701
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.3675228953361511,
+              "relative_l2": 0.49969560496062926
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.3446624279022217,
+              "relative_l2": 0.5166406774927551
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 4.419483661651611,
+              "relative_l2": 0.3349543809715701
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.3675228953361511,
+              "relative_l2": 0.49969560496062926
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.3446624279022217,
+              "relative_l2": 0.5166406774927551
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        }
+      }
+    },
+    {
+      "group": "high_k",
+      "k": 64,
+      "order": "seeded",
+      "same_request": true,
+      "fresh_retained": {
+        "left": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        },
+        "right": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": true,
+          "same_ranks": true,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": true,
+              "max_absolute": 0,
+              "relative_l2": 0
+            }
+          },
+          "same_base_tokens": true,
+          "same_image_embeddings": true,
+          "same_additional_context": true,
+          "same_top_few": true,
+          "same_top_few_order": true,
+          "same_calibration_id": true
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": false,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.2484130859375,
+              "relative_l2": 0.46131322811563913
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.07549476996064186,
+              "relative_l2": 0.23084298753892357
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04721942916512489,
+              "relative_l2": 0.2574473804827879
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        },
+        "retained": {
+          "same_candidate_ids": true,
+          "same_winner": true,
+          "same_top_two": false,
+          "same_ranks": false,
+          "differences": {
+            "logit": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 1.2484130859375,
+              "relative_l2": 0.46131322811563913
+            },
+            "raw_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.07549476996064186,
+              "relative_l2": 0.23084298753892357
+            },
+            "calibrated_probability": {
+              "same_shape": true,
+              "equal": false,
+              "max_absolute": 0.04721942916512489,
+              "relative_l2": 0.2574473804827879
+            }
+          },
+          "same_top_few": false,
+          "same_top_few_order": false,
+          "same_calibration_id": true
+        }
+      }
+    }
+  ],
+  "groups": {
+    "high_k": {
+      "cases": 4,
+      "paired_requests": 4,
+      "fresh_retained": {
+        "left": {
+          "comparisons": 4,
+          "same_winner": 4,
+          "same_top_two": 4,
+          "same_top_few": 4,
+          "same_top_few_order": 4,
+          "same_ranks": 4,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        },
+        "right": {
+          "comparisons": 4,
+          "same_winner": 4,
+          "same_top_two": 4,
+          "same_top_few": 4,
+          "same_top_few_order": 4,
+          "same_ranks": 4,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "comparisons": 4,
+          "same_winner": 2,
+          "same_top_two": 2,
+          "same_top_few": 1,
+          "same_top_few_order": 0,
+          "same_ranks": 0,
+          "max_absolute": {
+            "logit": 4.419483661651611,
+            "raw_probability": 0.3675228953361511,
+            "calibrated_probability": 0.3446624279022217
+          }
+        },
+        "retained": {
+          "comparisons": 4,
+          "same_winner": 2,
+          "same_top_two": 2,
+          "same_top_few": 1,
+          "same_top_few_order": 0,
+          "same_ranks": 0,
+          "max_absolute": {
+            "logit": 4.419483661651611,
+            "raw_probability": 0.3675228953361511,
+            "calibrated_probability": 0.3446624279022217
+          }
+        }
+      }
+    },
+    "noul": {
+      "cases": 1,
+      "paired_requests": 1,
+      "fresh_retained": {
+        "left": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 1,
+          "same_top_few": 1,
+          "same_top_few_order": 1,
+          "same_ranks": 1,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        },
+        "right": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 1,
+          "same_top_few": 1,
+          "same_top_few_order": 1,
+          "same_ranks": 1,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 1,
+          "same_top_few": 1,
+          "same_top_few_order": 1,
+          "same_ranks": 1,
+          "max_absolute": {
+            "logit": 0.9213638305664062,
+            "raw_probability": 0.04238129407167435,
+            "calibrated_probability": 0.053323566913604736
+          }
+        },
+        "retained": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 1,
+          "same_top_few": 1,
+          "same_top_few_order": 1,
+          "same_ranks": 1,
+          "max_absolute": {
+            "logit": 0.9213638305664062,
+            "raw_probability": 0.04238129407167435,
+            "calibrated_probability": 0.053323566913604736
+          }
+        }
+      }
+    },
+    "ordinal": {
+      "cases": 1,
+      "paired_requests": 1,
+      "fresh_retained": {
+        "left": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 1,
+          "same_top_few": 1,
+          "same_top_few_order": 1,
+          "same_ranks": 1,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        },
+        "right": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 1,
+          "same_top_few": 1,
+          "same_top_few_order": 1,
+          "same_ranks": 1,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 0,
+          "same_top_few": 0,
+          "same_top_few_order": 0,
+          "same_ranks": 0,
+          "max_absolute": {
+            "logit": 3.7818727493286133,
+            "raw_probability": 0.04689657362177968,
+            "calibrated_probability": 0.04689657362177968
+          }
+        },
+        "retained": {
+          "comparisons": 1,
+          "same_winner": 1,
+          "same_top_two": 0,
+          "same_top_few": 0,
+          "same_top_few_order": 0,
+          "same_ranks": 0,
+          "max_absolute": {
+            "logit": 3.7818727493286133,
+            "raw_probability": 0.04689657362177968,
+            "calibrated_probability": 0.04689657362177968
+          }
+        }
+      }
+    },
+    "visual": {
+      "cases": 6,
+      "paired_requests": 6,
+      "fresh_retained": {
+        "left": {
+          "comparisons": 6,
+          "same_winner": 6,
+          "same_top_two": 6,
+          "same_top_few": 6,
+          "same_top_few_order": 6,
+          "same_ranks": 6,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        },
+        "right": {
+          "comparisons": 6,
+          "same_winner": 6,
+          "same_top_two": 6,
+          "same_top_few": 6,
+          "same_top_few_order": 6,
+          "same_ranks": 6,
+          "max_absolute": {
+            "logit": 0,
+            "raw_probability": 0,
+            "calibrated_probability": 0
+          }
+        }
+      },
+      "between_bitrates": {
+        "fresh": {
+          "comparisons": 6,
+          "same_winner": 6,
+          "same_top_two": 6,
+          "same_top_few": 6,
+          "same_top_few_order": 6,
+          "same_ranks": 6,
+          "max_absolute": {
+            "logit": 6.068017482757568,
+            "raw_probability": 0.0983128547668457,
+            "calibrated_probability": 0.030635595321655273
+          }
+        },
+        "retained": {
+          "comparisons": 6,
+          "same_winner": 6,
+          "same_top_two": 6,
+          "same_top_few": 6,
+          "same_top_few_order": 6,
+          "same_ranks": 6,
+          "max_absolute": {
+            "logit": 6.068017482757568,
+            "raw_probability": 0.0983128547668457,
+            "calibrated_probability": 0.030635595321655273
+          }
+        }
+      }
+    }
+  }
+}

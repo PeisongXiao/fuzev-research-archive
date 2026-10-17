@@ -20,7 +20,7 @@
       "ordinal": 0.9596070647239685
     },
     "reproduction": "research-training.md#reproduce",
-    "provenance": "research-provenance.md#released-head-provenance",
+    "provenance": "research-provenance.md#v10-head-provenance",
     "wrapper_records": "study-code/README.md"
   },
   "held_out_quality": {
@@ -51,7 +51,7 @@
       "vllm-exl3-4.05": 0.75
     },
     "mtp": false,
-    "configurations_reference": "https://github.com/PeisongXiao/fuzev/blob/main/docs/models.md#recorded-benchmark-settings",
+    "configurations_reference": "configs/README.md#quality-and-head-studies",
     "reproduction": "research-evaluation.md#reproduce",
     "server_and_panel_configs": "configs/README.md#quality-and-head-studies"
   },

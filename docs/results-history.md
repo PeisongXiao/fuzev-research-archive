@@ -3,13 +3,13 @@
 ## Superseded vLLM Generation Checks
 
 Checkpoint: [NVIDIA Qwen3.8-Flash-Next NVFP4](https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4/tree/fc694b54fb0174e0913e6adf86691ef85a4ead47).
-Platform: NVIDIA GB10, ARM64. Date: 2026-10-12.
+Platform: one NVIDIA GB10 (128 GB unified memory), ARM64. Date: 2026-10-12.
 
 These pre-release vLLM measurements predate the graph-replay and cache
 slot-mapping repairs. Outputs contain repeated punctuation or token-ID-zero
 text; HTTP completion, overlapping lifetimes and cleanup do not show healthy
 generation. Corrected measurements are in
-[the integration results](https://github.com/PeisongXiao/fuzev/blob/main/docs/integration.md).
+[the integration results](integration-v1.0.md).
 
 | Output Budget | Output Tokens | HTTP Wall (s) | Accepted / Proposed Draft Tokens |
 | --- | ---: | ---: | ---: |
@@ -25,6 +25,8 @@ The superseded mixed-request check uses a 419-token prompt and a 64-token output
 - The engine reports 0 accepted draft tokens out of 189 proposed.
 
 Malformed outputs make these timings unusable for speed comparison.
+Sources: [long generation](results/integration/vllm-mrv1-mtp-long-v1.json) and
+[mixed request](results/integration/vllm-nvidia-staggered-v2.json).
 
 ## Initial Long-Prefill Failure
 
@@ -39,15 +41,15 @@ The completed generation checks use:
 - Context 262,144 and GPU memory fraction 0.85
 
 Later exact-length 8,192/32,768-prefill measurements are in
-[the current MTP aggregates](https://github.com/PeisongXiao/fuzev/blob/main/docs/mtp-diagnostics.json).
+[the v1.0 MTP aggregates](results/integration/v1.0/mtp-diagnostics.json).
 
 ## Pre-Fix vLLM Short-Workload Performance (Superseded)
 
 These pre-release plugin and engine measurements also predate the graph-replay
 and cache slot-mapping fixes.
-The ExLlamaV3 rows are in [the performance panel](https://github.com/PeisongXiao/fuzev/blob/main/docs/performance.md).
+The ExLlamaV3 rows are in [the performance panel](performance-v1.0.md).
 
-- **Environment:** NVIDIA GB10, ARM64, Python 3.12, PyTorch 2.13.0+cu130 (CUDA 13.0), 2026-10-12.
+- **Environment:** one NVIDIA GB10 (128 GB unified memory), ARM64, Python 3.12, PyTorch 2.13.0+cu130 (CUDA 13.0), 2026-10-12.
 - **Settings:** MTP off, KV `auto`, GPU memory fraction 0.75. NVFP4 embeddings
   are memory-mapped; EXL3 embeddings are resident.
 - **Workload:** a short Python-file chat prompt with thinking disabled, a
@@ -66,9 +68,9 @@ Wall values are pipeline means; brackets give the range of the three run means.
 | vLLM EXL3 4.05 bpw | 1 | 813.67 | 15.88 | 2.54 [2.46, 2.70] | 1.51 [1.49, 1.53] | 3.68 [3.67, 3.70] |
 | vLLM EXL3 4.05 bpw | 4 | 503.95 | 14.41 | 3.63 [3.61, 3.65] | 4.34 [4.13, 4.46] | 7.97 [7.78, 8.08] |
 
-Source artifacts: `vllm-nvidia-small-performance-v2.json`,
-`vllm-radixark-small-performance-v2.json` and
-`vllm-exl3-small-performance-v2.json`.
+Source artifacts: [NVIDIA](results/performance/vllm-nvidia-small-performance-v2.json),
+[RadixArk](results/performance/vllm-radixark-small-performance-v2.json) and
+[vLLM EXL3](results/performance/vllm-exl3-small-performance-v2.json).
 
 ### Full Statistics
 
@@ -79,7 +81,7 @@ checkpoint revisions and recorded settings:
 {
   "schema": "fuzev-small-performance-aggregates-v3",
   "date": "2026-10-12",
-  "engine_builds": "Pre-release plugin and engine builds; optimized assets are enabled for native measurements. Published serving builds have no end-to-end quality/performance benchmark.",
+  "engine_builds": "Pre-release plugin and engine builds; optimized assets are enabled for native measurements.",
   "recorded_settings": {
     "vllm_nvfp4": {
       "context_tokens": 262144,

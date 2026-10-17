@@ -15,5 +15,6 @@
       "speculative_decoding": null,
       "wall_seconds": null
     }
-  ]
+  ],
+  "device": "NVIDIA GB10"
 }

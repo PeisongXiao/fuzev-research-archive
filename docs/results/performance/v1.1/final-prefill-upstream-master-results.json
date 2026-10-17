@@ -1,0 +1,3118 @@
+{
+  "scope": "Matched ordinary warm/primed-PLE prefill W1-W5: ExLlamaV3 master 058b8630 (version string 1.6.2) versus exllamav3-fuzev v1.1 on the upstream 1.6.1 base 3a513ac9.",
+  "reference": {
+    "version": "1.6.2",
+    "mode": "plain",
+    "decision_hooks": false,
+    "commit": "058b8630fd081f3ff46fce6246955b157c3a2e3b",
+    "ref": "master",
+    "label": "ExLlamaV3 master 058b8630 (version string 1.6.2)"
+  },
+  "candidate": {
+    "base": "unpublished lab commit ID 3a3e1d02",
+    "effective_prefill_options": {
+      "prefill_chunk": 32768,
+      "qsa_stage": true,
+      "moe_impl": "folded-hot",
+      "moe_batch_cap": 4,
+      "moe_max_rows": 16384,
+      "gdn_native_layers": [
+        0
+      ],
+      "hc_cache_tables": true,
+      "prefill_min_rows": 256,
+      "bmm_tile": [
+        64,
+        128,
+        64,
+        3
+      ]
+    },
+    "code": "The candidate patch is unpublished. Its hyperconnections.py and optimized/profile.json changes are in exllamav3-fuzev v1.1; decision measurements precede the decision-root scheduling fix."
+  },
+  "formulae": {
+    "native_time_ratio": "arithmetic mean upstream time_prefill_s / arithmetic mean final time_prefill_s",
+    "wall_time_ratio": "arithmetic mean upstream wall_s / arithmetic mean final wall_s",
+    "time_ratio_gain_pct": "100*(ratio-1)",
+    "latency_reduction_pct": "100*(1-1/ratio)",
+    "mean_per_row_tokens_per_s": "arithmetic mean of saved per-row rates; not used to form time ratios",
+    "measured_peak_gib": "max selected measured peak_gpu_bytes / 2^30"
+  },
+  "primary_selection": {
+    "measured_rows": 20,
+    "matched_pairs": 10,
+    "excluded_selected_rep0_warmups": 10,
+    "processed_tokens_each_arm": 185334,
+    "W4": "Only variant=Full for primary comparison, two rows. repeat_Full is separate control evidence, not pooled.",
+    "other_W4_ablations": "Other W4 ablations are in final-loo-w4.json."
+  },
+  "inputs": {
+    "upstream-master-fresh.json": {
+      "mode": "plain",
+      "settings": {
+        "mode": "plain",
+        "bundle": null,
+        "chunks": [
+          32768
+        ],
+        "lengths": [
+          2048,
+          16384,
+          65536
+        ],
+        "prefix_tokens": null,
+        "append_tokens": null,
+        "reps": 2,
+        "variants": null,
+        "cache_tokens": 98304,
+        "context_tokens": 98304,
+        "recurrent_state_fp32": true,
+        "use_gib": 90,
+        "features": null,
+        "trace": null,
+        "trace_backend": "torch",
+        "ple_diagnostic": false,
+        "warm_ple": true,
+        "continuation": null,
+        "continuation_only": false,
+        "hc_folded_reference": false,
+        "greedy": null,
+        "stage_a": false,
+        "moe_witness": null,
+        "moe_layer_probe": false,
+        "stage_a_fanout_only": false,
+        "fanout_widths": [
+          4,
+          8
+        ],
+        "head": null,
+        "batch_sizes": [
+          1,
+          4
+        ],
+        "mtp_tokens": 3
+      },
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer-python": "0.6.18.post1",
+        "flashinfer-jit-cache": "0.6.18.post1+cu130"
+      },
+      "effective_prefill_options": {},
+      "recurrent_state_dtypes": {
+        "target": {
+          "(0, 0)": "torch.float32",
+          "(1, 0)": "torch.float32",
+          "(2, 0)": "torch.float32",
+          "(4, 0)": "torch.float32",
+          "(5, 0)": "torch.float32",
+          "(6, 0)": "torch.float32",
+          "(8, 0)": "torch.float32",
+          "(9, 0)": "torch.float32",
+          "(10, 0)": "torch.float32",
+          "(12, 0)": "torch.float32",
+          "(13, 0)": "torch.float32",
+          "(14, 0)": "torch.float32",
+          "(16, 0)": "torch.float32",
+          "(17, 0)": "torch.float32",
+          "(18, 0)": "torch.float32",
+          "(20, 0)": "torch.float32",
+          "(21, 0)": "torch.float32",
+          "(22, 0)": "torch.float32",
+          "(24, 0)": "torch.float32",
+          "(25, 0)": "torch.float32",
+          "(26, 0)": "torch.float32",
+          "(28, 0)": "torch.float32",
+          "(29, 0)": "torch.float32",
+          "(30, 0)": "torch.float32",
+          "(32, 0)": "torch.float32",
+          "(33, 0)": "torch.float32",
+          "(34, 0)": "torch.float32",
+          "(36, 0)": "torch.float32",
+          "(37, 0)": "torch.float32",
+          "(38, 0)": "torch.float32",
+          "(40, 0)": "torch.float32",
+          "(41, 0)": "torch.float32",
+          "(42, 0)": "torch.float32",
+          "(44, 0)": "torch.float32",
+          "(45, 0)": "torch.float32",
+          "(46, 0)": "torch.float32"
+        },
+        "draft": {}
+      },
+      "ngram_stream_from_disk": true,
+      "batch_size": 1,
+      "saved_means": [
+        {
+          "chunk": 32768,
+          "length": 2048,
+          "reps": 2,
+          "tok_per_s": 833.3218758105381,
+          "time_prefill_s": 2.4577606916427612,
+          "wall_s": 2.4923765099956654
+        },
+        {
+          "chunk": 32768,
+          "length": 16384,
+          "reps": 2,
+          "tok_per_s": 1465.6619883359435,
+          "time_prefill_s": 11.17795979976654,
+          "wall_s": 11.213152359996457
+        },
+        {
+          "chunk": 32768,
+          "length": 65536,
+          "reps": 2,
+          "tok_per_s": 1537.2682282422563,
+          "time_prefill_s": 42.64593064785004,
+          "wall_s": 42.68234316702001
+        }
+      ],
+      "environment": {
+        "device": "NVIDIA GB10",
+        "device_memory_description": "128 GB unified memory",
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer_python": "0.6.18.post1",
+        "flashinfer_jit_cache": "0.6.18.post1+cu130",
+        "prefill_chunk": [
+          32768
+        ],
+        "max_batch_size": 1,
+        "kv_cache_bits": [
+          8,
+          8
+        ],
+        "mtp_tokens": 0,
+        "recurrent_state": [
+          "torch.float32"
+        ],
+        "mtp_note": "Ordinary fresh/append prefill loads the target component only. settings.mtp_tokens records the generic flag used by the harness's additional generation modes."
+      }
+    },
+    "upstream-master-w4.json": {
+      "mode": "plain",
+      "settings": {
+        "mode": "plain",
+        "bundle": null,
+        "chunks": [
+          32768
+        ],
+        "lengths": [
+          33280
+        ],
+        "prefix_tokens": 32768,
+        "append_tokens": 512,
+        "reps": 2,
+        "variants": null,
+        "cache_tokens": 66048,
+        "context_tokens": 66048,
+        "recurrent_state_fp32": true,
+        "use_gib": 90,
+        "features": null,
+        "trace": null,
+        "trace_backend": "torch",
+        "ple_diagnostic": false,
+        "warm_ple": true,
+        "continuation": null,
+        "continuation_only": false,
+        "hc_folded_reference": false,
+        "greedy": null,
+        "stage_a": false,
+        "moe_witness": null,
+        "moe_layer_probe": false,
+        "stage_a_fanout_only": false,
+        "fanout_widths": [
+          4,
+          8
+        ],
+        "head": null,
+        "batch_sizes": [
+          1,
+          4
+        ],
+        "mtp_tokens": 3
+      },
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer-python": "0.6.18.post1",
+        "flashinfer-jit-cache": "0.6.18.post1+cu130"
+      },
+      "effective_prefill_options": {},
+      "recurrent_state_dtypes": {
+        "target": {
+          "(0, 0)": "torch.float32",
+          "(1, 0)": "torch.float32",
+          "(2, 0)": "torch.float32",
+          "(4, 0)": "torch.float32",
+          "(5, 0)": "torch.float32",
+          "(6, 0)": "torch.float32",
+          "(8, 0)": "torch.float32",
+          "(9, 0)": "torch.float32",
+          "(10, 0)": "torch.float32",
+          "(12, 0)": "torch.float32",
+          "(13, 0)": "torch.float32",
+          "(14, 0)": "torch.float32",
+          "(16, 0)": "torch.float32",
+          "(17, 0)": "torch.float32",
+          "(18, 0)": "torch.float32",
+          "(20, 0)": "torch.float32",
+          "(21, 0)": "torch.float32",
+          "(22, 0)": "torch.float32",
+          "(24, 0)": "torch.float32",
+          "(25, 0)": "torch.float32",
+          "(26, 0)": "torch.float32",
+          "(28, 0)": "torch.float32",
+          "(29, 0)": "torch.float32",
+          "(30, 0)": "torch.float32",
+          "(32, 0)": "torch.float32",
+          "(33, 0)": "torch.float32",
+          "(34, 0)": "torch.float32",
+          "(36, 0)": "torch.float32",
+          "(37, 0)": "torch.float32",
+          "(38, 0)": "torch.float32",
+          "(40, 0)": "torch.float32",
+          "(41, 0)": "torch.float32",
+          "(42, 0)": "torch.float32",
+          "(44, 0)": "torch.float32",
+          "(45, 0)": "torch.float32",
+          "(46, 0)": "torch.float32"
+        },
+        "draft": {}
+      },
+      "ngram_stream_from_disk": true,
+      "batch_size": 1,
+      "saved_means": [
+        {
+          "chunk": 32768,
+          "length": 33280,
+          "reps": 2,
+          "tok_per_s": 341.6922673676439,
+          "time_prefill_s": 1.4961469173431396,
+          "wall_s": 1.5339089585177135,
+          "prefix_tokens": 32768,
+          "append_tokens": 512
+        }
+      ],
+      "environment": {
+        "device": "NVIDIA GB10",
+        "device_memory_description": "128 GB unified memory",
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer_python": "0.6.18.post1",
+        "flashinfer_jit_cache": "0.6.18.post1+cu130",
+        "prefill_chunk": [
+          32768
+        ],
+        "max_batch_size": 1,
+        "kv_cache_bits": [
+          8,
+          8
+        ],
+        "mtp_tokens": 0,
+        "recurrent_state": [
+          "torch.float32"
+        ],
+        "mtp_note": "Ordinary fresh/append prefill loads the target component only. settings.mtp_tokens records the generic flag used by the harness's additional generation modes."
+      }
+    },
+    "upstream-master-w5.json": {
+      "mode": "plain",
+      "settings": {
+        "mode": "plain",
+        "bundle": null,
+        "chunks": [
+          32768
+        ],
+        "lengths": [
+          40960
+        ],
+        "prefix_tokens": 32768,
+        "append_tokens": 8192,
+        "reps": 2,
+        "variants": null,
+        "cache_tokens": 73728,
+        "context_tokens": 73728,
+        "recurrent_state_fp32": true,
+        "use_gib": 90,
+        "features": null,
+        "trace": null,
+        "trace_backend": "torch",
+        "ple_diagnostic": false,
+        "warm_ple": true,
+        "continuation": null,
+        "continuation_only": false,
+        "hc_folded_reference": false,
+        "greedy": null,
+        "stage_a": false,
+        "moe_witness": null,
+        "moe_layer_probe": false,
+        "stage_a_fanout_only": false,
+        "fanout_widths": [
+          4,
+          8
+        ],
+        "head": null,
+        "batch_sizes": [
+          1,
+          4
+        ],
+        "mtp_tokens": 3
+      },
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer-python": "0.6.18.post1",
+        "flashinfer-jit-cache": "0.6.18.post1+cu130"
+      },
+      "effective_prefill_options": {},
+      "recurrent_state_dtypes": {
+        "target": {
+          "(0, 0)": "torch.float32",
+          "(1, 0)": "torch.float32",
+          "(2, 0)": "torch.float32",
+          "(4, 0)": "torch.float32",
+          "(5, 0)": "torch.float32",
+          "(6, 0)": "torch.float32",
+          "(8, 0)": "torch.float32",
+          "(9, 0)": "torch.float32",
+          "(10, 0)": "torch.float32",
+          "(12, 0)": "torch.float32",
+          "(13, 0)": "torch.float32",
+          "(14, 0)": "torch.float32",
+          "(16, 0)": "torch.float32",
+          "(17, 0)": "torch.float32",
+          "(18, 0)": "torch.float32",
+          "(20, 0)": "torch.float32",
+          "(21, 0)": "torch.float32",
+          "(22, 0)": "torch.float32",
+          "(24, 0)": "torch.float32",
+          "(25, 0)": "torch.float32",
+          "(26, 0)": "torch.float32",
+          "(28, 0)": "torch.float32",
+          "(29, 0)": "torch.float32",
+          "(30, 0)": "torch.float32",
+          "(32, 0)": "torch.float32",
+          "(33, 0)": "torch.float32",
+          "(34, 0)": "torch.float32",
+          "(36, 0)": "torch.float32",
+          "(37, 0)": "torch.float32",
+          "(38, 0)": "torch.float32",
+          "(40, 0)": "torch.float32",
+          "(41, 0)": "torch.float32",
+          "(42, 0)": "torch.float32",
+          "(44, 0)": "torch.float32",
+          "(45, 0)": "torch.float32",
+          "(46, 0)": "torch.float32"
+        },
+        "draft": {}
+      },
+      "ngram_stream_from_disk": true,
+      "batch_size": 1,
+      "saved_means": [
+        {
+          "chunk": 32768,
+          "length": 40960,
+          "reps": 2,
+          "tok_per_s": 1357.4161944401412,
+          "time_prefill_s": 6.0352537631988525,
+          "wall_s": 6.073799656500341,
+          "prefix_tokens": 32768,
+          "append_tokens": 8192
+        }
+      ],
+      "environment": {
+        "device": "NVIDIA GB10",
+        "device_memory_description": "128 GB unified memory",
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer_python": "0.6.18.post1",
+        "flashinfer_jit_cache": "0.6.18.post1+cu130",
+        "prefill_chunk": [
+          32768
+        ],
+        "max_batch_size": 1,
+        "kv_cache_bits": [
+          8,
+          8
+        ],
+        "mtp_tokens": 0,
+        "recurrent_state": [
+          "torch.float32"
+        ],
+        "mtp_note": "Ordinary fresh/append prefill loads the target component only. settings.mtp_tokens records the generic flag used by the harness's additional generation modes."
+      }
+    },
+    "final-fresh.json": {
+      "mode": "fork-opt",
+      "settings": {
+        "mode": "fork-opt",
+        "bundle": null,
+        "chunks": [
+          32768
+        ],
+        "lengths": [
+          2048,
+          16384,
+          65536
+        ],
+        "prefix_tokens": null,
+        "append_tokens": null,
+        "reps": 2,
+        "variants": null,
+        "cache_tokens": 98304,
+        "context_tokens": 98304,
+        "recurrent_state_fp32": false,
+        "use_gib": 90,
+        "trace": null,
+        "trace_backend": "torch",
+        "ple_diagnostic": false,
+        "warm_ple": true,
+        "continuation": null,
+        "continuation_only": false,
+        "hc_folded_reference": false,
+        "stage_a": false,
+        "moe_witness": null,
+        "moe_layer_probe": false,
+        "stage_a_fanout_only": false,
+        "fanout_widths": [
+          4,
+          8
+        ],
+        "head": null,
+        "batch_sizes": [
+          1,
+          4
+        ],
+        "mtp_tokens": 3
+      },
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer-python": "0.6.18.post1",
+        "flashinfer-jit-cache": "0.6.18.post1+cu130"
+      },
+      "effective_prefill_options": {
+        "prefill_chunk": 32768,
+        "qsa_stage": true,
+        "moe_impl": "folded-hot",
+        "moe_batch_cap": 4,
+        "moe_max_rows": 16384,
+        "gdn_native_layers": [
+          0
+        ],
+        "hc_cache_tables": true,
+        "prefill_min_rows": 256,
+        "bmm_tile": [
+          64,
+          128,
+          64,
+          3
+        ]
+      },
+      "recurrent_state_dtypes": {
+        "target": {
+          "(0, 0)": "torch.float32",
+          "(1, 0)": "torch.float32",
+          "(2, 0)": "torch.float32",
+          "(4, 0)": "torch.float32",
+          "(5, 0)": "torch.float32",
+          "(6, 0)": "torch.float32",
+          "(8, 0)": "torch.float32",
+          "(9, 0)": "torch.float32",
+          "(10, 0)": "torch.float32",
+          "(12, 0)": "torch.float32",
+          "(13, 0)": "torch.float32",
+          "(14, 0)": "torch.float32",
+          "(16, 0)": "torch.float32",
+          "(17, 0)": "torch.float32",
+          "(18, 0)": "torch.float32",
+          "(20, 0)": "torch.float32",
+          "(21, 0)": "torch.float32",
+          "(22, 0)": "torch.float32",
+          "(24, 0)": "torch.float32",
+          "(25, 0)": "torch.float32",
+          "(26, 0)": "torch.float32",
+          "(28, 0)": "torch.float32",
+          "(29, 0)": "torch.float32",
+          "(30, 0)": "torch.float32",
+          "(32, 0)": "torch.float32",
+          "(33, 0)": "torch.float32",
+          "(34, 0)": "torch.float32",
+          "(36, 0)": "torch.float32",
+          "(37, 0)": "torch.float32",
+          "(38, 0)": "torch.float32",
+          "(40, 0)": "torch.float32",
+          "(41, 0)": "torch.float32",
+          "(42, 0)": "torch.float32",
+          "(44, 0)": "torch.float32",
+          "(45, 0)": "torch.float32",
+          "(46, 0)": "torch.float32"
+        },
+        "draft": {}
+      },
+      "ngram_stream_from_disk": true,
+      "batch_size": 1,
+      "saved_means": [
+        {
+          "chunk": 32768,
+          "length": 2048,
+          "reps": 2,
+          "tok_per_s": 1340.7631938795907,
+          "time_prefill_s": 1.5269668102264404,
+          "wall_s": 1.5613291485060472
+        },
+        {
+          "chunk": 32768,
+          "length": 16384,
+          "reps": 2,
+          "tok_per_s": 2050.122811115206,
+          "time_prefill_s": 7.991263747215271,
+          "wall_s": 8.02612988249166
+        },
+        {
+          "chunk": 32768,
+          "length": 65536,
+          "reps": 2,
+          "tok_per_s": 2216.1883336081123,
+          "time_prefill_s": 29.57155454158783,
+          "wall_s": 29.608359815989388
+        }
+      ],
+      "environment": {
+        "device": "NVIDIA GB10",
+        "device_memory_description": "128 GB unified memory",
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer_python": "0.6.18.post1",
+        "flashinfer_jit_cache": "0.6.18.post1+cu130",
+        "prefill_chunk": [
+          32768
+        ],
+        "max_batch_size": 1,
+        "kv_cache_bits": [
+          8,
+          8
+        ],
+        "mtp_tokens": 0,
+        "recurrent_state": [
+          "torch.float32"
+        ],
+        "mtp_note": "Ordinary fresh/append prefill loads the target component only. settings.mtp_tokens records the generic flag used by the harness's additional generation modes."
+      }
+    },
+    "final-loo-w4.json": {
+      "mode": "fork-opt",
+      "settings": {
+        "mode": "fork-opt",
+        "bundle": null,
+        "chunks": [
+          32768
+        ],
+        "lengths": [
+          33280
+        ],
+        "prefix_tokens": 32768,
+        "append_tokens": 512,
+        "reps": 2,
+        "variants": {
+          "Full": {},
+          "minus_C": {
+            "chunk": 8192
+          },
+          "minus_H0": {
+            "hc_cache_tables": false
+          },
+          "repeat_Full": {}
+        },
+        "cache_tokens": 66048,
+        "context_tokens": 66048,
+        "recurrent_state_fp32": false,
+        "use_gib": 90,
+        "features": null,
+        "trace": null,
+        "trace_backend": "torch",
+        "ple_diagnostic": false,
+        "warm_ple": true,
+        "continuation": null,
+        "continuation_only": false,
+        "hc_folded_reference": false,
+        "greedy": null,
+        "stage_a": false,
+        "moe_witness": null,
+        "moe_layer_probe": false,
+        "stage_a_fanout_only": false,
+        "fanout_widths": [
+          4,
+          8
+        ],
+        "head": null,
+        "batch_sizes": [
+          1,
+          4
+        ],
+        "mtp_tokens": 3
+      },
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer-python": "0.6.18.post1",
+        "flashinfer-jit-cache": "0.6.18.post1+cu130"
+      },
+      "effective_prefill_options": {
+        "prefill_chunk": 32768,
+        "qsa_stage": true,
+        "moe_impl": "folded-hot",
+        "moe_batch_cap": 4,
+        "moe_max_rows": 16384,
+        "gdn_native_layers": [
+          0
+        ],
+        "hc_cache_tables": true,
+        "prefill_min_rows": 256,
+        "bmm_tile": [
+          64,
+          128,
+          64,
+          3
+        ]
+      },
+      "recurrent_state_dtypes": {
+        "target": {
+          "(0, 0)": "torch.float32",
+          "(1, 0)": "torch.float32",
+          "(2, 0)": "torch.float32",
+          "(4, 0)": "torch.float32",
+          "(5, 0)": "torch.float32",
+          "(6, 0)": "torch.float32",
+          "(8, 0)": "torch.float32",
+          "(9, 0)": "torch.float32",
+          "(10, 0)": "torch.float32",
+          "(12, 0)": "torch.float32",
+          "(13, 0)": "torch.float32",
+          "(14, 0)": "torch.float32",
+          "(16, 0)": "torch.float32",
+          "(17, 0)": "torch.float32",
+          "(18, 0)": "torch.float32",
+          "(20, 0)": "torch.float32",
+          "(21, 0)": "torch.float32",
+          "(22, 0)": "torch.float32",
+          "(24, 0)": "torch.float32",
+          "(25, 0)": "torch.float32",
+          "(26, 0)": "torch.float32",
+          "(28, 0)": "torch.float32",
+          "(29, 0)": "torch.float32",
+          "(30, 0)": "torch.float32",
+          "(32, 0)": "torch.float32",
+          "(33, 0)": "torch.float32",
+          "(34, 0)": "torch.float32",
+          "(36, 0)": "torch.float32",
+          "(37, 0)": "torch.float32",
+          "(38, 0)": "torch.float32",
+          "(40, 0)": "torch.float32",
+          "(41, 0)": "torch.float32",
+          "(42, 0)": "torch.float32",
+          "(44, 0)": "torch.float32",
+          "(45, 0)": "torch.float32",
+          "(46, 0)": "torch.float32"
+        },
+        "draft": {}
+      },
+      "ngram_stream_from_disk": true,
+      "batch_size": 1,
+      "saved_means": [
+        {
+          "chunk": 32768,
+          "length": 33280,
+          "reps": 2,
+          "tok_per_s": 599.8900249669737,
+          "time_prefill_s": 0.8527777194976807,
+          "wall_s": 0.8931499595055357,
+          "prefix_tokens": 32768,
+          "append_tokens": 512,
+          "variant": "Full",
+          "operator_chunk": 32768,
+          "effective_prefill_options": {
+            "prefill_chunk": 32768,
+            "qsa_stage": true,
+            "moe_impl": "folded-hot",
+            "moe_batch_cap": 4,
+            "moe_max_rows": 16384,
+            "gdn_native_layers": [
+              0
+            ],
+            "hc_cache_tables": true,
+            "prefill_min_rows": 256,
+            "bmm_tile": [
+              64,
+              128,
+              64,
+              3
+            ]
+          }
+        },
+        {
+          "chunk": 8192,
+          "length": 33280,
+          "reps": 2,
+          "tok_per_s": 607.705956754935,
+          "time_prefill_s": 0.8429697751998901,
+          "wall_s": 0.8833623620157596,
+          "prefix_tokens": 32768,
+          "append_tokens": 512,
+          "variant": "minus_C",
+          "operator_chunk": 32768,
+          "effective_prefill_options": {
+            "prefill_chunk": 32768,
+            "qsa_stage": true,
+            "moe_impl": "folded-hot",
+            "moe_batch_cap": 4,
+            "moe_max_rows": 16384,
+            "gdn_native_layers": [
+              0
+            ],
+            "hc_cache_tables": true,
+            "prefill_min_rows": 256,
+            "bmm_tile": [
+              64,
+              128,
+              64,
+              3
+            ]
+          }
+        },
+        {
+          "chunk": 32768,
+          "length": 33280,
+          "reps": 2,
+          "tok_per_s": 575.9180508999375,
+          "time_prefill_s": 0.8893122673034668,
+          "wall_s": 0.9295672095031478,
+          "prefix_tokens": 32768,
+          "append_tokens": 512,
+          "variant": "minus_H0",
+          "operator_chunk": 32768,
+          "effective_prefill_options": {
+            "prefill_chunk": 32768,
+            "qsa_stage": true,
+            "moe_impl": "folded-hot",
+            "moe_batch_cap": 4,
+            "moe_max_rows": 16384,
+            "gdn_native_layers": [
+              0
+            ],
+            "hc_cache_tables": false,
+            "prefill_min_rows": 256,
+            "bmm_tile": [
+              64,
+              128,
+              64,
+              3
+            ]
+          }
+        },
+        {
+          "chunk": 32768,
+          "length": 33280,
+          "reps": 2,
+          "tok_per_s": 604.4820781212876,
+          "time_prefill_s": 0.8493396043777466,
+          "wall_s": 0.8895146545255557,
+          "prefix_tokens": 32768,
+          "append_tokens": 512,
+          "variant": "repeat_Full",
+          "operator_chunk": 32768,
+          "effective_prefill_options": {
+            "prefill_chunk": 32768,
+            "qsa_stage": true,
+            "moe_impl": "folded-hot",
+            "moe_batch_cap": 4,
+            "moe_max_rows": 16384,
+            "gdn_native_layers": [
+              0
+            ],
+            "hc_cache_tables": true,
+            "prefill_min_rows": 256,
+            "bmm_tile": [
+              64,
+              128,
+              64,
+              3
+            ]
+          }
+        }
+      ],
+      "environment": {
+        "device": "NVIDIA GB10",
+        "device_memory_description": "128 GB unified memory",
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer_python": "0.6.18.post1",
+        "flashinfer_jit_cache": "0.6.18.post1+cu130",
+        "prefill_chunk": [
+          32768
+        ],
+        "max_batch_size": 1,
+        "kv_cache_bits": [
+          8,
+          8
+        ],
+        "mtp_tokens": 0,
+        "recurrent_state": [
+          "torch.float32"
+        ],
+        "mtp_note": "Ordinary fresh/append prefill loads the target component only. settings.mtp_tokens records the generic flag used by the harness's additional generation modes."
+      }
+    },
+    "final-w5.json": {
+      "mode": "fork-opt",
+      "settings": {
+        "mode": "fork-opt",
+        "bundle": null,
+        "chunks": [
+          32768
+        ],
+        "lengths": [
+          40960
+        ],
+        "prefix_tokens": 32768,
+        "append_tokens": 8192,
+        "reps": 2,
+        "variants": null,
+        "cache_tokens": 73728,
+        "context_tokens": 73728,
+        "recurrent_state_fp32": false,
+        "use_gib": 90,
+        "features": null,
+        "trace": null,
+        "trace_backend": "torch",
+        "ple_diagnostic": false,
+        "warm_ple": true,
+        "continuation": null,
+        "continuation_only": false,
+        "hc_folded_reference": false,
+        "greedy": null,
+        "stage_a": false,
+        "moe_witness": null,
+        "moe_layer_probe": false,
+        "stage_a_fanout_only": false,
+        "fanout_widths": [
+          4,
+          8
+        ],
+        "head": null,
+        "batch_sizes": [
+          1,
+          4
+        ],
+        "mtp_tokens": 3
+      },
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer-python": "0.6.18.post1",
+        "flashinfer-jit-cache": "0.6.18.post1+cu130"
+      },
+      "effective_prefill_options": {
+        "prefill_chunk": 32768,
+        "qsa_stage": true,
+        "moe_impl": "folded-hot",
+        "moe_batch_cap": 4,
+        "moe_max_rows": 16384,
+        "gdn_native_layers": [
+          0
+        ],
+        "hc_cache_tables": true,
+        "prefill_min_rows": 256,
+        "bmm_tile": [
+          64,
+          128,
+          64,
+          3
+        ]
+      },
+      "recurrent_state_dtypes": {
+        "target": {
+          "(0, 0)": "torch.float32",
+          "(1, 0)": "torch.float32",
+          "(2, 0)": "torch.float32",
+          "(4, 0)": "torch.float32",
+          "(5, 0)": "torch.float32",
+          "(6, 0)": "torch.float32",
+          "(8, 0)": "torch.float32",
+          "(9, 0)": "torch.float32",
+          "(10, 0)": "torch.float32",
+          "(12, 0)": "torch.float32",
+          "(13, 0)": "torch.float32",
+          "(14, 0)": "torch.float32",
+          "(16, 0)": "torch.float32",
+          "(17, 0)": "torch.float32",
+          "(18, 0)": "torch.float32",
+          "(20, 0)": "torch.float32",
+          "(21, 0)": "torch.float32",
+          "(22, 0)": "torch.float32",
+          "(24, 0)": "torch.float32",
+          "(25, 0)": "torch.float32",
+          "(26, 0)": "torch.float32",
+          "(28, 0)": "torch.float32",
+          "(29, 0)": "torch.float32",
+          "(30, 0)": "torch.float32",
+          "(32, 0)": "torch.float32",
+          "(33, 0)": "torch.float32",
+          "(34, 0)": "torch.float32",
+          "(36, 0)": "torch.float32",
+          "(37, 0)": "torch.float32",
+          "(38, 0)": "torch.float32",
+          "(40, 0)": "torch.float32",
+          "(41, 0)": "torch.float32",
+          "(42, 0)": "torch.float32",
+          "(44, 0)": "torch.float32",
+          "(45, 0)": "torch.float32",
+          "(46, 0)": "torch.float32"
+        },
+        "draft": {}
+      },
+      "ngram_stream_from_disk": true,
+      "batch_size": 1,
+      "saved_means": [
+        {
+          "chunk": 32768,
+          "length": 40960,
+          "reps": 2,
+          "tok_per_s": 1773.1637295264266,
+          "time_prefill_s": 4.619481682777405,
+          "wall_s": 4.659410368971294,
+          "prefix_tokens": 32768,
+          "append_tokens": 8192
+        }
+      ],
+      "environment": {
+        "device": "NVIDIA GB10",
+        "device_memory_description": "128 GB unified memory",
+        "torch": "2.13.0+cu130",
+        "triton": "3.7.1",
+        "flashinfer_python": "0.6.18.post1",
+        "flashinfer_jit_cache": "0.6.18.post1+cu130",
+        "prefill_chunk": [
+          32768
+        ],
+        "max_batch_size": 1,
+        "kv_cache_bits": [
+          8,
+          8
+        ],
+        "mtp_tokens": 0,
+        "recurrent_state": [
+          "torch.float32"
+        ],
+        "mtp_note": "Ordinary fresh/append prefill loads the target component only. settings.mtp_tokens records the generic flag used by the harness's additional generation modes."
+      }
+    }
+  },
+  "cells": [
+    {
+      "cell": "W1",
+      "length": 2048,
+      "upstream": "upstream-master-fresh.json",
+      "final": "final-fresh.json",
+      "recipe": {
+        "context_tokens": [
+          98304,
+          98304
+        ],
+        "cache_tokens": [
+          98304,
+          98304
+        ],
+        "chunks": [
+          [
+            32768
+          ],
+          [
+            32768
+          ]
+        ],
+        "use_gib": [
+          90,
+          90
+        ],
+        "batch_size": [
+          1,
+          1
+        ],
+        "model_equal": true,
+        "corpus_equal": true,
+        "versions_equal": true,
+        "recurrent_dtypes_equal": true,
+        "ngram_stream_from_disk": [
+          true,
+          true
+        ],
+        "warm_ple": [
+          true,
+          true
+        ],
+        "trace": [
+          null,
+          null
+        ],
+        "actual_state_dtypes": [
+          "torch.float32"
+        ]
+      },
+      "upstream_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 2.4577606916427612,
+        "wall_mean_s": 2.4923765099956654,
+        "mean_per_row_tokens_per_s": 833.3218758105381,
+        "peak_allocated_bytes": 68180353024,
+        "peak_allocated_gib": 63.497901916503906,
+        "native_range_s": [
+          2.40065336227417,
+          2.5148680210113525
+        ],
+        "wall_range_s": [
+          2.435642172989901,
+          2.5491108470014296
+        ]
+      },
+      "final_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 1.5269668102264404,
+        "wall_mean_s": 1.5613291485060472,
+        "mean_per_row_tokens_per_s": 1340.7631938795907,
+        "peak_allocated_bytes": 69578854912,
+        "peak_allocated_gib": 64.80035829544067,
+        "native_range_s": [
+          1.5084550380706787,
+          1.5454785823822021
+        ],
+        "wall_range_s": [
+          1.542331829026807,
+          1.5803264679852873
+        ]
+      },
+      "native_time_ratio": 1.6095704734265242,
+      "native_gain_pct": 60.957047342652416,
+      "wall_time_ratio": 1.5963171586084126,
+      "wall_gain_pct": 59.63171586084126,
+      "wall_latency_reduction_pct": 37.3558071084227,
+      "peak_allocated_delta_gib": 1.3024563789367676,
+      "upstream_warmups": [
+        {
+          "chunk": 32768,
+          "length": 2048,
+          "rep": 0,
+          "measured": false,
+          "offset": 7919,
+          "wall_s": 3.037049730948638,
+          "time_prefill_s": 2.995819330215454,
+          "prompt_tokens": 2048,
+          "cached_tokens": 0,
+          "processed_tokens": 2047,
+          "peak_gpu_bytes": 68182410240,
+          "tok_per_s": 683.2855303903735
+        }
+      ],
+      "final_warmups": [
+        {
+          "chunk": 32768,
+          "length": 2048,
+          "rep": 0,
+          "measured": false,
+          "offset": 7919,
+          "wall_s": 2.2511514690122567,
+          "time_prefill_s": 2.2039811611175537,
+          "prompt_tokens": 2048,
+          "cached_tokens": 0,
+          "processed_tokens": 2047,
+          "peak_gpu_bytes": 69578708480,
+          "tok_per_s": 928.7738189931013
+        }
+      ],
+      "paired_samples": [
+        {
+          "rep": 1,
+          "offset": 15838,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 2048,
+            "rep": 1,
+            "measured": true,
+            "offset": 15838,
+            "wall_s": 2.435642172989901,
+            "time_prefill_s": 2.40065336227417,
+            "prompt_tokens": 2048,
+            "cached_tokens": 0,
+            "processed_tokens": 2047,
+            "peak_gpu_bytes": 68180353024,
+            "tok_per_s": 852.6845367049788,
+            "ple_priming": {
+              "wall_s": 2.52164074301254,
+              "input_tokens": 2048,
+              "prompt_tokens": 2048,
+              "cached_tokens": 0,
+              "processed_tokens": 2047
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129881680,
+            "timed_ru_inblock_after": 129881680,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 2048,
+            "rep": 1,
+            "measured": true,
+            "offset": 15838,
+            "wall_s": 1.542331829026807,
+            "time_prefill_s": 1.5084550380706787,
+            "prompt_tokens": 2048,
+            "cached_tokens": 0,
+            "processed_tokens": 2047,
+            "peak_gpu_bytes": 69578854912,
+            "tok_per_s": 1357.01757648549,
+            "ple_priming": {
+              "wall_s": 1.530687765975017,
+              "input_tokens": 2048,
+              "prompt_tokens": 2048,
+              "cached_tokens": 0,
+              "processed_tokens": 2047
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 130040424,
+            "timed_ru_inblock_after": 130040424,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.591464976871049,
+          "wall_time_ratio": 1.5791946500428264
+        },
+        {
+          "rep": 2,
+          "offset": 23757,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 2048,
+            "rep": 2,
+            "measured": true,
+            "offset": 23757,
+            "wall_s": 2.5491108470014296,
+            "time_prefill_s": 2.5148680210113525,
+            "prompt_tokens": 2048,
+            "cached_tokens": 0,
+            "processed_tokens": 2047,
+            "peak_gpu_bytes": 68177499648,
+            "tok_per_s": 813.9592149160974,
+            "ple_priming": {
+              "wall_s": 2.416682100039907,
+              "input_tokens": 2048,
+              "prompt_tokens": 2048,
+              "cached_tokens": 0,
+              "processed_tokens": 2047
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129881680,
+            "timed_ru_inblock_after": 129881680,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 2048,
+            "rep": 2,
+            "measured": true,
+            "offset": 23757,
+            "wall_s": 1.5803264679852873,
+            "time_prefill_s": 1.5454785823822021,
+            "prompt_tokens": 2048,
+            "cached_tokens": 0,
+            "processed_tokens": 2047,
+            "peak_gpu_bytes": 69578854912,
+            "tok_per_s": 1324.5088112736912,
+            "ple_priming": {
+              "wall_s": 1.5704268980189227,
+              "input_tokens": 2048,
+              "prompt_tokens": 2048,
+              "cached_tokens": 0,
+              "processed_tokens": 2047
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 130040424,
+            "timed_ru_inblock_after": 130040424,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.6272422340107313,
+          "wall_time_ratio": 1.6130280031639397
+        }
+      ]
+    },
+    {
+      "cell": "W2",
+      "length": 16384,
+      "upstream": "upstream-master-fresh.json",
+      "final": "final-fresh.json",
+      "recipe": {
+        "context_tokens": [
+          98304,
+          98304
+        ],
+        "cache_tokens": [
+          98304,
+          98304
+        ],
+        "chunks": [
+          [
+            32768
+          ],
+          [
+            32768
+          ]
+        ],
+        "use_gib": [
+          90,
+          90
+        ],
+        "batch_size": [
+          1,
+          1
+        ],
+        "model_equal": true,
+        "corpus_equal": true,
+        "versions_equal": true,
+        "recurrent_dtypes_equal": true,
+        "ngram_stream_from_disk": [
+          true,
+          true
+        ],
+        "warm_ple": [
+          true,
+          true
+        ],
+        "trace": [
+          null,
+          null
+        ],
+        "actual_state_dtypes": [
+          "torch.float32"
+        ]
+      },
+      "upstream_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 11.17795979976654,
+        "wall_mean_s": 11.213152359996457,
+        "mean_per_row_tokens_per_s": 1465.6619883359435,
+        "peak_allocated_bytes": 70788129280,
+        "peak_allocated_gib": 65.92658281326294,
+        "native_range_s": [
+          11.148892402648926,
+          11.207027196884155
+        ],
+        "wall_range_s": [
+          11.184036499995273,
+          11.24226821999764
+        ]
+      },
+      "final_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 7.991263747215271,
+        "wall_mean_s": 8.02612988249166,
+        "mean_per_row_tokens_per_s": 2050.122811115206,
+        "peak_allocated_bytes": 72122608640,
+        "peak_allocated_gib": 67.16941356658936,
+        "native_range_s": [
+          7.974499702453613,
+          8.008027791976929
+        ],
+        "wall_range_s": [
+          8.009146179014351,
+          8.043113585968968
+        ]
+      },
+      "native_time_ratio": 1.3987724787161158,
+      "native_gain_pct": 39.87724787161157,
+      "wall_time_ratio": 1.3970808501936935,
+      "wall_gain_pct": 39.708085019369356,
+      "wall_latency_reduction_pct": 28.422181159998118,
+      "peak_allocated_delta_gib": 1.242830753326416,
+      "upstream_warmups": [
+        {
+          "chunk": 32768,
+          "length": 16384,
+          "rep": 0,
+          "measured": false,
+          "offset": 31676,
+          "wall_s": 10.874802669975907,
+          "time_prefill_s": 10.839102983474731,
+          "prompt_tokens": 16384,
+          "cached_tokens": 0,
+          "processed_tokens": 16383,
+          "peak_gpu_bytes": 70756711936,
+          "tok_per_s": 1511.4719386814093
+        }
+      ],
+      "final_warmups": [
+        {
+          "chunk": 32768,
+          "length": 16384,
+          "rep": 0,
+          "measured": false,
+          "offset": 31676,
+          "wall_s": 15.62844993598992,
+          "time_prefill_s": 15.5899338722229,
+          "prompt_tokens": 16384,
+          "cached_tokens": 0,
+          "processed_tokens": 16383,
+          "peak_gpu_bytes": 72122612224,
+          "tok_per_s": 1050.8703971599348
+        }
+      ],
+      "paired_samples": [
+        {
+          "rep": 1,
+          "offset": 39595,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 16384,
+            "rep": 1,
+            "measured": true,
+            "offset": 39595,
+            "wall_s": 11.24226821999764,
+            "time_prefill_s": 11.207027196884155,
+            "prompt_tokens": 16384,
+            "cached_tokens": 0,
+            "processed_tokens": 16383,
+            "peak_gpu_bytes": 70773740032,
+            "tok_per_s": 1461.8506506841438,
+            "ple_priming": {
+              "wall_s": 11.458753472019453,
+              "input_tokens": 16384,
+              "prompt_tokens": 16384,
+              "cached_tokens": 0,
+              "processed_tokens": 16383
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129881848,
+            "timed_ru_inblock_after": 129881848,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 16384,
+            "rep": 1,
+            "measured": true,
+            "offset": 39595,
+            "wall_s": 8.009146179014351,
+            "time_prefill_s": 7.974499702453613,
+            "prompt_tokens": 16384,
+            "cached_tokens": 0,
+            "processed_tokens": 16383,
+            "peak_gpu_bytes": 72122608640,
+            "tok_per_s": 2054.4235514811344,
+            "ple_priming": {
+              "wall_s": 7.9971991530037485,
+              "input_tokens": 16384,
+              "prompt_tokens": 16384,
+              "cached_tokens": 0,
+              "processed_tokens": 16383
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 130040600,
+            "timed_ru_inblock_after": 130040600,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.405358030602967,
+          "wall_time_ratio": 1.4036787403699473
+        },
+        {
+          "rep": 2,
+          "offset": 47514,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 16384,
+            "rep": 2,
+            "measured": true,
+            "offset": 47514,
+            "wall_s": 11.184036499995273,
+            "time_prefill_s": 11.148892402648926,
+            "prompt_tokens": 16384,
+            "cached_tokens": 0,
+            "processed_tokens": 16383,
+            "peak_gpu_bytes": 70788129280,
+            "tok_per_s": 1469.4733259877432,
+            "ple_priming": {
+              "wall_s": 11.137946156959515,
+              "input_tokens": 16384,
+              "prompt_tokens": 16384,
+              "cached_tokens": 0,
+              "processed_tokens": 16383
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129881848,
+            "timed_ru_inblock_after": 129881848,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 16384,
+            "rep": 2,
+            "measured": true,
+            "offset": 47514,
+            "wall_s": 8.043113585968968,
+            "time_prefill_s": 8.008027791976929,
+            "prompt_tokens": 16384,
+            "cached_tokens": 0,
+            "processed_tokens": 16383,
+            "peak_gpu_bytes": 72114437120,
+            "tok_per_s": 2045.822070749277,
+            "ple_priming": {
+              "wall_s": 8.038055223994888,
+              "input_tokens": 16384,
+              "prompt_tokens": 16384,
+              "cached_tokens": 0,
+              "processed_tokens": 16383
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 130040600,
+            "timed_ru_inblock_after": 130040600,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.3922144992826775,
+          "wall_time_ratio": 1.3905108240054667
+        }
+      ]
+    },
+    {
+      "cell": "W3",
+      "length": 65536,
+      "upstream": "upstream-master-fresh.json",
+      "final": "final-fresh.json",
+      "recipe": {
+        "context_tokens": [
+          98304,
+          98304
+        ],
+        "cache_tokens": [
+          98304,
+          98304
+        ],
+        "chunks": [
+          [
+            32768
+          ],
+          [
+            32768
+          ]
+        ],
+        "use_gib": [
+          90,
+          90
+        ],
+        "batch_size": [
+          1,
+          1
+        ],
+        "model_equal": true,
+        "corpus_equal": true,
+        "versions_equal": true,
+        "recurrent_dtypes_equal": true,
+        "ngram_stream_from_disk": [
+          true,
+          true
+        ],
+        "warm_ple": [
+          true,
+          true
+        ],
+        "trace": [
+          null,
+          null
+        ],
+        "actual_state_dtypes": [
+          "torch.float32"
+        ]
+      },
+      "upstream_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 42.64593064785004,
+        "wall_mean_s": 42.68234316702001,
+        "mean_per_row_tokens_per_s": 1537.2682282422563,
+        "peak_allocated_bytes": 73446136320,
+        "peak_allocated_gib": 68.4020447731018,
+        "native_range_s": [
+          41.84309196472168,
+          43.448769330978394
+        ],
+        "wall_range_s": [
+          41.87987212103326,
+          43.48481421300676
+        ]
+      },
+      "final_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 29.57155454158783,
+        "wall_mean_s": 29.608359815989388,
+        "mean_per_row_tokens_per_s": 2216.1883336081123,
+        "peak_allocated_bytes": 75298622976,
+        "peak_allocated_gib": 70.12730741500854,
+        "native_range_s": [
+          29.448534727096558,
+          29.6945743560791
+        ],
+        "wall_range_s": [
+          29.48585339600686,
+          29.730866235971916
+        ]
+      },
+      "native_time_ratio": 1.4421267771998634,
+      "native_gain_pct": 44.21267771998634,
+      "wall_time_ratio": 1.4415639174977293,
+      "wall_gain_pct": 44.15639174977293,
+      "wall_latency_reduction_pct": 30.630894137819233,
+      "peak_allocated_delta_gib": 1.7252626419067383,
+      "upstream_warmups": [
+        {
+          "chunk": 32768,
+          "length": 65536,
+          "rep": 0,
+          "measured": false,
+          "offset": 55433,
+          "wall_s": 43.10429986397503,
+          "time_prefill_s": 43.066730976104736,
+          "prompt_tokens": 65536,
+          "cached_tokens": 0,
+          "processed_tokens": 65535,
+          "peak_gpu_bytes": 73423421440,
+          "tok_per_s": 1521.7082540200606
+        }
+      ],
+      "final_warmups": [
+        {
+          "chunk": 32768,
+          "length": 65536,
+          "rep": 0,
+          "measured": false,
+          "offset": 55433,
+          "wall_s": 30.483029730035923,
+          "time_prefill_s": 30.44642734527588,
+          "prompt_tokens": 65536,
+          "cached_tokens": 0,
+          "processed_tokens": 65535,
+          "peak_gpu_bytes": 75284957696,
+          "tok_per_s": 2152.4692948963852
+        }
+      ],
+      "paired_samples": [
+        {
+          "rep": 1,
+          "offset": 63352,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 65536,
+            "rep": 1,
+            "measured": true,
+            "offset": 63352,
+            "wall_s": 41.87987212103326,
+            "time_prefill_s": 41.84309196472168,
+            "prompt_tokens": 65536,
+            "cached_tokens": 0,
+            "processed_tokens": 65535,
+            "peak_gpu_bytes": 73446136320,
+            "tok_per_s": 1566.2083494033664,
+            "ple_priming": {
+              "wall_s": 42.97916364099365,
+              "input_tokens": 65536,
+              "prompt_tokens": 65536,
+              "cached_tokens": 0,
+              "processed_tokens": 65535
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129882008,
+            "timed_ru_inblock_after": 129882008,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 65536,
+            "rep": 1,
+            "measured": true,
+            "offset": 63352,
+            "wall_s": 29.48585339600686,
+            "time_prefill_s": 29.448534727096558,
+            "prompt_tokens": 65536,
+            "cached_tokens": 0,
+            "processed_tokens": 65535,
+            "peak_gpu_bytes": 75263689216,
+            "tok_per_s": 2225.4078380239107,
+            "ple_priming": {
+              "wall_s": 29.727693188993726,
+              "input_tokens": 65536,
+              "prompt_tokens": 65536,
+              "cached_tokens": 0,
+              "processed_tokens": 65535
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 130040760,
+            "timed_ru_inblock_after": 130040760,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.420888759066864,
+          "wall_time_ratio": 1.4203377992344244
+        },
+        {
+          "rep": 2,
+          "offset": 71271,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 65536,
+            "rep": 2,
+            "measured": true,
+            "offset": 71271,
+            "wall_s": 43.48481421300676,
+            "time_prefill_s": 43.448769330978394,
+            "prompt_tokens": 65536,
+            "cached_tokens": 0,
+            "processed_tokens": 65535,
+            "peak_gpu_bytes": 73402132480,
+            "tok_per_s": 1508.3281070811463,
+            "ple_priming": {
+              "wall_s": 43.417762560013216,
+              "input_tokens": 65536,
+              "prompt_tokens": 65536,
+              "cached_tokens": 0,
+              "processed_tokens": 65535
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129882008,
+            "timed_ru_inblock_after": 129882008,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 65536,
+            "rep": 2,
+            "measured": true,
+            "offset": 71271,
+            "wall_s": 29.730866235971916,
+            "time_prefill_s": 29.6945743560791,
+            "prompt_tokens": 65536,
+            "cached_tokens": 0,
+            "processed_tokens": 65535,
+            "peak_gpu_bytes": 75298622976,
+            "tok_per_s": 2206.968829192314,
+            "ple_priming": {
+              "wall_s": 29.69863062602235,
+              "input_tokens": 65536,
+              "prompt_tokens": 65536,
+              "cached_tokens": 0,
+              "processed_tokens": 65535
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 130040760,
+            "timed_ru_inblock_after": 130040760,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.463188823990788,
+          "wall_time_ratio": 1.4626151107697525
+        }
+      ]
+    },
+    {
+      "cell": "W4",
+      "length": 33280,
+      "upstream": "upstream-master-w4.json",
+      "final": "final-loo-w4.json",
+      "variant": "Full",
+      "recipe": {
+        "context_tokens": [
+          66048,
+          66048
+        ],
+        "cache_tokens": [
+          66048,
+          66048
+        ],
+        "chunks": [
+          [
+            32768
+          ],
+          [
+            32768
+          ]
+        ],
+        "use_gib": [
+          90,
+          90
+        ],
+        "batch_size": [
+          1,
+          1
+        ],
+        "model_equal": true,
+        "corpus_equal": true,
+        "versions_equal": true,
+        "recurrent_dtypes_equal": true,
+        "ngram_stream_from_disk": [
+          true,
+          true
+        ],
+        "warm_ple": [
+          true,
+          true
+        ],
+        "trace": [
+          null,
+          null
+        ],
+        "actual_state_dtypes": [
+          "torch.float32"
+        ]
+      },
+      "upstream_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 1.4961469173431396,
+        "wall_mean_s": 1.5339089585177135,
+        "mean_per_row_tokens_per_s": 341.6922673676439,
+        "peak_allocated_bytes": 67364901376,
+        "peak_allocated_gib": 62.73845338821411,
+        "native_range_s": [
+          1.4649808406829834,
+          1.527312994003296
+        ],
+        "wall_range_s": [
+          1.5030608380329795,
+          1.5647570790024474
+        ]
+      },
+      "final_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 0.8527777194976807,
+        "wall_mean_s": 0.8931499595055357,
+        "mean_per_row_tokens_per_s": 599.8900249669737,
+        "peak_allocated_bytes": 68776323072,
+        "peak_allocated_gib": 64.05294227600098,
+        "native_range_s": [
+          0.8242411613464355,
+          0.8813142776489258
+        ],
+        "wall_range_s": [
+          0.864973068004474,
+          0.9213268510065973
+        ]
+      },
+      "native_time_ratio": 1.7544395018017456,
+      "native_gain_pct": 75.44395018017455,
+      "wall_time_ratio": 1.7174147993769309,
+      "wall_gain_pct": 71.74147993769309,
+      "wall_latency_reduction_pct": 41.77294848263827,
+      "peak_allocated_delta_gib": 1.3144888877868652,
+      "upstream_warmups": [
+        {
+          "chunk": 32768,
+          "length": 33280,
+          "rep": 0,
+          "measured": false,
+          "offset": 7919,
+          "wall_s": 1.0755200019921176,
+          "time_prefill_s": 1.0370211601257324,
+          "prompt_tokens": 33280,
+          "cached_tokens": 32768,
+          "processed_tokens": 511,
+          "peak_gpu_bytes": 67364898304,
+          "tok_per_s": 492.75754405825666,
+          "prefix_tokens": 32768,
+          "append_tokens": 512,
+          "forwarded_tokens": 512,
+          "new_tokens": 1,
+          "prefix_setup": {
+            "wall_s": 20.39046489901375,
+            "prompt_tokens": 32769,
+            "cached_tokens": 0,
+            "processed_tokens": 32768,
+            "forwarded_tokens": 32769,
+            "new_tokens": 1
+          }
+        }
+      ],
+      "final_warmups": [
+        {
+          "chunk": 32768,
+          "length": 33280,
+          "rep": 0,
+          "measured": false,
+          "offset": 7919,
+          "wall_s": 2.08109756099293,
+          "time_prefill_s": 2.033724546432495,
+          "prompt_tokens": 33280,
+          "cached_tokens": 32768,
+          "processed_tokens": 511,
+          "peak_gpu_bytes": 68775644160,
+          "tok_per_s": 251.26313241209704,
+          "prefix_tokens": 32768,
+          "append_tokens": 512,
+          "forwarded_tokens": 512,
+          "new_tokens": 1,
+          "prefix_setup": {
+            "wall_s": 17.789612324966583,
+            "prompt_tokens": 32769,
+            "cached_tokens": 0,
+            "processed_tokens": 32768,
+            "forwarded_tokens": 32769,
+            "new_tokens": 1
+          },
+          "variant": "Full",
+          "operator_chunk": 32768,
+          "effective_prefill_options": {
+            "prefill_chunk": 32768,
+            "qsa_stage": true,
+            "moe_impl": "folded-hot",
+            "moe_batch_cap": 4,
+            "moe_max_rows": 16384,
+            "gdn_native_layers": [
+              0
+            ],
+            "hc_cache_tables": true,
+            "prefill_min_rows": 256,
+            "bmm_tile": [
+              64,
+              128,
+              64,
+              3
+            ]
+          }
+        }
+      ],
+      "paired_samples": [
+        {
+          "rep": 1,
+          "offset": 15838,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 33280,
+            "rep": 1,
+            "measured": true,
+            "offset": 15838,
+            "wall_s": 1.5647570790024474,
+            "time_prefill_s": 1.527312994003296,
+            "prompt_tokens": 33280,
+            "cached_tokens": 32768,
+            "processed_tokens": 511,
+            "peak_gpu_bytes": 67364901376,
+            "tok_per_s": 334.5745122357659,
+            "prefix_tokens": 32768,
+            "append_tokens": 512,
+            "forwarded_tokens": 512,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 20.162523314007558,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 22.2726971799857,
+              "input_tokens": 33280,
+              "prompt_tokens": 33280,
+              "cached_tokens": 0,
+              "processed_tokens": 33279
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129639008,
+            "timed_ru_inblock_after": 129639008,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 33280,
+            "rep": 1,
+            "measured": true,
+            "offset": 15838,
+            "wall_s": 0.864973068004474,
+            "time_prefill_s": 0.8242411613464355,
+            "prompt_tokens": 33280,
+            "cached_tokens": 32768,
+            "processed_tokens": 511,
+            "peak_gpu_bytes": 68776323072,
+            "tok_per_s": 619.9641851970341,
+            "prefix_tokens": 32768,
+            "append_tokens": 512,
+            "forwarded_tokens": 512,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 14.28811926196795,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 15.07950609200634,
+              "input_tokens": 33280,
+              "prompt_tokens": 33280,
+              "cached_tokens": 0,
+              "processed_tokens": 33279
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129189160,
+            "timed_ru_inblock_after": 129189160,
+            "timed_ru_inblock_delta": 0,
+            "variant": "Full",
+            "operator_chunk": 32768,
+            "effective_prefill_options": {
+              "prefill_chunk": 32768,
+              "qsa_stage": true,
+              "moe_impl": "folded-hot",
+              "moe_batch_cap": 4,
+              "moe_max_rows": 16384,
+              "gdn_native_layers": [
+                0
+              ],
+              "hc_cache_tables": true,
+              "prefill_min_rows": 256,
+              "bmm_tile": [
+                64,
+                128,
+                64,
+                3
+              ]
+            }
+          },
+          "native_time_ratio": 1.8529928686264108,
+          "wall_time_ratio": 1.8090240458149776
+        },
+        {
+          "rep": 2,
+          "offset": 23757,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 33280,
+            "rep": 2,
+            "measured": true,
+            "offset": 23757,
+            "wall_s": 1.5030608380329795,
+            "time_prefill_s": 1.4649808406829834,
+            "prompt_tokens": 33280,
+            "cached_tokens": 32768,
+            "processed_tokens": 511,
+            "peak_gpu_bytes": 67364901376,
+            "tok_per_s": 348.81002249952195,
+            "prefix_tokens": 32768,
+            "append_tokens": 512,
+            "forwarded_tokens": 512,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 21.149926255980972,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 22.798982314998284,
+              "input_tokens": 33280,
+              "prompt_tokens": 33280,
+              "cached_tokens": 0,
+              "processed_tokens": 33279
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129639008,
+            "timed_ru_inblock_after": 129639008,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 33280,
+            "rep": 2,
+            "measured": true,
+            "offset": 23757,
+            "wall_s": 0.9213268510065973,
+            "time_prefill_s": 0.8813142776489258,
+            "prompt_tokens": 33280,
+            "cached_tokens": 32768,
+            "processed_tokens": 511,
+            "peak_gpu_bytes": 68776323072,
+            "tok_per_s": 579.8158647369133,
+            "prefix_tokens": 32768,
+            "append_tokens": 512,
+            "forwarded_tokens": 512,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 14.324595812999178,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 15.18304363900097,
+              "input_tokens": 33280,
+              "prompt_tokens": 33280,
+              "cached_tokens": 0,
+              "processed_tokens": 33279
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129189160,
+            "timed_ru_inblock_after": 129189160,
+            "timed_ru_inblock_delta": 0,
+            "variant": "Full",
+            "operator_chunk": 32768,
+            "effective_prefill_options": {
+              "prefill_chunk": 32768,
+              "qsa_stage": true,
+              "moe_impl": "folded-hot",
+              "moe_batch_cap": 4,
+              "moe_max_rows": 16384,
+              "gdn_native_layers": [
+                0
+              ],
+              "hc_cache_tables": true,
+              "prefill_min_rows": 256,
+              "bmm_tile": [
+                64,
+                128,
+                64,
+                3
+              ]
+            }
+          },
+          "native_time_ratio": 1.66226836196402,
+          "wall_time_ratio": 1.6314089146439266
+        }
+      ]
+    },
+    {
+      "cell": "W5",
+      "length": 40960,
+      "upstream": "upstream-master-w5.json",
+      "final": "final-w5.json",
+      "recipe": {
+        "context_tokens": [
+          73728,
+          73728
+        ],
+        "cache_tokens": [
+          73728,
+          73728
+        ],
+        "chunks": [
+          [
+            32768
+          ],
+          [
+            32768
+          ]
+        ],
+        "use_gib": [
+          90,
+          90
+        ],
+        "batch_size": [
+          1,
+          1
+        ],
+        "model_equal": true,
+        "corpus_equal": true,
+        "versions_equal": true,
+        "recurrent_dtypes_equal": true,
+        "ngram_stream_from_disk": [
+          true,
+          true
+        ],
+        "warm_ple": [
+          true,
+          true
+        ],
+        "trace": [
+          null,
+          null
+        ],
+        "actual_state_dtypes": [
+          "torch.float32"
+        ]
+      },
+      "upstream_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 6.0352537631988525,
+        "wall_mean_s": 6.073799656500341,
+        "mean_per_row_tokens_per_s": 1357.4161944401412,
+        "peak_allocated_bytes": 68964461056,
+        "peak_allocated_gib": 64.22815942764282,
+        "native_range_s": [
+          5.95774507522583,
+          6.112762451171875
+        ],
+        "wall_range_s": [
+          5.99700935499277,
+          6.150589958007913
+        ]
+      },
+      "final_summary": {
+        "measured_rows": 2,
+        "native_mean_s": 4.619481682777405,
+        "wall_mean_s": 4.659410368971294,
+        "mean_per_row_tokens_per_s": 1773.1637295264266,
+        "peak_allocated_bytes": 70241912320,
+        "peak_allocated_gib": 65.4178786277771,
+        "native_range_s": [
+          4.603554725646973,
+          4.635408639907837
+        ],
+        "wall_range_s": [
+          4.644215451960918,
+          4.67460528598167
+        ]
+      },
+      "native_time_ratio": 1.3064785570424067,
+      "native_gain_pct": 30.64785570424067,
+      "wall_time_ratio": 1.3035554234389783,
+      "wall_gain_pct": 30.355542343897834,
+      "wall_latency_reduction_pct": 23.286729354257353,
+      "peak_allocated_delta_gib": 1.1897192001342773,
+      "upstream_warmups": [
+        {
+          "chunk": 32768,
+          "length": 40960,
+          "rep": 0,
+          "measured": false,
+          "offset": 7919,
+          "wall_s": 5.964131287008058,
+          "time_prefill_s": 5.925279140472412,
+          "prompt_tokens": 40960,
+          "cached_tokens": 32768,
+          "processed_tokens": 8191,
+          "peak_gpu_bytes": 68938456064,
+          "tok_per_s": 1382.3821301601913,
+          "prefix_tokens": 32768,
+          "append_tokens": 8192,
+          "forwarded_tokens": 8192,
+          "new_tokens": 1,
+          "prefix_setup": {
+            "wall_s": 20.366139221994672,
+            "prompt_tokens": 32769,
+            "cached_tokens": 0,
+            "processed_tokens": 32768,
+            "forwarded_tokens": 32769,
+            "new_tokens": 1
+          }
+        }
+      ],
+      "final_warmups": [
+        {
+          "chunk": 32768,
+          "length": 40960,
+          "rep": 0,
+          "measured": false,
+          "offset": 7919,
+          "wall_s": 11.035225750994869,
+          "time_prefill_s": 10.990675449371338,
+          "prompt_tokens": 40960,
+          "cached_tokens": 32768,
+          "processed_tokens": 8191,
+          "peak_gpu_bytes": 70242624000,
+          "tok_per_s": 745.2681172992441,
+          "prefix_tokens": 32768,
+          "append_tokens": 8192,
+          "forwarded_tokens": 8192,
+          "new_tokens": 1,
+          "prefix_setup": {
+            "wall_s": 15.711551090003923,
+            "prompt_tokens": 32769,
+            "cached_tokens": 0,
+            "processed_tokens": 32768,
+            "forwarded_tokens": 32769,
+            "new_tokens": 1
+          }
+        }
+      ],
+      "paired_samples": [
+        {
+          "rep": 1,
+          "offset": 15838,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 40960,
+            "rep": 1,
+            "measured": true,
+            "offset": 15838,
+            "wall_s": 5.99700935499277,
+            "time_prefill_s": 5.95774507522583,
+            "prompt_tokens": 40960,
+            "cached_tokens": 32768,
+            "processed_tokens": 8191,
+            "peak_gpu_bytes": 68960300544,
+            "tok_per_s": 1374.849023678563,
+            "prefix_tokens": 32768,
+            "append_tokens": 8192,
+            "forwarded_tokens": 8192,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 20.393417234998196,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 27.48010395601159,
+              "input_tokens": 40960,
+              "prompt_tokens": 40960,
+              "cached_tokens": 0,
+              "processed_tokens": 40959
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129994840,
+            "timed_ru_inblock_after": 129994840,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 40960,
+            "rep": 1,
+            "measured": true,
+            "offset": 15838,
+            "wall_s": 4.67460528598167,
+            "time_prefill_s": 4.635408639907837,
+            "prompt_tokens": 40960,
+            "cached_tokens": 32768,
+            "processed_tokens": 8191,
+            "peak_gpu_bytes": 70236362240,
+            "tok_per_s": 1767.0502508626416,
+            "prefix_tokens": 32768,
+            "append_tokens": 8192,
+            "forwarded_tokens": 8192,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 14.324201899988111,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 18.911303728993516,
+              "input_tokens": 40960,
+              "prompt_tokens": 40960,
+              "cached_tokens": 0,
+              "processed_tokens": 40959
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129949944,
+            "timed_ru_inblock_after": 129949944,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.2852685788979943,
+          "wall_time_ratio": 1.2828910652578005
+        },
+        {
+          "rep": 2,
+          "offset": 23757,
+          "field_mismatches": [],
+          "priming_count_mismatches": [],
+          "prefix_setup_count_mismatches": [],
+          "upstream": {
+            "chunk": 32768,
+            "length": 40960,
+            "rep": 2,
+            "measured": true,
+            "offset": 23757,
+            "wall_s": 6.150589958007913,
+            "time_prefill_s": 6.112762451171875,
+            "prompt_tokens": 40960,
+            "cached_tokens": 32768,
+            "processed_tokens": 8191,
+            "peak_gpu_bytes": 68964461056,
+            "tok_per_s": 1339.9833652017194,
+            "prefix_tokens": 32768,
+            "append_tokens": 8192,
+            "forwarded_tokens": 8192,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 21.558501050050836,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 26.801379380980507,
+              "input_tokens": 40960,
+              "prompt_tokens": 40960,
+              "cached_tokens": 0,
+              "processed_tokens": 40959
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129994840,
+            "timed_ru_inblock_after": 129994840,
+            "timed_ru_inblock_delta": 0
+          },
+          "final": {
+            "chunk": 32768,
+            "length": 40960,
+            "rep": 2,
+            "measured": true,
+            "offset": 23757,
+            "wall_s": 4.644215451960918,
+            "time_prefill_s": 4.603554725646973,
+            "prompt_tokens": 40960,
+            "cached_tokens": 32768,
+            "processed_tokens": 8191,
+            "peak_gpu_bytes": 70241912320,
+            "tok_per_s": 1779.2772081902115,
+            "prefix_tokens": 32768,
+            "append_tokens": 8192,
+            "forwarded_tokens": 8192,
+            "new_tokens": 1,
+            "prefix_setup": {
+              "wall_s": 14.436900302011054,
+              "prompt_tokens": 32769,
+              "cached_tokens": 0,
+              "processed_tokens": 32768,
+              "forwarded_tokens": 32769,
+              "new_tokens": 1
+            },
+            "ple_priming": {
+              "wall_s": 18.9831883830484,
+              "input_tokens": 40960,
+              "prompt_tokens": 40960,
+              "cached_tokens": 0,
+              "processed_tokens": 40959
+            },
+            "cpu_affinity": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "timed_ru_inblock_before": 129949944,
+            "timed_ru_inblock_after": 129949944,
+            "timed_ru_inblock_delta": 0
+          },
+          "native_time_ratio": 1.3278352958675432,
+          "wall_time_ratio": 1.324355000673141
+        }
+      ]
+    }
+  ],
+  "w4_current_control_sensitivity": {
+    "scope": "Within-final Full/repeat_Full, same offsets; not an upstream self-repeat.",
+    "rows": [
+      {
+        "chunk": 32768,
+        "length": 33280,
+        "rep": 1,
+        "measured": true,
+        "offset": 15838,
+        "wall_s": 0.8315424200263806,
+        "time_prefill_s": 0.7911415100097656,
+        "prompt_tokens": 33280,
+        "cached_tokens": 32768,
+        "processed_tokens": 511,
+        "peak_gpu_bytes": 68776323072,
+        "tok_per_s": 645.9021471312918,
+        "prefix_tokens": 32768,
+        "append_tokens": 512,
+        "forwarded_tokens": 512,
+        "new_tokens": 1,
+        "prefix_setup": {
+          "wall_s": 14.32461567199789,
+          "prompt_tokens": 32769,
+          "cached_tokens": 0,
+          "processed_tokens": 32768,
+          "forwarded_tokens": 32769,
+          "new_tokens": 1
+        },
+        "ple_priming": {
+          "wall_s": 15.102280183986295,
+          "input_tokens": 33280,
+          "prompt_tokens": 33280,
+          "cached_tokens": 0,
+          "processed_tokens": 33279
+        },
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "timed_ru_inblock_before": 129189160,
+        "timed_ru_inblock_after": 129189160,
+        "timed_ru_inblock_delta": 0,
+        "variant": "repeat_Full",
+        "operator_chunk": 32768,
+        "effective_prefill_options": {
+          "prefill_chunk": 32768,
+          "qsa_stage": true,
+          "moe_impl": "folded-hot",
+          "moe_batch_cap": 4,
+          "moe_max_rows": 16384,
+          "gdn_native_layers": [
+            0
+          ],
+          "hc_cache_tables": true,
+          "prefill_min_rows": 256,
+          "bmm_tile": [
+            64,
+            128,
+            64,
+            3
+          ]
+        }
+      },
+      {
+        "chunk": 32768,
+        "length": 33280,
+        "rep": 2,
+        "measured": true,
+        "offset": 23757,
+        "wall_s": 0.9474868890247308,
+        "time_prefill_s": 0.9075376987457275,
+        "prompt_tokens": 33280,
+        "cached_tokens": 32768,
+        "processed_tokens": 511,
+        "peak_gpu_bytes": 68776323072,
+        "tok_per_s": 563.0620091112834,
+        "prefix_tokens": 32768,
+        "append_tokens": 512,
+        "forwarded_tokens": 512,
+        "new_tokens": 1,
+        "prefix_setup": {
+          "wall_s": 14.316344479040708,
+          "prompt_tokens": 32769,
+          "cached_tokens": 0,
+          "processed_tokens": 32768,
+          "forwarded_tokens": 32769,
+          "new_tokens": 1
+        },
+        "ple_priming": {
+          "wall_s": 15.184743169986177,
+          "input_tokens": 33280,
+          "prompt_tokens": 33280,
+          "cached_tokens": 0,
+          "processed_tokens": 33279
+        },
+        "cpu_affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "timed_ru_inblock_before": 129189160,
+        "timed_ru_inblock_after": 129189160,
+        "timed_ru_inblock_delta": 0,
+        "variant": "repeat_Full",
+        "operator_chunk": 32768,
+        "effective_prefill_options": {
+          "prefill_chunk": 32768,
+          "qsa_stage": true,
+          "moe_impl": "folded-hot",
+          "moe_batch_cap": 4,
+          "moe_max_rows": 16384,
+          "gdn_native_layers": [
+            0
+          ],
+          "hc_cache_tables": true,
+          "prefill_min_rows": 256,
+          "bmm_tile": [
+            64,
+            128,
+            64,
+            3
+          ]
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "rep": 1,
+        "offset": 15838,
+        "native_control_latency_shift_pct": -4.015772675390306,
+        "wall_control_latency_shift_pct": -3.8649351308959523,
+        "upstream_over_repeated_final_native_ratio": 1.9305180864349327,
+        "upstream_over_repeated_final_wall_ratio": 1.8817525616465913
+      },
+      {
+        "rep": 2,
+        "offset": 23757,
+        "native_control_latency_shift_pct": 2.9754903286892898,
+        "wall_control_latency_shift_pct": 2.839387345495492,
+        "upstream_over_repeated_final_native_ratio": 1.6142368991477447,
+        "upstream_over_repeated_final_wall_ratio": 1.5863658436267265
+      }
+    ],
+    "repeat_native_mean_s": 0.8493396043777466,
+    "repeat_wall_mean_s": 0.8895146545255557,
+    "upstream_over_repeated_final_native_mean_ratio": 1.761541448946402,
+    "upstream_over_repeated_final_wall_mean_ratio": 1.7244336006311904
+  },
+  "peak_including_selected_warmups": {
+    "upstream": [
+      {
+        "cell": "W1",
+        "peak_allocated_bytes": 68182410240
+      },
+      {
+        "cell": "W2",
+        "peak_allocated_bytes": 70788129280
+      },
+      {
+        "cell": "W3",
+        "peak_allocated_bytes": 73446136320
+      },
+      {
+        "cell": "W4",
+        "peak_allocated_bytes": 67364901376
+      },
+      {
+        "cell": "W5",
+        "peak_allocated_bytes": 68964461056
+      }
+    ],
+    "final": [
+      {
+        "cell": "W1",
+        "peak_allocated_bytes": 69578854912
+      },
+      {
+        "cell": "W2",
+        "peak_allocated_bytes": 72122612224
+      },
+      {
+        "cell": "W3",
+        "peak_allocated_bytes": 75298622976
+      },
+      {
+        "cell": "W4",
+        "peak_allocated_bytes": 68776323072
+      },
+      {
+        "cell": "W5",
+        "peak_allocated_bytes": 70242624000
+      }
+    ]
+  },
+  "host_memory_interval": {
+    "interval_start_utc": "2026-10-16T07:10:48.000Z",
+    "interval_end_utc": "2026-10-16T08:12:31.635Z",
+    "scope": "Host-memory samples over the whole comparison session, including other work and idle periods.",
+    "sample_count": 740,
+    "first": {
+      "source_timestamp": "2026-10-16T03:10:50-04:00",
+      "timestamp_utc": "2026-10-16T07:10:50.000Z",
+      "mem_available_kib": 121540900
+    },
+    "last": {
+      "source_timestamp": "2026-10-16T04:12:30-04:00",
+      "timestamp_utc": "2026-10-16T08:12:30.000Z",
+      "mem_available_kib": 46040808
+    },
+    "minimum": {
+      "source_timestamp": "2026-10-16T03:41:38-04:00",
+      "timestamp_utc": "2026-10-16T07:41:38.000Z",
+      "mem_available_kib": 39222432
+    },
+    "minimum_gib": 37.405426025390625,
+    "largest_sample_interval_s": 6
+  },
+  "limits": [
+    "W4 final Full rows are reused from an interleaved four-arm LOO panel versus standalone upstream W4.",
+    "W2 uses the matched final-fresh offsets.",
+    "One load per panel, two distinct offsets. Upstream repeat-control noise, independent-load variance and confidence intervals are unmeasured.",
+    "Performance means exclude warmups, loading, PLE priming, prefix setup, feature capture and generation.",
+    "Counts describe harness accounting. Physical chunk and forward calls were unobserved.",
+    "Torch allocated-memory peaks cover the measured intervals. Prime/setup memory and total host/device residency are outside that measure.",
+    "The archive records only summary statistics of the host-memory log."
+  ],
+  "finished_utc": {
+    "upstream-master-fresh.json": "2026-10-16T07:17:02Z",
+    "upstream-master-w4.json": "2026-10-16T07:27:07.775Z",
+    "upstream-master-w5.json": "2026-10-16T07:33:17.672Z",
+    "final-fresh.json": "2026-10-16T07:42:19.787Z",
+    "final-loo-w4.json": "2026-10-16T07:57:24.268Z",
+    "final-w5.json": "2026-10-16T08:12:31.635Z"
+  },
+  "environment": {
+    "device": "NVIDIA GB10",
+    "device_memory_description": "128 GB unified memory"
+  }
+}

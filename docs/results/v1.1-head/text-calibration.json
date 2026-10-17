@@ -1,0 +1,101 @@
+{
+  "strata": [
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 16,
+      "temperature": 1.1897170014985052,
+      "records": 3441,
+      "groups": 3136,
+      "k_counts": {
+        "2": 3441
+      },
+      "bound": null
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 17,
+      "k_max": 26,
+      "temperature": 1.4813895335917564,
+      "records": 34,
+      "groups": 34,
+      "k_counts": {
+        "26": 34
+      },
+      "bound": null
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 27,
+      "k_max": 64,
+      "temperature": 1.403627065220406,
+      "records": 32,
+      "groups": 32,
+      "k_counts": {
+        "64": 32
+      },
+      "bound": null
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 65,
+      "k_max": 128,
+      "temperature": 1.3487881257571341,
+      "records": 22,
+      "groups": 22,
+      "k_counts": {
+        "128": 22
+      },
+      "bound": null
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 129,
+      "k_max": 255,
+      "temperature": 1.2075890185196168,
+      "records": 15,
+      "groups": 15,
+      "k_counts": {
+        "255": 15
+      },
+      "bound": null
+    },
+    {
+      "primitive": "noul",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 2,
+      "temperature": 1.3205070000254826,
+      "records": 1066,
+      "groups": 977,
+      "k_counts": {
+        "2": 1066
+      },
+      "bound": null
+    },
+    {
+      "primitive": "ordinal",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 5,
+      "temperature": 1.1070365485247873,
+      "records": 9980,
+      "groups": 998,
+      "k_counts": {
+        "5": 9980
+      },
+      "bound": null
+    }
+  ],
+  "temperature_bounds": [
+    0.03,
+    100
+  ],
+  "selection_epoch": 2,
+  "evaluation": "not_run"
+}

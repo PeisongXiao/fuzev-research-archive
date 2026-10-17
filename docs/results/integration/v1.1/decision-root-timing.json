@@ -1,0 +1,301 @@
+{
+  "scope": "One before/after timing pair for four independent SystemOne questions over a shared public-documentation context.",
+  "measured_date": "2026-10-17",
+  "measurement_status": "One before/after timing pair measured; native correctness diagnostics and controls are recorded separately.",
+  "tool": "tools/shared_prefix_timing.py",
+  "model": "turboderp/Qwen3.8-Flash-Next-exl3@55a732e0c4c3d4614bc42b68493bb930d9b02c0a",
+  "head": "fuzev-head 1.1.0",
+  "environment": {
+    "device": "NVIDIA GB10",
+    "device_memory_bytes": 130663165952,
+    "device_memory_description": "128 GB unified memory",
+    "python": "3.12.3",
+    "torch": "2.13.0+cu130",
+    "cuda": "13.0",
+    "triton": "3.7.1",
+    "flashinfer_python": "0.7.2",
+    "flashinfer_jit_cache": "0.7.2+cu130",
+    "engine": "exllamav3-fuzev 1.6.1+fuzev.v1.1",
+    "max_batch_size": 4,
+    "kv_cache_bits": [
+      8,
+      8
+    ],
+    "prefill_chunk": 2048,
+    "recurrent_state": [
+      "torch.float32"
+    ],
+    "mtp_tokens": 3,
+    "context_tokens": 16384,
+    "cache_tokens": 16384,
+    "ple": "streamed from disk"
+  },
+  "isolation": {
+    "changed": "The decision-root scheduling fix only.",
+    "settings": "Identical server settings and fixture in both arms.",
+    "runtime_plugin_scope": "Release-candidate runtime and plugin sources in both timing arms.",
+    "runtime": "fuzev-runtime 1.1.0, identical recorded source in both timing arms.",
+    "plugin": "fuzev-exllamav3-plugin 1.1.0, identical recorded source in both timing arms."
+  },
+  "fixture": {
+    "question_count": 4,
+    "question_type": "Four independent two-option Choice questions.",
+    "context_tokens": 2048,
+    "context_characters": 7273,
+    "context_source": "vllm-fuzev v1.0 public documentation corpus, first tokens, no special tokens",
+    "source": "https://github.com/PeisongXiao/vllm-fuzev/tree/v1.0/docs",
+    "tokenizer_revision": "55a732e0c4c3d4614bc42b68493bb930d9b02c0a",
+    "tokenizer_add_special_tokens": false,
+    "questions": {
+      "uppercase": {
+        "type": "choice",
+        "instructions": "Which label is uppercase?",
+        "criteria": {
+          "upper": "ALPHA",
+          "lower": "beta"
+        }
+      },
+      "number": {
+        "type": "choice",
+        "instructions": "Which value equals two plus two?",
+        "criteria": {
+          "four": "4",
+          "seven": "7"
+        }
+      },
+      "color": {
+        "type": "choice",
+        "instructions": "Which option names a color?",
+        "criteria": {
+          "red": "red",
+          "table": "table"
+        }
+      },
+      "weekday": {
+        "type": "choice",
+        "instructions": "Which option names a weekday?",
+        "criteria": {
+          "monday": "Monday",
+          "january": "January"
+        }
+      }
+    }
+  },
+  "protocol": {
+    "grouped": "one SystemOne request with all questions",
+    "concurrent": "one concurrent SystemOne request per question",
+    "cache_order": "grouped first, concurrent next, then counter probes; no warmup or cache reset",
+    "decision_probes": "separate counter probes, excluded from SystemOne timings"
+  },
+  "arms": {
+    "before": {
+      "engine_source": "v1.1 release-candidate fork.",
+      "samples": [
+        {
+          "sample": 0,
+          "health": {
+            "status": "ok",
+            "context_window": 16380,
+            "capabilities": {
+              "generation": true,
+              "decisions": true,
+              "images": false,
+              "streaming": true
+            }
+          },
+          "grouped": {
+            "wall_seconds": 16.51136789598968,
+            "usage": {
+              "input_tokens": 27302,
+              "output_tokens": 314
+            },
+            "latency_ms": 16509.566502994858
+          },
+          "concurrent": {
+            "wall_seconds": 2.0236605539685115,
+            "requests": {
+              "uppercase": {
+                "wall_seconds": 0.36279861704679206,
+                "usage": {
+                  "input_tokens": 6306,
+                  "output_tokens": 78
+                },
+                "latency_ms": 359.54628098988906
+              },
+              "number": {
+                "wall_seconds": 2.0225012950249948,
+                "usage": {
+                  "input_tokens": 6320,
+                  "output_tokens": 78
+                },
+                "latency_ms": 2019.963493978139
+              },
+              "color": {
+                "wall_seconds": 2.022517182980664,
+                "usage": {
+                  "input_tokens": 6309,
+                  "output_tokens": 78
+                },
+                "latency_ms": 2008.4028220153414
+              },
+              "weekday": {
+                "wall_seconds": 1.568120567011647,
+                "usage": {
+                  "input_tokens": 6314,
+                  "output_tokens": 80
+                },
+                "latency_ms": 1550.6252929917537
+              }
+            }
+          },
+          "decision_probes": {
+            "uppercase": {
+              "wall_seconds": 0.37968055001692846,
+              "execution": {
+                "submitted_tokens": 6306,
+                "cached_tokens": 6240,
+                "forwarded_tokens": 66,
+                "completed_root_branches": 2
+              }
+            },
+            "number": {
+              "wall_seconds": 0.3433545650332235,
+              "execution": {
+                "submitted_tokens": 6320,
+                "cached_tokens": 6248,
+                "forwarded_tokens": 72,
+                "completed_root_branches": 2
+              }
+            },
+            "color": {
+              "wall_seconds": 0.3314938570256345,
+              "execution": {
+                "submitted_tokens": 6309,
+                "cached_tokens": 6242,
+                "forwarded_tokens": 67,
+                "completed_root_branches": 2
+              }
+            },
+            "weekday": {
+              "wall_seconds": 0.3370757839875296,
+              "execution": {
+                "submitted_tokens": 6314,
+                "cached_tokens": 6244,
+                "forwarded_tokens": 70,
+                "completed_root_branches": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    "after": {
+      "engine_source": "v1.1 release-candidate fork with the decision-root scheduling fix.",
+      "samples": [
+        {
+          "sample": 0,
+          "health": {
+            "status": "ok",
+            "context_window": 16380,
+            "capabilities": {
+              "generation": true,
+              "decisions": true,
+              "images": false,
+              "streaming": true
+            }
+          },
+          "grouped": {
+            "wall_seconds": 16.89559765602462,
+            "usage": {
+              "input_tokens": 27302,
+              "output_tokens": 313
+            },
+            "latency_ms": 16884.17820399627
+          },
+          "concurrent": {
+            "wall_seconds": 1.2334234379814006,
+            "requests": {
+              "uppercase": {
+                "wall_seconds": 1.2288221279741265,
+                "usage": {
+                  "input_tokens": 6306,
+                  "output_tokens": 78
+                },
+                "latency_ms": 1225.995981018059
+              },
+              "number": {
+                "wall_seconds": 1.2312726079835556,
+                "usage": {
+                  "input_tokens": 6320,
+                  "output_tokens": 78
+                },
+                "latency_ms": 1215.7524729846045
+              },
+              "color": {
+                "wall_seconds": 1.228973152989056,
+                "usage": {
+                  "input_tokens": 6309,
+                  "output_tokens": 78
+                },
+                "latency_ms": 1224.5380830136128
+              },
+              "weekday": {
+                "wall_seconds": 1.2312943519791588,
+                "usage": {
+                  "input_tokens": 6314,
+                  "output_tokens": 81
+                },
+                "latency_ms": 1220.4073530156165
+              }
+            }
+          },
+          "decision_probes": {
+            "uppercase": {
+              "wall_seconds": 0.3576464380021207,
+              "execution": {
+                "submitted_tokens": 6306,
+                "cached_tokens": 6240,
+                "forwarded_tokens": 66,
+                "completed_root_branches": 2
+              }
+            },
+            "number": {
+              "wall_seconds": 0.3457237989641726,
+              "execution": {
+                "submitted_tokens": 6320,
+                "cached_tokens": 6248,
+                "forwarded_tokens": 72,
+                "completed_root_branches": 2
+              }
+            },
+            "color": {
+              "wall_seconds": 0.3398226709687151,
+              "execution": {
+                "submitted_tokens": 6309,
+                "cached_tokens": 6242,
+                "forwarded_tokens": 67,
+                "completed_root_branches": 2
+              }
+            },
+            "weekday": {
+              "wall_seconds": 0.34209811000619084,
+              "execution": {
+                "submitted_tokens": 6314,
+                "cached_tokens": 6244,
+                "forwarded_tokens": 70,
+                "completed_root_branches": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Each arm contains one sample. Statistical significance and general throughput remain unmeasured.",
+    "Grouped requests run first, concurrent requests run next and counter probes run last. First-use initialization and persistent-cache ordering are included. Warm grouped and concurrent requests on the final v1.1 sources are recorded in decision-root-timing-warm.json.",
+    "The release-candidate runtime and plugin count usage.input_tokens per logical branch; the v1.1 API counts the shared encoded state once.",
+    "The four sequential decision probes have identical execution counters across arms. They characterize those serial probe requests; concurrent correctness is reported in the separate native-control record.",
+    "Native correctness diagnostics and matched-geometry controls are recorded separately in decision-root-correctness.json."
+  ]
+}

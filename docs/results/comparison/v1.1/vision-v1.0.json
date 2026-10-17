@@ -1,0 +1,1190 @@
+{
+  "initial_pass": [
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "mm-rlhf/choice/image/best_response",
+      "requests": 150,
+      "scored": 150,
+      "errors": [],
+      "metrics": {
+        "nll": 0.9204573035125747,
+        "normalized_nll": 0.6629655159208631,
+        "brier": 0.2954753654800358,
+        "expected_accuracy": 0.605,
+        "tie_aware_accuracy": 0.7333333333333333,
+        "ece": 0.0913649461048356,
+        "records": 150,
+        "unique_gold_records": 103,
+        "unique_gold_accuracy": 0.7572815533980582,
+        "accuracy": 0.7333333333333333,
+        "correct": 110
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "all",
+      "requests": 600,
+      "scored": 599,
+      "errors": [
+        {
+          "index": 357,
+          "id": "6661022c74a9171c1c07ab686ded38123452e968398454dcf564f6ee00b6b722",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 450,
+      "gold_first": 303,
+      "gold_second": 77,
+      "first_pick": 291,
+      "gold_second_scored": 76,
+      "gold_second_correct": 64,
+      "metrics": {
+        "nll": 0.6205148043756539,
+        "normalized_nll": 0.7286926783480473,
+        "brier": 0.27641117154506495,
+        "expected_accuracy": 0.7090984974958264,
+        "tie_aware_accuracy": 0.7996661101836394,
+        "ece": 0.027584625351974593,
+        "records": 599,
+        "unique_gold_records": 482,
+        "unique_gold_accuracy": 0.7821576763485477,
+        "accuracy": 0.7996661101836394,
+        "correct": 479
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "mm-rlhf/choice/image/pairwise_preference",
+      "requests": 250,
+      "scored": 249,
+      "errors": [
+        {
+          "index": 357,
+          "id": "6661022c74a9171c1c07ab686ded38123452e968398454dcf564f6ee00b6b722",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 250,
+      "gold_first": 107,
+      "gold_second": 73,
+      "first_pick": 146,
+      "gold_second_scored": 72,
+      "gold_second_correct": 61,
+      "metrics": {
+        "nll": 0.4602427808009796,
+        "normalized_nll": 0.6639899774665194,
+        "brier": 0.1645343104676113,
+        "expected_accuracy": 0.751004016064257,
+        "tie_aware_accuracy": 0.891566265060241,
+        "ece": 0.04193769519179135,
+        "records": 249,
+        "unique_gold_records": 179,
+        "unique_gold_accuracy": 0.8491620111731844,
+        "accuracy": 0.891566265060241,
+        "correct": 222
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "vl-rewardbench/choice/image/official_heldout_preference",
+      "requests": 100,
+      "scored": 100,
+      "errors": [],
+      "binary_requests": 100,
+      "gold_first": 98,
+      "gold_second": 2,
+      "first_pick": 70,
+      "gold_second_scored": 2,
+      "gold_second_correct": 2,
+      "metrics": {
+        "nll": 0.6170724616344132,
+        "normalized_nll": 0.8902473802691133,
+        "brier": 0.42175731072147093,
+        "expected_accuracy": 0.72,
+        "tie_aware_accuracy": 0.72,
+        "ece": 0.10821102633790136,
+        "records": 100,
+        "unique_gold_records": 100,
+        "unique_gold_accuracy": 0.72,
+        "accuracy": 0.72,
+        "correct": 72
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "vl-rewardbench/noul/image/pairwise_preference_yes_no",
+      "requests": 100,
+      "scored": 100,
+      "errors": [],
+      "binary_requests": 100,
+      "gold_first": 98,
+      "gold_second": 2,
+      "first_pick": 75,
+      "gold_second_scored": 2,
+      "gold_second_correct": 1,
+      "metrics": {
+        "nll": 0.5731207371124521,
+        "normalized_nll": 0.8268384452627622,
+        "brier": 0.3810421255490624,
+        "expected_accuracy": 0.75,
+        "tie_aware_accuracy": 0.75,
+        "ece": 0.08831832398462693,
+        "records": 100,
+        "unique_gold_records": 100,
+        "unique_gold_accuracy": 0.75,
+        "accuracy": 0.75,
+        "correct": 75
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-choice",
+      "track": "vl-rewardbench/choice/image/official_heldout_preference",
+      "requests": 1247,
+      "scored": 1236,
+      "errors": [
+        {
+          "index": 604,
+          "id": "88fbfbeb4d3bf8fa888303814b42cf54c003cc1341c9644e873463e7570ca0d3",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1676,
+          "id": "63a36796b45e20f06ba5491dfb74813b9f549c596205e3c70127bad3d68dce3e",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1699,
+          "id": "ee2b7eca2cab70b5345c41be67d423f7a443c39f952f80a823bdf8d91adead5c",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1701,
+          "id": "489fb99f4eaebce300865529ba2d6f74729f062d59478daf1436b4771525e03a",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1718,
+          "id": "8f409f7e8fd204c9d04b27cc56b1f3d7debcc07144ab2fde6f5738f075224f03",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1728,
+          "id": "554ee110487cdb08aafe5cbeef2451542fe02b65ab9055a9df97124307c210c6",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1729,
+          "id": "d4c31399bbd45a3e888ff6bc6232cfb53d725c270b31135533d6849cace9d391",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1758,
+          "id": "8299f715e53989d58d4fef5ef0ce3673bc4f97d46736d3f6d092608a9ccfe966",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1804,
+          "id": "ee88200d640febd14837ce01abb4d5cd6bac45230a8b2b1d381097f6826ef5a9",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1813,
+          "id": "dcdcc3fdc725350d11a8677ff44002bd65f6e37e4859eae70e84f9f19ffb4653",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1841,
+          "id": "ee74906ac499b8046f50cc221361a1d0dbf18bca306a9d5fffbbaaf91a44d6ee",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 857,
+      "gold_second_scored": 21,
+      "gold_second_correct": 13,
+      "metrics": {
+        "nll": 0.607654402102366,
+        "normalized_nll": 0.8766599924874316,
+        "brier": 0.4114710145456033,
+        "expected_accuracy": 0.6974110032362459,
+        "tie_aware_accuracy": 0.6974110032362459,
+        "ece": 0.04597088033552827,
+        "records": 1236,
+        "unique_gold_records": 1236,
+        "unique_gold_accuracy": 0.6974110032362459,
+        "accuracy": 0.6974110032362459,
+        "correct": 862
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-choice",
+      "track": "all",
+      "requests": 1247,
+      "scored": 1236,
+      "errors": [
+        {
+          "index": 604,
+          "id": "88fbfbeb4d3bf8fa888303814b42cf54c003cc1341c9644e873463e7570ca0d3",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1676,
+          "id": "63a36796b45e20f06ba5491dfb74813b9f549c596205e3c70127bad3d68dce3e",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1699,
+          "id": "ee2b7eca2cab70b5345c41be67d423f7a443c39f952f80a823bdf8d91adead5c",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1701,
+          "id": "489fb99f4eaebce300865529ba2d6f74729f062d59478daf1436b4771525e03a",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1718,
+          "id": "8f409f7e8fd204c9d04b27cc56b1f3d7debcc07144ab2fde6f5738f075224f03",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1728,
+          "id": "554ee110487cdb08aafe5cbeef2451542fe02b65ab9055a9df97124307c210c6",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1729,
+          "id": "d4c31399bbd45a3e888ff6bc6232cfb53d725c270b31135533d6849cace9d391",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1758,
+          "id": "8299f715e53989d58d4fef5ef0ce3673bc4f97d46736d3f6d092608a9ccfe966",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1804,
+          "id": "ee88200d640febd14837ce01abb4d5cd6bac45230a8b2b1d381097f6826ef5a9",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1813,
+          "id": "dcdcc3fdc725350d11a8677ff44002bd65f6e37e4859eae70e84f9f19ffb4653",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1841,
+          "id": "ee74906ac499b8046f50cc221361a1d0dbf18bca306a9d5fffbbaaf91a44d6ee",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 857,
+      "gold_second_scored": 21,
+      "gold_second_correct": 13,
+      "metrics": {
+        "nll": 0.607654402102366,
+        "normalized_nll": 0.8766599924874316,
+        "brier": 0.4114710145456033,
+        "expected_accuracy": 0.6974110032362459,
+        "tie_aware_accuracy": 0.6974110032362459,
+        "ece": 0.04597088033552827,
+        "records": 1236,
+        "unique_gold_records": 1236,
+        "unique_gold_accuracy": 0.6974110032362459,
+        "accuracy": 0.6974110032362459,
+        "correct": 862
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-noul",
+      "track": "vl-rewardbench/noul/image/pairwise_preference_yes_no",
+      "requests": 1247,
+      "scored": 1236,
+      "errors": [
+        {
+          "index": 1851,
+          "id": "6f4fc4806762a6597bfe901f4f64bb9882e89a34919b4f72f19ba0b4b2be19e6",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2923,
+          "id": "f6ed7c3adeb07db0fa9f1c4dca6647a85b2a67f9e225e0d117aee201f3534835",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2946,
+          "id": "709a28c829f49ad75a43fc6c4a0a8b687560ec38aa6a2d675ff4df7baff06eeb",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2948,
+          "id": "35058aed9fd4f5b2d02311e431740a25bddc2c80b77e04a215f35e28de0c7ee7",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2965,
+          "id": "2b4e03745c5acf908544c084362b428b6b11344e6937e4f78b1c3416c989e305",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2975,
+          "id": "0ef13f24e4b7959ba57a0101f22a909d6dd7831faa5d5dd9d017a5f0a77fbd08",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2976,
+          "id": "a2c269a87ab5f021b6affc29758ada4f0a2974882bdeeba62e9a0dae62d9ed88",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3005,
+          "id": "73b23e3489ca6c368679ab55849ae8826d2dae0c2ee1e195592810ea0a8011bc",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3051,
+          "id": "f8b5f941e7e4658a50db89a1d0f872e57f3470e75250a7532decce3163807fa8",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3060,
+          "id": "58e4e525580f701c2ff7cf51647af0f8966c150db3df344fac9b34376ec19fad",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3088,
+          "id": "d9e5deb2e25cc9fd0f996f4c26c2a8ec6eaaa002985af57e54703b152e1d58e6",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 895,
+      "gold_second_scored": 21,
+      "gold_second_correct": 14,
+      "metrics": {
+        "nll": 0.5258509011197964,
+        "normalized_nll": 0.7586424872925229,
+        "brier": 0.3529656963592779,
+        "expected_accuracy": 0.7297734627831716,
+        "tie_aware_accuracy": 0.7297734627831716,
+        "ece": 0.03380145594719797,
+        "records": 1236,
+        "unique_gold_records": 1236,
+        "unique_gold_accuracy": 0.7297734627831716,
+        "accuracy": 0.7297734627831716,
+        "correct": 902
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-noul",
+      "track": "all",
+      "requests": 1247,
+      "scored": 1236,
+      "errors": [
+        {
+          "index": 1851,
+          "id": "6f4fc4806762a6597bfe901f4f64bb9882e89a34919b4f72f19ba0b4b2be19e6",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2923,
+          "id": "f6ed7c3adeb07db0fa9f1c4dca6647a85b2a67f9e225e0d117aee201f3534835",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2946,
+          "id": "709a28c829f49ad75a43fc6c4a0a8b687560ec38aa6a2d675ff4df7baff06eeb",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2948,
+          "id": "35058aed9fd4f5b2d02311e431740a25bddc2c80b77e04a215f35e28de0c7ee7",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2965,
+          "id": "2b4e03745c5acf908544c084362b428b6b11344e6937e4f78b1c3416c989e305",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2975,
+          "id": "0ef13f24e4b7959ba57a0101f22a909d6dd7831faa5d5dd9d017a5f0a77fbd08",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2976,
+          "id": "a2c269a87ab5f021b6affc29758ada4f0a2974882bdeeba62e9a0dae62d9ed88",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3005,
+          "id": "73b23e3489ca6c368679ab55849ae8826d2dae0c2ee1e195592810ea0a8011bc",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3051,
+          "id": "f8b5f941e7e4658a50db89a1d0f872e57f3470e75250a7532decce3163807fa8",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3060,
+          "id": "58e4e525580f701c2ff7cf51647af0f8966c150db3df344fac9b34376ec19fad",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3088,
+          "id": "d9e5deb2e25cc9fd0f996f4c26c2a8ec6eaaa002985af57e54703b152e1d58e6",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 895,
+      "gold_second_scored": 21,
+      "gold_second_correct": 14,
+      "metrics": {
+        "nll": 0.5258509011197964,
+        "normalized_nll": 0.7586424872925229,
+        "brier": 0.3529656963592779,
+        "expected_accuracy": 0.7297734627831716,
+        "tie_aware_accuracy": 0.7297734627831716,
+        "ece": 0.03380145594719797,
+        "records": 1236,
+        "unique_gold_records": 1236,
+        "unique_gold_accuracy": 0.7297734627831716,
+        "accuracy": 0.7297734627831716,
+        "correct": 902
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "attribute-eval",
+      "track": "sugarcrepe/choice/image/replace_att",
+      "requests": 192,
+      "scored": 192,
+      "errors": [],
+      "binary_requests": 192,
+      "gold_first": 96,
+      "gold_second": 96,
+      "first_pick": 97,
+      "gold_second_scored": 96,
+      "gold_second_correct": 94,
+      "metrics": {
+        "nll": 0.14127825138826225,
+        "normalized_nll": 0.20382143266331032,
+        "brier": 0.05558581625955811,
+        "expected_accuracy": 0.984375,
+        "tie_aware_accuracy": 0.984375,
+        "ece": 0.10123999445658943,
+        "records": 192,
+        "unique_gold_records": 192,
+        "unique_gold_accuracy": 0.984375,
+        "accuracy": 0.984375,
+        "correct": 189
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "attribute-eval",
+      "track": "all",
+      "requests": 192,
+      "scored": 192,
+      "errors": [],
+      "binary_requests": 192,
+      "gold_first": 96,
+      "gold_second": 96,
+      "first_pick": 97,
+      "gold_second_scored": 96,
+      "gold_second_correct": 94,
+      "metrics": {
+        "nll": 0.14127825138826225,
+        "normalized_nll": 0.20382143266331032,
+        "brier": 0.05558581625955811,
+        "expected_accuracy": 0.984375,
+        "tie_aware_accuracy": 0.984375,
+        "ece": 0.10123999445658943,
+        "records": 192,
+        "unique_gold_records": 192,
+        "unique_gold_accuracy": 0.984375,
+        "accuracy": 0.984375,
+        "correct": 189
+      }
+    }
+  ],
+  "retry_completed": [
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "mm-rlhf/choice/image/best_response",
+      "requests": 150,
+      "scored": 150,
+      "errors": [],
+      "metrics": {
+        "nll": 0.9204573035125747,
+        "normalized_nll": 0.6629655159208631,
+        "brier": 0.2954753654800358,
+        "expected_accuracy": 0.605,
+        "tie_aware_accuracy": 0.7333333333333333,
+        "ece": 0.0913649461048356,
+        "records": 150,
+        "unique_gold_records": 103,
+        "unique_gold_accuracy": 0.7572815533980582,
+        "accuracy": 0.7333333333333333,
+        "correct": 110
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "all",
+      "requests": 600,
+      "scored": 600,
+      "errors": [],
+      "binary_requests": 450,
+      "gold_first": 303,
+      "gold_second": 77,
+      "first_pick": 292,
+      "gold_second_scored": 77,
+      "gold_second_correct": 64,
+      "metrics": {
+        "nll": 0.6222553588817793,
+        "normalized_nll": 0.7314813026236361,
+        "brier": 0.27814170293444057,
+        "expected_accuracy": 0.7079166666666666,
+        "tie_aware_accuracy": 0.7983333333333333,
+        "ece": 0.028889951792664646,
+        "records": 600,
+        "unique_gold_records": 483,
+        "unique_gold_accuracy": 0.7805383022774327,
+        "accuracy": 0.7983333333333333,
+        "correct": 479
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "mm-rlhf/choice/image/pairwise_preference",
+      "requests": 250,
+      "scored": 250,
+      "errors": [],
+      "binary_requests": 250,
+      "gold_first": 107,
+      "gold_second": 73,
+      "first_pick": 147,
+      "gold_second_scored": 73,
+      "gold_second_correct": 61,
+      "metrics": {
+        "nll": 0.46506119970997917,
+        "normalized_nll": 0.6709414865314588,
+        "brier": 0.1691350932464226,
+        "expected_accuracy": 0.748,
+        "tie_aware_accuracy": 0.888,
+        "ece": 0.04501306637008824,
+        "records": 250,
+        "unique_gold_records": 180,
+        "unique_gold_accuracy": 0.8444444444444444,
+        "accuracy": 0.888,
+        "correct": 222
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "vl-rewardbench/choice/image/official_heldout_preference",
+      "requests": 100,
+      "scored": 100,
+      "errors": [],
+      "binary_requests": 100,
+      "gold_first": 98,
+      "gold_second": 2,
+      "first_pick": 70,
+      "gold_second_scored": 2,
+      "gold_second_correct": 2,
+      "metrics": {
+        "nll": 0.6170724616344132,
+        "normalized_nll": 0.8902473802691133,
+        "brier": 0.42175731072147093,
+        "expected_accuracy": 0.72,
+        "tie_aware_accuracy": 0.72,
+        "ece": 0.10821102633790136,
+        "records": 100,
+        "unique_gold_records": 100,
+        "unique_gold_accuracy": 0.72,
+        "accuracy": 0.72,
+        "correct": 72
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "eval-mix",
+      "track": "vl-rewardbench/noul/image/pairwise_preference_yes_no",
+      "requests": 100,
+      "scored": 100,
+      "errors": [],
+      "binary_requests": 100,
+      "gold_first": 98,
+      "gold_second": 2,
+      "first_pick": 75,
+      "gold_second_scored": 2,
+      "gold_second_correct": 1,
+      "metrics": {
+        "nll": 0.5731207371124521,
+        "normalized_nll": 0.8268384452627622,
+        "brier": 0.3810421255490624,
+        "expected_accuracy": 0.75,
+        "tie_aware_accuracy": 0.75,
+        "ece": 0.08831832398462693,
+        "records": 100,
+        "unique_gold_records": 100,
+        "unique_gold_accuracy": 0.75,
+        "accuracy": 0.75,
+        "correct": 75
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-choice",
+      "track": "vl-rewardbench/choice/image/official_heldout_preference",
+      "requests": 1247,
+      "scored": 1243,
+      "errors": [
+        {
+          "index": 1676,
+          "id": "63a36796b45e20f06ba5491dfb74813b9f549c596205e3c70127bad3d68dce3e",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1718,
+          "id": "8f409f7e8fd204c9d04b27cc56b1f3d7debcc07144ab2fde6f5738f075224f03",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1758,
+          "id": "8299f715e53989d58d4fef5ef0ce3673bc4f97d46736d3f6d092608a9ccfe966",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1813,
+          "id": "dcdcc3fdc725350d11a8677ff44002bd65f6e37e4859eae70e84f9f19ffb4653",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 860,
+      "gold_second_scored": 21,
+      "gold_second_correct": 13,
+      "metrics": {
+        "nll": 0.6121604241057033,
+        "normalized_nll": 0.8831608080857827,
+        "brier": 0.414391578007229,
+        "expected_accuracy": 0.6958970233306516,
+        "tie_aware_accuracy": 0.6958970233306516,
+        "ece": 0.04900127043585597,
+        "records": 1243,
+        "unique_gold_records": 1243,
+        "unique_gold_accuracy": 0.6958970233306516,
+        "accuracy": 0.6958970233306516,
+        "correct": 865
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-choice",
+      "track": "all",
+      "requests": 1247,
+      "scored": 1243,
+      "errors": [
+        {
+          "index": 1676,
+          "id": "63a36796b45e20f06ba5491dfb74813b9f549c596205e3c70127bad3d68dce3e",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1718,
+          "id": "8f409f7e8fd204c9d04b27cc56b1f3d7debcc07144ab2fde6f5738f075224f03",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1758,
+          "id": "8299f715e53989d58d4fef5ef0ce3673bc4f97d46736d3f6d092608a9ccfe966",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 1813,
+          "id": "dcdcc3fdc725350d11a8677ff44002bd65f6e37e4859eae70e84f9f19ffb4653",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 860,
+      "gold_second_scored": 21,
+      "gold_second_correct": 13,
+      "metrics": {
+        "nll": 0.6121604241057033,
+        "normalized_nll": 0.8831608080857827,
+        "brier": 0.414391578007229,
+        "expected_accuracy": 0.6958970233306516,
+        "tie_aware_accuracy": 0.6958970233306516,
+        "ece": 0.04900127043585597,
+        "records": 1243,
+        "unique_gold_records": 1243,
+        "unique_gold_accuracy": 0.6958970233306516,
+        "accuracy": 0.6958970233306516,
+        "correct": 865
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-noul",
+      "track": "vl-rewardbench/noul/image/pairwise_preference_yes_no",
+      "requests": 1247,
+      "scored": 1243,
+      "errors": [
+        {
+          "index": 2923,
+          "id": "f6ed7c3adeb07db0fa9f1c4dca6647a85b2a67f9e225e0d117aee201f3534835",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2965,
+          "id": "2b4e03745c5acf908544c084362b428b6b11344e6937e4f78b1c3416c989e305",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3005,
+          "id": "73b23e3489ca6c368679ab55849ae8826d2dae0c2ee1e195592810ea0a8011bc",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3060,
+          "id": "58e4e525580f701c2ff7cf51647af0f8966c150db3df344fac9b34376ec19fad",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 898,
+      "gold_second_scored": 21,
+      "gold_second_correct": 14,
+      "metrics": {
+        "nll": 0.5280244224259103,
+        "normalized_nll": 0.7617782157021199,
+        "brier": 0.3549465243387686,
+        "expected_accuracy": 0.7280772325020113,
+        "tie_aware_accuracy": 0.7280772325020113,
+        "ece": 0.03464238720389659,
+        "records": 1243,
+        "unique_gold_records": 1243,
+        "unique_gold_accuracy": 0.7280772325020113,
+        "accuracy": 0.7280772325020113,
+        "correct": 905
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "vl-noul",
+      "track": "all",
+      "requests": 1247,
+      "scored": 1243,
+      "errors": [
+        {
+          "index": 2923,
+          "id": "f6ed7c3adeb07db0fa9f1c4dca6647a85b2a67f9e225e0d117aee201f3534835",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 2965,
+          "id": "2b4e03745c5acf908544c084362b428b6b11344e6937e4f78b1c3416c989e305",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3005,
+          "id": "73b23e3489ca6c368679ab55849ae8826d2dae0c2ee1e195592810ea0a8011bc",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        },
+        {
+          "index": 3060,
+          "id": "58e4e525580f701c2ff7cf51647af0f8966c150db3df344fac9b34376ec19fad",
+          "error": "ValueError: HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+        }
+      ],
+      "binary_requests": 1247,
+      "gold_first": 1226,
+      "gold_second": 21,
+      "first_pick": 898,
+      "gold_second_scored": 21,
+      "gold_second_correct": 14,
+      "metrics": {
+        "nll": 0.5280244224259103,
+        "normalized_nll": 0.7617782157021199,
+        "brier": 0.3549465243387686,
+        "expected_accuracy": 0.7280772325020113,
+        "tie_aware_accuracy": 0.7280772325020113,
+        "ece": 0.03464238720389659,
+        "records": 1243,
+        "unique_gold_records": 1243,
+        "unique_gold_accuracy": 0.7280772325020113,
+        "accuracy": 0.7280772325020113,
+        "correct": 905
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "attribute-eval",
+      "track": "sugarcrepe/choice/image/replace_att",
+      "requests": 192,
+      "scored": 192,
+      "errors": [],
+      "binary_requests": 192,
+      "gold_first": 96,
+      "gold_second": 96,
+      "first_pick": 97,
+      "gold_second_scored": 96,
+      "gold_second_correct": 94,
+      "metrics": {
+        "nll": 0.14127825138826225,
+        "normalized_nll": 0.20382143266331032,
+        "brier": 0.05558581625955811,
+        "expected_accuracy": 0.984375,
+        "tie_aware_accuracy": 0.984375,
+        "ece": 0.10123999445658943,
+        "records": 192,
+        "unique_gold_records": 192,
+        "unique_gold_accuracy": 0.984375,
+        "accuracy": 0.984375,
+        "correct": 189
+      }
+    },
+    {
+      "arm": "FuZev v1.0",
+      "method": "head",
+      "set": "attribute-eval",
+      "track": "all",
+      "requests": 192,
+      "scored": 192,
+      "errors": [],
+      "binary_requests": 192,
+      "gold_first": 96,
+      "gold_second": 96,
+      "first_pick": 97,
+      "gold_second_scored": 96,
+      "gold_second_correct": 94,
+      "metrics": {
+        "nll": 0.14127825138826225,
+        "normalized_nll": 0.20382143266331032,
+        "brier": 0.05558581625955811,
+        "expected_accuracy": 0.984375,
+        "tie_aware_accuracy": 0.984375,
+        "ece": 0.10123999445658943,
+        "records": 192,
+        "unique_gold_records": 192,
+        "unique_gold_accuracy": 0.984375,
+        "accuracy": 0.984375,
+        "correct": 189
+      }
+    }
+  ],
+  "retry_attempts": [
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 357,
+        "id": "6661022c74a9171c1c07ab686ded38123452e968398454dcf564f6ee00b6b722",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 604,
+        "id": "88fbfbeb4d3bf8fa888303814b42cf54c003cc1341c9644e873463e7570ca0d3",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1676,
+        "id": "63a36796b45e20f06ba5491dfb74813b9f549c596205e3c70127bad3d68dce3e",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1699,
+        "id": "ee2b7eca2cab70b5345c41be67d423f7a443c39f952f80a823bdf8d91adead5c",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1701,
+        "id": "489fb99f4eaebce300865529ba2d6f74729f062d59478daf1436b4771525e03a",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1718,
+        "id": "8f409f7e8fd204c9d04b27cc56b1f3d7debcc07144ab2fde6f5738f075224f03",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1728,
+        "id": "554ee110487cdb08aafe5cbeef2451542fe02b65ab9055a9df97124307c210c6",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1729,
+        "id": "d4c31399bbd45a3e888ff6bc6232cfb53d725c270b31135533d6849cace9d391",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1758,
+        "id": "8299f715e53989d58d4fef5ef0ce3673bc4f97d46736d3f6d092608a9ccfe966",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1804,
+        "id": "ee88200d640febd14837ce01abb4d5cd6bac45230a8b2b1d381097f6826ef5a9",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1813,
+        "id": "dcdcc3fdc725350d11a8677ff44002bd65f6e37e4859eae70e84f9f19ffb4653",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1841,
+        "id": "ee74906ac499b8046f50cc221361a1d0dbf18bca306a9d5fffbbaaf91a44d6ee",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 1851,
+        "id": "6f4fc4806762a6597bfe901f4f64bb9882e89a34919b4f72f19ba0b4b2be19e6",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 2923,
+        "id": "f6ed7c3adeb07db0fa9f1c4dca6647a85b2a67f9e225e0d117aee201f3534835",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 2946,
+        "id": "709a28c829f49ad75a43fc6c4a0a8b687560ec38aa6a2d675ff4df7baff06eeb",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 2948,
+        "id": "35058aed9fd4f5b2d02311e431740a25bddc2c80b77e04a215f35e28de0c7ee7",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 2965,
+        "id": "2b4e03745c5acf908544c084362b428b6b11344e6937e4f78b1c3416c989e305",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 2975,
+        "id": "0ef13f24e4b7959ba57a0101f22a909d6dd7831faa5d5dd9d017a5f0a77fbd08",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 2976,
+        "id": "a2c269a87ab5f021b6affc29758ada4f0a2974882bdeeba62e9a0dae62d9ed88",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 3005,
+        "id": "73b23e3489ca6c368679ab55849ae8826d2dae0c2ee1e195592810ea0a8011bc",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 3051,
+        "id": "f8b5f941e7e4658a50db89a1d0f872e57f3470e75250a7532decce3163807fa8",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 3060,
+        "id": "58e4e525580f701c2ff7cf51647af0f8966c150db3df344fac9b34376ec19fad",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 413,
+      "error": "HTTP 413: {\"detail\":\"Request body exceeds the configured limit\"}"
+    },
+    {
+      "path": "vision-v10-retry413.jsonl",
+      "retry_of": {
+        "path": "vision-v10.jsonl",
+        "index": 3088,
+        "id": "d9e5deb2e25cc9fd0f996f4c26c2a8ec6eaaa002985af57e54703b152e1d58e6",
+        "arm": "FuZev v1.0"
+      },
+      "status_code": 200,
+      "error": null
+    }
+  ],
+  "server": "a TabbyAPI-based server on the published v1.0 fork (exllamav3-fuzev 1.5.2+fuzev.v1.0) with head 1.0.0: runtime chunk 8,192, batch 4, MTP 3, raw head, 98,304 context",
+  "scope": "Experimental image decisions; use images at your own risk.",
+  "accuracy_rule": "Any equally best gold candidate is correct; tied-gold targets split mass equally for NLL.",
+  "retry_method": "HTTP 413 requests were re-sent once as lossless WebP; remaining errors exceed the default 8 MiB request-body limit (--max-request-bytes).",
+  "answer_order_note": "In this conversion the preferred response is first in 1,226 of 1,247 VL-RewardBench items (98.3%; 98 of the 100 mix items), so accuracy mostly reflects how often a system answers Yes or picks the first response."
+}

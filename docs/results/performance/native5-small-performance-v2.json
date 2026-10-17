@@ -1758,5 +1758,6 @@
       ],
       "scope": "per-request engine phases; wave wall is separate and includes prefix release"
     }
-  ]
+  ],
+  "device": "NVIDIA GB10"
 }

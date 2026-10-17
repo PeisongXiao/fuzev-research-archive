@@ -1,6 +1,6 @@
 # Historical Study Code
 
-These code-only records describe the released head's original workflow.
+These code-only records describe the v1.0 head's original workflow.
 
 | Name | Stands for |
 | --- | --- |
@@ -23,7 +23,7 @@ These code-only records describe the released head's original workflow.
 | Refit weight-reference helper | [admit.py](admit.py) | `f74f81ade3c5cdbe23cdd1322d8e58f9e51ea2067ebf3a1396d728c55ca71393` |
 | CAL-only temperatures and processed quality | [calibrate_frozen_reference.py](calibrate_frozen_reference.py) | `ef9d06f3e850183d3b13692d4ecf7e11b382cfa329c3a2af5896b3005a075f0c` |
 
-The released refit used five epochs and 3,620 updates. It calls
+The v1.0 refit used five epochs and 3,620 updates. It calls
 `capacity_train.train_epoch` directly; the dependency's separate eight-epoch
 CLI belongs to an earlier study. These historical wrappers use Torch (tested
 with 2.13.0+cu130), safetensors, NumPy and the standard-library SQLite module.
@@ -68,6 +68,6 @@ Exact reproduction also needs:
 
 The caller supplies host-specific engine binaries and the CUDA build image.
 Training-module identities are preserved in
-[head provenance](../research-provenance.md#released-head-provenance).
+[head provenance](../research-provenance.md#v10-head-provenance).
 
 For a new fit, use the [portable training walkthrough](../train-a-shared-head.md).

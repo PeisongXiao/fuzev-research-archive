@@ -1,0 +1,174 @@
+{
+  "scope": "v1.1 release-candidate source installation and text API checks, before the decision-root scheduling and usage-accounting fixes; this records the measured build.",
+  "environment": {
+    "device": "NVIDIA GB10",
+    "device_memory_description": "128 GB unified memory",
+    "architecture": "aarch64",
+    "python": "3.12.3",
+    "torch": "2.13.0+cu130",
+    "triton": "3.7.1",
+    "flashinfer_python": "0.7.2",
+    "flashinfer_jit_cache": "0.7.2+cu130",
+    "engine": "exllamav3 1.6.1+fuzev.v1.1",
+    "runtime": "fuzev-runtime 1.1.0",
+    "plugin": "fuzev-exllamav3-plugin 1.1.0"
+  },
+  "installation": {
+    "format": "Unpacked source directories",
+    "build": "pip install --no-build-isolation ./exllamav3-fuzev",
+    "packages": "pip install ./fuzev-runtime ./fuzev-exllamav3-plugin",
+    "cuda_toolkit": "13.0",
+    "outcome": "Engine extension built; runtime and plugin installed with normal dependency resolution."
+  },
+  "settings": {
+    "model": "turboderp/Qwen3.8-Flash-Next-exl3@55a732e0",
+    "bpw": 4.05,
+    "head": "1.1.0",
+    "calibration": "calibrated",
+    "prefill_chunk": 32768,
+    "profile": {
+      "prefill_chunk": 32768,
+      "qsa_stage": true,
+      "moe_impl": "folded-hot",
+      "moe_batch_cap": 4,
+      "moe_max_rows": 16384,
+      "gdn_native_layers": [
+        0
+      ],
+      "hc_cache_tables": true,
+      "prefill_min_rows": 256,
+      "bmm_tile": [
+        64,
+        128,
+        64,
+        3
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "health",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "models shape",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "install.md smoke noul",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "combined choice/noul/score + unknown fields",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "K=1 rejected 422",
+      "status": 422,
+      "ok": true
+    },
+    {
+      "name": "K=2 choice",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "K=26 choice",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "K=27 choice",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "K=64 choice",
+      "status": 200,
+      "ok": false
+    },
+    {
+      "name": "K=255 choice",
+      "status": 200,
+      "ok": false
+    },
+    {
+      "name": "K=256 rejected 422",
+      "status": 422,
+      "ok": true
+    },
+    {
+      "name": "score 12 levels",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "/v1/decisions choice",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "/v1/decisions unknown field 422 (documented)",
+      "status": 422,
+      "ok": true
+    },
+    {
+      "name": "chat non-stream",
+      "status": 200,
+      "ok": true,
+      "has_reasoning": true,
+      "think_in_content": false
+    },
+    {
+      "name": "chat enable_thinking=false",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "chat stream SSE",
+      "status": 200,
+      "ok": true,
+      "n_events": 30
+    },
+    {
+      "name": "completions stream SSE",
+      "status": 200,
+      "ok": true,
+      "n_events": 10
+    },
+    {
+      "name": "retain_decision_prefix -> prefix_id",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "systemone with prefix_id",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "delete prefix",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "name": "released prefix -> 404",
+      "status": 404,
+      "ok": true
+    },
+    {
+      "name": "9 MiB body -> 413",
+      "status": 413,
+      "ok": true
+    }
+  ],
+  "limitations": [
+    "K64 and K255 requests returned HTTP 200; their synthetic expected-winner checks failed.",
+    "Recorded usage and head_id predate their release fixes.",
+    "Image serving, throughput and decision quality are outside this installation check."
+  ]
+}

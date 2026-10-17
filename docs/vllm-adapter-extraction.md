@@ -1,6 +1,8 @@
 # vLLM Adapter Method
 
-The [vLLM plugin](https://github.com/PeisongXiao/fuzev-vllm-plugin) separates HTTP serving and
+v1.0 research method. FuZev v1.1 serves through ExLlamaV3 only.
+
+The [vLLM plugin](https://github.com/PeisongXiao/fuzev-vllm-plugin/tree/v1.0) separates HTTP serving and
 decision orchestration from the shared head and engine fork. This note records
 the feature-readout method retained from the research implementation.
 
@@ -27,7 +29,7 @@ the feature-readout method retained from the research implementation.
 - `POST /v1/systemone` and the optional lower-level `/v1/decisions` route use
   the same decision service.
 - Images are an experimental extension, supplied as base64 or a data URL; see
-  the [API guide](https://github.com/PeisongXiao/fuzev/blob/main/docs/api.md).
+  the [API guide](https://github.com/PeisongXiao/fuzev/blob/v1.0/docs/api.md).
 
 ## Evidence
 
@@ -35,7 +37,5 @@ the feature-readout method retained from the research implementation.
   independence, accepted-prefix identity, feature copies, cancellation and cleanup.
 - The [SystemOne report](2026-10-12-systemone-unit-compatibility.md) records SDK
   comparisons.
-- The [integration page](https://github.com/PeisongXiao/fuzev/blob/main/docs/integration.md)
+- The [v1.0 integration page](integration-v1.0.md)
   has live-engine results and their measured scope.
-
-For current installation and launch commands, see the component's README.

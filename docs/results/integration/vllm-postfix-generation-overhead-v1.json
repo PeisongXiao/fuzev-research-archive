@@ -15,7 +15,7 @@
       "num_key_value_heads": 2,
       "hidden_act": "silu",
       "initializer_range": 0.02,
-      "rms_norm_eps": 0.000001,
+      "rms_norm_eps": 1e-06,
       "use_cache": true,
       "rope_parameters": {
         "mrope_interleaved": true,
@@ -1051,5 +1051,6 @@
       "decode_available_pairs": 3,
       "decode_overhead_percent": -2.407464361503224
     }
-  ]
+  ],
+  "device": "NVIDIA GB10"
 }

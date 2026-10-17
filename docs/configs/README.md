@@ -31,7 +31,7 @@ exports. The JSON files are records, not direct launcher inputs:
 
 The [installation history](../component-install-smoke.md#source-zip-serving-checks)
 describes measured scope. For a new environment, use the
-[canonical installation guide](https://github.com/PeisongXiao/fuzev/blob/main/docs/install.md).
+[canonical installation guide](https://github.com/PeisongXiao/fuzev/blob/v1.1/docs/install.md).
 
 ## Mixed Workloads
 
@@ -69,7 +69,7 @@ weights remain linked to their Hugging Face repositories.
 
 ## Quality And Head Studies
 
-Code/configuration records for the released head and the six 5,075-request
+Code/configuration records for the v1.0 head and the six 5,075-request
 benchmark runs:
 
 - [head-study.json](head-study.json): five-epoch refit, CAL-only scalar fit and full processed-quality settings.
@@ -93,4 +93,14 @@ result. Exact launch-file byte identity against every historical run is unconfir
 [Study-code records](../study-code/README.md) list the actual wrappers and
 their remaining dependencies. Prepared examples, images, features and raw
 journals are acquired or produced separately. Membership counts and hashes are
-in the [provenance table](../research-provenance.md#released-head-provenance).
+in the [provenance table](../research-provenance.md#v10-head-provenance).
+
+## v1.1 Head
+
+Configuration records for the v1.1 head ([recipe](../train-v1.1-head.md) and
+[results](../v1.1-head-results.md)):
+
+- [v1.1-train-config.json](v1.1-train-config.json): training geometry and text option capacities.
+- [v1.1-calibration-strata.json](v1.1-calibration-strata.json): the seven text calibration strata. Each stratum carries a placeholder temperature that the strata format requires; the fit starts at T=1.
+- [v1.1-final-head.json](v1.1-final-head.json) and [v1.1-final-calibration.json](v1.1-final-calibration.json): the 1.1.0 bundle's `config.json` and `calibration.json`.
+- [sugarcrepe-excluded-coco-ids.json](sugarcrepe-excluded-coco-ids.json): the 84 COCO image IDs excluded from the SugarCrepe image sample because they appear in earlier FuZev image data.

@@ -1,0 +1,289 @@
+{
+  "scope": "One mixed HTTP workload: a nine-candidate decision, a streaming chat without max_tokens and six short chats.",
+  "measured_date": "2026-10-17",
+  "installation": "Fork wheel built from the v1.1 source, with the v1.1 runtime and plugin sources.",
+  "environment": {
+    "device": "NVIDIA GB10",
+    "device_memory_bytes": 130663165952,
+    "device_memory_description": "128 GB unified memory",
+    "python": "3.12.3",
+    "torch": "2.13.0+cu130",
+    "cuda": "13.0",
+    "triton": "3.7.1",
+    "flashinfer_python": "0.7.2",
+    "flashinfer_jit_cache": "0.7.2+cu130",
+    "engine": "exllamav3-fuzev 1.6.1+fuzev.v1.1",
+    "max_batch_size": 4,
+    "kv_cache_bits": [
+      8,
+      8
+    ],
+    "prefill_chunk": 2048,
+    "recurrent_state": [
+      "torch.float32"
+    ],
+    "mtp_tokens": 3,
+    "context_tokens": 16384,
+    "cache_tokens": 16384,
+    "ple": "streamed from disk",
+    "httpx": "0.28.1",
+    "runtime": "fuzev-runtime 1.1.0",
+    "plugin": "fuzev-exllamav3-plugin 1.1.0"
+  },
+  "context_tokens": 2048,
+  "timeout_seconds": 120,
+  "elapsed_s": 29.94977225299226,
+  "workload_started_s": 0.079815401986707,
+  "workload_finished_s": 29.04826964100357,
+  "deadline_reached": false,
+  "health_before": {
+    "http_status": 200,
+    "started_s": 0.060451773984823376,
+    "finished_s": 0.07979727297788486,
+    "elapsed_s": 0.019345498993061483,
+    "status": "ok",
+    "context_window": 16380
+  },
+  "requests": [
+    {
+      "name": "decision",
+      "path": "/v1/decisions",
+      "http_status": 200,
+      "started_s": 0.08016595197841525,
+      "finished_s": 28.567731068993453,
+      "elapsed_s": 28.487565117015038,
+      "execution": {
+        "input_tokens": 2252,
+        "submitted_tokens": 21647,
+        "cached_tokens": 19395,
+        "forwarded_tokens": 2252,
+        "completed_root_branches": 9
+      },
+      "candidate_count": 9,
+      "primitive": "choice"
+    },
+    {
+      "name": "nomax",
+      "path": "/v1/chat/completions",
+      "http_status": 200,
+      "started_s": 0.08034195500658825,
+      "finished_s": 29.0482117679785,
+      "elapsed_s": 28.967869812971912,
+      "max_tokens_supplied": false,
+      "headers_s": 0.22535339195746928,
+      "first_output_s": 23.91264783096267,
+      "output_tokens": 64,
+      "sse_done": true,
+      "stream_errors": [
+        {
+          "message": "Request cancelled",
+          "type": "request_cancelled",
+          "code": 499
+        }
+      ]
+    },
+    {
+      "name": "short-0",
+      "path": "/v1/chat/completions",
+      "http_status": 200,
+      "started_s": 0.08048840600531548,
+      "finished_s": 17.876946826989297,
+      "elapsed_s": 17.79645842098398,
+      "usage": {
+        "prompt_tokens": 2072,
+        "completion_tokens": 2,
+        "total_tokens": 2074
+      },
+      "max_tokens_supplied": true,
+      "max_tokens": 2
+    },
+    {
+      "name": "short-1",
+      "path": "/v1/chat/completions",
+      "http_status": 200,
+      "started_s": 0.08062315999995917,
+      "finished_s": 18.358495499996934,
+      "elapsed_s": 18.277872339996975,
+      "usage": {
+        "prompt_tokens": 2072,
+        "completion_tokens": 2,
+        "total_tokens": 2074
+      },
+      "max_tokens_supplied": true,
+      "max_tokens": 2
+    },
+    {
+      "name": "short-2",
+      "path": "/v1/chat/completions",
+      "http_status": 200,
+      "started_s": 0.0807474339962937,
+      "finished_s": 18.358915362972766,
+      "elapsed_s": 18.278167928976472,
+      "usage": {
+        "prompt_tokens": 2072,
+        "completion_tokens": 2,
+        "total_tokens": 2074
+      },
+      "max_tokens_supplied": true,
+      "max_tokens": 2
+    },
+    {
+      "name": "short-3",
+      "path": "/v1/chat/completions",
+      "http_status": 200,
+      "started_s": 0.08086545299738646,
+      "finished_s": 17.876575251983013,
+      "elapsed_s": 17.795709798985627,
+      "usage": {
+        "prompt_tokens": 2072,
+        "completion_tokens": 2,
+        "total_tokens": 2074
+      },
+      "max_tokens_supplied": true,
+      "max_tokens": 2
+    },
+    {
+      "name": "short-4",
+      "path": "/v1/chat/completions",
+      "http_status": 200,
+      "started_s": 0.0809812470106408,
+      "finished_s": 18.358740800002124,
+      "elapsed_s": 18.277759552991483,
+      "usage": {
+        "prompt_tokens": 2072,
+        "completion_tokens": 2,
+        "total_tokens": 2074
+      },
+      "max_tokens_supplied": true,
+      "max_tokens": 2
+    },
+    {
+      "name": "short-5",
+      "path": "/v1/chat/completions",
+      "http_status": 200,
+      "started_s": 0.07986015500500798,
+      "finished_s": 17.876993962971028,
+      "elapsed_s": 17.79713380796602,
+      "usage": {
+        "prompt_tokens": 2072,
+        "completion_tokens": 2,
+        "total_tokens": 2074
+      },
+      "max_tokens_supplied": true,
+      "max_tokens": 2
+    }
+  ],
+  "finite_completed_before_bound_cancel": [
+    "decision",
+    "short-0",
+    "short-1",
+    "short-2",
+    "short-3",
+    "short-4",
+    "short-5"
+  ],
+  "finite_requests_http_200": true,
+  "cancel_after_output_tokens": 64,
+  "bound_cancel_output_tokens": 64,
+  "stream_token_count": "Client-retokenized reasoning and content; the recorded count is the cancellation observation.",
+  "bound_cancel": {
+    "http_status": 202,
+    "started_s": 28.98486637795577,
+    "finished_s": 28.989661308994982,
+    "elapsed_s": 0.004794931039214134,
+    "cancel_requested": true
+  },
+  "completed_before_cleanup": [
+    "decision",
+    "nomax",
+    "short-0",
+    "short-1",
+    "short-2",
+    "short-3",
+    "short-4",
+    "short-5"
+  ],
+  "client_tasks_pending_after_server_cancel": 0,
+  "cleanup_cancelled_count": 0,
+  "cleanup": {
+    "inactive_request_count": 8,
+    "all_request_ids_inactive": true,
+    "internal_engine_counters": "Outside the HTTP measurement surface.",
+    "health_after": {
+      "http_status": 200,
+      "started_s": 29.059364730957896,
+      "finished_s": 29.06073315400863,
+      "elapsed_s": 0.0013684230507351458,
+      "status": "ok",
+      "context_window": 16380
+    },
+    "short_chat_after": {
+      "http_status": 200,
+      "started_s": 29.060735713981558,
+      "finished_s": 29.949302949011326,
+      "elapsed_s": 0.8885672350297682,
+      "content_is_ok": true,
+      "usage": {
+        "prompt_tokens": 15,
+        "completion_tokens": 2,
+        "total_tokens": 17
+      }
+    },
+    "inactive_request_rechecks": [
+      {
+        "http_status": 404,
+        "started_s": 29.048433804011438,
+        "finished_s": 29.05377132096328,
+        "elapsed_s": 0.005337516951840371
+      },
+      {
+        "http_status": 404,
+        "started_s": 29.048784098005854,
+        "finished_s": 29.05670930800261,
+        "elapsed_s": 0.007925209996756166
+      },
+      {
+        "http_status": 404,
+        "started_s": 29.049022806982975,
+        "finished_s": 29.05737328797113,
+        "elapsed_s": 0.00835048098815605
+      },
+      {
+        "http_status": 404,
+        "started_s": 29.049260650994256,
+        "finished_s": 29.057747565966565,
+        "elapsed_s": 0.008486914972309023
+      },
+      {
+        "http_status": 404,
+        "started_s": 29.04948169499403,
+        "finished_s": 29.05813928495627,
+        "elapsed_s": 0.008657589962240309
+      },
+      {
+        "http_status": 404,
+        "started_s": 29.04969302599784,
+        "finished_s": 29.058530923968647,
+        "elapsed_s": 0.008837897970806807
+      },
+      {
+        "http_status": 404,
+        "started_s": 29.04990155796986,
+        "finished_s": 29.058912610984407,
+        "elapsed_s": 0.009011053014546633
+      },
+      {
+        "http_status": 404,
+        "started_s": 29.05012024997268,
+        "finished_s": 29.059337145998143,
+        "elapsed_s": 0.009216896025463939
+      }
+    ]
+  },
+  "limitations": [
+    "Cleanup evidence covers HTTP request inactivity and subsequent health/chat responsiveness. Internal page and root accounting is outside this check.",
+    "The streaming transport returns HTTP 200; cancellation appears as the expected 499 SSE error followed by the SSE completion marker.",
+    "This is one completion/cancellation observation, with first-use initialization included in its wall times.",
+    "Final server usage for the cancelled stream remains unreported."
+  ]
+}

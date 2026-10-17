@@ -14,8 +14,6 @@
     "B",
     "A"
   ],
-  "status": "failed",
-  "tolerance": 0.000002,
   "maximum_absolute_probability_delta": 0.10429,
   "source_precision": "Existing report rounded to five decimal places.",
   "alpha_probabilities": {

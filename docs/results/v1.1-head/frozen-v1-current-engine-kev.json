@@ -1,0 +1,212 @@
+{
+  "scope": "Kev breadth-v1 TEST, 1,990 records / 3,089 questions; v1.0 head, raw T=1. Reference: engine unpublished lab commit ID c078a909. Candidate: engine unpublished lab commit ID 1c2985f0, plugin unpublished lab commit ID b422d0d, runtime unpublished lab commit ID 1fc9054. Q8 KV, MTP 3, batch 4, chunk 8192, context 32768 / cache 40960 / load 90 GiB.",
+  "metric": "question accuracy over the full frozen partition; missing rows count wrong",
+  "bootstrap": {
+    "samples": 2000,
+    "seed": 0,
+    "unit": "record, resampled within dataset, paired across arms",
+    "intervals": "percentile 95%"
+  },
+  "records": 1990,
+  "questions": 3089,
+  "reference_answered_questions": 3089,
+  "candidate_answered_questions": 3089,
+  "reference_missing": [],
+  "candidate_missing": [],
+  "complete": true,
+  "overall": {
+    "reference_correct": 2261,
+    "candidate_correct": 2253,
+    "reference_accuracy": 0.7319520880543865,
+    "candidate_accuracy": 0.7293622531563613,
+    "candidate_minus_reference": -0.002589834898025251,
+    "delta_ci95": [
+      -0.00781333003023864,
+      0.002579937994883092
+    ]
+  },
+  "datasets": {
+    "apibank": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 141,
+      "candidate_correct": 141,
+      "reference_accuracy": 0.94,
+      "candidate_accuracy": 0.94,
+      "candidate_minus_reference": 0,
+      "delta_ci95": [
+        0,
+        0
+      ]
+    },
+    "bfcl": {
+      "records": 150,
+      "questions": 305,
+      "reference_correct": 280,
+      "candidate_correct": 280,
+      "reference_accuracy": 0.9180327868852459,
+      "candidate_accuracy": 0.9180327868852459,
+      "candidate_minus_reference": 0,
+      "delta_ci95": [
+        -0.00964708017840473,
+        0.009902634781750592
+      ]
+    },
+    "bright": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 102,
+      "candidate_correct": 99,
+      "reference_accuracy": 0.68,
+      "candidate_accuracy": 0.66,
+      "candidate_minus_reference": -0.02,
+      "delta_ci95": [
+        -0.06,
+        0.013333333333333334
+      ]
+    },
+    "cfcolor": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 77,
+      "candidate_correct": 79,
+      "reference_accuracy": 0.5133333333333333,
+      "candidate_accuracy": 0.5266666666666666,
+      "candidate_minus_reference": 0.013333333333333334,
+      "delta_ci95": [
+        0,
+        0.03333333333333333
+      ]
+    },
+    "chessbench": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 41,
+      "candidate_correct": 35,
+      "reference_accuracy": 0.2733333333333333,
+      "candidate_accuracy": 0.23333333333333334,
+      "candidate_minus_reference": -0.04,
+      "delta_ci95": [
+        -0.08,
+        -0.006666666666666667
+      ]
+    },
+    "clinc150": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 143,
+      "candidate_correct": 143,
+      "reference_accuracy": 0.9533333333333334,
+      "candidate_accuracy": 0.9533333333333334,
+      "candidate_minus_reference": 0,
+      "delta_ci95": [
+        0,
+        0
+      ]
+    },
+    "contractnli": {
+      "records": 40,
+      "questions": 160,
+      "reference_correct": 104,
+      "candidate_correct": 106,
+      "reference_accuracy": 0.65,
+      "candidate_accuracy": 0.6625,
+      "candidate_minus_reference": 0.0125,
+      "delta_ci95": [
+        -0.01875,
+        0.04375
+      ]
+    },
+    "hellaswag": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 124,
+      "candidate_correct": 125,
+      "reference_accuracy": 0.8266666666666667,
+      "candidate_accuracy": 0.8333333333333334,
+      "candidate_minus_reference": 0.006666666666666667,
+      "delta_ci95": [
+        0,
+        0.02
+      ]
+    },
+    "humicroedit": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 85,
+      "candidate_correct": 83,
+      "reference_accuracy": 0.5666666666666667,
+      "candidate_accuracy": 0.5533333333333333,
+      "candidate_minus_reference": -0.013333333333333334,
+      "delta_ci95": [
+        -0.04666666666666667,
+        0.02
+      ]
+    },
+    "musr": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 100,
+      "candidate_correct": 97,
+      "reference_accuracy": 0.6666666666666666,
+      "candidate_accuracy": 0.6466666666666666,
+      "candidate_minus_reference": -0.02,
+      "delta_ci95": [
+        -0.05333333333333334,
+        0.013333333333333334
+      ]
+    },
+    "routerbench": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 56,
+      "candidate_correct": 60,
+      "reference_accuracy": 0.37333333333333335,
+      "candidate_accuracy": 0.4,
+      "candidate_minus_reference": 0.02666666666666667,
+      "delta_ci95": [
+        0,
+        0.06
+      ]
+    },
+    "sata_bench": {
+      "records": 150,
+      "questions": 974,
+      "reference_correct": 815,
+      "candidate_correct": 814,
+      "reference_accuracy": 0.8367556468172485,
+      "candidate_accuracy": 0.8357289527720739,
+      "candidate_minus_reference": -0.001026694045174538,
+      "delta_ci95": [
+        -0.006322611409745101,
+        0.004162439299340964
+      ]
+    },
+    "sgd": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 100,
+      "candidate_correct": 100,
+      "reference_accuracy": 0.6666666666666666,
+      "candidate_accuracy": 0.6666666666666666,
+      "candidate_minus_reference": 0,
+      "delta_ci95": [
+        -0.04,
+        0.04
+      ]
+    },
+    "toolret": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 93,
+      "candidate_correct": 91,
+      "reference_accuracy": 0.62,
+      "candidate_accuracy": 0.6066666666666667,
+      "candidate_minus_reference": -0.013333333333333334,
+      "delta_ci95": [
+        -0.05333333333333334,
+        0.02
+      ]
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "fuzev-shared-head-package-v2",
+  "architecture_version": "fuzev-shared-decision-head-v1",
+  "encoding_version": "fuzev-list-aware-v2",
+  "head_id": "fuzev-head-1.1.0",
+  "release_date": "2026-10-17",
+  "precision": "float32",
+  "hidden_size": 2560,
+  "projection_size": 512,
+  "query_adapter_size": 64,
+  "key_adapter_size": 16,
+  "features": {
+    "query": {
+      "tap": "final-pre-lm",
+      "pooling": "last-token"
+    },
+    "candidate": {
+      "tap": "final-pre-lm",
+      "pooling": "last-token"
+    }
+  },
+  "baseline": {
+    "labelled": "query-label-logits",
+    "label_free": "zero"
+  },
+  "capacities": {
+    "choice": {
+      "text": {
+        "implemented_max": 255,
+        "validated_max": 255
+      },
+      "image_text": {
+        "implemented_max": 26,
+        "validated_max": 2
+      }
+    },
+    "noul": {
+      "text": {
+        "implemented_max": 2,
+        "validated_max": 2
+      },
+      "image_text": {
+        "implemented_max": 2,
+        "validated_max": null
+      }
+    },
+    "ordinal": {
+      "text": {
+        "implemented_max": 255,
+        "validated_max": null
+      },
+      "image_text": {
+        "implemented_max": 26,
+        "validated_max": null
+      }
+    }
+  },
+  "residual_strength": {
+    "text": 1.0,
+    "image_text": 1.0
+  },
+  "reference_backbone": {
+    "repo": "turboderp/Qwen3.8-Flash-Next-exl3",
+    "revision": "55a732e0c4c3d4614bc42b68493bb930d9b02c0a"
+  }
+}

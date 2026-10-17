@@ -1,0 +1,226 @@
+{
+  "scope": "Kev breadth-v1 TEST, 1,990 records / 3,089 questions; raw v1.0 head (reference) versus raw v1.1 head (candidate), T=1, on the shared historical 4.05 bpw / FP16-KV / batch 8 / chunk 8192 feature cache. The text_noul_k2 section covers 1,279 held-out text Noul questions.",
+  "metric": "question accuracy over the full frozen partition; missing rows count wrong",
+  "bootstrap": {
+    "samples": 2000,
+    "seed": 0,
+    "unit": "record, resampled within dataset, paired across arms",
+    "intervals": "percentile 95%"
+  },
+  "records": 1990,
+  "questions": 3089,
+  "reference_answered_questions": 3089,
+  "candidate_answered_questions": 3089,
+  "reference_missing": [],
+  "candidate_missing": [],
+  "complete": true,
+  "overall": {
+    "reference_correct": 2261,
+    "candidate_correct": 2243,
+    "reference_accuracy": 0.7319520880543865,
+    "candidate_accuracy": 0.7261249595338297,
+    "candidate_minus_reference": -0.005827128520556815,
+    "delta_ci95": [
+      -0.018259481014977187,
+      0.0065020034465624234
+    ]
+  },
+  "datasets": {
+    "apibank": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 142,
+      "candidate_correct": 135,
+      "reference_accuracy": 0.9466666666666667,
+      "candidate_accuracy": 0.9,
+      "candidate_minus_reference": -0.04666666666666667,
+      "delta_ci95": [
+        -0.08666666666666667,
+        -0.02
+      ]
+    },
+    "bfcl": {
+      "records": 150,
+      "questions": 305,
+      "reference_correct": 282,
+      "candidate_correct": 287,
+      "reference_accuracy": 0.9245901639344263,
+      "candidate_accuracy": 0.940983606557377,
+      "candidate_minus_reference": 0.01639344262295082,
+      "delta_ci95": [
+        0.0033442028985507244,
+        0.03180777888158139
+      ]
+    },
+    "bright": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 103,
+      "candidate_correct": 102,
+      "reference_accuracy": 0.6866666666666666,
+      "candidate_accuracy": 0.68,
+      "candidate_minus_reference": -0.006666666666666667,
+      "delta_ci95": [
+        -0.08,
+        0.06666666666666667
+      ]
+    },
+    "cfcolor": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 78,
+      "candidate_correct": 86,
+      "reference_accuracy": 0.52,
+      "candidate_accuracy": 0.5733333333333334,
+      "candidate_minus_reference": 0.05333333333333334,
+      "delta_ci95": [
+        -0.04,
+        0.14666666666666667
+      ]
+    },
+    "chessbench": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 35,
+      "candidate_correct": 36,
+      "reference_accuracy": 0.23333333333333334,
+      "candidate_accuracy": 0.24,
+      "candidate_minus_reference": 0.006666666666666667,
+      "delta_ci95": [
+        -0.06016666666666665,
+        0.08
+      ]
+    },
+    "clinc150": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 143,
+      "candidate_correct": 131,
+      "reference_accuracy": 0.9533333333333334,
+      "candidate_accuracy": 0.8733333333333333,
+      "candidate_minus_reference": -0.08,
+      "delta_ci95": [
+        -0.12666666666666668,
+        -0.03983333333333424
+      ]
+    },
+    "contractnli": {
+      "records": 40,
+      "questions": 160,
+      "reference_correct": 108,
+      "candidate_correct": 97,
+      "reference_accuracy": 0.675,
+      "candidate_accuracy": 0.60625,
+      "candidate_minus_reference": -0.06875,
+      "delta_ci95": [
+        -0.15,
+        0.0125
+      ]
+    },
+    "hellaswag": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 124,
+      "candidate_correct": 133,
+      "reference_accuracy": 0.8266666666666667,
+      "candidate_accuracy": 0.8866666666666667,
+      "candidate_minus_reference": 0.06,
+      "delta_ci95": [
+        0.02666666666666667,
+        0.1
+      ]
+    },
+    "humicroedit": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 85,
+      "candidate_correct": 92,
+      "reference_accuracy": 0.5666666666666667,
+      "candidate_accuracy": 0.6133333333333333,
+      "candidate_minus_reference": 0.04666666666666667,
+      "delta_ci95": [
+        -0.03333333333333333,
+        0.13333333333333333
+      ]
+    },
+    "musr": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 98,
+      "candidate_correct": 90,
+      "reference_accuracy": 0.6533333333333333,
+      "candidate_accuracy": 0.6,
+      "candidate_minus_reference": -0.05333333333333334,
+      "delta_ci95": [
+        -0.12,
+        0.02
+      ]
+    },
+    "routerbench": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 60,
+      "candidate_correct": 43,
+      "reference_accuracy": 0.4,
+      "candidate_accuracy": 0.2866666666666667,
+      "candidate_minus_reference": -0.11333333333333333,
+      "delta_ci95": [
+        -0.20016666666666666,
+        -0.02666666666666667
+      ]
+    },
+    "sata_bench": {
+      "records": 150,
+      "questions": 974,
+      "reference_correct": 813,
+      "candidate_correct": 823,
+      "reference_accuracy": 0.8347022587268994,
+      "candidate_accuracy": 0.8449691991786448,
+      "candidate_minus_reference": 0.01026694045174538,
+      "delta_ci95": [
+        -0.0010331113221429427,
+        0.02132142524837945
+      ]
+    },
+    "sgd": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 98,
+      "candidate_correct": 100,
+      "reference_accuracy": 0.6533333333333333,
+      "candidate_accuracy": 0.6666666666666666,
+      "candidate_minus_reference": 0.013333333333333334,
+      "delta_ci95": [
+        -0.06666666666666667,
+        0.08666666666666667
+      ]
+    },
+    "toolret": {
+      "records": 150,
+      "questions": 150,
+      "reference_correct": 92,
+      "candidate_correct": 88,
+      "reference_accuracy": 0.6133333333333333,
+      "candidate_accuracy": 0.5866666666666667,
+      "candidate_minus_reference": -0.02666666666666667,
+      "delta_ci95": [
+        -0.08,
+        0.02666666666666667
+      ]
+    }
+  },
+  "text_noul_k2": {
+    "questions": 1279,
+    "reference": {
+      "correct": 1095,
+      "accuracy": 0.856137607505864,
+      "nll": 0.38025724211500955
+    },
+    "candidate": {
+      "correct": 1110,
+      "accuracy": 0.8678655199374511,
+      "nll": 0.3581310003790739
+    },
+    "method": "Stable-first argmax; natural-log cross-entropy over cached text Noul K=2 questions."
+  }
+}

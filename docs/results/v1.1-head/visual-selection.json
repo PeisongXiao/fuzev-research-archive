@@ -1,0 +1,548 @@
+{
+  "selected": {
+    "name": "v1.1_head",
+    "lambda": 1,
+    "temperature": 0.5135668608446433
+  },
+  "candidates": [
+    {
+      "name": "baseline",
+      "lambda": 0,
+      "temperature": 0.4908549377647389,
+      "fit_normalized_nll": 0.10134210220188111,
+      "dev_normalized_nll": 0.10147194785695104
+    },
+    {
+      "name": "v1.1_head",
+      "lambda": 1,
+      "temperature": 0.5135668608446433,
+      "fit_normalized_nll": 0.1309267510857928,
+      "dev_normalized_nll": 0.058223599803209056
+    },
+    {
+      "name": "fit_residual",
+      "lambda": 0,
+      "temperature": 0.4908549377647389,
+      "fit_normalized_nll": 0.10134210220188111,
+      "dev_normalized_nll": 0.10147194785695104
+    }
+  ],
+  "selection_rule": "minimum DEV normalized NLL; exact ties prefer smaller lambda",
+  "temperature_bounds": [
+    0.03,
+    100
+  ],
+  "fit": {
+    "role": "fit",
+    "records": 96,
+    "image_groups": 48,
+    "baseline": {
+      "temperature": 1,
+      "metrics": {
+        "nll": 0.09092038590700656,
+        "normalized_nll": 0.1311703898637492,
+        "brier": 0.050248328021698464,
+        "expected_accuracy": 0.9583333333333334,
+        "accuracy": 0.9583333333333334,
+        "tie_aware_accuracy": 0.9583333333333334,
+        "ece": 0.03463497514483549,
+        "records": 96
+      },
+      "image_intervals": {
+        "accuracy": {
+          "low": 0.9166666666666666,
+          "high": 0.9895833333333334,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.9583333333333334
+        },
+        "normalized_nll": {
+          "low": 0.06333190407471109,
+          "high": 0.21349176529198532,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.13117038986374918
+        },
+        "brier": {
+          "low": 0.01622746081913444,
+          "high": 0.09286697822742976,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.050248328021698464
+        }
+      },
+      "order_agreement": {
+        "count": 44,
+        "low": 0.8333333333333334,
+        "high": 0.9791666666666666,
+        "groups": 48,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.9166666666666666
+      },
+      "vs_baseline": {
+        "accuracy_delta": {
+          "low": 0,
+          "high": 0,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0
+        },
+        "harmful_flips": {
+          "count": 0,
+          "low": 0,
+          "high": 0,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0
+        },
+        "repairs": {
+          "count": 0,
+          "low": 0,
+          "high": 0,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0
+        }
+      }
+    },
+    "v1.1_head": {
+      "temperature": 1,
+      "metrics": {
+        "nll": 0.11155972117398916,
+        "normalized_nll": 0.16094665650066967,
+        "brier": 0.06358174645702826,
+        "expected_accuracy": 0.9479166666666666,
+        "accuracy": 0.9479166666666666,
+        "tie_aware_accuracy": 0.9479166666666666,
+        "ece": 0.05032492106700661,
+        "records": 96
+      },
+      "image_intervals": {
+        "accuracy": {
+          "low": 0.8854166666666666,
+          "high": 0.9895833333333334,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.9479166666666666
+        },
+        "normalized_nll": {
+          "low": 0.08254040430308437,
+          "high": 0.25480812349721743,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.16094665650066967
+        },
+        "brier": {
+          "low": 0.024206592957514053,
+          "high": 0.11207098332866615,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.06358174645702826
+        }
+      },
+      "order_agreement": {
+        "count": 45,
+        "low": 0.8541666666666666,
+        "high": 1,
+        "groups": 48,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.9375
+      },
+      "vs_baseline": {
+        "accuracy_delta": {
+          "low": -0.052083333333333336,
+          "high": 0.020833333333333332,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": -0.010416666666666666
+        },
+        "harmful_flips": {
+          "count": 2,
+          "low": 0,
+          "high": 0.052083333333333336,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.020833333333333332
+        },
+        "repairs": {
+          "count": 1,
+          "low": 0,
+          "high": 0.03125,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.010416666666666666
+        }
+      }
+    },
+    "selected": {
+      "temperature": 0.5135668608446433,
+      "metrics": {
+        "nll": 0.09075150837499102,
+        "normalized_nll": 0.1309267510857928,
+        "brier": 0.05935072506551745,
+        "expected_accuracy": 0.9479166666666666,
+        "accuracy": 0.9479166666666666,
+        "tie_aware_accuracy": 0.9479166666666666,
+        "ece": 0.03367945763198366,
+        "records": 96
+      },
+      "image_intervals": {
+        "accuracy": {
+          "low": 0.8854166666666666,
+          "high": 0.9895833333333334,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.9479166666666666
+        },
+        "normalized_nll": {
+          "low": 0.04192249357181735,
+          "high": 0.24691595532342417,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.1309267510857928
+        },
+        "brier": {
+          "low": 0.01528228960820947,
+          "high": 0.11593995252499781,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.05935072506551745
+        }
+      },
+      "order_agreement": {
+        "count": 45,
+        "low": 0.8541666666666666,
+        "high": 1,
+        "groups": 48,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.9375
+      },
+      "vs_baseline": {
+        "accuracy_delta": {
+          "low": -0.052083333333333336,
+          "high": 0.020833333333333332,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": -0.010416666666666666
+        },
+        "harmful_flips": {
+          "count": 2,
+          "low": 0,
+          "high": 0.052083333333333336,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.020833333333333332
+        },
+        "repairs": {
+          "count": 1,
+          "low": 0,
+          "high": 0.03125,
+          "groups": 48,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.010416666666666666
+        }
+      },
+      "lambda": 1,
+      "name": "v1.1_head"
+    }
+  },
+  "development": {
+    "role": "development",
+    "records": 160,
+    "image_groups": 80,
+    "baseline": {
+      "temperature": 1,
+      "metrics": {
+        "nll": 0.07149077027806694,
+        "normalized_nll": 0.10313937974949927,
+        "brier": 0.035861340309034866,
+        "expected_accuracy": 0.975,
+        "accuracy": 0.975,
+        "tie_aware_accuracy": 0.975,
+        "ece": 0.02942207729766957,
+        "records": 160
+      },
+      "image_intervals": {
+        "accuracy": {
+          "low": 0.95,
+          "high": 0.99375,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.975
+        },
+        "normalized_nll": {
+          "low": 0.05037201806799474,
+          "high": 0.17637903290222057,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.10313937974949927
+        },
+        "brier": {
+          "low": 0.010083027554424077,
+          "high": 0.07100864301791486,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.03586134030903486
+        }
+      },
+      "order_agreement": {
+        "count": 76,
+        "low": 0.9,
+        "high": 0.9875,
+        "groups": 80,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.95
+      },
+      "vs_baseline": {
+        "accuracy_delta": {
+          "low": 0,
+          "high": 0,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0
+        },
+        "harmful_flips": {
+          "count": 0,
+          "low": 0,
+          "high": 0,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0
+        },
+        "repairs": {
+          "count": 0,
+          "low": 0,
+          "high": 0,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0
+        }
+      }
+    },
+    "v1.1_head": {
+      "temperature": 1,
+      "metrics": {
+        "nll": 0.07167644733111615,
+        "normalized_nll": 0.10340725511314026,
+        "brier": 0.031189769605473185,
+        "expected_accuracy": 0.98125,
+        "accuracy": 0.98125,
+        "tie_aware_accuracy": 0.98125,
+        "ece": 0.04974957666603001,
+        "records": 160
+      },
+      "image_intervals": {
+        "accuracy": {
+          "low": 0.95625,
+          "high": 1,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.98125
+        },
+        "normalized_nll": {
+          "low": 0.06449727973842749,
+          "high": 0.15365438526641131,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.10340725511314024
+        },
+        "brier": {
+          "low": 0.012375795428077613,
+          "high": 0.05613994211025794,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.031189769605473185
+        }
+      },
+      "order_agreement": {
+        "count": 77,
+        "low": 0.9125,
+        "high": 1,
+        "groups": 80,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.9625
+      },
+      "vs_baseline": {
+        "accuracy_delta": {
+          "low": 0,
+          "high": 0.01875,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.00625
+        },
+        "harmful_flips": {
+          "count": 1,
+          "low": 0,
+          "high": 0.01875,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.00625
+        },
+        "repairs": {
+          "count": 2,
+          "low": 0,
+          "high": 0.03125,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.0125
+        }
+      }
+    },
+    "selected": {
+      "temperature": 0.5135668608446433,
+      "metrics": {
+        "nll": 0.04035752404564495,
+        "normalized_nll": 0.058223599803209056,
+        "brier": 0.02541303918756419,
+        "expected_accuracy": 0.98125,
+        "accuracy": 0.98125,
+        "tie_aware_accuracy": 0.98125,
+        "ece": 0.0200038062316628,
+        "records": 160
+      },
+      "image_intervals": {
+        "accuracy": {
+          "low": 0.95625,
+          "high": 1,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.98125
+        },
+        "normalized_nll": {
+          "low": 0.016884954320666255,
+          "high": 0.1147283664008432,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.058223599803209056
+        },
+        "brier": {
+          "low": 0.0035056005914098336,
+          "high": 0.0549043599946068,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.02541303918756419
+        }
+      },
+      "order_agreement": {
+        "count": 77,
+        "low": 0.9125,
+        "high": 1,
+        "groups": 80,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.9625
+      },
+      "vs_baseline": {
+        "accuracy_delta": {
+          "low": 0,
+          "high": 0.01875,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.00625
+        },
+        "harmful_flips": {
+          "count": 1,
+          "low": 0,
+          "high": 0.01875,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.00625
+        },
+        "repairs": {
+          "count": 2,
+          "low": 0,
+          "high": 0.03125,
+          "groups": 80,
+          "draws": 2000,
+          "seed": 17,
+          "method": "paired image-unit bootstrap; one observation per image",
+          "mean": 0.0125
+        }
+      },
+      "lambda": 1,
+      "name": "v1.1_head"
+    }
+  },
+  "scope": "Experimental image setting: SugarCrepe replace_att caption pairs on COCO val2017 images; FIT/DEV select the residual strength and temperature; EVAL is held out from both."
+}

@@ -1,6 +1,6 @@
 # Shared vLLM Service Adapter
 
-Historical pre-1.0 research service, superseded by `fuzev-vllm-plugin` and
+Historical pre-1.0 research service, superseded in FuZev v1.0 by `fuzev-vllm-plugin` and
 `fuzev-exllamav3-plugin`. It does not run against the published engine forks.
 The released servers have no `--service-config`, `phase_timing` or server-local
 image path.

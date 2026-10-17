@@ -3,7 +3,7 @@
 The 2026-10-12 transport checks compared the public `typesafe-sdk` client
 (tested with 0.6.0) against the existing decision services through in-process
 ASGI. This record describes the earlier measured revisions; the
-[API reference](https://github.com/PeisongXiao/fuzev/blob/main/docs/api.md)
+[API reference](https://github.com/PeisongXiao/fuzev/blob/v1.1/docs/api.md)
 documents current behavior.
 
 ## Recorded Coverage
@@ -55,22 +55,22 @@ All revisions below are **unpublished lab commit IDs**.
 ## Reproduce Current CPU Checks
 
 Use downloaded source directories, which include the tests. From their parent
-directory, create an environment and install the runtime, plugins and test
+directory, create an environment and install the runtime, plugin and test
 dependencies together:
 
 ```bash
 python3 -m venv .venv-systemone
 . .venv-systemone/bin/activate
 python -m pip install './fuzev-runtime[test]' \
-  './fuzev-exllamav3-plugin[test]' './fuzev-vllm-plugin[test]' typesafe-sdk
+  './fuzev-exllamav3-plugin[test]' typesafe-sdk
 export CUDA_VISIBLE_DEVICES=""
 (cd fuzev-runtime && python -m pytest -q tests/test_systemone.py tests/test_head.py)
 (cd fuzev-exllamav3-plugin && python -m pytest -q)
 ```
 
 Run `(cd fuzev-vllm-plugin && python -m pytest -q tests/test_adapter.py)` in a
-serving environment with the vllm-fuzev fork installed
-([installation guide](https://github.com/PeisongXiao/fuzev/blob/main/docs/install.md#vllm)).
+v1.0 serving environment with the vllm-fuzev fork installed
+([v1.0 installation guide](https://github.com/PeisongXiao/fuzev/blob/v1.0/docs/install.md#vllm)).
 Engine-fork pooling checks use the fork's own test environment.
 
 These commands target the supplied source, so counts can differ from the

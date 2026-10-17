@@ -171,15 +171,15 @@ PY
 
 ## Limitations
 
-- This portable baseline uses the training procedure above. The published head's
-  specialized loss and five-epoch refit are in the [research history](research-history.md).
+- This portable baseline uses the training procedure above. The v1.0 head's
+  specialized loss and five-epoch refit are in the [research history](research-history.md);
+  the v1.1 head's recipe is [train-v1.1-head.md](train-v1.1-head.md).
 - The tiny random model checks extraction, training and loading. This recorded run
   verifies CPU execution.
 - Heads using the walkthrough's `fuzev-hf-text-branches-v1` encoding load and score
-  through the runtime Python API in v1.0. The v1.0 engine plugins serve only the
-  released head's `fuzev-candidate-branches-v1` Qwen chat encoding; engine serving of
-  other encodings is planned for v1.1
-  ([Encodings](https://github.com/PeisongXiao/fuzev/blob/main/docs/models.md#encodings)).
+  through the runtime Python API in v1.1. The v1.1 ExLlamaV3 plugin serves only the
+  `fuzev-candidate-branches-v1` and `fuzev-list-aware-v2` Qwen chat encodings
+  ([Encodings](https://github.com/PeisongXiao/fuzev/blob/v1.1/docs/models.md#encodings)).
 - JSONL stays in host memory, and CAL batches one primitive at a time. Size inputs
   and batches accordingly.
 - For distribution, supply a model card and notices. Keep data, features, optimizer

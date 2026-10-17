@@ -130,5 +130,6 @@
       "reasoning_effort": "medium"
     }
   },
-  "finish_reason": "length"
+  "finish_reason": "length",
+  "device": "NVIDIA GB10"
 }

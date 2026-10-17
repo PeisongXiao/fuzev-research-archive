@@ -1,0 +1,60 @@
+{
+  "strata": [
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 16,
+      "temperature": 1.1897170014985052
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 17,
+      "k_max": 26,
+      "temperature": 1.4813895335917564
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 27,
+      "k_max": 64,
+      "temperature": 1.403627065220406
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 65,
+      "k_max": 128,
+      "temperature": 1.3487881257571341
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 129,
+      "k_max": 255,
+      "temperature": 1.2075890185196168
+    },
+    {
+      "primitive": "noul",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 2,
+      "temperature": 1.3205070000254826
+    },
+    {
+      "primitive": "ordinal",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 5,
+      "temperature": 1.1070365485247873
+    },
+    {
+      "primitive": "choice",
+      "modality": "image_text",
+      "k_min": 2,
+      "k_max": 2,
+      "temperature": 0.5135668608446433
+    }
+  ]
+}

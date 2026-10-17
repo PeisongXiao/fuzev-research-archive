@@ -1,0 +1,543 @@
+{
+  "weighted_normalized_nll": null,
+  "cells": [
+    {
+      "lane": "heldout",
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 17,
+      "k_max": 26,
+      "records": 56,
+      "groups": 56,
+      "k_counts": {
+        "26": 56
+      },
+      "acceptable_set_sizes": {
+        "1": 28,
+        "2": 2,
+        "3": 2,
+        "4": 4,
+        "5": 1,
+        "6": 1,
+        "7": 2,
+        "8": 2,
+        "9": 3,
+        "10": 1,
+        "11": 2,
+        "12": 2,
+        "13": 1,
+        "14": 1,
+        "15": 1,
+        "19": 2,
+        "20": 1
+      },
+      "grade_counts": {
+        "0": 246,
+        "1": 932,
+        "2": 278
+      },
+      "execution": {
+        "submitted_tokens": {
+          "observed_sum": 4101346,
+          "observed_records": 56,
+          "missing_records": 0
+        },
+        "forwarded_tokens": {
+          "observed_sum": 294556,
+          "observed_records": 56,
+          "missing_records": 0
+        },
+        "cached_tokens": {
+          "observed_sum": 3806790,
+          "observed_records": 56,
+          "missing_records": 0
+        },
+        "completed_root_branches": {
+          "observed_sum": 1456,
+          "observed_records": 56,
+          "missing_records": 0
+        }
+      },
+      "calibration_summary": {
+        "requested": "calibrated",
+        "effective": "calibrated",
+        "calibrated_records": 56,
+        "raw_records": 0
+      },
+      "head": {
+        "expected_accuracy": 0.3744639602252384,
+        "strict_pair_agreement": 0.8245635619492292,
+        "nll": 2.26282245649494,
+        "normalized_nll": 0.6945228387459218,
+        "accuracy": 0.6428571428571429,
+        "acceptable_accuracy": 0.6785714285714286,
+        "ndcg": 0.9323357971347017,
+        "tie_aware_accuracy": 0.6785714285714286,
+        "brier": 0.34697646389176257,
+        "ece": 0.16159022347990715,
+        "records": 56
+      },
+      "baseline": {
+        "expected_accuracy": 0.3228749242612024,
+        "strict_pair_agreement": 0.6668410785156565,
+        "nll": 3.0962898953260405,
+        "normalized_nll": 0.9503370631265271,
+        "accuracy": 0.5357142857142857,
+        "acceptable_accuracy": 0.6428571428571429,
+        "ndcg": 0.8974998517940636,
+        "tie_aware_accuracy": 0.6428571428571429,
+        "brier": 0.48528951344972276,
+        "ece": 0.24271830225841984,
+        "records": 56
+      },
+      "nll_difference": {
+        "difference": -0.25581422438060514,
+        "low": -0.34578283647519387,
+        "high": -0.16451999719304067,
+        "groups": 56,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired group bootstrap; record-weighted mean"
+      }
+    },
+    {
+      "lane": "heldout",
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 27,
+      "k_max": 64,
+      "records": 54,
+      "groups": 54,
+      "k_counts": {
+        "64": 54
+      },
+      "acceptable_set_sizes": {
+        "1": 22,
+        "2": 4,
+        "4": 3,
+        "6": 1,
+        "8": 3,
+        "9": 2,
+        "12": 1,
+        "13": 2,
+        "14": 1,
+        "16": 1,
+        "17": 1,
+        "18": 1,
+        "21": 1,
+        "25": 1,
+        "26": 2,
+        "27": 1,
+        "31": 2,
+        "32": 1,
+        "40": 1,
+        "41": 1,
+        "44": 1,
+        "45": 1
+      },
+      "grade_counts": {
+        "0": 623,
+        "1": 2251,
+        "2": 582
+      },
+      "execution": {
+        "submitted_tokens": {
+          "observed_sum": 23344816,
+          "observed_records": 54,
+          "missing_records": 0
+        },
+        "forwarded_tokens": {
+          "observed_sum": 712624,
+          "observed_records": 54,
+          "missing_records": 0
+        },
+        "cached_tokens": {
+          "observed_sum": 22632192,
+          "observed_records": 54,
+          "missing_records": 0
+        },
+        "completed_root_branches": {
+          "observed_sum": 3456,
+          "observed_records": 54,
+          "missing_records": 0
+        }
+      },
+      "calibration_summary": {
+        "requested": "calibrated",
+        "effective": "calibrated",
+        "calibrated_records": 54,
+        "raw_records": 0
+      },
+      "head": {
+        "expected_accuracy": 0.26513718265323005,
+        "strict_pair_agreement": 0.8117755728039681,
+        "nll": 3.1017887365992363,
+        "normalized_nll": 0.7458225380294938,
+        "accuracy": 0.5,
+        "acceptable_accuracy": 0.6666666666666666,
+        "ndcg": 0.9364573434442126,
+        "tie_aware_accuracy": 0.6666666666666666,
+        "brier": 0.3442467441048841,
+        "ece": 0.12472134787637806,
+        "records": 54
+      },
+      "baseline": {
+        "expected_accuracy": 0.03183805825972973,
+        "strict_pair_agreement": 0.5,
+        "nll": 4.158883083359672,
+        "normalized_nll": 1,
+        "accuracy": 0.045454545454545456,
+        "acceptable_accuracy": 0.14814814814814814,
+        "ndcg": 0.796520244912488,
+        "tie_aware_accuracy": 0.14814814814814814,
+        "brier": 0.4730983529986596,
+        "ece": 0.016213058259729733,
+        "records": 54
+      },
+      "nll_difference": {
+        "difference": -0.25417746197050634,
+        "low": -0.3381814818672408,
+        "high": -0.17585910843248148,
+        "groups": 54,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired group bootstrap; record-weighted mean"
+      }
+    },
+    {
+      "lane": "heldout",
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 65,
+      "k_max": 128,
+      "records": 44,
+      "groups": 44,
+      "k_counts": {
+        "128": 44
+      },
+      "acceptable_set_sizes": {
+        "1": 18,
+        "2": 3,
+        "3": 2,
+        "4": 1,
+        "8": 2,
+        "13": 3,
+        "22": 2,
+        "23": 1,
+        "28": 1,
+        "30": 1,
+        "34": 1,
+        "37": 1,
+        "42": 1,
+        "54": 1,
+        "56": 1,
+        "62": 1,
+        "64": 1,
+        "73": 1,
+        "81": 1,
+        "94": 1
+      },
+      "grade_counts": {
+        "0": 1130,
+        "1": 3691,
+        "2": 811
+      },
+      "execution": {
+        "submitted_tokens": {
+          "observed_sum": 72524070,
+          "observed_records": 44,
+          "missing_records": 0
+        },
+        "forwarded_tokens": {
+          "observed_sum": 1124774,
+          "observed_records": 44,
+          "missing_records": 0
+        },
+        "cached_tokens": {
+          "observed_sum": 71399296,
+          "observed_records": 44,
+          "missing_records": 0
+        },
+        "completed_root_branches": {
+          "observed_sum": 5632,
+          "observed_records": 44,
+          "missing_records": 0
+        }
+      },
+      "calibration_summary": {
+        "requested": "calibrated",
+        "effective": "calibrated",
+        "calibrated_records": 44,
+        "raw_records": 0
+      },
+      "head": {
+        "expected_accuracy": 0.21571152298801036,
+        "strict_pair_agreement": 0.7904855767811124,
+        "nll": 3.5937765026388337,
+        "normalized_nll": 0.740674791202904,
+        "accuracy": 0.4444444444444444,
+        "acceptable_accuracy": 0.5681818181818182,
+        "ndcg": 0.9373268417910947,
+        "tie_aware_accuracy": 0.5681818181818182,
+        "brier": 0.3416775868498413,
+        "ece": 0.1311124656259398,
+        "records": 44
+      },
+      "baseline": {
+        "expected_accuracy": 0.004566480802952201,
+        "strict_pair_agreement": 0.5,
+        "nll": 4.852030263919617,
+        "normalized_nll": 1,
+        "accuracy": 0,
+        "acceptable_accuracy": 0.1590909090909091,
+        "ndcg": 0.814768345984853,
+        "tie_aware_accuracy": 0.1590909090909091,
+        "brier": 0.47595867010136383,
+        "ece": 0.0032460191970477992,
+        "records": 44
+      },
+      "nll_difference": {
+        "difference": -0.2593252087970959,
+        "low": -0.3598079055422058,
+        "high": -0.16471066577220317,
+        "groups": 44,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired group bootstrap; record-weighted mean"
+      }
+    },
+    {
+      "lane": "heldout",
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 129,
+      "k_max": 255,
+      "records": 35,
+      "groups": 35,
+      "k_counts": {
+        "255": 35
+      },
+      "acceptable_set_sizes": {
+        "1": 12,
+        "2": 1,
+        "3": 2,
+        "4": 5,
+        "9": 1,
+        "10": 1,
+        "13": 1,
+        "19": 1,
+        "25": 1,
+        "44": 1,
+        "48": 1,
+        "54": 1,
+        "60": 1,
+        "70": 1,
+        "85": 1,
+        "122": 1,
+        "125": 1,
+        "156": 1,
+        "157": 1
+      },
+      "grade_counts": {
+        "0": 2098,
+        "1": 5790,
+        "2": 1037
+      },
+      "execution": {
+        "submitted_tokens": {
+          "observed_sum": 226685815,
+          "observed_records": 35,
+          "missing_records": 0
+        },
+        "forwarded_tokens": {
+          "observed_sum": 1776325,
+          "observed_records": 35,
+          "missing_records": 0
+        },
+        "cached_tokens": {
+          "observed_sum": 224909490,
+          "observed_records": 35,
+          "missing_records": 0
+        },
+        "completed_root_branches": {
+          "observed_sum": 8925,
+          "observed_records": 35,
+          "missing_records": 0
+        }
+      },
+      "calibration_summary": {
+        "requested": "calibrated",
+        "effective": "calibrated",
+        "calibrated_records": 35,
+        "raw_records": 0
+      },
+      "head": {
+        "expected_accuracy": 0.23136490617720204,
+        "strict_pair_agreement": 0.7657995233308877,
+        "nll": 4.037521257238315,
+        "normalized_nll": 0.7286282676026161,
+        "accuracy": 0.5833333333333334,
+        "acceptable_accuracy": 0.6857142857142857,
+        "ndcg": 0.9489269051104111,
+        "tie_aware_accuracy": 0.6857142857142857,
+        "brier": 0.30887115984522134,
+        "ece": 0.121232423212963,
+        "records": 35
+      },
+      "baseline": {
+        "expected_accuracy": 0.0005181180752555799,
+        "strict_pair_agreement": 0.5,
+        "nll": 5.541263545158425,
+        "normalized_nll": 1,
+        "accuracy": 0,
+        "acceptable_accuracy": 0.05714285714285714,
+        "ndcg": 0.8198824731726018,
+        "tie_aware_accuracy": 0.05714285714285714,
+        "brier": 0.4226814327878464,
+        "ece": 0.0034034505521953994,
+        "records": 35
+      },
+      "nll_difference": {
+        "difference": -0.2713717323973839,
+        "low": -0.3719806495766349,
+        "high": -0.1725973503973623,
+        "groups": 35,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired group bootstrap; record-weighted mean"
+      }
+    }
+  ],
+  "same_candidate_views": 0,
+  "order_agreement": null,
+  "execution": {
+    "submitted_tokens": {
+      "observed_sum": 326656047,
+      "observed_records": 189,
+      "missing_records": 0
+    },
+    "forwarded_tokens": {
+      "observed_sum": 3908279,
+      "observed_records": 189,
+      "missing_records": 0
+    },
+    "cached_tokens": {
+      "observed_sum": 322747768,
+      "observed_records": 189,
+      "missing_records": 0
+    },
+    "completed_root_branches": {
+      "observed_sum": 19469,
+      "observed_records": 189,
+      "missing_records": 0
+    }
+  },
+  "calibration_summary": {
+    "requested": "calibrated",
+    "effective": "calibrated",
+    "calibrated_records": 189,
+    "raw_records": 0
+  },
+  "execution_note": "Native extraction counters: forwarded_tokens are processed, cached_tokens are reused; completed_root_branches counts completed native branches. Missing counts stay unavailable.",
+  "baseline_note": "K above label capacity uses zero utilities, not a frozen-model label control",
+  "calibration": "calibrated",
+  "strata": [
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 16,
+      "temperature": 1.1897170014985052
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 17,
+      "k_max": 26,
+      "temperature": 1.4813895335917564
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 27,
+      "k_max": 64,
+      "temperature": 1.403627065220406
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 65,
+      "k_max": 128,
+      "temperature": 1.3487881257571341
+    },
+    {
+      "primitive": "choice",
+      "modality": "text",
+      "k_min": 129,
+      "k_max": 255,
+      "temperature": 1.2075890185196168
+    },
+    {
+      "primitive": "noul",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 2,
+      "temperature": 1.3205070000254826
+    },
+    {
+      "primitive": "ordinal",
+      "modality": "text",
+      "k_min": 2,
+      "k_max": 5,
+      "temperature": 1.1070365485247873
+    }
+  ],
+  "k_buckets": [
+    [
+      2,
+      16
+    ],
+    [
+      17,
+      26
+    ],
+    [
+      27,
+      64
+    ],
+    [
+      65,
+      128
+    ],
+    [
+      129,
+      255
+    ]
+  ],
+  "top_k": 5,
+  "records": 189,
+  "groups": 56,
+  "capacities": {
+    "choice": {
+      "text": {
+        "implemented_max": 255,
+        "validated_max": null
+      }
+    },
+    "noul": {
+      "text": {
+        "implemented_max": 2,
+        "validated_max": null
+      }
+    },
+    "ordinal": {
+      "text": {
+        "implemented_max": 5,
+        "validated_max": null
+      }
+    }
+  },
+  "residual_strength": {
+    "text": 1
+  }
+}

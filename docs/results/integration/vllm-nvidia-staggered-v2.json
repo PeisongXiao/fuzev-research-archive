@@ -83,7 +83,7 @@
     "scope": "unpreempted engine-core request intervals; prefill includes first token; decode excludes first token; not GPU kernel time",
     "prefill_seconds": 0.39813154097646475,
     "decode_seconds": 6.4579670779639855,
-    "queue_seconds": 0.00004310405347496271,
+    "queue_seconds": 4.310405347496271e-05,
     "prompt_tokens": 419,
     "completion_tokens": 64,
     "decode_tokens": 63,
@@ -149,5 +149,6 @@
       "streaming": false,
       "checkpoint_retention": false
     }
-  }
+  },
+  "device": "NVIDIA GB10"
 }

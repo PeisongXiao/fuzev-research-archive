@@ -204,5 +204,6 @@
     }
   ],
   "fresh_decision_requests": 5,
-  "distinct_decision_engine_requests": 15
+  "distinct_decision_engine_requests": 15,
+  "device": "NVIDIA GB10"
 }

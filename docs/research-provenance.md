@@ -1,7 +1,10 @@
 # Research Provenance
 
+Covers the v1.0 head (`head.safetensors` SHA-256 prefix `f7bc42e7`);
+the v1.1 head is in [v1.1 head results](v1.1-head-results.md).
+
 The archive keeps methods, aggregate results and source records, with curated
-paths and process notes.
+paths and method notes.
 
 - Starting research revision: unpublished lab commit
   `48c09bb6592d09702de15d16be252c851429c622`.
@@ -12,7 +15,7 @@ paths and process notes.
 - Dataset contents, feature shards, optimizer state and original Git metadata
   stay with the original study inputs.
 
-## Released Head Provenance
+## v1.0 Head Provenance
 
 The [record-only provenance JSON](head-provenance.json) captures the actual
 released-reference manifest, including FIT/DEV/CAL membership counts and
@@ -41,12 +44,12 @@ The original manifest belongs to the calibrated reference bundle. Serving
 | Original head tensors | `f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c` |
 | Original reference calibration | `566e0f43fb66fbbd5834d34299a41f3e884f3b306c9a0040d30364c8189d01d3` |
 | Historical numerical scorer | `5435eeff154cc7494ca9a214f8a8fdf32012326902cf41da32ab7fe1dac9090c` |
-| Serving `head.safetensors`, selected release bytes | `f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c` |
-| Serving `config.json`, selected release bytes | `33937ec66536248fc6ae4fc3eeb1df3d835aae5e908d1f8fae3f39a370a7acbe` |
-| Serving `calibration.json`, selected release bytes | `24a15bd4fda54411d06ad96689f2a86317d7d259723b946a2d06b75a048a372c` |
-| Serving runtime `_scoring.py`, selected release source | `a3b03255d7f9369736d3cc404b2a3c8bc24ed7c0911a03fb36d2f7cbe1f573db` |
+| Serving `head.safetensors`, v1.0 release bytes | `f7bc42e780c6da72aa675ae9ddde5e4b4f4320da6b0676946ca7b3e1238ac33c` |
+| Serving `config.json`, v1.0 release bytes | `33937ec66536248fc6ae4fc3eeb1df3d835aae5e908d1f8fae3f39a370a7acbe` |
+| Serving `calibration.json`, v1.0 release bytes | `24a15bd4fda54411d06ad96689f2a86317d7d259723b946a2d06b75a048a372c` |
+| Serving runtime `_scoring.py`, v1.0 release source | `a3b03255d7f9369736d3cc404b2a3c8bc24ed7c0911a03fb36d2f7cbe1f573db` |
 
-`SHA256SUMS` is the head bundle's release checksum list. Verify it by running
+`SHA256SUMS` is the v1.0 head bundle's release checksum list. Verify it by running
 `sha256sum -c SHA256SUMS` in the head directory.
 
 ## Study Code And Configurations
@@ -91,9 +94,9 @@ reader-supplied `FUZEV_ROOT` (experiment data) and `SNAPSHOT` (source) instead.
 | Historical name | Archive or public component |
 | --- | --- |
 | `recipes` | `research-snapshot/` |
-| `src/exllamav3-fuzev` | [exllamav3-fuzev](https://github.com/PeisongXiao/exllamav3-fuzev) |
+| `src/exllamav3-fuzev` | [exllamav3-fuzev](https://github.com/PeisongXiao/exllamav3-fuzev/tree/v1.1) |
 | `src/kev-evaluation` | [Kev](https://github.com/jaredpalmer/kev) |
-| `vllm-exl3-fuzev` | [vllm-exl3-plugin](https://github.com/PeisongXiao/vllm-exl3-plugin) (AGPL-3.0-only) |
+| `vllm-exl3-fuzev` | [vllm-exl3-plugin](https://github.com/PeisongXiao/vllm-exl3-plugin/tree/v1.0) (AGPL-3.0-only) |
 
 ## Glossary
 
@@ -118,4 +121,4 @@ reader-supplied `FUZEV_ROOT` (experiment data) and `SNAPSHOT` (source) instead.
 
 - Source and documentation: Apache-2.0.
 - Third-party attribution: [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
-- Selected head: [head card](https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev).
+- v1.0 head: [head card](https://huggingface.co/peisongxiao/Qwen3.8-Flash-Next-FuZev/tree/v1.0).

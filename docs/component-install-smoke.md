@@ -1,12 +1,51 @@
 # Component Installation History
 
-Use the [installation guide](https://github.com/PeisongXiao/fuzev/blob/main/docs/install.md) for current commands.
+Use the [installation guide](https://github.com/PeisongXiao/fuzev/blob/v1.1/docs/install.md) for current commands.
+The 2026-10-12 and 2026-10-13 checks are v1.0 installations, including the
+vLLM research paths.
+
+## v1.1 Source Installation
+
+The [v1.1 source-installation record](results/integration/v1.1/source-installation.json)
+covers the v1.1 release candidate before the
+[decision-root scheduling](integration-v1.1.md#decision-root-checks) and
+usage-accounting fixes. It used one NVIDIA GB10 (128 GB unified memory), Linux
+aarch64, Python 3.12.3, PyTorch 2.13.0+cu130, Triton 3.7.1, FlashInfer 0.7.2
+and JIT cache `0.7.2+cu130`. Installed versions were ExLlamaV3
+`1.6.1+fuzev.v1.1` and runtime/plugin `1.1.0`.
+
+**Build.** From unpacked source directories,
+`pip install --no-build-isolation ./exllamav3-fuzev` built the engine
+extension with CUDA toolkit 13.0, then
+`pip install ./fuzev-runtime ./fuzev-exllamav3-plugin` resolved dependencies
+normally.
+
+**Launcher settings:** turboderp EXL3 4.05 bpw snapshot `55a732e0`, head
+1.1.0, calibrated probabilities and the prefill profile in the JSON, including
+the 32,768-token chunk. The launcher command was:
+
+```bash
+fuzev-native --model "$FUZEV_MODEL" --head "$FUZEV_HEAD" --model-name my-model \
+  --calibration calibrated
+```
+
+`FUZEV_MODEL` is the turboderp snapshot and `FUZEV_HEAD` the 1.1.0 bundle
+directory.
+
+**Run.** 21 of 23 checks passed, including model discovery, a combined
+Choice/Noul/Score request with unknown SystemOne fields, 2-, 26- and 27-option
+Choice, 1- and 256-option rejection, 12-level Score, `/v1/decisions`, SSE chat
+and completions, retained-prefix reuse and release, and the request-size
+limit. 64- and 255-option Choice requests returned HTTP 200 but failed the
+check's synthetic expected-winner assertions; the JSON keeps these failures.
+Recorded usage and `head_id` precede their release fixes. Image serving and
+decision quality are outside this check.
 
 ## Source-ZIP Serving Checks
 
-The 2026-10-13 checks used NVIDIA GB10, Linux aarch64, Python 3.12.3,
-PyTorch 2.13.0+cu130 (CUDA 13.0), `MAX_JOBS=4`, normal dependency resolution
-and a CPU decision head.
+The 2026-10-13 checks used one NVIDIA GB10 (128 GB unified memory), Linux
+aarch64, Python 3.12.3, PyTorch 2.13.0+cu130 (CUDA 13.0), `MAX_JOBS=4`,
+normal dependency resolution and a CPU decision head.
 
 The JSON records keep scrubbed executed commands, source-ZIP release
 versions, engine settings and exact HTTP requests/responses. Braced paths stand
@@ -43,11 +82,11 @@ application shutdown. It exited 0.
 **Diagnostics.** The [native JSON](configs/smoke-native-exl3.json) keeps their
 input/output subset.
 
-- **Shared-state prewarm:** the single ordered pair took 8.73646424600156 s
-  without state prewarm and 5.317069264001475 s with it, a 39.139346% timing
+- **Shared-state prewarm:** the single ordered pair took about 8.7 s
+  without state prewarm and 5.3 s with it, a 39% timing
   reduction. KV/page caches were reset before each case, with no separate
   warmup or matched first-use kernel-cache state. The pair measures timing only.
-- **Option checkpoint:** one 64-word, eight-option case took 3.641698779996659 s,
+- **Option checkpoint:** one 64-word, eight-option case took about 3.6 s,
   with candidate readouts using `checkpoint=False`. The single case measures
   latency below the 256-token page boundary only: the 223-token query and all
   240-token candidates stayed under it.
@@ -209,5 +248,5 @@ and established metadata only.
 ### Reproduction Boundary
 
 The original prepared image and raw installation records are omitted. For a
-new environment, follow the [current installation procedure](https://github.com/PeisongXiao/fuzev/blob/main/docs/install.md).
+new environment, follow the [current installation procedure](https://github.com/PeisongXiao/fuzev/blob/v1.1/docs/install.md).
 For route behavior, see [SystemOne CPU checks](2026-10-12-systemone-unit-compatibility.md).

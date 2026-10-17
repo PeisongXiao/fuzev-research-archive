@@ -1,0 +1,257 @@
+{
+  "role": "test",
+  "records": 192,
+  "image_groups": 96,
+  "baseline": {
+    "temperature": 1,
+    "metrics": {
+      "nll": 0.07075880416065775,
+      "normalized_nll": 0.1020833758618143,
+      "brier": 0.03481568636168999,
+      "expected_accuracy": 0.96875,
+      "accuracy": 0.96875,
+      "tie_aware_accuracy": 0.96875,
+      "ece": 0.053194852446819894,
+      "records": 192
+    },
+    "image_intervals": {
+      "accuracy": {
+        "low": 0.9375,
+        "high": 0.9947916666666666,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.96875
+      },
+      "normalized_nll": {
+        "low": 0.06554602527307755,
+        "high": 0.14908329056446565,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.1020833758618143
+      },
+      "brier": {
+        "low": 0.016368008298427602,
+        "high": 0.05962987206311498,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.03481568636168999
+      }
+    },
+    "order_agreement": {
+      "count": 92,
+      "low": 0.9166666666666666,
+      "high": 0.9895833333333334,
+      "groups": 96,
+      "draws": 2000,
+      "seed": 17,
+      "method": "paired image-unit bootstrap; one observation per image",
+      "mean": 0.9583333333333334
+    },
+    "vs_baseline": {
+      "accuracy_delta": {
+        "low": 0,
+        "high": 0,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0
+      },
+      "harmful_flips": {
+        "count": 0,
+        "low": 0,
+        "high": 0,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0
+      },
+      "repairs": {
+        "count": 0,
+        "low": 0,
+        "high": 0,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0
+      }
+    }
+  },
+  "v1.1_head": {
+    "temperature": 1,
+    "metrics": {
+      "nll": 0.07908447847642266,
+      "normalized_nll": 0.11409478490922494,
+      "brier": 0.03617178634259275,
+      "expected_accuracy": 0.984375,
+      "accuracy": 0.984375,
+      "tie_aware_accuracy": 0.984375,
+      "ece": 0.05384906131499842,
+      "records": 192
+    },
+    "image_intervals": {
+      "accuracy": {
+        "low": 0.9583333333333334,
+        "high": 1,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.984375
+      },
+      "normalized_nll": {
+        "low": 0.0757626794350091,
+        "high": 0.16090888940947276,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.11409478490922494
+      },
+      "brier": {
+        "low": 0.018003034018796018,
+        "high": 0.05919597056968113,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.03617178634259275
+      }
+    },
+    "order_agreement": {
+      "count": 95,
+      "low": 0.96875,
+      "high": 1,
+      "groups": 96,
+      "draws": 2000,
+      "seed": 17,
+      "method": "paired image-unit bootstrap; one observation per image",
+      "mean": 0.9895833333333334
+    },
+    "vs_baseline": {
+      "accuracy_delta": {
+        "low": 0,
+        "high": 0.036458333333333336,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.015625
+      },
+      "harmful_flips": {
+        "count": 0,
+        "low": 0,
+        "high": 0,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0
+      },
+      "repairs": {
+        "count": 3,
+        "low": 0,
+        "high": 0.036458333333333336,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.015625
+      }
+    }
+  },
+  "selected": {
+    "temperature": 0.5135668608446433,
+    "metrics": {
+      "nll": 0.046367335069892,
+      "normalized_nll": 0.06689392436457013,
+      "brier": 0.026507276799356272,
+      "expected_accuracy": 0.984375,
+      "accuracy": 0.984375,
+      "tie_aware_accuracy": 0.984375,
+      "ece": 0.029630146339906068,
+      "records": 192
+    },
+    "image_intervals": {
+      "accuracy": {
+        "low": 0.9583333333333334,
+        "high": 1,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.984375
+      },
+      "normalized_nll": {
+        "low": 0.027179706675643032,
+        "high": 0.12009923901589185,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.06689392436457013
+      },
+      "brier": {
+        "low": 0.007244388574833348,
+        "high": 0.052363028089358624,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.026507276799356272
+      }
+    },
+    "order_agreement": {
+      "count": 95,
+      "low": 0.96875,
+      "high": 1,
+      "groups": 96,
+      "draws": 2000,
+      "seed": 17,
+      "method": "paired image-unit bootstrap; one observation per image",
+      "mean": 0.9895833333333334
+    },
+    "vs_baseline": {
+      "accuracy_delta": {
+        "low": 0,
+        "high": 0.036458333333333336,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.015625
+      },
+      "harmful_flips": {
+        "count": 0,
+        "low": 0,
+        "high": 0,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0
+      },
+      "repairs": {
+        "count": 3,
+        "low": 0,
+        "high": 0.036458333333333336,
+        "groups": 96,
+        "draws": 2000,
+        "seed": 17,
+        "method": "paired image-unit bootstrap; one observation per image",
+        "mean": 0.015625
+      }
+    },
+    "lambda": 1,
+    "name": "v1.1_head"
+  },
+  "scope": "Experimental image setting: SugarCrepe replace_att caption pairs on COCO val2017 images; FIT/DEV select the residual strength and temperature; EVAL is held out from both."
+}

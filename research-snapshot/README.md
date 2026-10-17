@@ -1,5 +1,8 @@
 # FuZev Research Snapshot
 
+Covers the v1.0 head (`head.safetensors` SHA-256 prefix `f7bc42e7`);
+the v1.1 head is in [v1.1 head results](../docs/v1.1-head-results.md).
+
 Curated source and method notes for frozen-backbone decision-head experiments.
 The research Python package is `fuzev_research`. For a new backbone, use the
 archive's [training walkthrough](../docs/train-a-shared-head.md); for serving, use the
@@ -7,7 +10,7 @@ archive's [training walkthrough](../docs/train-a-shared-head.md); for serving, u
 
 The snapshot keeps feature extraction, dataset adapters, training, evaluation,
 runtime experiments and a read-only experiment dashboard, with curated paths and
-process notes. [Provenance and historical settings](../docs/research-provenance.md)
+method notes. [Provenance and historical settings](../docs/research-provenance.md)
 explain the original experiments' source revisions, vocabulary and limits.
 
 ## Method Map
@@ -30,7 +33,7 @@ explain the original experiments' source revisions, vocabulary and limits.
   Query label logits come from the existing LM projection.
 - Candidate branches share an immutable query prefix and continue independently.
 - Extraction experiments used candidate batches of four and eight. The native
-  quality study used batch eight; the released Generator attachment uses batch one.
+  quality study used batch eight; the v1.0 Generator attachment uses batch one.
 - Different batch geometries select different kernels and can change features.
   Batch-1/4/8 drift was not recorded.
 - Same-geometry repeats and cross-batch comparisons are distinct measurements;
@@ -54,7 +57,7 @@ not establish a general throughput improvement.
 - **Development search:** text warmup, then mixed training with text replay;
   seeds 17/29/43, learning rates 0.0003/0.001 and Brier weights 0/0.1.
 
-[Training history](../docs/research-training.md) records the selected release's
+[Training history](../docs/research-training.md) records the v1.0 head's
 later five-epoch refit.
 
 ## Working With The Snapshot
@@ -68,7 +71,7 @@ export FUZEV_ROOT="$PWD/../experiment-data"
 mkdir -p "$FUZEV_ROOT"
 python -m venv .venv-research
 . .venv-research/bin/activate
-python -m pip install "$SNAPSHOT[test,data]" torch
+python -m pip install "$SNAPSHOT[test,data]" torch transformers
 ```
 
 Tested with torch 2.13.0 (CUDA 13.0 build).
@@ -77,8 +80,8 @@ Tested with torch 2.13.0 (CUDA 13.0 build).
 state. The browser-check tool needs the optional `dashboard` dependencies
 (`python -m pip install "$SNAPSHOT[dashboard]"`).
 
-`fuzev-vllm-plugin` and `fuzev-exllamav3-plugin` supersede the historical pre-1.0
-research service, which does not run against the published engine forks. Its
+In v1.0, `fuzev-vllm-plugin` and `fuzev-exllamav3-plugin` superseded the historical
+pre-1.0 research service, which does not run against the published engine forks. Its
 modules under `fuzev_research/` are `server.py`, `native_service.py`,
 `vllm_server.py`, `vllm_service.py`, `service_contracts.py`, `service_images.py`
 and `vllm_images.py`.

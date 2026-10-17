@@ -1762,5 +1762,6 @@
   "health_before": {
     "gpu_owner_threads": 1,
     "max_queued_requests": 4
-  }
+  },
+  "device": "NVIDIA GB10"
 }

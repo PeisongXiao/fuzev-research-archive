@@ -56,5 +56,6 @@
       },
       "wall_seconds": 29.246426556957886
     }
-  ]
+  ],
+  "device": "NVIDIA GB10"
 }
